@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('proveedores', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre', 150);
+            $table->string('ruc', 20)->unique()->nullable();
+            $table->string('telefono', 20)->nullable();
+            $table->string('email', 150)->nullable();
+            $table->text('direccion')->nullable();
+            $table->string('contacto_principal', 100)->nullable();
+            $table->text('productos_suministrados')->nullable();
+            $table->enum('tipo', ['Farmaceutico', 'Alimentos', 'Accesorios', 'Equipos', 'Mixto'])->default('Mixto');
+            $table->boolean('activo')->default(true);
             $table->timestamps();
         });
     }
