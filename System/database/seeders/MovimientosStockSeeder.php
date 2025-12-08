@@ -5,73 +5,289 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
 
 class MovimientosStockSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
         $movimientos = [
-            // Entradas por compras
-            ['producto_id' => 1, 'tipo_movimiento' => 'Entrada', 'cantidad' => 100, 'cantidad_anterior' => 50, 'cantidad_nueva' => 150, 'motivo' => 'Compra a proveedor', 'referencia_id' => 1, 'referencia_tipo' => 'compra', 'empleado_id' => 13, 'fecha_movimiento' => Carbon::now()->subDays(15)],
-            ['producto_id' => 2, 'tipo_movimiento' => 'Entrada', 'cantidad' => 80, 'cantidad_anterior' => 40, 'cantidad_nueva' => 120, 'motivo' => 'Compra a proveedor', 'referencia_id' => 1, 'referencia_tipo' => 'compra', 'empleado_id' => 13, 'fecha_movimiento' => Carbon::now()->subDays(15)],
-            ['producto_id' => 6, 'tipo_movimiento' => 'Entrada', 'cantidad' => 30, 'cantidad_anterior' => 20, 'cantidad_nueva' => 50, 'motivo' => 'Compra a proveedor', 'referencia_id' => 2, 'referencia_tipo' => 'compra', 'empleado_id' => 13, 'fecha_movimiento' => Carbon::now()->subDays(12)],
-            
-            // Salidas por ventas
-            ['producto_id' => 1, 'tipo_movimiento' => 'Salida', 'cantidad' => 2, 'cantidad_anterior' => 150, 'cantidad_nueva' => 148, 'motivo' => 'Venta a cliente', 'referencia_id' => 1, 'referencia_tipo' => 'venta', 'empleado_id' => 11, 'fecha_movimiento' => Carbon::now()->subDays(5)],
-            ['producto_id' => 6, 'tipo_movimiento' => 'Salida', 'cantidad' => 1, 'cantidad_anterior' => 50, 'cantidad_nueva' => 49, 'motivo' => 'Venta a cliente', 'referencia_id' => 2, 'referencia_tipo' => 'venta', 'empleado_id' => 12, 'fecha_movimiento' => Carbon::now()->subDays(4)],
-            ['producto_id' => 9, 'tipo_movimiento' => 'Salida', 'cantidad' => 1, 'cantidad_anterior' => 60, 'cantidad_nueva' => 59, 'motivo' => 'Venta a cliente', 'referencia_id' => 2, 'referencia_tipo' => 'venta', 'empleado_id' => 12, 'fecha_movimiento' => Carbon::now()->subDays(4)],
-            
-            // Ajustes de inventario
-            ['producto_id' => 3, 'tipo_movimiento' => 'Ajuste', 'cantidad' => -5, 'cantidad_anterior' => 85, 'cantidad_nueva' => 80, 'motivo' => 'Productos vencidos', 'referencia_id' => null, 'referencia_tipo' => null, 'empleado_id' => 13, 'fecha_movimiento' => Carbon::now()->subDays(10)],
-            ['producto_id' => 12, 'tipo_movimiento' => 'Ajuste', 'cantidad' => 10, 'cantidad_anterior' => 70, 'cantidad_nueva' => 80, 'motivo' => 'Corrección inventario', 'referencia_id' => null, 'referencia_tipo' => null, 'empleado_id' => 13, 'fecha_movimiento' => Carbon::now()->subDays(8)],
-            
-            // Más movimientos
-            ['producto_id' => 4, 'tipo_movimiento' => 'Salida', 'cantidad' => 1, 'cantidad_anterior' => 100, 'cantidad_nueva' => 99, 'motivo' => 'Venta a cliente', 'referencia_id' => 4, 'referencia_tipo' => 'venta', 'empleado_id' => 21, 'fecha_movimiento' => Carbon::now()->subDays(2)],
-            ['producto_id' => 2, 'tipo_movimiento' => 'Salida', 'cantidad' => 2, 'cantidad_anterior' => 120, 'cantidad_nueva' => 118, 'motivo' => 'Venta a cliente', 'referencia_id' => 5, 'referencia_tipo' => 'venta', 'empleado_id' => 12, 'fecha_movimiento' => Carbon::now()->subDays(1)],
-            ['producto_id' => 18, 'tipo_movimiento' => 'Salida', 'cantidad' => 1, 'cantidad_anterior' => 55, 'cantidad_nueva' => 54, 'motivo' => 'Venta a cliente', 'referencia_id' => 5, 'referencia_tipo' => 'venta', 'empleado_id' => 12, 'fecha_movimiento' => Carbon::now()->subDays(1)],
-            ['producto_id' => 14, 'tipo_movimiento' => 'Salida', 'cantidad' => 1, 'cantidad_anterior' => 45, 'cantidad_nueva' => 44, 'motivo' => 'Venta a cliente', 'referencia_id' => 5, 'referencia_tipo' => 'venta', 'empleado_id' => 12, 'fecha_movimiento' => Carbon::now()->subDays(1)],
-            
-            ['producto_id' => 7, 'tipo_movimiento' => 'Entrada', 'cantidad' => 20, 'cantidad_anterior' => 10, 'cantidad_nueva' => 30, 'motivo' => 'Compra a proveedor', 'referencia_id' => 2, 'referencia_tipo' => 'compra', 'empleado_id' => 13, 'fecha_movimiento' => Carbon::now()->subDays(12)],
-            ['producto_id' => 7, 'tipo_movimiento' => 'Salida', 'cantidad' => 1, 'cantidad_anterior' => 30, 'cantidad_nueva' => 29, 'motivo' => 'Venta a cliente', 'referencia_id' => 6, 'referencia_tipo' => 'venta', 'empleado_id' => 21, 'fecha_movimiento' => Carbon::now()->subHours(5)],
-            ['producto_id' => 13, 'tipo_movimiento' => 'Salida', 'cantidad' => 1, 'cantidad_anterior' => 120, 'cantidad_nueva' => 119, 'motivo' => 'Venta a cliente', 'referencia_id' => 6, 'referencia_tipo' => 'venta', 'empleado_id' => 21, 'fecha_movimiento' => Carbon::now()->subHours(5)],
-            
-            ['producto_id' => 11, 'tipo_movimiento' => 'Salida', 'cantidad' => 1, 'cantidad_anterior' => 25, 'cantidad_nueva' => 24, 'motivo' => 'Venta a cliente', 'referencia_id' => 7, 'referencia_tipo' => 'venta', 'empleado_id' => 11, 'fecha_movimiento' => Carbon::now()->subDays(6)],
-            ['producto_id' => 5, 'tipo_movimiento' => 'Salida', 'cantidad' => 2, 'cantidad_anterior' => 90, 'cantidad_nueva' => 88, 'motivo' => 'Venta a cliente', 'referencia_id' => 8, 'referencia_tipo' => 'venta', 'empleado_id' => 12, 'fecha_movimiento' => Carbon::now()->subDays(7)],
-            
-            ['producto_id' => 15, 'tipo_movimiento' => 'Entrada', 'cantidad' => 50, 'cantidad_anterior' => 20, 'cantidad_nueva' => 70, 'motivo' => 'Compra a proveedor', 'referencia_id' => 5, 'referencia_tipo' => 'compra', 'empleado_id' => 13, 'fecha_movimiento' => Carbon::now()->subDays(7)],
-            ['producto_id' => 15, 'tipo_movimiento' => 'Salida', 'cantidad' => 2, 'cantidad_anterior' => 70, 'cantidad_nueva' => 68, 'motivo' => 'Venta a cliente', 'referencia_id' => 8, 'referencia_tipo' => 'venta', 'empleado_id' => 12, 'fecha_movimiento' => Carbon::now()->subDays(7)],
-            
-            ['producto_id' => 16, 'tipo_movimiento' => 'Salida', 'cantidad' => 1, 'cantidad_anterior' => 95, 'cantidad_nueva' => 94, 'motivo' => 'Venta a cliente', 'referencia_id' => 3, 'referencia_tipo' => 'venta', 'empleado_id' => 21, 'fecha_movimiento' => Carbon::now()->subDays(3)],
-            
-            // Más entradas y salidas para completar 25+ registros
-            ['producto_id' => 8, 'tipo_movimiento' => 'Entrada', 'cantidad' => 40, 'cantidad_anterior' => 35, 'cantidad_nueva' => 75, 'motivo' => 'Compra a proveedor', 'referencia_id' => 4, 'referencia_tipo' => 'compra', 'empleado_id' => 13, 'fecha_movimiento' => Carbon::now()->subDays(8)],
-            ['producto_id' => 19, 'tipo_movimiento' => 'Entrada', 'cantidad' => 25, 'cantidad_anterior' => 15, 'cantidad_nueva' => 40, 'motivo' => 'Compra a proveedor', 'referencia_id' => 6, 'referencia_tipo' => 'compra', 'empleado_id' => 13, 'fecha_movimiento' => Carbon::now()->subDays(5)],
-            ['producto_id' => 20, 'tipo_movimiento' => 'Entrada', 'cantidad' => 15, 'cantidad_anterior' => 20, 'cantidad_nueva' => 35, 'motivo' => 'Compra a proveedor', 'referencia_id' => 6, 'referencia_tipo' => 'compra', 'empleado_id' => 13, 'fecha_movimiento' => Carbon::now()->subDays(5)],
-            ['producto_id' => 21, 'tipo_movimiento' => 'Entrada', 'cantidad' => 100, 'cantidad_anterior' => 100, 'cantidad_nueva' => 200, 'motivo' => 'Compra a proveedor', 'referencia_id' => 4, 'referencia_tipo' => 'compra', 'empleado_id' => 13, 'fecha_movimiento' => Carbon::now()->subDays(8)],
-            ['producto_id' => 22, 'tipo_movimiento' => 'Salida', 'cantidad' => 1, 'cantidad_anterior' => 15, 'cantidad_nueva' => 14, 'motivo' => 'Venta a cliente', 'referencia_id' => 10, 'referencia_tipo' => 'venta', 'empleado_id' => 11, 'fecha_movimiento' => Carbon::now()->subDays(9)],
-            ['producto_id' => 23, 'tipo_movimiento' => 'Ajuste', 'cantidad' => 5, 'cantidad_anterior' => 60, 'cantidad_nueva' => 65, 'motivo' => 'Inventario encontrado', 'referencia_id' => null, 'referencia_tipo' => null, 'empleado_id' => 13, 'fecha_movimiento' => Carbon::now()->subDays(6)]
+            [
+                'producto_id' => 1,
+                'tipo_movimiento' => 'entrada', 
+                'stock_anterior' => 50,
+                'cantidad' => 30,
+                'stock_nuevo' => 80,
+                'motivo' => 'compra',
+                'numero_factura_compra' => 'FC001',
+                'fecha' => '2024-01-15',
+                'usuario_id' => 1
+            ],
+            [
+                'producto_id' => 2,
+                'tipo_movimiento' => 'salida',
+                'stock_anterior' => 25,
+                'cantidad' => 5,
+                'stock_nuevo' => 20,
+                'motivo' => 'venta',
+                'venta_id' => 1,
+                'fecha' => '2024-01-16',
+                'usuario_id' => 1
+            ],
+            [
+                'producto_id' => 3,
+                'tipo_movimiento' => 'entrada',
+                'stock_anterior' => 40,
+                'cantidad' => 20,
+                'stock_nuevo' => 60,
+                'motivo' => 'compra',
+                'numero_factura_compra' => 'FC002',
+                'fecha' => '2024-01-17',
+                'usuario_id' => 1
+            ],
+            [
+                'producto_id' => 4,
+                'tipo_movimiento' => 'salida',
+                'stock_anterior' => 15,
+                'cantidad' => 3,
+                'stock_nuevo' => 12,
+                'motivo' => 'venta',
+                'venta_id' => 2,
+                'fecha' => '2024-01-18',
+                'usuario_id' => 2
+            ],
+            [
+                'producto_id' => 5,
+                'tipo_movimiento' => 'entrada',
+                'stock_anterior' => 30,
+                'cantidad' => 25,
+                'stock_nuevo' => 55,
+                'motivo' => 'compra',
+                'numero_factura_compra' => 'FC003',
+                'fecha' => '2024-01-19',
+                'usuario_id' => 2
+            ],
+            [
+                'producto_id' => 1,
+                'tipo_movimiento' => 'salida',
+                'stock_anterior' => 80,
+                'cantidad' => 8,
+                'stock_nuevo' => 72,
+                'motivo' => 'venta',
+                'venta_id' => 3,
+                'fecha' => '2024-01-20',
+                'usuario_id' => 1
+            ],
+            [
+                'producto_id' => 6,
+                'tipo_movimiento' => 'entrada',
+                'stock_anterior' => 20,
+                'cantidad' => 15,
+                'stock_nuevo' => 35,
+                'motivo' => 'compra',
+                'numero_factura_compra' => 'FC004',
+                'fecha' => '2024-01-21',
+                'usuario_id' => 2
+            ],
+            [
+                'producto_id' => 7,
+                'tipo_movimiento' => 'salida',
+                'stock_anterior' => 35,
+                'cantidad' => 7,
+                'stock_nuevo' => 28,
+                'motivo' => 'venta',
+                'venta_id' => 4,
+                'fecha' => '2024-01-22',
+                'usuario_id' => 1
+            ],
+            [
+                'producto_id' => 8,
+                'tipo_movimiento' => 'entrada',
+                'stock_anterior' => 10,
+                'cantidad' => 40,
+                'stock_nuevo' => 50,
+                'motivo' => 'compra',
+                'numero_factura_compra' => 'FC005',
+                'fecha' => '2024-01-23',
+                'usuario_id' => 2
+            ],
+            [
+                'producto_id' => 2,
+                'tipo_movimiento' => 'salida',
+                'stock_anterior' => 20,
+                'cantidad' => 4,
+                'stock_nuevo' => 16,
+                'motivo' => 'venta',
+                'venta_id' => 5,
+                'fecha' => '2024-01-24',
+                'usuario_id' => 1
+            ],
+            [
+                'producto_id' => 9,
+                'tipo_movimiento' => 'entrada',
+                'stock_anterior' => 25,
+                'cantidad' => 35,
+                'stock_nuevo' => 60,
+                'motivo' => 'compra',
+                'numero_factura_compra' => 'FC006',
+                'fecha' => '2024-01-25',
+                'usuario_id' => 2
+            ],
+            [
+                'producto_id' => 10,
+                'tipo_movimiento' => 'salida',
+                'stock_anterior' => 18,
+                'cantidad' => 2,
+                'stock_nuevo' => 16,
+                'motivo' => 'venta',
+                'venta_id' => 6,
+                'fecha' => '2024-01-26',
+                'usuario_id' => 1
+            ],
+            [
+                'producto_id' => 3,
+                'tipo_movimiento' => 'salida',
+                'stock_anterior' => 60,
+                'cantidad' => 12,
+                'stock_nuevo' => 48,
+                'motivo' => 'venta',
+                'venta_id' => 7,
+                'fecha' => '2024-01-27',
+                'usuario_id' => 2
+            ],
+            [
+                'producto_id' => 11,
+                'tipo_movimiento' => 'entrada',
+                'stock_anterior' => 5,
+                'cantidad' => 20,
+                'stock_nuevo' => 25,
+                'motivo' => 'compra',
+                'numero_factura_compra' => 'FC007',
+                'fecha' => '2024-01-28',
+                'usuario_id' => 1
+            ],
+            [
+                'producto_id' => 12,
+                'tipo_movimiento' => 'salida',
+                'stock_anterior' => 30,
+                'cantidad' => 6,
+                'stock_nuevo' => 24,
+                'motivo' => 'venta',
+                'venta_id' => 8,
+                'fecha' => '2024-01-29',
+                'usuario_id' => 2
+            ],
+            [
+                'producto_id' => 4,
+                'tipo_movimiento' => 'entrada',
+                'stock_anterior' => 12,
+                'cantidad' => 18,
+                'stock_nuevo' => 30,
+                'motivo' => 'compra',
+                'numero_factura_compra' => 'FC008',
+                'fecha' => '2024-01-30',
+                'usuario_id' => 1
+            ],
+            [
+                'producto_id' => 13,
+                'tipo_movimiento' => 'salida',
+                'stock_anterior' => 22,
+                'cantidad' => 9,
+                'stock_nuevo' => 13,
+                'motivo' => 'venta',
+                'venta_id' => 9,
+                'fecha' => '2024-01-31',
+                'usuario_id' => 2
+            ],
+            [
+                'producto_id' => 14,
+                'tipo_movimiento' => 'entrada',
+                'stock_anterior' => 8,
+                'cantidad' => 22,
+                'stock_nuevo' => 30,
+                'motivo' => 'compra',
+                'numero_factura_compra' => 'FC009',
+                'fecha' => '2024-02-01',
+                'usuario_id' => 1
+            ],
+            [
+                'producto_id' => 15,
+                'tipo_movimiento' => 'salida',
+                'stock_anterior' => 40,
+                'cantidad' => 10,
+                'stock_nuevo' => 30,
+                'motivo' => 'venta',
+                'venta_id' => 10,
+                'fecha' => '2024-02-02',
+                'usuario_id' => 2
+            ],
+            [
+                'producto_id' => 5,
+                'tipo_movimiento' => 'entrada',
+                'stock_anterior' => 55,
+                'cantidad' => 25,
+                'stock_nuevo' => 80,
+                'motivo' => 'compra',
+                'numero_factura_compra' => 'FC010',
+                'fecha' => '2024-02-03',
+                'usuario_id' => 1
+            ],
+            [
+                'producto_id' => 16,
+                'tipo_movimiento' => 'salida',
+                'stock_anterior' => 35,
+                'cantidad' => 8,
+                'stock_nuevo' => 27,
+                'motivo' => 'venta',
+                'venta_id' => 11,
+                'fecha' => '2024-02-04',
+                'usuario_id' => 2
+            ],
+            [
+                'producto_id' => 17,
+                'tipo_movimiento' => 'entrada',
+                'stock_anterior' => 12,
+                'cantidad' => 28,
+                'stock_nuevo' => 40,
+                'motivo' => 'compra',
+                'numero_factura_compra' => 'FC011',
+                'fecha' => '2024-02-05',
+                'usuario_id' => 1
+            ],
+            [
+                'producto_id' => 6,
+                'tipo_movimiento' => 'salida',
+                'stock_anterior' => 35,
+                'cantidad' => 5,
+                'stock_nuevo' => 30,
+                'motivo' => 'venta',
+                'venta_id' => 12,
+                'fecha' => '2024-02-06',
+                'usuario_id' => 2
+            ],
+            [
+                'producto_id' => 18,
+                'tipo_movimiento' => 'entrada',
+                'stock_anterior' => 15,
+                'cantidad' => 35,
+                'stock_nuevo' => 50,
+                'motivo' => 'compra',
+                'numero_factura_compra' => 'FC012',
+                'fecha' => '2024-02-07',
+                'usuario_id' => 1
+            ],
+            [
+                'producto_id' => 19,
+                'tipo_movimiento' => 'salida',
+                'stock_anterior' => 28,
+                'cantidad' => 7,
+                'stock_nuevo' => 21,
+                'motivo' => 'venta',
+                'venta_id' => 13,
+                'fecha' => '2024-02-08',
+                'usuario_id' => 2
+            ]
         ];
 
-        foreach ($movimientos as $movimiento) {
-            DB::table('movimientos_stock')->insert([
-                'producto_id' => $movimiento['producto_id'],
-                'empleado_id' => $movimiento['empleado_id'],
-                'venta_id' => $movimiento['venta_id'],
-                'tipo_movimiento' => $movimiento['tipo_movimiento'],
-                'cantidad' => $movimiento['cantidad'],
-                'stock_anterior' => $movimiento['stock_anterior'],
-                'stock_nuevo' => $movimiento['stock_nuevo'],
-                'precio_unitario' => $movimiento['precio_unitario'],
-                'motivo' => $movimiento['motivo'],
-                'numero_factura_compra' => $movimiento['numero_factura_compra'],
-                'observaciones' => $movimiento['observaciones'],
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ]);
-        }
+        DB::table('movimientos_stock')->insert($movimientos);
     }
 }
