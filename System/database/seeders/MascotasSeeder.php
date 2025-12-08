@@ -406,8 +406,9 @@ class MascotasSeeder extends Seeder
             ]
         ];
 
-        foreach ($mascotas as $mascota) {
+        foreach ($mascotas as $index => $mascota) {
             DB::table('mascotas')->insert([
+                'codigo_mascota' => 'MASC' . str_pad($index + 1, 4, '0', STR_PAD_LEFT),
                 'nombre' => $mascota['nombre'],
                 'especie' => $mascota['especie'],
                 'raza' => $mascota['raza'],
@@ -418,7 +419,6 @@ class MascotasSeeder extends Seeder
                 'esterilizado' => $mascota['esterilizado'],
                 'cliente_id' => $mascota['cliente_id'],
                 'microchip' => $mascota['microchip'],
-                'vacunas_al_dia' => $mascota['vacunas_al_dia'],
                 'alergias' => $mascota['alergias'],
                 'condiciones_medicas' => $mascota['condiciones_medicas'],
                 'activo' => $mascota['activo'],

@@ -357,17 +357,18 @@ class ProductosSeeder extends Seeder
             ]
         ];
 
-        foreach ($productos as $producto) {
+        foreach ($productos as $index => $producto) {
             DB::table('productos')->insert([
                 'nombre' => $producto['nombre'],
                 'descripcion' => $producto['descripcion'],
-                'precio' => $producto['precio'],
+                'codigo_interno' => 'PROD' . str_pad($index + 1, 4, '0', STR_PAD_LEFT),
+                'precio_venta' => $producto['precio'],
+                'precio_compra' => $producto['precio'] * 0.7, // 30% margen aproximado
                 'stock_actual' => $producto['stock_actual'],
                 'stock_minimo' => $producto['stock_minimo'],
                 'codigo_barras' => $producto['codigo_barras'],
                 'categoria_id' => $producto['categoria_id'],
-                'fecha_vencimiento' => $producto['fecha_vencimiento'],
-                'laboratorio' => $producto['laboratorio'],
+                'marca' => $producto['laboratorio'],
                 'presentacion' => $producto['presentacion'],
                 'activo' => $producto['activo'],
                 'created_at' => Carbon::now(),
