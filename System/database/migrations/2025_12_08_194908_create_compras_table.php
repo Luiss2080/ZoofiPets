@@ -23,12 +23,13 @@ return new class extends Migration
             $table->decimal('descuento', 10, 2)->default(0);
             $table->decimal('total', 12, 2);
             $table->enum('estado', ['Pedido', 'En_Transito', 'Recibida', 'Cancelada'])->default('Pedido');
-            $table->enum('metodo_pago', ['Efectivo', 'Transferencia', 'Cheque', 'Credito']);
+            $table->enum('tipo_pago', ['Contado', 'Credito_30', 'Credito_60', 'Credito_90'])->default('Contado');
             $table->text('observaciones')->nullable();
             $table->timestamps();
             
             $table->index(['proveedor_id', 'fecha_compra']);
             $table->index(['estado', 'fecha_compra']);
+            $table->index(['numero_factura']);
         });
     }
 

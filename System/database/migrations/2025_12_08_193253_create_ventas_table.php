@@ -21,10 +21,16 @@ return new class extends Migration
             $table->decimal('impuesto', 10, 2)->default(0);
             $table->decimal('descuento', 10, 2)->default(0);
             $table->decimal('total', 12, 2);
-            $table->enum('metodo_pago', ['Efectivo', 'Tarjeta', 'Transferencia', 'Mixto']);
             $table->enum('estado', ['Pendiente', 'Pagada', 'Cancelada', 'Devuelta'])->default('Pendiente');
+            $table->enum('tipo_venta', ['Contado', 'Credito', 'Mixto'])->default('Contado');
+            $table->decimal('cambio', 10, 2)->default(0);
             $table->text('observaciones')->nullable();
             $table->timestamps();
+            
+            $table->index(['numero_factura']);
+            $table->index(['cliente_id', 'fecha_venta']);
+            $table->index(['empleado_id', 'fecha_venta']);
+            $table->index(['estado', 'fecha_venta']);
         });
     }
 
