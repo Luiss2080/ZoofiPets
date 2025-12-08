@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('ventas', function (Blueprint $table) {
             $table->id();
+            $table->string('numero_factura', 50)->unique();
+            $table->foreignId('cliente_id')->nullable()->constrained('clientes')->onDelete('set null');
+            $table->foreignId('empleado_id')->constrained('empleados')->onDelete('restrict'); // Vendedor/Cajero
+            $table->datetime('fecha_venta');
+            $table->decimal('subtotal', 12, 2);
+            $table->decimal('impuesto', 10, 2)->default(0);
+            $table->decimal('descuento', 10, 2)->default(0);
+            $table->decimal('total', 12, 2);
+            $table->enum('metodo_pago', ['Efectivo', 'Tarjeta', 'Transferencia', 'Mixto']);
+            $table->enum('estado', ['Pendiente', 'Pagada', 'Cancelada', 'Devuelta'])->default('Pendiente');
+            $table->text('observaciones')->nullable();
             $table->timestamps();
         });
     }
