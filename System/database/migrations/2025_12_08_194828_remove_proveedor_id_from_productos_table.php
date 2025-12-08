@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('productos', function (Blueprint $table) {
-            $table->dropForeign(['proveedor_id']);
-            $table->dropColumn('proveedor_id');
-        });
+        // Ya no hay nada que eliminar porque la tabla productos fue corregida
+        // La relación con proveedores ahora es muchos a muchos via producto_proveedor
     }
 
     /**
@@ -22,8 +20,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('productos', function (Blueprint $table) {
-            $table->foreignId('proveedor_id')->nullable()->constrained('proveedores')->onDelete('set null');
-        });
+        // No hacer nada en rollback
     }
 };

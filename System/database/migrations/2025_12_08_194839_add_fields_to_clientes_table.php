@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('clientes', function (Blueprint $table) {
-            $table->string('telefono_secundario', 20)->nullable();
-            $table->string('contacto_emergencia', 100)->nullable();
-            $table->string('telefono_emergencia', 20)->nullable();
-            $table->boolean('acepta_promociones')->default(true);
-            $table->decimal('credito_disponible', 10, 2)->default(0);
-        });
+        // Ya no se necesita agregar campos porque la tabla clientes ya los tiene
+        // integrados en su migración principal
     }
 
     /**
@@ -25,11 +20,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('clientes', function (Blueprint $table) {
-            $table->dropColumn([
-                'telefono_secundario', 'contacto_emergencia', 
-                'telefono_emergencia', 'acepta_promociones', 'credito_disponible'
-            ]);
-        });
+        // No hacer nada en rollback
     }
 };

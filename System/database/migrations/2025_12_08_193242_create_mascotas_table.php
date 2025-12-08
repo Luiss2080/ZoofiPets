@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('mascotas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('cliente_id')->constrained('clientes')->onDelete('cascade');
+            $table->foreignId('cliente_id')->constrained('clientes')->onDelete('cascade'); // NO NULLABLE - siempre debe tener dueño
+            $table->string('codigo_mascota', 20)->unique(); // Código único de identificación
             $table->string('nombre', 100);
             $table->enum('especie', ['Perro', 'Gato', 'Ave', 'Roedor', 'Reptil', 'Pez', 'Otro']);
             $table->string('raza', 100)->nullable();
@@ -25,11 +26,21 @@ return new class extends Migration
             $table->string('color', 100)->nullable();
             $table->text('caracteristicas_especiales')->nullable();
             $table->boolean('esterilizado')->default(false);
-            $table->string('microchip', 50)->nullable();
+            $table->date('fecha_esterilizacion')->nullable();
+            $table->string('microchip', 50)->unique()->nullable();
             $table->text('alergias')->nullable();
             $table->text('condiciones_medicas')->nullable();
+            $table->string('seguro_veterinario', 100)->nullable();
+            $table->string('numero_poliza', 50)->nullable();
+            $table->enum('temperamento', ['Docil', 'Agresivo', 'Nervioso', 'Tranquilo', 'Jugueton'])->nullable();
+            $table->text('notas_comportamiento')->nullable();
             $table->boolean('activo')->default(true);
             $table->timestamps();
+            
+            $table->index(['cliente_id', 'activo']);
+            $table->index(['codigo_mascota']);
+            $table->index(['especie', 'raza']);
+            $table->index(['microchip']);
         });
     }
 
