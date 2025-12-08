@@ -44,9 +44,8 @@ class PagosSeeder extends Seeder
                 'venta_id' => $pago['venta_id'],
                 'metodo_pago_id' => $pago['metodo_pago_id'],
                 'monto' => $pago['monto'],
-                'numero_transaccion' => $pago['numero_transaccion'],
-                'fecha_pago' => $pago['fecha_pago'],
-                'estado' => $pago['estado'],
+                'referencia' => $pago['referencia'],
+                'observaciones' => $pago['observaciones'],
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);

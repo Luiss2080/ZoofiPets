@@ -59,15 +59,16 @@ class MovimientosStockSeeder extends Seeder
         foreach ($movimientos as $movimiento) {
             DB::table('movimientos_stock')->insert([
                 'producto_id' => $movimiento['producto_id'],
+                'empleado_id' => $movimiento['empleado_id'],
+                'venta_id' => $movimiento['venta_id'],
                 'tipo_movimiento' => $movimiento['tipo_movimiento'],
                 'cantidad' => $movimiento['cantidad'],
-                'cantidad_anterior' => $movimiento['cantidad_anterior'],
-                'cantidad_nueva' => $movimiento['cantidad_nueva'],
+                'stock_anterior' => $movimiento['stock_anterior'],
+                'stock_nuevo' => $movimiento['stock_nuevo'],
+                'precio_unitario' => $movimiento['precio_unitario'],
                 'motivo' => $movimiento['motivo'],
-                'referencia_id' => $movimiento['referencia_id'],
-                'referencia_tipo' => $movimiento['referencia_tipo'],
-                'empleado_id' => $movimiento['empleado_id'],
-                'fecha_movimiento' => $movimiento['fecha_movimiento'],
+                'numero_factura_compra' => $movimiento['numero_factura_compra'],
+                'observaciones' => $movimiento['observaciones'],
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);

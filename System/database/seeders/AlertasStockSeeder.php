@@ -45,11 +45,12 @@ class AlertasStockSeeder extends Seeder
             DB::table('alertas_stock')->insert([
                 'producto_id' => $alerta['producto_id'],
                 'tipo_alerta' => $alerta['tipo_alerta'],
-                'mensaje' => $alerta['mensaje'],
                 'stock_actual' => $alerta['stock_actual'],
                 'stock_minimo' => $alerta['stock_minimo'],
-                'activo' => $alerta['activo'],
-                'fecha_alerta' => $alerta['fecha_alerta'],
+                'fecha_vencimiento' => $alerta['fecha_vencimiento'],
+                'notificado' => $alerta['notificado'],
+                'resuelto' => $alerta['resuelto'],
+                'observaciones' => $alerta['observaciones'],
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);

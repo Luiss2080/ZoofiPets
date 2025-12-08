@@ -44,12 +44,13 @@ class RegistroVacunasSeeder extends Seeder
         foreach ($vacunas as $vacuna) {
             DB::table('registro_vacunas')->insert([
                 'mascota_id' => $vacuna['mascota_id'],
-                'tipo_vacuna' => $vacuna['tipo_vacuna'],
-                'fecha_aplicacion' => $vacuna['fecha_aplicacion'],
-                'fecha_vencimiento' => $vacuna['fecha_vencimiento'],
-                'veterinario_id' => $vacuna['veterinario_id'],
+                'empleado_id' => $vacuna['empleado_id'],
+                'servicio_medico_id' => $vacuna['servicio_medico_id'],
+                'vacuna' => $vacuna['vacuna'],
                 'laboratorio' => $vacuna['laboratorio'],
                 'lote' => $vacuna['lote'],
+                'fecha_aplicacion' => $vacuna['fecha_aplicacion'],
+                'proxima_dosis' => $vacuna['proxima_dosis'],
                 'observaciones' => $vacuna['observaciones'],
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),

@@ -43,9 +43,8 @@ class UsoPromocionesSeeder extends Seeder
         foreach ($usos as $uso) {
             DB::table('uso_promociones')->insert([
                 'promocion_id' => $uso['promocion_id'],
-                'cliente_id' => $uso['cliente_id'],
                 'venta_id' => $uso['venta_id'],
-                'fecha_uso' => $uso['fecha_uso'],
+                'cliente_id' => $uso['cliente_id'],
                 'descuento_aplicado' => $uso['descuento_aplicado'],
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
