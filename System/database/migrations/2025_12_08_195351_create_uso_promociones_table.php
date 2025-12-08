@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('uso_promociones', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('promocion_id')->constrained('promociones')->onDelete('cascade');
+            $table->foreignId('venta_id')->constrained('ventas')->onDelete('cascade');
+            $table->foreignId('cliente_id')->constrained('clientes')->onDelete('cascade');
+            $table->decimal('descuento_aplicado', 10, 2);
             $table->timestamps();
+            
+            $table->index(['promocion_id', 'cliente_id']);
         });
     }
 
