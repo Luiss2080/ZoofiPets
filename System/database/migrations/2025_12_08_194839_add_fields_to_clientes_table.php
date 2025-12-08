@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('clientes', function (Blueprint $table) {
-            $table->string('cedula', 20)->unique()->nullable();
             $table->string('telefono_secundario', 20)->nullable();
             $table->string('contacto_emergencia', 100)->nullable();
             $table->string('telefono_emergencia', 20)->nullable();
@@ -28,9 +27,8 @@ return new class extends Migration
     {
         Schema::table('clientes', function (Blueprint $table) {
             $table->dropColumn([
-                'cedula', 'telefono_secundario',
-                'contacto_emergencia', 'telefono_emergencia',
-                'acepta_promociones', 'credito_disponible'
+                'telefono_secundario', 'contacto_emergencia', 
+                'telefono_emergencia', 'acepta_promociones', 'credito_disponible'
             ]);
         });
     }
