@@ -246,7 +246,7 @@ class MascotasSeeder extends Seeder
             // Otras especies
             [
                 'nombre' => 'Hoppy',
-                'especie' => 'Conejo',
+                'especie' => 'Roedor', // Cambiar de 'Conejo' a 'Roedor'
                 'raza' => 'Holandés Enano',
                 'fecha_nacimiento' => Carbon::now()->subYears(2)->subMonths(3),
                 'peso' => 1.2,
@@ -283,7 +283,7 @@ class MascotasSeeder extends Seeder
                 'fecha_nacimiento' => Carbon::now()->subMonths(10),
                 'peso' => 0.05,
                 'color' => 'Dorado',
-                'sexo' => 'Indeterminado',
+                'sexo' => 'Hembra', // Cambiar de 'Indeterminado' a 'Hembra'
                 'esterilizado' => false,
                 'cliente_id' => 17,
                 'microchip' => null,
