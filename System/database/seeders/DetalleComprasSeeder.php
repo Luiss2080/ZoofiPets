@@ -23,9 +23,9 @@ class DetalleComprasSeeder extends Seeder
             ['compra_id' => 1, 'producto_id' => 15, 'cantidad' => 25, 'precio_unitario' => 12.40, 'subtotal' => 310.00],
 
             // Compra 2 - Veterinaria Central (3 productos)
-            ['compra_id' => 2, 'producto_id' => 21, 'cantidad' => 40, 'precio_unitario' => 45.00, 'subtotal' => 1800.00],
-            ['compra_id' => 2, 'producto_id' => 22, 'cantidad' => 30, 'precio_unitario' => 85.50, 'subtotal' => 2565.00],
-            ['compra_id' => 2, 'producto_id' => 23, 'cantidad' => 20, 'precio_unitario' => 125.75, 'subtotal' => 2515.00],
+            ['compra_id' => 2, 'producto_id' => 1, 'cantidad' => 40, 'precio_unitario' => 45.00, 'subtotal' => 1800.00],
+            ['compra_id' => 2, 'producto_id' => 2, 'cantidad' => 30, 'precio_unitario' => 85.50, 'subtotal' => 2565.00],
+            ['compra_id' => 2, 'producto_id' => 3, 'cantidad' => 20, 'precio_unitario' => 125.75, 'subtotal' => 2515.00],
 
             // Compra 3 - Mascotas & Más (4 productos)
             ['compra_id' => 3, 'producto_id' => 2, 'cantidad' => 35, 'precio_unitario' => 28.90, 'subtotal' => 1011.50],
@@ -51,10 +51,10 @@ class DetalleComprasSeeder extends Seeder
             ['compra_id' => 6, 'producto_id' => 17, 'cantidad' => 30, 'precio_unitario' => 25.80, 'subtotal' => 774.00],
 
             // Compra 7 - Veterinaria Central (4 productos veterinarios)
-            ['compra_id' => 7, 'producto_id' => 24, 'cantidad' => 15, 'precio_unitario' => 185.00, 'subtotal' => 2775.00],
-            ['compra_id' => 7, 'producto_id' => 21, 'cantidad' => 25, 'precio_unitario' => 44.00, 'subtotal' => 1100.00],
-            ['compra_id' => 7, 'producto_id' => 22, 'cantidad' => 20, 'precio_unitario' => 84.50, 'subtotal' => 1690.00],
-            ['compra_id' => 7, 'producto_id' => 23, 'cantidad' => 12, 'precio_unitario' => 124.00, 'subtotal' => 1488.00],
+            ['compra_id' => 7, 'producto_id' => 4, 'cantidad' => 15, 'precio_unitario' => 185.00, 'subtotal' => 2775.00],
+            ['compra_id' => 7, 'producto_id' => 5, 'cantidad' => 25, 'precio_unitario' => 44.00, 'subtotal' => 1100.00],
+            ['compra_id' => 7, 'producto_id' => 6, 'cantidad' => 20, 'precio_unitario' => 84.50, 'subtotal' => 1690.00],
+            ['compra_id' => 7, 'producto_id' => 7, 'cantidad' => 12, 'precio_unitario' => 124.00, 'subtotal' => 1488.00],
 
             // Compra 8 - Mascotas & Más (5 productos)
             ['compra_id' => 8, 'producto_id' => 19, 'cantidad' => 40, 'precio_unitario' => 35.60, 'subtotal' => 1424.00],
