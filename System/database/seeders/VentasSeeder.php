@@ -46,7 +46,7 @@ class VentasSeeder extends Seeder
             [
                 'numero_factura' => 'FAC-2025-0003',
                 'cliente_id' => 3,
-                'empleado_id' => 21, // Valeria Cajero
+                'empleado_id' => 1, // Valeria Cajero
                 'fecha_venta' => Carbon::now()->subDays(3)->setTime(9, 45),
                 'subtotal' => 89.50,
                 'impuesto' => 10.74,
@@ -88,7 +88,7 @@ class VentasSeeder extends Seeder
             [
                 'numero_factura' => 'FAC-2025-0006',
                 'cliente_id' => 6,
-                'empleado_id' => 21,
+                'empleado_id' => 2,
                 'fecha_venta' => Carbon::now()->subHours(5),
                 'subtotal' => 127.90,
                 'impuesto' => 15.35,
@@ -130,7 +130,7 @@ class VentasSeeder extends Seeder
             [
                 'numero_factura' => 'FAC-2025-0009',
                 'cliente_id' => 9,
-                'empleado_id' => 21,
+                'empleado_id' => 3,
                 'fecha_venta' => Carbon::now()->subDays(8)->setTime(12, 15),
                 'subtotal' => 78.30,
                 'impuesto' => 9.40,
@@ -172,7 +172,7 @@ class VentasSeeder extends Seeder
             [
                 'numero_factura' => 'FAC-2025-0012',
                 'cliente_id' => null,
-                'empleado_id' => 21,
+                'empleado_id' => 4,
                 'fecha_venta' => Carbon::now()->subDays(11)->setTime(8, 45),
                 'subtotal' => 92.15,
                 'impuesto' => 11.06,
@@ -214,7 +214,7 @@ class VentasSeeder extends Seeder
             [
                 'numero_factura' => 'FAC-2025-0015',
                 'cliente_id' => 15,
-                'empleado_id' => 21,
+                'empleado_id' => 5,
                 'fecha_venta' => Carbon::now()->subDays(14)->setTime(9, 15),
                 'subtotal' => 67.25,
                 'impuesto' => 8.07,
@@ -256,7 +256,7 @@ class VentasSeeder extends Seeder
             [
                 'numero_factura' => 'FAC-2025-0018',
                 'cliente_id' => 18,
-                'empleado_id' => 21,
+                'empleado_id' => 6,
                 'fecha_venta' => Carbon::now()->subDays(17)->setTime(10, 25),
                 'subtotal' => 278.45,
                 'impuesto' => 33.41,
@@ -294,34 +294,6 @@ class VentasSeeder extends Seeder
                 'tipo_venta' => 'Contado',
                 'cambio' => 20.84,
                 'observaciones' => 'Compra mayor - descuento volumen',
-            ],
-            [
-                'numero_factura' => 'FAC-2025-0021',
-                'cliente_id' => null,
-                'empleado_id' => 21,
-                'fecha_venta' => Carbon::now()->subDays(20)->setTime(14, 5),
-                'subtotal' => 156.30,
-                'impuesto' => 18.76,
-                'descuento' => 0.00,
-                'total' => 175.06,
-                'estado' => 'Pagada',
-                'tipo_venta' => 'Contado',
-                'cambio' => 24.94,
-                'observaciones' => 'Turista - venta ocasional',
-            ],
-            [
-                'numero_factura' => 'FAC-2025-0022',
-                'cliente_id' => 22,
-                'empleado_id' => 11,
-                'fecha_venta' => Carbon::now()->subDays(21)->setTime(9, 30),
-                'subtotal' => 234.60,
-                'impuesto' => 28.15,
-                'descuento' => 23.46,
-                'total' => 239.29,
-                'estado' => 'Pagada',
-                'tipo_venta' => 'Credito',
-                'cambio' => 0.00,
-                'observaciones' => 'Cliente corporativo - crédito 60 días',
             ]
         ];
 

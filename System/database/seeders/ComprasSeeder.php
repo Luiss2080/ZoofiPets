@@ -34,10 +34,7 @@ class ComprasSeeder extends Seeder
             ['numero_factura' => 'FC-2024-0017', 'proveedor_id' => 1, 'empleado_id' => 14, 'fecha_compra' => Carbon::now()->subDays(60), 'fecha_recepcion' => Carbon::now()->subDays(53), 'subtotal' => 330.00, 'impuesto' => 39.60, 'total' => 369.60, 'estado' => 'Recibida'],
             ['numero_factura' => 'FC-2024-0018', 'proveedor_id' => 2, 'empleado_id' => 13, 'fecha_compra' => Carbon::now()->subDays(16), 'fecha_recepcion' => Carbon::now()->subDays(9), 'subtotal' => 487.50, 'impuesto' => 58.50, 'total' => 546.00, 'estado' => 'Recibida'],
             ['numero_factura' => 'FC-2024-0019', 'proveedor_id' => 3, 'empleado_id' => 14, 'fecha_compra' => Carbon::now()->subDays(38), 'fecha_recepcion' => Carbon::now()->subDays(31), 'subtotal' => 460.00, 'impuesto' => 55.20, 'total' => 515.20, 'estado' => 'Recibida'],
-            ['numero_factura' => 'FC-2024-0020', 'proveedor_id' => 4, 'empleado_id' => 13, 'fecha_compra' => Carbon::now()->subDays(26), 'fecha_recepcion' => Carbon::now()->subDays(19), 'subtotal' => 510.00, 'impuesto' => 61.20, 'total' => 571.20, 'estado' => 'Recibida'],
-            ['numero_factura' => 'FC-2024-0021', 'proveedor_id' => 5, 'empleado_id' => 14, 'fecha_compra' => Carbon::now()->subDays(55), 'fecha_recepcion' => Carbon::now()->subDays(48), 'subtotal' => 1275.00, 'impuesto' => 153.00, 'total' => 1428.00, 'estado' => 'Recibida'],
-            ['numero_factura' => 'FC-2024-0022', 'proveedor_id' => 6, 'empleado_id' => 13, 'fecha_compra' => Carbon::now()->subDays(42), 'fecha_recepcion' => Carbon::now()->subDays(35), 'subtotal' => 1464.00, 'impuesto' => 175.68, 'total' => 1639.68, 'estado' => 'Recibida'],
-            ['numero_factura' => 'FC-2024-0023', 'proveedor_id' => 7, 'empleado_id' => 14, 'fecha_compra' => Carbon::now()->subDays(48), 'fecha_recepcion' => Carbon::now()->subDays(41), 'subtotal' => 987.00, 'impuesto' => 118.44, 'total' => 1105.44, 'estado' => 'Recibida']
+            ['numero_factura' => 'FC-2024-0020', 'proveedor_id' => 4, 'empleado_id' => 13, 'fecha_compra' => Carbon::now()->subDays(26), 'fecha_recepcion' => Carbon::now()->subDays(19), 'subtotal' => 510.00, 'impuesto' => 61.20, 'total' => 571.20, 'estado' => 'Recibida']
         ];
 
         foreach ($compras as $compra) {
