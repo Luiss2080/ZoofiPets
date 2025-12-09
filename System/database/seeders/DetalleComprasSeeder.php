@@ -70,15 +70,12 @@ class DetalleComprasSeeder extends Seeder
             ['compra_id' => 12, 'producto_id' => 12, 'cantidad' => 35, 'precio_unitario' => 15.60, 'subtotal' => 546.00],
             ['compra_id' => 13, 'producto_id' => 15, 'cantidad' => 40, 'precio_unitario' => 12.20, 'subtotal' => 488.00],
             ['compra_id' => 14, 'producto_id' => 18, 'cantidad' => 30, 'precio_unitario' => 22.00, 'subtotal' => 660.00],
-            ['compra_id' => 15, 'producto_id' => 21, 'cantidad' => 20, 'precio_unitario' => 44.50, 'subtotal' => 890.00],
+            ['compra_id' => 15, 'producto_id' => 1, 'cantidad' => 20, 'precio_unitario' => 44.50, 'subtotal' => 890.00],
             ['compra_id' => 16, 'producto_id' => 3, 'cantidad' => 55, 'precio_unitario' => 31.80, 'subtotal' => 1749.00],
             ['compra_id' => 17, 'producto_id' => 7, 'cantidad' => 75, 'precio_unitario' => 4.40, 'subtotal' => 330.00],
             ['compra_id' => 18, 'producto_id' => 11, 'cantidad' => 50, 'precio_unitario' => 9.75, 'subtotal' => 487.50],
             ['compra_id' => 19, 'producto_id' => 14, 'cantidad' => 25, 'precio_unitario' => 18.40, 'subtotal' => 460.00],
-            ['compra_id' => 20, 'producto_id' => 17, 'cantidad' => 20, 'precio_unitario' => 25.50, 'subtotal' => 510.00],
-            ['compra_id' => 21, 'producto_id' => 22, 'cantidad' => 15, 'precio_unitario' => 85.00, 'subtotal' => 1275.00],
-            ['compra_id' => 22, 'producto_id' => 24, 'cantidad' => 8, 'precio_unitario' => 183.00, 'subtotal' => 1464.00],
-            ['compra_id' => 23, 'producto_id' => 20, 'cantidad' => 35, 'precio_unitario' => 28.20, 'subtotal' => 987.00],
+            ['compra_id' => 20, 'producto_id' => 17, 'cantidad' => 20, 'precio_unitario' => 25.50, 'subtotal' => 510.00]
         ];
 
         foreach ($detalles as $detalle) {
