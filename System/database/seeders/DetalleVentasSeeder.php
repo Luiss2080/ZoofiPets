@@ -50,7 +50,7 @@ class DetalleVentasSeeder extends Seeder
             ['venta_id' => 9, 'producto_id' => 3, 'descripcion' => 'Producto vendido', 'cantidad' => 1, 'precio_unitario' => 78.30, 'subtotal' => 78.30],
             
             // Detalles para FAC-2025-0010
-            ['venta_id' => 10, 'producto_id' => 22, 'descripcion' => 'Producto vendido', 'cantidad' => 1, 'precio_unitario' => 345.00, 'subtotal' => 345.00],
+            ['venta_id' => 10, 'producto_id' => 2, 'descripcion' => 'Producto vendido', 'cantidad' => 1, 'precio_unitario' => 345.00, 'subtotal' => 345.00],
             
             // Detalles para FAC-2025-0011
             ['venta_id' => 11, 'producto_id' => 17, 'descripcion' => 'Producto vendido', 'cantidad' => 10, 'precio_unitario' => 12.45, 'subtotal' => 124.50],
@@ -62,18 +62,18 @@ class DetalleVentasSeeder extends Seeder
             
             // Detalles para FAC-2025-0013
             ['venta_id' => 13, 'producto_id' => 20, 'descripcion' => 'Producto vendido', 'cantidad' => 2, 'precio_unitario' => 125.70, 'subtotal' => 251.40],
-            ['venta_id' => 13, 'producto_id' => 24, 'descripcion' => 'Producto vendido', 'cantidad' => 1, 'precio_unitario' => 56.75, 'subtotal' => 56.75],
+            ['venta_id' => 13, 'producto_id' => 4, 'descripcion' => 'Producto vendido', 'cantidad' => 1, 'precio_unitario' => 56.75, 'subtotal' => 56.75],
             
             // Detalles para FAC-2025-0014
             ['venta_id' => 14, 'producto_id' => 10, 'descripcion' => 'Producto vendido', 'cantidad' => 3, 'precio_unitario' => 45.75, 'subtotal' => 137.25],
-            ['venta_id' => 14, 'producto_id' => 25, 'descripcion' => 'Producto vendido', 'cantidad' => 1, 'precio_unitario' => 29.80, 'subtotal' => 29.80],
+            ['venta_id' => 14, 'producto_id' => 5, 'descripcion' => 'Producto vendido', 'cantidad' => 1, 'precio_unitario' => 29.80, 'subtotal' => 29.80],
             
             // Detalles para FAC-2025-0015
             ['venta_id' => 15, 'producto_id' => 8, 'descripcion' => 'Producto vendido', 'cantidad' => 1, 'precio_unitario' => 67.25, 'subtotal' => 67.25],
             
             // Detalles para FAC-2025-0016
             ['venta_id' => 16, 'producto_id' => 2, 'descripcion' => 'Producto vendido', 'cantidad' => 4, 'precio_unitario' => 92.75, 'subtotal' => 371.00],
-            ['venta_id' => 16, 'producto_id' => 21, 'descripcion' => 'Producto vendido', 'cantidad' => 2, 'precio_unitario' => 23.90, 'subtotal' => 47.80],
+            ['venta_id' => 16, 'producto_id' => 1, 'descripcion' => 'Producto vendido', 'cantidad' => 2, 'precio_unitario' => 23.90, 'subtotal' => 47.80],
             
             // Detalles para FAC-2025-0017 (Devuelta)
             ['venta_id' => 17, 'producto_id' => 12, 'descripcion' => 'Producto vendido', 'cantidad' => 3, 'precio_unitario' => 34.50, 'subtotal' => 103.50],
@@ -81,7 +81,7 @@ class DetalleVentasSeeder extends Seeder
             
             // Detalles para FAC-2025-0018
             ['venta_id' => 18, 'producto_id' => 6, 'descripcion' => 'Producto vendido', 'cantidad' => 2, 'precio_unitario' => 125.00, 'subtotal' => 250.00],
-            ['venta_id' => 18, 'producto_id' => 23, 'descripcion' => 'Producto vendido', 'cantidad' => 1, 'precio_unitario' => 48.60, 'subtotal' => 48.60],
+            ['venta_id' => 18, 'producto_id' => 3, 'descripcion' => 'Producto vendido', 'cantidad' => 1, 'precio_unitario' => 48.60, 'subtotal' => 48.60],
             
             // Detalles para FAC-2025-0019
             ['venta_id' => 19, 'producto_id' => 4, 'descripcion' => 'Producto vendido', 'cantidad' => 1, 'precio_unitario' => 45.80, 'subtotal' => 45.80],
@@ -89,14 +89,7 @@ class DetalleVentasSeeder extends Seeder
             
             // Detalles para FAC-2025-0020
             ['venta_id' => 20, 'producto_id' => 1, 'descripcion' => 'Producto vendido', 'cantidad' => 5, 'precio_unitario' => 85.50, 'subtotal' => 427.50],
-            ['venta_id' => 20, 'producto_id' => 5, 'descripcion' => 'Producto vendido', 'cantidad' => 3, 'precio_unitario' => 52.90, 'subtotal' => 158.70],
-            
-            // Detalles para FAC-2025-0021
-            ['venta_id' => 21, 'producto_id' => 9, 'descripcion' => 'Producto vendido', 'cantidad' => 1, 'precio_unitario' => 156.00, 'subtotal' => 156.00],
-            
-            // Detalles para FAC-2025-0022
-            ['venta_id' => 22, 'producto_id' => 7, 'descripcion' => 'Producto vendido', 'cantidad' => 2, 'precio_unitario' => 89.50, 'subtotal' => 179.00],
-            ['venta_id' => 22, 'producto_id' => 18, 'descripcion' => 'Producto vendido', 'cantidad' => 1, 'precio_unitario' => 78.90, 'subtotal' => 78.90]
+            ['venta_id' => 20, 'producto_id' => 5, 'descripcion' => 'Producto vendido', 'cantidad' => 3, 'precio_unitario' => 52.90, 'subtotal' => 158.70]
         ];
 
         foreach ($detalles as $detalle) {
