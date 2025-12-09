@@ -189,7 +189,7 @@ class CitasMedicasSeeder extends Seeder
                 'numero_cita' => 'CITA-2025-0011',
                 'cliente_id' => 11,
                 'mascota_id' => 11,
-                'empleado_id' => 25, // Dr. Alberto (Medicina Felina)
+                'empleado_id' => 5, // Dra. Patricia (Oftalmología)
                 'servicio_medico_id' => 20, // Medicina Felina
                 'fecha_hora' => Carbon::now()->addDays(6)->setTime(11, 15),
                 'duracion_minutos' => 50,
@@ -393,7 +393,7 @@ class CitasMedicasSeeder extends Seeder
                 'numero_cita' => 'CITA-2025-0023',
                 'cliente_id' => 23,
                 'mascota_id' => 23,
-                'empleado_id' => 25,
+                'empleado_id' => 15,
                 'servicio_medico_id' => 20,
                 'fecha_hora' => Carbon::now()->addDays(13)->setTime(10, 15),
                 'duracion_minutos' => 40,
@@ -427,7 +427,7 @@ class CitasMedicasSeeder extends Seeder
                 'numero_cita' => 'CITA-2025-0025',
                 'cliente_id' => 25,
                 'mascota_id' => 1, // Reutilizando mascota del cliente 1
-                'empleado_id' => 23, // Dra. Cristina (Anestesiología)
+                'empleado_id' => 3, // Dra. Lucía (Dermatología)
                 'servicio_medico_id' => 18, // Anestesiología
                 'fecha_hora' => Carbon::now()->addDays(16)->setTime(7, 30),
                 'duracion_minutos' => 180,

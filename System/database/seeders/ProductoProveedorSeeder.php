@@ -26,20 +26,20 @@ class ProductoProveedorSeeder extends Seeder
             ['producto_id' => 6, 'proveedor_id' => 2, 'precio_compra' => 87.50, 'tiempo_entrega_dias' => 3, 'cantidad_minima_pedido' => 10, 'proveedor_principal' => true],
             ['producto_id' => 7, 'proveedor_id' => 2, 'precio_compra' => 62.65, 'tiempo_entrega_dias' => 3, 'cantidad_minima_pedido' => 8, 'proveedor_principal' => true],
             ['producto_id' => 8, 'proveedor_id' => 2, 'precio_compra' => 47.08, 'tiempo_entrega_dias' => 5, 'cantidad_minima_pedido' => 15, 'proveedor_principal' => true],
-            ['producto_id' => 25, 'proveedor_id' => 2, 'precio_compra' => 20.86, 'tiempo_entrega_dias' => 7, 'cantidad_minima_pedido' => 18, 'proveedor_principal' => true],
+            ['producto_id' => 5, 'proveedor_id' => 2, 'precio_compra' => 20.86, 'tiempo_entrega_dias' => 7, 'cantidad_minima_pedido' => 18, 'proveedor_principal' => true],
             
             // Accesorios - Accesorios Pet Store
             ['producto_id' => 9, 'proveedor_id' => 3, 'precio_compra' => 109.20, 'tiempo_entrega_dias' => 14, 'cantidad_minima_pedido' => 12, 'proveedor_principal' => true],
             ['producto_id' => 10, 'proveedor_id' => 3, 'precio_compra' => 32.03, 'tiempo_entrega_dias' => 7, 'cantidad_minima_pedido' => 8, 'proveedor_principal' => true],
             ['producto_id' => 11, 'proveedor_id' => 3, 'precio_compra' => 132.93, 'tiempo_entrega_dias' => 21, 'cantidad_minima_pedido' => 5, 'proveedor_principal' => true],
-            ['producto_id' => 22, 'proveedor_id' => 3, 'precio_compra' => 241.50, 'tiempo_entrega_dias' => 30, 'cantidad_minima_pedido' => 3, 'proveedor_principal' => true],
+            ['producto_id' => 2, 'proveedor_id' => 3, 'precio_compra' => 241.50, 'tiempo_entrega_dias' => 30, 'cantidad_minima_pedido' => 3, 'proveedor_principal' => true],
             
             // Higiene - Productos de Higiene Animal
             ['producto_id' => 12, 'proveedor_id' => 4, 'precio_compra' => 24.15, 'tiempo_entrega_dias' => 7, 'cantidad_minima_pedido' => 15, 'proveedor_principal' => true],
             ['producto_id' => 13, 'proveedor_id' => 4, 'precio_compra' => 20.13, 'tiempo_entrega_dias' => 5, 'cantidad_minima_pedido' => 20, 'proveedor_principal' => true],
             ['producto_id' => 14, 'proveedor_id' => 4, 'precio_compra' => 29.54, 'tiempo_entrega_dias' => 10, 'cantidad_minima_pedido' => 10, 'proveedor_principal' => true],
-            ['producto_id' => 21, 'proveedor_id' => 4, 'precio_compra' => 16.73, 'tiempo_entrega_dias' => 5, 'cantidad_minima_pedido' => 30, 'proveedor_principal' => true],
-            ['producto_id' => 23, 'proveedor_id' => 4, 'precio_compra' => 34.02, 'tiempo_entrega_dias' => 14, 'cantidad_minima_pedido' => 12, 'proveedor_principal' => true],
+            ['producto_id' => 1, 'proveedor_id' => 4, 'precio_compra' => 16.73, 'tiempo_entrega_dias' => 5, 'cantidad_minima_pedido' => 30, 'proveedor_principal' => false],
+            ['producto_id' => 3, 'proveedor_id' => 4, 'precio_compra' => 34.02, 'tiempo_entrega_dias' => 14, 'cantidad_minima_pedido' => 12, 'proveedor_principal' => false],
             
             // Juguetes - Juguetes y Entretenimiento
             ['producto_id' => 15, 'proveedor_id' => 5, 'precio_compra' => 27.23, 'tiempo_entrega_dias' => 10, 'cantidad_minima_pedido' => 12, 'proveedor_principal' => true],
@@ -50,7 +50,7 @@ class ProductoProveedorSeeder extends Seeder
             ['producto_id' => 18, 'proveedor_id' => 6, 'precio_compra' => 55.23, 'tiempo_entrega_dias' => 14, 'cantidad_minima_pedido' => 10, 'proveedor_principal' => true],
             ['producto_id' => 19, 'proveedor_id' => 6, 'precio_compra' => 46.06, 'tiempo_entrega_dias' => 12, 'cantidad_minima_pedido' => 8, 'proveedor_principal' => true],
             ['producto_id' => 20, 'proveedor_id' => 6, 'precio_compra' => 87.99, 'tiempo_entrega_dias' => 21, 'cantidad_minima_pedido' => 7, 'proveedor_principal' => true],
-            ['producto_id' => 24, 'proveedor_id' => 6, 'precio_compra' => 39.73, 'tiempo_entrega_dias' => 10, 'cantidad_minima_pedido' => 15, 'proveedor_principal' => true],
+            ['producto_id' => 4, 'proveedor_id' => 6, 'precio_compra' => 39.73, 'tiempo_entrega_dias' => 10, 'cantidad_minima_pedido' => 15, 'proveedor_principal' => false],
             
             // Proveedores alternativos
             ['producto_id' => 1, 'proveedor_id' => 7, 'precio_compra' => 61.25, 'tiempo_entrega_dias' => 10, 'cantidad_minima_pedido' => 25, 'proveedor_principal' => false],
