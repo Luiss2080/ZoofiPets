@@ -403,6 +403,22 @@ class MascotasSeeder extends Seeder
                 'alergias' => 'Ninguna conocida',
                 'condiciones_medicas' => null,
                 'activo' => true,
+            ],
+            [
+                'nombre' => 'Kira',
+                'especie' => 'Perro',
+                'raza' => 'Pastor Belga',
+                'fecha_nacimiento' => Carbon::now()->subYears(3)->subMonths(8),
+                'peso' => 22.5,
+                'color' => 'Negro',
+                'sexo' => 'Hembra',
+                'esterilizado' => true,
+                'cliente_id' => 20,
+                'microchip' => '982000123456810',
+                'vacunas_al_dia' => true,
+                'alergias' => 'Ninguna conocida',
+                'condiciones_medicas' => null,
+                'activo' => true,
             ]
         ];
 
