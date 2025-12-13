@@ -399,7 +399,7 @@
 
 /* Mobile Menu Toggle */
 .mobile-toggle {
-    display: flex;
+    display: none; /* Oculto por defecto en Desktop */
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
@@ -416,17 +416,40 @@
 }
 
 /* Responsive */
+
+/* 1. Laptops y Tablets Grandes (max-width: 1200px) */
 @media (max-width: 1200px) {
     .nav-capsule {
-        display: none; /* Ocultar en pantallas medianas/pequeñas */
-    }
-    
-    .search-bar {
         display: none;
     }
-
     .mobile-toggle {
         display: flex;
+    }
+    .search-bar {
+        width: 200px;
+    }
+    .search-bar:focus-within {
+        width: 250px;
+    }
+}
+
+/* 2. Tablets y Móviles Grandes (max-width: 992px) */
+@media (max-width: 992px) {
+    .auth-buttons {
+        display: none; /* Se mueven al menú móvil */
+    }
+    .search-bar {
+        display: none; /* Se oculta para dar espacio */
+    }
+}
+
+/* 3. Móviles (max-width: 576px) */
+@media (max-width: 576px) {
+    .header-container {
+        padding: 0 1.5rem;
+    }
+    .brand-text {
+        display: none; /* Solo icono en móviles muy pequeños */
     }
 }
 
