@@ -2,28 +2,16 @@
 setlocal EnableDelayedExpansion
 echo Starting ZoofiPets Environment...
 
-:: Find free port for Web (starting from 8000) - Web goes first as login portal
-set WEB_PORT=8000
-:findWebPort
-netstat -an | find ":%WEB_PORT%" >nul
-if %errorlevel% == 0 (
-    set /a WEB_PORT+=1
-    goto findWebPort
-)
-
-:: Find free port for System (starting from Web port + 1) - System comes after authentication
-set /a SYSTEM_PORT=%WEB_PORT%+1
-:findSystemPort
-netstat -an | find ":%SYSTEM_PORT%" >nul
-if %errorlevel% == 0 (
-    set /a SYSTEM_PORT+=1
-    goto findSystemPort
-)
+:: Configuration
+set WEB_HOST=127.0.0.10
+set WEB_PORT=9000
+set SYSTEM_HOST=127.0.0.20
+set SYSTEM_PORT=9010
 
 echo ---------------------------------------
-echo Found free ports:
-echo Web (Login):    %WEB_PORT%
-echo Sistema:        %SYSTEM_PORT%
+echo Configuration:
+echo Web (Login):    %WEB_HOST%:%WEB_PORT%
+echo Sistema:        %SYSTEM_HOST%:%SYSTEM_PORT%
 echo ---------------------------------------
 
 :: Check if directories exist
@@ -45,7 +33,7 @@ echo ========================================
 echo   🌐 Iniciando Web (Portal de Login)
 echo ========================================
 cd Web
-php artisan serve --port=%WEB_PORT% &
+php artisan serve --host=%WEB_HOST% --port=%WEB_PORT% &
 timeout /t 2 /nobreak >nul
 powershell -Command "Start-Job -ScriptBlock { Set-Location '%CD%'; npm run dev } -Name 'Web-Frontend' | Out-Null"
 cd ..
@@ -56,7 +44,7 @@ echo ========================================
 echo   📱 Iniciando Sistema (Aplicación)
 echo ========================================
 cd System
-php artisan serve --port=%SYSTEM_PORT% &
+php artisan serve --host=%SYSTEM_HOST% --port=%SYSTEM_PORT% &
 timeout /t 2 /nobreak >nul
 powershell -Command "Start-Job -ScriptBlock { Set-Location '%CD%'; npm run dev } -Name 'Sistema-Frontend' | Out-Null"
 cd ..
@@ -67,8 +55,8 @@ echo.
 echo =======================================
 echo        🚀 ZoofiPets Iniciado! 🚀
 echo =======================================
-echo 🔐 Web (Login):  http://localhost:%WEB_PORT%
-echo 📱 Sistema:      http://localhost:%SYSTEM_PORT%
+echo 🔐 Web (Login):  http://%WEB_HOST%:%WEB_PORT%
+echo 📱 Sistema:      http://%SYSTEM_HOST%:%SYSTEM_PORT%
 echo.
 echo 📋 Flujo de acceso:
 echo 1. Ingresar por Web para autenticarse
