@@ -1,0 +1,257 @@
+/* Variables de color inspiradas en VS Code / OneNote (Tonos Morados) */
+:root {
+    --primary-color: #6C5CE7; /* Morado vibrante */
+    --primary-dark: #5849BE;  /* Morado oscuro hover */
+    --primary-light: #A29BFE; /* Lila suave */
+    --accent-color: #00CEC9;  /* Turquesa para detalles */
+    --text-dark: #2D3436;     /* Gris oscuro texto */
+    --text-light: #636E72;    /* Gris claro texto */
+    --white: #FFFFFF;
+    --bg-glass: rgba(255, 255, 255, 0.95);
+    --shadow-sm: 0 2px 10px rgba(108, 92, 231, 0.1);
+    --shadow-md: 0 4px 20px rgba(108, 92, 231, 0.15);
+    --transition: all 0.3s ease;
+}
+
+/* Reset básico para el componente */
+.zoofi-header * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.zoofi-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--white);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Estado Scrolled (cuando se baja la página) */
+.zoofi-header.scrolled {
+    background-color: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+    padding: 0.5rem 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.zoofi-header.scrolled .header-container {
+    padding: 0.5rem 1.5rem;
+}
+
+/* Logo */
+.brand-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.brand-name .highlight {
+    color: var(--primary-color);
+}
+
+.brand-logo:hover .logo-icon {
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* Navegación Desktop */
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    transition: var(--transition);
+    padding: 0.5rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+/* Acciones (Botones) */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-toggle:hover {
+    background-color: rgba(108, 92, 231, 0.1);
+    color: var(--primary-color);
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-login, .btn-register {
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.btn-login {
+    color: var(--primary-color);
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+.btn-login:hover {
+    background-color: rgba(108, 92, 231, 0.1);
+}
+
+.btn-register {
+    background-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3);
+}
+
+.btn-register:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(108, 92, 231, 0.4);
+}
+
+/* Mobile Toggle */
+.nav-toggle, .nav-close {
+    display: none;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+/* Responsive */
+@media screen and (max-width: 968px) {
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 400px;
+        height: 100vh;
+        background-color: var(--white);
+        box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+        flex-direction: column;
+        padding: 4rem 2rem;
+        transition: var(--transition);
+        z-index: 1001;
+    }
+
+    .nav-menu.show {
+        right: 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        display: block;
+    }
+
+    .nav-toggle {
+        display: block;
+        padding: 0.5rem;
+    }
+
+    .nav-close {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    .auth-buttons {
+        display: none; /* Opcional: mover dentro del menú móvil si se desea */
+    }
+    
+    /* Agregar botones al menú móvil si es necesario mediante JS o duplicando en HTML */
+}
+
+@media screen and (max-width: 480px) {
+    .brand-name {
+        font-size: 1.2rem;
+    }
+    
+    .header-container {
+        padding: 1rem;
+    }
+}
