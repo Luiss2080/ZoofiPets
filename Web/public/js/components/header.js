@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* --- Variables --- */
     const header = document.getElementById('main-header');
     const mobileMenu = document.getElementById('mobile-menu');
-    const navToggle = document.getElementById('nav-toggle');
+    const navToggle = document.getElementById('mobile-toggle');
     const navClose = document.getElementById('nav-close');
     const mobileLinks = document.querySelectorAll('.mobile-link');
 
@@ -86,11 +86,4 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.style.position = 'relative';
         }
     });
-});            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    };
-
-    window.addEventListener('scroll', scrollHeader);
 });
