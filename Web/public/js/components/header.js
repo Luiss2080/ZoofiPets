@@ -1,40 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
     /* --- Variables --- */
     const header = document.getElementById('main-header');
-    const navMenu = document.getElementById('nav-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
     const navToggle = document.getElementById('nav-toggle');
     const navClose = document.getElementById('nav-close');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
     /* --- Menú Móvil --- */
     // Mostrar menú
     if (navToggle) {
         navToggle.addEventListener('click', () => {
-            navMenu.classList.add('show');
+            mobileMenu.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevenir scroll
         });
     }
 
     // Ocultar menú
+    const closeMenu = () => {
+        mobileMenu.classList.remove('show');
+        document.body.style.overflow = ''; // Restaurar scroll
+    };
+
     if (navClose) {
-        navClose.addEventListener('click', () => {
-            navMenu.classList.remove('show');
+        navClose.addEventListener('click', closeMenu);
+    }
+
+    // Cerrar al hacer click fuera del contenido (en el overlay oscuro)
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMenu();
+            }
         });
     }
 
     // Ocultar menú al hacer click en un enlace
-    navLinks.forEach(link => {
+    mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.classList.remove('show');
+            closeMenu();
             
             // Activar enlace actual
-            navLinks.forEach(l => l.classList.remove('active'));
+            mobileLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
         });
     });
 
     /* --- Efecto Scroll Header --- */
     const scrollHeader = () => {
-        if (window.scrollY >= 50) {
+        if (window.scrollY >= 20) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
@@ -42,14 +55,4 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('scroll', scrollHeader);
-
-    /* --- Efecto Hover Avanzado (Opcional) --- */
-    // Añade una clase al header cuando el mouse entra para efectos adicionales si se desea
-    header.addEventListener('mouseenter', () => {
-        header.classList.add('hovered');
-    });
-
-    header.addEventListener('mouseleave', () => {
-        header.classList.remove('hovered');
-    });
 });
