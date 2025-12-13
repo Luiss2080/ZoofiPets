@@ -46,9 +46,7 @@
                 </li>
 
                 <li class="nav-item"><a href="#" class="nav-link">Especialistas</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Planes</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Tienda</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
