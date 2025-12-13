@@ -76,28 +76,36 @@
             </div>
 
             <!-- Toggle Móvil -->
-            <div class="nav-toggle" id="nav-toggle">
+            <div class="mobile-toggle" id="nav-toggle">
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </div>
         </div>
     </div>
+</header>
 
-    <!-- Menú Móvil Overlay (Separado para mejor control) -->
-    <div class="mobile-menu-overlay" id="mobile-menu">
-        <div class="mobile-menu-content">
-            <div class="mobile-header">
-                <span class="brand-title">ZOOFIPETS</span>
-                <div class="nav-close" id="nav-close">
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </div>
+<!-- Menú Móvil Overlay (Separado para mejor control) -->
+<div class="mobile-menu-overlay" id="mobile-menu">
+    <div class="mobile-menu-content">
+        <div class="mobile-header">
+            <span class="brand-title">ZOOFIPETS</span>
+            <div class="nav-close" id="nav-close">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </div>
-            <ul class="mobile-nav-list">
-                <li><a href="#" class="mobile-link active">Inicio</a></li>
-                <li><a href="#" class="mobile-link">Servicios</a></li>
-                <li><a href="#" class="mobile-link">Especialistas</a></li>
-                <li><a href="#" class="mobile-link">Tienda</a></li>
-                <li><a href="#" class="mobile-link">Contacto</a></li>
-            </ul>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="#" class="mobile-link active">Inicio</a></li>
+            <li><a href="#" class="mobile-link">Servicios</a></li>
+            <li><a href="#" class="mobile-link">Especialistas</a></li>
+            <li><a href="#" class="mobile-link">Tienda</a></li>
+            <li><a href="#" class="mobile-link">Contacto</a></li>
+        </ul>
+        
+        <div class="mobile-auth">
+            <a href="/login" class="btn-login full-width">Iniciar Sesión</a>
+            <a href="/register" class="btn-register full-width">Únete Ahora</a>
+        </div>
+    </div>
+</div>
             <div class="mobile-auth">
                 <a href="/login" class="btn-login full-width">Iniciar Sesión</a>
                 <a href="/register" class="btn-register full-width">Únete Ahora</a>
