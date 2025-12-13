@@ -55,4 +55,42 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('scroll', scrollHeader);
+
+    /* --- Efecto Ripple (Onda al hacer click) --- */
+    const createRipple = (event) => {
+        const button = event.currentTarget;
+        const circle = document.createElement('span');
+        const diameter = Math.max(button.clientWidth, button.clientHeight);
+        const radius = diameter / 2;
+
+        circle.style.width = circle.style.height = `${diameter}px`;
+        circle.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
+        circle.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
+        circle.classList.add('ripple');
+
+        const ripple = button.getElementsByClassName('ripple')[0];
+
+        if (ripple) {
+            ripple.remove();
+        }
+
+        button.appendChild(circle);
+    };
+
+    const buttons = document.querySelectorAll('.btn-register, .search-btn, .nav-link');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', createRipple);
+        // Asegurar que el botón tenga overflow hidden para que el ripple no se salga
+        btn.style.overflow = 'hidden';
+        if (getComputedStyle(btn).position === 'static') {
+            btn.style.position = 'relative';
+        }
+    });
+});            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    };
+
+    window.addEventListener('scroll', scrollHeader);
 });
