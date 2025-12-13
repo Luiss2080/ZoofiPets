@@ -21,6 +21,7 @@
         <nav class="nav-capsule">
             <ul class="nav-list">
                 <li class="nav-item"><a href="#" class="nav-link active">Inicio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Nosotros</a></li>
                 
                 <!-- Dropdown Servicios -->
                 <li class="nav-item dropdown">
@@ -45,6 +46,8 @@
                 </li>
 
                 <li class="nav-item"><a href="#" class="nav-link">Especialistas</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Planes</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Tienda</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
             </ul>
@@ -74,11 +77,6 @@
                     <div class="btn-shine"></div>
                 </a>
             </div>
-
-            <!-- Toggle Móvil -->
-            <div class="mobile-toggle" id="nav-toggle">
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-            </div>
         </div>
     </div>
 </header>
@@ -106,12 +104,5 @@
         </div>
     </div>
 </div>
-            <div class="mobile-auth">
-                <a href="/login" class="btn-login full-width">Iniciar Sesión</a>
-                <a href="/register" class="btn-register full-width">Únete Ahora</a>
-            </div>
-        </div>
-    </div>
-</header>
 
 <script src="{{ asset('js/components/header.js') }}"></script>

@@ -123,6 +123,14 @@
     display: flex;
     align-items: center;
     position: relative;
+    border: 1px solid rgba(108, 92, 231, 0.2); /* Borde morado sutil */
+    box-shadow: 0 4px 20px rgba(108, 92, 231, 0.05);
+    transition: var(--transition);
+}
+
+.nav-capsule:hover {
+    border-color: rgba(108, 92, 231, 0.5);
+    box-shadow: 0 8px 25px rgba(108, 92, 231, 0.1);
 }
 
 .nav-list {
@@ -141,24 +149,28 @@
     text-decoration: none;
     color: var(--text-muted);
     font-weight: 600;
-    font-size: 0.95rem;
-    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
     border-radius: 30px;
     transition: var(--transition);
     display: flex;
     align-items: center;
     gap: 5px;
+    border: 1px solid transparent;
 }
 
 .nav-link:hover {
     color: var(--primary-color);
     background-color: rgba(108, 92, 231, 0.05);
+    border-color: rgba(108, 92, 231, 0.2);
+    transform: translateY(-1px);
 }
 
 .nav-link.active {
     background: var(--primary-gradient);
     color: white;
     box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3);
+    border-color: transparent;
 }
 
 /* Dropdown Styles */
@@ -318,17 +330,19 @@
 
 .btn-login {
     text-decoration: none;
-    color: var(--text-main);
+    color: var(--primary-color);
     font-weight: 600;
     font-size: 0.9rem;
     padding: 0.6rem 1.2rem;
     border-radius: 30px;
     transition: var(--transition);
+    border: 1px solid transparent;
 }
 
 .btn-login:hover {
-    color: var(--primary-color);
-    background-color: rgba(108, 92, 231, 0.05);
+    color: white;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3);
 }
 
 .btn-register {
@@ -373,11 +387,12 @@
 
 /* Mobile Menu Toggle */
 .mobile-toggle {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
     z-index: 1001;
+    margin-left: 1rem;
 }
 
 .bar {
@@ -389,9 +404,9 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .nav-capsule {
-        display: none; /* Ocultar en tablet/móvil por ahora */
+        display: none; /* Ocultar en pantallas medianas/pequeñas */
     }
     
     .search-bar {
