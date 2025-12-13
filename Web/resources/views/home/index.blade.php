@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZoofiPets - Veterinaria Moderna</title>
-    <link rel="icon" href="{{ asset('images/logs/LogoPestaña.jpg') }}" type="image/jpeg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('images/logs/LogoPestaña.jpg') }}?v=99">
+    <link rel="apple-touch-icon" href="{{ asset('images/logs/LogoPestaña.jpg') }}?v=99">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

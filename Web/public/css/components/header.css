@@ -66,40 +66,29 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    gap: 0.8rem;
-}
-
-.logo-icon-container {
-    width: 40px;
-    height: 40px;
-    background: var(--primary-gradient);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
-    animation: pulseLogo 3s infinite;
-}
-
-@keyframes pulseLogo {
-    0% { box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.4); }
-    70% { box-shadow: 0 0 0 10px rgba(108, 92, 231, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(108, 92, 231, 0); }
+    gap: 1rem;
 }
 
 .logo-image {
-    width: 24px;
-    height: 24px;
+    width: auto;
+    height: 65px; /* Altura máxima permitida por el header (80px) */
     object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
 }
 
 .brand-text {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .brand-title {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--text-main);
     letter-spacing: -0.5px;
@@ -107,12 +96,12 @@
 }
 
 .brand-subtitle {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: var(--primary-color);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     font-weight: 700;
-    margin-top: 2px;
+    margin-top: 4px;
 }
 
 /* 2. Navegación Central (Cápsula) */

@@ -4,9 +4,7 @@
     <div class="header-container">
         <!-- 1. Logo (Izquierda) -->
         <a href="/" class="brand-logo">
-            <div class="logo-icon-container">
-                <img src="{{ asset('images/logs/LogoHeader.png') }}" alt="ZoofiPets Logo" class="logo-image">
-            </div>
+            <img src="{{ asset('images/logs/LogoHeader.png') }}" alt="ZoofiPets Logo" class="logo-image">
             <div class="brand-text">
                 <span class="brand-title">ZOOFIPETS</span>
                 <span class="brand-subtitle">VETERINARY CLINIC</span>
