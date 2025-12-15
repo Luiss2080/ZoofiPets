@@ -6,8 +6,8 @@
     <title>ZoofiPets - Veterinaria Moderna</title>
     
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('images/logs/LogoPestaña.jpg') }}?v=99">
-    <link rel="apple-touch-icon" href="{{ asset('images/logs/LogoPestaña.jpg') }}?v=99">
+    <link rel="icon" href="{{ asset('images/logs/LogoPestaña.png') }}?v=100" type="image/png">
+    <link rel="apple-touch-icon" href="{{ asset('images/logs/LogoPestaña.png') }}?v=100">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
