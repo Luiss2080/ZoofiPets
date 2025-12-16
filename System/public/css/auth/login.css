@@ -1026,7 +1026,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* ===== SECCIÓN SOCIAL ===== */
+/* ===== SECCIÓN SOCIAL (ELIMINADO ESTILOS ANTIGUOS) ===== */
 .social-section {
     text-align: center;
 }
@@ -1043,87 +1043,7 @@ body {
     font-size: 1rem;
     margin-bottom: 1rem;
 }
-
-.social-media-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    max-width: 320px;
-    margin: 0 auto;
-}
-
-.social-link {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.6rem 0.8rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-md);
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    transition: all var(--transition);
-    min-height: 50px;
-    justify-content: flex-start;
-}
-
-.social-link:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-.social-link.tiktok:hover {
-    border-color: var(--primary-red);
-    box-shadow: 0 8px 25px rgba(108, 92, 231, 0.3);
-}
-
-.social-link.facebook:hover {
-    border-color: #1877f2;
-    box-shadow: 0 8px 25px rgba(24, 119, 242, 0.3);
-}
-
-.social-link.instagram:hover {
-    border-color: #e4405f;
-    box-shadow: 0 8px 25px rgba(228, 64, 95, 0.3);
-}
-
-.social-link.whatsapp:hover {
-    border-color: #25d366;
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
-}
-
-.social-icon {
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border-radius: 0;
-    flex-shrink: 0;
-}
-
-.social-icon svg {
-    width: 24px;
-    height: 24px;
-    fill: #000000;
-    transition: var(--transition);
-}
-
-.social-link:hover .social-icon svg {
-    transform: scale(1.1);
-}
-
-.social-link span {
-    font-size: 0.8rem;
-    font-weight: 500;
-    text-align: left;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+/* Los estilos de .social-media-links y .social-link ahora se manejan específicamente por columna abajo */
 
 /* ===== FORMULARIO DERECHA ===== */
 .login-form-section {
@@ -1428,55 +1348,135 @@ body {
     color: var(--primary-red-hover);
 }
 
-/* ===== SECCIONES SOCIALES ===== */
-.social-media-links {
+/* ===== SECCIONES SOCIALES (COLUMNA DERECHA) ===== */
+.form-footer .social-media-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.4rem;
-    margin-bottom: 1rem;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
 }
 
-.social-link {
+.form-footer .social-link {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    padding: 0.6rem 0.8rem;
-    background: #ffffff;
-    border: 1px solid #b2bec3;
-    border-radius: var(--radius-sm);
-    color: var(--text-black);
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    background: var(--primary-red); /* Fondo Morado */
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--white); /* Texto Blanco */
     text-decoration: none;
-    font-size: 0.8rem;
-    transition: all var(--transition);
-    min-height: 46px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-height: 55px;
     justify-content: flex-start;
+    box-shadow: 0 4px 15px rgba(72, 52, 212, 0.2);
+    position: relative;
+    overflow: hidden;
 }
 
-.social-link:hover {
-    background: rgba(72, 52, 212, 0.05);
-    border-color: var(--primary-red);
-    color: var(--primary-red);
-    transform: translateY(-1px);
+.form-footer .social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.social-icon {
+.form-footer .social-link:hover {
+    background: var(--primary-red-hover);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(72, 52, 212, 0.4);
+    color: var(--white);
+}
+
+.form-footer .social-link:hover::before {
+    opacity: 1;
+}
+
+.form-footer .social-icon {
     font-size: 1.4rem;
-    width: 28px;
-    text-align: center;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
     flex-shrink: 0;
+    transition: transform 0.3s ease;
 }
 
-.trading-signals .social-icon {
-    color: var(--primary-red);
+.form-footer .social-link:hover .social-icon {
+    transform: rotate(10deg) scale(1.1);
+    background: rgba(255, 255, 255, 0.25);
 }
-.academy .social-icon {
-    color: var(--primary-red-light);
+
+.form-footer .social-icon svg {
+    fill: #ffffff !important; /* Forzar icono blanco */
+    width: 20px;
+    height: 20px;
 }
-.community .social-icon {
-    color: var(--primary-red);
+
+/* ===== SECCIONES SOCIALES (COLUMNA IZQUIERDA - BRANDING) ===== */
+.branding-content .social-media-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    max-width: 320px;
+    margin: 0 auto;
 }
-.support .social-icon {
-    color: var(--primary-red);
+
+.branding-content .social-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-height: 55px;
+    justify-content: flex-start;
+    backdrop-filter: blur(5px);
+}
+
+.branding-content .social-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.branding-content .social-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.branding-content .social-link:hover .social-icon {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.branding-content .social-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
 }
 
 /* ===== REGISTRO SECTION ===== */
