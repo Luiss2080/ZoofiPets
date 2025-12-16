@@ -63,8 +63,8 @@
 
             <!-- Botones Auth -->
             <div class="auth-buttons">
-                <a href="/login" class="btn-login">Ingresar</a>
-                <a href="/register" class="btn-register">
+                <a href="{{ route('login') }}" class="btn-login">Ingresar</a>
+                <a href="{{ route('registro') }}" class="btn-register">
                     <span>Únete Ahora</span>
                     <div class="btn-shine"></div>
                 </a>
@@ -98,8 +98,8 @@
         </ul>
         
         <div class="mobile-auth">
-            <a href="/login" class="btn-login full-width">Iniciar Sesión</a>
-            <a href="/register" class="btn-register full-width">Únete Ahora</a>
+            <a href="{{ route('login') }}" class="btn-login full-width">Iniciar Sesión</a>
+            <a href="{{ route('registro') }}" class="btn-register full-width">Únete Ahora</a>
         </div>
     </div>
 </div>
