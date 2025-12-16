@@ -257,7 +257,7 @@
                     <div class="form-footer">
                         <p class="register-text">
                             ¿Quieres unirte a nuestra asociación?
-                            <span class="highlight"><a href="{{ route('register.show') }}" class="register-link" id="registerLink">¡Solicita tu registro!</a></span>
+                            <span class="highlight"><a href="{{ route('registro') }}" class="register-link" id="registerLink">¡Solicita tu registro!</a></span>
                         </p>
 
                         <!-- Social Media Links -->
