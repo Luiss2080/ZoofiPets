@@ -123,14 +123,14 @@
     gap: 0.4rem;
 }
 
-.nav-link:hover, .nav-link.active {
-    color: #fff;
-    background: rgba(155, 89, 182, 0.2); /* Fondo violeta suave */
-}
-
+.nav-link:hover, 
+.nav-link:focus, 
+.nav-link:active, 
 .nav-link.active {
-    background: var(--primary-color); /* Violeta sólido para activo */
-    box-shadow: 0 4px 10px rgba(155, 89, 182, 0.4);
+    color: var(--primary-color) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
 }
 
 /* Dropdown */

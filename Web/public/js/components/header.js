@@ -57,6 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', scrollHeader);
 
     /* --- Efecto Ripple (Onda al hacer click) --- */
+    // Eliminado por solicitud del usuario (causaba bug visual)
+    /*
     const createRipple = (event) => {
         const button = event.currentTarget;
         const circle = document.createElement('span');
@@ -86,4 +88,5 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.style.position = 'relative';
         }
     });
+    */
 });
