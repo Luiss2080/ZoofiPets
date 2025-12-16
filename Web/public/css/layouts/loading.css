@@ -110,62 +110,98 @@
 }
 
 .loading-title .highlight {
-    color: var(--green-accent);
-    text-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
+    background: linear-gradient(120deg, #2ecc71 0%, #00b894 50%, #55efc4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 30px rgba(46, 204, 113, 0.4);
+    font-weight: 900;
+    letter-spacing: 2px;
+    position: relative;
+    filter: drop-shadow(0 0 2px rgba(46, 204, 113, 0.5));
 }
 
 .progress-container {
-    width: 300px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    margin: 0 auto 1.5rem;
+    width: 340px;
+    height: 16px;
+    background: rgba(20, 20, 30, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    margin: 0 auto 0.5rem; /* Reducido margen inferior para acercar el texto */
     position: relative;
     overflow: hidden;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.2);
+    padding: 3px;
+    backdrop-filter: blur(5px);
 }
 
 .loading-text {
     font-family: var(--font-body);
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 0.5rem;
     transition: opacity 0.2s ease;
-    min-height: 1.2em; /* Evitar saltos si el texto cambia */
+    min-height: 1.2em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .progress-bar {
     height: 100%;
-    background: var(--green-accent);
+    background: linear-gradient(90deg, #2ecc71, #00b894);
     width: 0%;
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(46, 204, 113, 0.7);
-    transition: width 0.1s linear; /* Más suave para actualizaciones frecuentes */
+    border-radius: 50px;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.6);
+    transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
 }
 
-/* Efecto de brillo en movimiento para la barra */
+/* Patrón de rayas animado */
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.25) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0.25) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 20px 20px;
+    animation: moveStripes 0.8s linear infinite;
+    z-index: 2;
+}
+
+/* Brillo superior */
 .progress-bar::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
     right: 0;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.4),
-        transparent
-    );
-    transform: translateX(-100%);
-    animation: shimmer 1.5s infinite;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+    border-radius: 50px 50px 0 0;
+    z-index: 3;
 }
 
-@keyframes shimmer {
-    100% {
-        transform: translateX(100%);
-    }
+@keyframes moveStripes {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 0; }
+}
+
+.percentage-text {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--green-accent);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: block;
 }
 
 .loading-dots span {
@@ -185,21 +221,161 @@
     100% { opacity: 0; }
 }
 
-/* Elementos Robóticos (Simplificados para no saturar) */
-.gear, .circuit-board, .led-indicator, .robot-eye, .data-stream, .tech-particle {
+/* Elementos Veterinarios */
+.vet-elements {
     position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.floating-items {
+    position: absolute;
+    inset: 0;
     pointer-events: none;
 }
-/* Copiar estilos básicos de elementos si es necesario, o confiar en que son decorativos */
-/* Para asegurar que se vean, añadiré algunos estilos básicos aquí también */
-.gear { border: 3px solid rgba(108, 92, 231, 0.3); border-radius: 50%; }
-.gear-1 { width: 80px; height: 80px; top: 15%; right: 10%; }
-.gear-2 { width: 60px; height: 60px; bottom: 20%; left: 5%; }
 
-.led-indicator { width: 8px; height: 8px; background: rgba(108, 92, 231, 0.6); border-radius: 50%; box-shadow: 0 0 10px rgba(108, 92, 231, 0.4); }
-.led-1 { top: 25%; left: 8%; }
-.led-2 { top: 65%; right: 12%; background: rgba(162, 155, 254, 0.6); }
+/* Huellas */
+.paw-print {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    opacity: 0.4;
+    animation: pawFloat 8s ease-in-out infinite;
+}
 
-.tech-particle { width: 4px; height: 4px; background: rgba(108, 92, 231, 0.8); border-radius: 50%; box-shadow: 0 0 5px rgba(108, 92, 231, 0.6); }
-.tp-1 { top: 5%; left: 10%; }
-.tp-2 { bottom: 15%; right: 8%; background: rgba(34, 197, 94, 0.8); }
+.paw-print .pad {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.paw-print .pad.large {
+    width: 24px;
+    height: 24px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.paw-print .pad.small {
+    width: 10px;
+    height: 14px;
+    top: 0;
+}
+
+.paw-print .pad.s-1 { left: 0; transform: rotate(-20deg); }
+.paw-print .pad.s-2 { left: 50%; transform: translateX(-50%) translateY(-4px); }
+.paw-print .pad.s-3 { right: 0; transform: rotate(20deg); }
+
+.paw-1 { top: 15%; left: 10%; animation-delay: 0s; --rotation: 20deg; }
+.paw-2 { top: 60%; right: 15%; animation-delay: 2s; --rotation: -15deg; }
+.paw-3 { bottom: 20%; left: 20%; animation-delay: 4s; --rotation: 10deg; }
+.paw-4 { top: 30%; right: 25%; animation-delay: 1s; --rotation: -30deg; }
+
+/* Huesos */
+.bone {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    opacity: 0.3;
+    animation: boneSpin 15s linear infinite;
+}
+
+.bone::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    width: 30px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    top: 5px;
+}
+
+.bone::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    box-shadow: 
+        40px 0 0 rgba(255, 255, 255, 0.4),
+        0 10px 0 rgba(255, 255, 255, 0.4),
+        40px 10px 0 rgba(255, 255, 255, 0.4);
+    top: 0;
+    left: 0;
+}
+
+.bone-1 { top: 20%; right: 10%; animation-delay: 1s; --scale: 1; }
+.bone-2 { bottom: 30%; left: 5%; animation-delay: 3s; --scale: 0.8; }
+.bone-3 { top: 70%; right: 30%; animation-delay: 5s; --scale: 1.2; }
+
+/* Cruces Médicas */
+.medical-cross {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    animation: crossPulse 3s ease-in-out infinite;
+}
+
+.medical-cross::before, .medical-cross::after {
+    content: '';
+    position: absolute;
+    background: rgba(46, 204, 113, 0.5); /* Green accent */
+    border-radius: 4px;
+}
+
+.medical-cross::before {
+    width: 8px;
+    height: 30px;
+    left: 11px;
+}
+
+.medical-cross::after {
+    width: 30px;
+    height: 8px;
+    top: 11px;
+}
+
+.cross-1 { top: 40%; left: 15%; animation-delay: 0.5s; --scale: 1; }
+.cross-2 { bottom: 10%; right: 20%; animation-delay: 1.5s; --scale: 0.7; }
+.cross-3 { top: 10%; left: 40%; animation-delay: 2.5s; --scale: 1.1; }
+
+/* Partículas de Salud */
+.health-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #2ecc71;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #2ecc71;
+    animation: particleFloat 5s ease-in-out infinite;
+}
+
+.hp-1 { top: 50%; left: 50%; animation-delay: 0s; }
+.hp-2 { top: 20%; right: 40%; animation-delay: 1s; }
+.hp-3 { bottom: 40%; left: 30%; animation-delay: 2s; }
+.hp-4 { top: 80%; right: 10%; animation-delay: 3s; }
+.hp-5 { top: 10%; left: 80%; animation-delay: 4s; }
+
+/* Animaciones */
+@keyframes pawFloat {
+    0%, 100% { transform: translateY(0) rotate(var(--rotation, 0deg)); }
+    50% { transform: translateY(-15px) rotate(calc(var(--rotation, 0deg) + 5deg)); }
+}
+
+@keyframes boneSpin {
+    0% { transform: scale(var(--scale, 1)) rotate(0deg); }
+    100% { transform: scale(var(--scale, 1)) rotate(360deg); }
+}
+
+@keyframes crossPulse {
+    0%, 100% { transform: scale(var(--scale, 1)); opacity: 0.5; }
+    50% { transform: scale(calc(var(--scale, 1) * 1.2)); opacity: 0.9; }
+}
+
+@keyframes particleFloat {
+    0% { transform: translate(0, 0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translate(20px, -40px); opacity: 0; }
+}
