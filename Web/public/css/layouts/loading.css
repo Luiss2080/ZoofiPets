@@ -124,20 +124,48 @@
     overflow: hidden;
 }
 
+.loading-text {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+    transition: opacity 0.2s ease;
+    min-height: 1.2em; /* Evitar saltos si el texto cambia */
+}
+
 .progress-bar {
     height: 100%;
     background: var(--green-accent);
     width: 0%;
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(46, 204, 113, 0.7);
-    transition: width 0.2s ease;
+    transition: width 0.1s linear; /* Más suave para actualizaciones frecuentes */
+    position: relative;
+    overflow: hidden;
 }
 
-.loading-text {
-    font-family: var(--font-body);
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 0.5rem;
+/* Efecto de brillo en movimiento para la barra */
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transform: translateX(-100%);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 .loading-dots span {
