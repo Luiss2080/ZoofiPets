@@ -16,7 +16,7 @@ Route::get('/registro', function () {
 
 // Rutas de restablecimiento de contraseña (Placeholder para evitar errores)
 Route::get('/password/reset', function () {
-    return view('auth.passwords.email');
+    return view('auth.recuperar');
 })->name('password.request');
 
 Route::post('/password/email', function () {
