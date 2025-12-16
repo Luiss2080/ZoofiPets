@@ -1,17 +1,17 @@
-/* Variables de color - Tema Claro Moderno (Clean & Tech) */
+/* Variables de color - Tema Violeta Oscuro (ZoofiPets) */
 :root {
-    --bg-header: rgba(255, 255, 255, 0.9); /* Blanco translúcido */
-    --bg-scrolled: rgba(255, 255, 255, 0.95);
-    --text-main: #2d3436;     /* Gris oscuro casi negro */
-    --text-muted: #636e72;    /* Gris medio */
-    --primary-color: #6c5ce7; /* Morado Principal */
-    --primary-light: #a29bfe; /* Morado Claro */
-    --primary-gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
-    --accent-color: #00cec9;  /* Turquesa para detalles pequeños */
-    --border-color: #dfe6e9;  /* Gris muy suave */
-    --capsule-bg: #f1f2f6;    /* Gris muy claro para la cápsula */
-    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
-    --shadow-hover: 0 15px 35px rgba(108, 92, 231, 0.15);
+    --bg-header: rgba(20, 20, 30, 0.2); /* Transparente oscuro inicial */
+    --bg-scrolled: rgba(40, 20, 60, 0.9); /* Violeta oscuro al hacer scroll */
+    --text-main: #ffffff;     /* Blanco */
+    --text-muted: #e1e1e1;    /* Gris claro */
+    --primary-color: #2ecc71; /* Verde acento (como en loading) */
+    --primary-light: #55efc4; /* Verde claro */
+    --primary-gradient: linear-gradient(135deg, #2ecc71, #00b894);
+    --accent-color: #a29bfe;  /* Violeta claro para detalles */
+    --border-color: rgba(255, 255, 255, 0.1);
+    --capsule-bg: rgba(255, 255, 255, 0.1);    /* Cápsula semitransparente */
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.2);
+    --shadow-hover: 0 15px 35px rgba(46, 204, 113, 0.3);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -30,7 +30,7 @@
     z-index: 1000;
     background-color: var(--bg-header);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     height: 80px;
     display: flex;
