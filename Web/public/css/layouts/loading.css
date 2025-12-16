@@ -1,0 +1,177 @@
+/* CSS para Loading Screen - ZoofiPets */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap");
+
+:root {
+    --primary-red: #4834d4; /* Violeta Oscuro Principal */
+    --primary-red-hover: #2c1680; /* Violeta Profundo */
+    --primary-red-light: #686de0; /* Violeta Intermedio */
+    --white: #ffffff;
+    --gray-light: #e1e1e1;
+    --text-black: #000000;
+    --text-dark: #1a1a1a;
+    --font-body: "Inter", sans-serif;
+    --font-heading: "Montserrat", sans-serif;
+    --green-accent: #2ecc71; /* Verde para la barra de carga como en el ejemplo */
+}
+
+/* Contenedor Principal */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #3c1053 0%, #4834d4 100%);
+    z-index: 9999; /* Por encima de todo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Background Styles (Copiados y adaptados de login.css) */
+.loading-background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bg-shapes, .tech-elements {
+    position: absolute;
+    inset: 0;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(108, 92, 231, 0.2);
+    background: transparent;
+    pointer-events: none;
+    animation: techFloat 12s linear infinite;
+}
+
+.shape-1 { width: 150px; height: 150px; top: 10%; left: 5%; border-style: dashed; animation-delay: 0s; }
+.shape-2 { width: 200px; height: 200px; bottom: 15%; right: 8%; border-width: 3px; animation-delay: 4s; }
+.shape-3 { width: 120px; height: 120px; top: 60%; left: 15%; border-color: rgba(162, 155, 254, 0.3); animation-delay: 8s; }
+.shape-4 { width: 180px; height: 180px; top: 25%; right: 20%; border-style: dotted; border-color: rgba(108, 92, 231, 0.25); animation-delay: 2s; }
+
+.bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(0deg, transparent 24%, rgba(108, 92, 231, 0.1) 25%, rgba(108, 92, 231, 0.1) 26%, transparent 27%, transparent 74%, rgba(108, 92, 231, 0.1) 75%, rgba(108, 92, 231, 0.1) 76%, transparent 77%),
+        linear-gradient(90deg, transparent 24%, rgba(108, 92, 231, 0.1) 25%, rgba(108, 92, 231, 0.1) 26%, transparent 27%, transparent 74%, rgba(108, 92, 231, 0.1) 75%, rgba(108, 92, 231, 0.1) 76%, transparent 77%),
+        radial-gradient(circle at 25% 25%, rgba(108, 92, 231, 0.3) 1px, transparent 2px),
+        radial-gradient(circle at 75% 75%, rgba(108, 92, 231, 0.3) 1px, transparent 2px);
+    background-size: 100px 100px, 100px 100px, 100px 100px, 100px 100px;
+    opacity: 0.6;
+    animation: circuitFlow 20s linear infinite;
+}
+
+/* Animaciones Background */
+@keyframes techFloat {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
+    25% { transform: translateY(-15px) rotate(90deg); opacity: 0.6; }
+    50% { transform: translateY(-10px) rotate(180deg); opacity: 0.3; }
+    75% { transform: translateY(5px) rotate(270deg); opacity: 0.7; }
+    100% { transform: translateY(0) rotate(360deg); opacity: 0.4; }
+}
+
+@keyframes circuitFlow {
+    0% { background-position: 0 0, 0 0, 0 0, 0 0; }
+    100% { background-position: 100px 100px, 100px 100px, 100px 100px, 100px 100px; }
+}
+
+/* Contenido del Loading */
+.loading-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: var(--white);
+    font-family: var(--font-heading);
+}
+
+.loading-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.loading-title .highlight {
+    color: var(--green-accent);
+    text-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
+}
+
+.progress-container {
+    width: 300px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--green-accent);
+    width: 0%;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.7);
+    transition: width 0.2s ease;
+}
+
+.loading-text {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+}
+
+.loading-dots span {
+    font-size: 1.5rem;
+    animation: dots 1.5s infinite;
+    opacity: 0;
+    color: var(--green-accent);
+}
+
+.loading-dots span:nth-child(1) { animation-delay: 0.0s; }
+.loading-dots span:nth-child(2) { animation-delay: 0.5s; }
+.loading-dots span:nth-child(3) { animation-delay: 1.0s; }
+
+@keyframes dots {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Elementos Robóticos (Simplificados para no saturar) */
+.gear, .circuit-board, .led-indicator, .robot-eye, .data-stream, .tech-particle {
+    position: absolute;
+    pointer-events: none;
+}
+/* Copiar estilos básicos de elementos si es necesario, o confiar en que son decorativos */
+/* Para asegurar que se vean, añadiré algunos estilos básicos aquí también */
+.gear { border: 3px solid rgba(108, 92, 231, 0.3); border-radius: 50%; }
+.gear-1 { width: 80px; height: 80px; top: 15%; right: 10%; }
+.gear-2 { width: 60px; height: 60px; bottom: 20%; left: 5%; }
+
+.led-indicator { width: 8px; height: 8px; background: rgba(108, 92, 231, 0.6); border-radius: 50%; box-shadow: 0 0 10px rgba(108, 92, 231, 0.4); }
+.led-1 { top: 25%; left: 8%; }
+.led-2 { top: 65%; right: 12%; background: rgba(162, 155, 254, 0.6); }
+
+.tech-particle { width: 4px; height: 4px; background: rgba(108, 92, 231, 0.8); border-radius: 50%; box-shadow: 0 0 5px rgba(108, 92, 231, 0.6); }
+.tp-1 { top: 5%; left: 10%; }
+.tp-2 { bottom: 15%; right: 8%; background: rgba(34, 197, 94, 0.8); }

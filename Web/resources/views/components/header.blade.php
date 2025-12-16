@@ -1,4 +1,7 @@
 <link rel="stylesheet" href="{{ asset('css/components/header.css') }}">
+<link rel="stylesheet" href="{{ asset('css/layouts/loading.css') }}">
+
+@include('layouts.loading')
 
 <header class="zoofi-header" id="main-header">
     <div class="header-container">
@@ -103,5 +106,7 @@
         </div>
     </div>
 </div>
+
+<script src="{{ asset('js/layouts/loading.js') }}"></script>
 
 <script src="{{ asset('js/components/header.js') }}"></script>
