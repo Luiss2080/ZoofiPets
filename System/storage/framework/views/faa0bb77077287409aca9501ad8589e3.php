@@ -304,7 +304,7 @@
                         <!-- Register Link -->
                         <div class="register-section">
                             <p class="no-account-text">¿Quieres unirte a nuestra asociación?
-                                <span class="highlight"><a href="<?php echo e(route('register.show')); ?>" class="register-link-main" id="registerMainLink">¡Solicita tu registro!</a></span>
+                                <span class="highlight"><a href="<?php echo e(route('registro')); ?>" class="register-link-main" id="registerMainLink">¡Solicita tu registro!</a></span>
                             </p>
                         </div>
 
