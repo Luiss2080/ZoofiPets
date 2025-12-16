@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceso Sistema - Asociación 1ro de Junio</title>
-    <link rel="icon" type="image/png" href="{{ asset('images/faviconTH.png') }}">
+    <title>Acceso Sistema - ZoofiPets</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
 
     <!-- Precargar fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,13 +21,13 @@
     <link rel="stylesheet" href="{{ asset('css/layouts/loading.css') }}">
 
     <!-- Meta tags para SEO -->
-    <meta name="description" content="Accede a tu cuenta en la Asociación 1ro de Junio. Sistema administrativo para gestión de conductores y servicios de mototaxi.">
-    <meta name="keywords" content="login, asociación, mototaxi, conductores, gestión, sistema">
+    <meta name="description" content="Accede a tu cuenta en ZoofiPets. Sistema administrativo para gestión de clínica veterinaria.">
+    <meta name="keywords" content="login, veterinaria, mascotas, gestión, sistema">
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Iniciar Sesión - Asociación 1ro de Junio">
-    <meta property="og:description" content="Accede a tu cuenta en la Asociación 1ro de Junio">
+    <meta property="og:title" content="Iniciar Sesión - ZoofiPets">
+    <meta property="og:description" content="Accede a tu cuenta en ZoofiPets">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
 </head>
@@ -99,7 +99,7 @@
                     <div class="brand-section">
                         <div class="logo-container">
                             <div class="logo-backdrop"></div>
-                            <img src="{{ asset('images/LogoTech.png') }}" alt="TECH HOME" class="brand-logo">
+                            <img src="{{ asset('images/LogoZoofiPets.png') }}" alt="ZOOFIPETS" class="brand-logo">
                         </div>
                         <div class="brand-text">
                             <div class="brand-line"></div>
@@ -110,7 +110,7 @@
                     <div class="welcome-section">
                         <h2 class="welcome-title">¡Bienvenido!</h2>
                         <p class="welcome-description">
-                            Inicia sesión con tu cuenta y accede al sistema administrativo de Tech Home. Plataforma diseñada para la gestión integral de cursos, estudiantes y administración de la escuela.
+                            Inicia sesión con tu cuenta y accede al sistema administrativo de ZoofiPets. Plataforma diseñada para la gestión integral de pacientes, citas y administración veterinaria.
                         </p>
                     </div>
 
@@ -256,7 +256,7 @@
                     <!-- Footer del formulario -->
                     <div class="form-footer">
                         <p class="register-text">
-                            ¿Quieres unirte a nuestra asociación?
+                            ¿Quieres unirte a nuestra clínica?
                             <span class="highlight"><a href="{{ route('registro') }}" class="register-link" id="registerLink">¡Solicita tu registro!</a></span>
                         </p>
 
@@ -303,7 +303,7 @@
 
                         <!-- Register Link -->
                         <div class="register-section">
-                            <p class="no-account-text">¿Quieres unirte a nuestra asociación?
+                            <p class="no-account-text">¿Quieres unirte a nuestra clínica?
                                 <span class="highlight"><a href="{{ route('registro') }}" class="register-link-main" id="registerMainLink">¡Solicita tu registro!</a></span>
                             </p>
                         </div>
