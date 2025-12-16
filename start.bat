@@ -33,9 +33,10 @@ echo ========================================
 echo   🌐 Iniciando Web (Portal de Login)
 echo ========================================
 cd Web
-php artisan serve --host=%WEB_HOST% --port=%WEB_PORT% &
-timeout /t 2 /nobreak >nul
-powershell -Command "Start-Job -ScriptBlock { Set-Location '%CD%'; npm run dev } -Name 'Web-Frontend' | Out-Null"
+echo   - Iniciando Laravel Server...
+start /B php artisan serve --host=%WEB_HOST% --port=%WEB_PORT% > laravel.log 2>&1
+echo   - Iniciando Vite...
+start /B npm run dev > vite.log 2>&1
 cd ..
 
 :: System (Main Application - After Web)
@@ -44,9 +45,10 @@ echo ========================================
 echo   📱 Iniciando Sistema (Aplicación)
 echo ========================================
 cd System
-php artisan serve --host=%SYSTEM_HOST% --port=%SYSTEM_PORT% &
-timeout /t 2 /nobreak >nul
-powershell -Command "Start-Job -ScriptBlock { Set-Location '%CD%'; npm run dev } -Name 'Sistema-Frontend' | Out-Null"
+echo   - Iniciando Laravel Server...
+start /B php artisan serve --host=%SYSTEM_HOST% --port=%SYSTEM_PORT% > laravel.log 2>&1
+echo   - Iniciando Vite...
+start /B npm run dev > vite.log 2>&1
 cd ..
 
 timeout /t 3 /nobreak >nul
@@ -62,9 +64,8 @@ echo 📋 Flujo de acceso:
 echo 1. Ingresar por Web para autenticarse
 echo 2. Acceder al Sistema tras login exitoso
 echo.
-echo Los frontends también están ejecutándose.
-echo Revisa la salida de Laravel arriba para las URLs completas.
+echo Los servicios se estan ejecutando en segundo plano en esta terminal.
+echo Los logs se guardan en 'laravel.log' y 'vite.log' en cada carpeta.
 echo.
-echo Para detener los frontends:
-echo powershell "Get-Job | Stop-Job; Get-Job | Remove-Job"
+echo Para detener todo, presiona CTRL + C en esta terminal.
 echo =======================================
