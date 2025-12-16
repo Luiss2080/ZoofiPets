@@ -967,7 +967,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .logo-container {
@@ -985,7 +985,7 @@ body {
 }
 
 .brand-logo {
-    width: 280px;
+    width: 380px;
     height: auto;
     filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1));
     position: relative;
@@ -1007,7 +1007,7 @@ body {
 /* ===== SECCIÓN DE BIENVENIDA ===== */
 .welcome-section {
     text-align: center;
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 .welcome-title {

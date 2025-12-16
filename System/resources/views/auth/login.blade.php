@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acceso Sistema - ZoofiPets</title>
-    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/LogoPestaña.jpg') }}">
 
     <!-- Precargar fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,7 +110,7 @@
                     <div class="welcome-section">
                         <h2 class="welcome-title">¡Bienvenido!</h2>
                         <p class="welcome-description">
-                            Inicia sesión con tu cuenta y accede al sistema administrativo de ZoofiPets. Plataforma diseñada para la gestión integral de pacientes, citas y administración veterinaria.
+                            Accede al sistema administrativo para la gestión integral de pacientes, citas y clínica veterinaria.
                         </p>
                     </div>
 
