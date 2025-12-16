@@ -7,9 +7,9 @@ Route::get('/', function () {
 });
 
 Route::get('/login', function () {
-    return view('auth.login');
+    return redirect('http://127.0.0.20:9010/login');
 })->name('login');
 
 Route::get('/registro', function () {
-    return view('auth.registro');
+    return redirect('http://127.0.0.20:9010/registro');
 })->name('registro');
