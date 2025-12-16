@@ -1,4 +1,8 @@
 <footer class="zoofi-footer">
+    <!-- Decorative Background -->
+    <div class="footer-bg-grid"></div>
+    <div class="footer-glow-line"></div>
+
     <div class="footer-container">
         <div class="footer-top">
             <!-- Column 1: Contacto -->
@@ -6,7 +10,9 @@
                 <h3>Contacto</h3>
                 
                 <div class="footer-card">
-                    <i class="fas fa-map-marker-alt footer-icon"></i>
+                    <div class="footer-icon-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
                     <div class="footer-text">
                         <strong>Ubicación</strong>
                         Av. Principal #123, Santa Cruz
@@ -14,7 +20,9 @@
                 </div>
 
                 <div class="footer-card">
-                    <i class="fas fa-phone-alt footer-icon"></i>
+                    <div class="footer-icon-box">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
                     <div class="footer-text">
                         <strong>Llámanos</strong>
                         +591 3 456-7890
@@ -22,7 +30,9 @@
                 </div>
 
                 <div class="footer-card">
-                    <i class="fas fa-envelope footer-icon"></i>
+                    <div class="footer-icon-box">
+                        <i class="fas fa-envelope"></i>
+                    </div>
                     <div class="footer-text">
                         <strong>Email</strong>
                         info@zoofipets.com
@@ -30,7 +40,9 @@
                 </div>
 
                 <div class="footer-card">
-                    <i class="fas fa-clock footer-icon"></i>
+                    <div class="footer-icon-box">
+                        <i class="fas fa-clock"></i>
+                    </div>
                     <div class="footer-text">
                         <strong>Horario</strong>
                         Lun - Dom: 24 Horas
@@ -43,27 +55,37 @@
                 <h3>Sistema</h3>
                 
                 <a href="#" class="footer-card">
-                    <i class="fas fa-home footer-icon"></i>
+                    <div class="footer-icon-box">
+                        <i class="fas fa-home"></i>
+                    </div>
                     <div class="footer-text">Inicio</div>
                 </a>
 
                 <a href="#" class="footer-card active">
-                    <i class="fas fa-stethoscope footer-icon"></i>
+                    <div class="footer-icon-box">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
                     <div class="footer-text">Servicios</div>
                 </a>
 
                 <a href="#" class="footer-card">
-                    <i class="fas fa-user-md footer-icon"></i>
+                    <div class="footer-icon-box">
+                        <i class="fas fa-user-md"></i>
+                    </div>
                     <div class="footer-text">Especialistas</div>
                 </a>
 
                 <a href="#" class="footer-card">
-                    <i class="fas fa-calendar-check footer-icon"></i>
+                    <div class="footer-icon-box">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
                     <div class="footer-text">Reservar Cita</div>
                 </a>
 
                 <a href="#" class="footer-card">
-                    <i class="fas fa-blog footer-icon"></i>
+                    <div class="footer-icon-box">
+                        <i class="fas fa-blog"></i>
+                    </div>
                     <div class="footer-text">Blog Veterinario</div>
                 </a>
             </div>
@@ -71,28 +93,34 @@
             <!-- Column 3: ZoofiPets Info -->
             <div class="footer-column">
                 <h3>ZoofiPets</h3>
-                <p style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; line-height: 1.6;">
+                <p style="color: rgba(255,255,255,0.6); margin-bottom: 2rem; line-height: 1.6; font-size: 0.95rem;">
                     Comprometidos con la salud y el bienestar de tus mascotas a través de tecnología y amor.
                 </p>
 
                 <div class="footer-card">
-                    <i class="fas fa-check-circle footer-icon"></i>
+                    <div class="footer-icon-box">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
                     <div class="footer-text">Atención Confiable</div>
                 </div>
 
                 <div class="footer-card">
-                    <i class="fas fa-star footer-icon"></i>
+                    <div class="footer-icon-box">
+                        <i class="fas fa-star"></i>
+                    </div>
                     <div class="footer-text">Tecnología Innovadora</div>
                 </div>
 
                 <div class="footer-card">
-                    <i class="fas fa-heart footer-icon"></i>
+                    <div class="footer-icon-box">
+                        <i class="fas fa-heart"></i>
+                    </div>
                     <div class="footer-text">Trato Humanizado</div>
                 </div>
 
-                <div style="margin-top: 2rem;">
+                <div style="margin-top: 2.5rem; display: flex; align-items: center; gap: 1rem;">
                     <span class="version-badge">VERSIÓN 2.0</span>
-                    <span class="build-text">Build #2025.12</span>
+                    <span style="color: rgba(255,255,255,0.3); font-size: 0.8rem;">Build #2025.12</span>
                 </div>
             </div>
         </div>
