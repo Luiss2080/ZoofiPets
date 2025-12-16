@@ -1,9 +1,9 @@
 /**
- * ASOCIACIÓN 1RO DE JUNIO - SISTEMA REGISTRO - JAVASCRIPT OPTIMIZADO
+ * ZOOFIPETS - SISTEMA REGISTRO - JAVASCRIPT OPTIMIZADO
  * Funciones específicas para el registro de usuarios
  */
 
-class AsociacionRegistration {
+class ZoofiPetsRegistration {
     constructor() {
         this.form = null;
         this.inputs = {};
@@ -37,16 +37,15 @@ class AsociacionRegistration {
     cacheElements() {
         this.form = document.getElementById("registerForm");
         this.inputs = {
-            nombre: document.getElementById("nombre"),
+            name: document.getElementById("name"),
             apellido: document.getElementById("apellido"),
             email: document.getElementById("email"),
             telefono: document.getElementById("telefono"),
-            pais: document.getElementById("pais"),
+            ci: document.getElementById("ci"),
             password: document.getElementById("password"),
             confirm_password: document.getElementById("confirm_password"),
             code: document.getElementById("code"),
             acepta_terminos: document.getElementById("acepta_terminos"),
-            acepta_marketing: document.getElementById("acepta_marketing"),
         };
         this.button = document.getElementById("registerButton");
         this.buttonText = document.querySelector(".button-text");
@@ -115,27 +114,6 @@ class AsociacionRegistration {
             );
         }
 
-        const contactSupport = document.getElementById("contactSupport");
-        if (contactSupport) {
-            contactSupport.addEventListener("click", (e) =>
-                this.handleContactSupport(e)
-            );
-        }
-
-        const helpCenter = document.getElementById("helpCenter");
-        if (helpCenter) {
-            helpCenter.addEventListener("click", (e) =>
-                this.handleHelpCenter(e)
-            );
-        }
-
-        // Enlaces de términos y privacidad
-        document
-            .querySelectorAll(".link-terms, .link-privacy")
-            .forEach((link) => {
-                link.addEventListener("click", (e) => this.handleLegalLinks(e));
-            });
-
         // Enlaces de social media del lado izquierdo
         document
             .querySelectorAll(".social-section .social-link")
@@ -151,9 +129,9 @@ class AsociacionRegistration {
 
     // ===== CONFIGURACIÓN POR PASOS ===== //
     focusFirstInput() {
-        if (this.inputs.nombre) {
+        if (this.inputs.name) {
             setTimeout(() => {
-                this.inputs.nombre.focus();
+                this.inputs.name.focus();
             }, 100);
         }
     }
@@ -217,7 +195,7 @@ class AsociacionRegistration {
         let message = "";
 
         switch (fieldName) {
-            case "nombre":
+            case "name":
             case "apellido":
                 isValid = value.length >= 2 && /^[a-zA-ZÀ-ÿ\s]+$/.test(value);
                 message = isValid
@@ -238,6 +216,11 @@ class AsociacionRegistration {
                 } else {
                     isValid = true; // Opcional
                 }
+                break;
+            
+            case "ci":
+                isValid = value.length >= 5;
+                message = isValid ? "" : "Ingresa una cédula válida";
                 break;
 
             case "password":
@@ -361,9 +344,10 @@ class AsociacionRegistration {
         if (this.currentStep === "register") {
             // Validar todos los campos requeridos
             const requiredFields = [
-                "nombre",
+                "name",
                 "apellido",
                 "email",
+                "ci",
                 "password",
                 "confirm_password",
             ];
@@ -465,38 +449,17 @@ class AsociacionRegistration {
         }, 1500);
     }
 
-    handleContactSupport(e) {
-        e.preventDefault();
-        this.showMessage("Abriendo soporte VIP...", "info");
-    }
-
-    handleHelpCenter(e) {
-        e.preventDefault();
-        this.showMessage("Accediendo al centro de ayuda...", "info");
-    }
-
-    handleLegalLinks(e) {
-        e.preventDefault();
-        const isTerms = e.target.classList.contains("link-terms");
-        this.showMessage(
-            isTerms
-                ? "Abriendo términos y condiciones..."
-                : "Abriendo política de privacidad...",
-            "info"
-        );
-    }
-
     // ===== REDES SOCIALES ===== //
     handleSocialClick(e) {
         e.preventDefault();
         const socialType = e.currentTarget.classList;
 
         if (socialType.contains("tiktok")) {
-            this.showMessage("Abriendo TikTok de la Asociación...", "info");
+            this.showMessage("Abriendo TikTok de ZoofiPets...", "info");
         } else if (socialType.contains("facebook")) {
-            this.showMessage("Abriendo Facebook de la Asociación...", "info");
+            this.showMessage("Abriendo Facebook de ZoofiPets...", "info");
         } else if (socialType.contains("instagram")) {
-            this.showMessage("Abriendo Instagram de la Asociación...", "info");
+            this.showMessage("Abriendo Instagram de ZoofiPets...", "info");
         } else if (socialType.contains("whatsapp")) {
             this.showMessage("Contactando por WhatsApp...", "info");
         }
@@ -589,17 +552,6 @@ class AsociacionRegistration {
             });
         }
 
-        // Animaciones para elementos de beneficios
-        document.querySelectorAll(".benefit-item").forEach((item, index) => {
-            item.addEventListener("mouseenter", () => {
-                item.style.transform = "translateY(-2px) scale(1.02)";
-            });
-
-            item.addEventListener("mouseleave", () => {
-                item.style.transform = "translateY(0) scale(1)";
-            });
-        });
-
         // Efectos en enlaces sociales
         document
             .querySelectorAll(".social-section .social-link")
@@ -621,7 +573,7 @@ class AsociacionRegistration {
     }
 
     animateParticles() {
-        const particles = document.querySelectorAll(".particle");
+        const particles = document.querySelectorAll(".tech-particle");
         particles.forEach((particle) => {
             const randomDelay = Math.random() * 2000;
             const randomDuration = 4000 + Math.random() * 2000;
@@ -652,44 +604,10 @@ class AsociacionRegistration {
             }
         });
     }
-
-    // ===== ACCESIBILIDAD ===== //
-    handleKeyboardNavigation() {
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape") {
-                // Cerrar mensajes activos
-                const messages = document.querySelectorAll(".message");
-                messages.forEach((msg) => {
-                    msg.style.transform = "translateX(100%)";
-                    setTimeout(() => {
-                        if (msg.parentNode) {
-                            msg.parentNode.removeChild(msg);
-                        }
-                    }, 300);
-                });
-            }
-
-            // Enter en el último input válido
-            if (e.key === "Enter") {
-                const activeElement = document.activeElement;
-                if (
-                    activeElement &&
-                    activeElement.classList.contains("form-input")
-                ) {
-                    const form = activeElement.closest("form");
-                    if (form && this.currentStep === "register") {
-                        // En registro, validar antes de submit automático
-                        e.preventDefault();
-                        this.handleSubmit(e);
-                    }
-                }
-            }
-        });
-    }
 }
 
 // ===== INICIALIZAR =====
-const asociacionRegistration = new AsociacionRegistration();
+const zoofiPetsRegistration = new ZoofiPetsRegistration();
 
 // Funciones globales para debugging (opcional)
-window.asociacionRegistration = asociacionRegistration;
+window.zoofiPetsRegistration = zoofiPetsRegistration;

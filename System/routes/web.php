@@ -14,6 +14,16 @@ Route::get('/registro', function () {
     return view('auth.registro');
 })->name('registro');
 
+Route::post('/registro', function () {
+    // Lógica de registro (Placeholder)
+    return back()->with('success', 'Registro simulado exitoso.');
+})->name('register.submit');
+
+Route::post('/registro/verify', function () {
+    // Lógica de verificación (Placeholder)
+    return back()->with('success', 'Verificación simulada exitosa.');
+})->name('register.verify');
+
 // Rutas de restablecimiento de contraseña (Placeholder para evitar errores)
 Route::get('/password/reset', function () {
     return view('auth.recuperar');
