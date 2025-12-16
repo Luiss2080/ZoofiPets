@@ -1108,7 +1108,7 @@ body {
 .social-icon svg {
     width: 24px;
     height: 24px;
-    fill: white;
+    fill: #000000;
     transition: var(--transition);
 }
 
