@@ -115,17 +115,18 @@
         <!-- Categories Carousel -->
         <section class="categories-section">
             <div class="section-header-row">
-                <div class="header-text">
+                <div class="header-text animate-fade-right">
                     <h2>Categorías Destacadas</h2>
                     <p class="section-subtitle">Explora nuestra selección premium pensada para el confort y la felicidad de tu mascota.</p>
+                    <a href="#" class="btn-text-arrow">Ver todo el catálogo <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="carousel-nav-buttons">
+                <div class="carousel-nav-buttons animate-fade-left">
                     <button class="nav-btn prev-btn" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
                     <button class="nav-btn next-btn" onclick="moveCarousel(1)"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
             
-            <div class="product-carousel-wrapper">
+            <div class="product-carousel-wrapper animate-fade-up-delay">
                 <div class="product-carousel-track" id="categoriesTrack">
                     <!-- Card 1 -->
                     <div class="product-card-modern">
@@ -250,19 +251,19 @@
         <!-- Banners -->
         <section class="banners-section">
             <div class="banners-grid">
-                <div class="promo-banner banner-green">
+                <div class="promo-banner banner-green animate-fade-right">
                     <div class="banner-content">
                         <h3>Winter Set</h3>
                         <p>¡Prepárate para el frío!</p>
-                        <a href="#" class="btn-sm" style="background:white; color:#16a085;">Comprar</a>
+                        <a href="#" class="btn-glass">Comprar Ahora <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <!-- Image removed -->
                 </div>
-                <div class="promo-banner banner-teal">
+                <div class="promo-banner banner-teal animate-fade-left">
                     <div class="banner-content">
                         <h3>Cozy Cats</h3>
                         <p>Camas calientitas.</p>
-                        <a href="#" class="btn-sm" style="background:white; color:#2980b9;">Comprar</a>
+                        <a href="#" class="btn-glass">Ver Colección <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <!-- Image removed -->
                 </div>
@@ -271,14 +272,14 @@
 
         <!-- Feature (Orange) -->
         <section class="feature-section">
-            <div class="feature-image">
+            <div class="feature-image animate-fade-right">
                 <!-- Image removed -->
             </div>
-            <div class="feature-content">
+            <div class="feature-content animate-fade-left">
                 <h2>Nutrición y Bienestar</h2>
                 <p>Descubre la mejor alimentación y suplementos para las necesidades específicas de tu mascota. Nos importa su salud tanto como a ti.</p>
                 <div style="margin-top: 20px;">
-                    <a href="#" class="btn-sm" style="background:white; color:#e67e22; padding: 10px 25px; font-size: 1rem;">Saber Más</a>
+                    <a href="#" class="btn-glass dark">Saber Más <i class="fas fa-plus"></i></a>
                 </div>
             </div>
         </section>
@@ -286,11 +287,14 @@
         <!-- Products Grid -->
         <section class="products-section">
             <div class="section-header-row">
-                <h2>Shop Pet</h2>
-                <div class="filter-tabs">
-                    <a href="#" class="btn-sm" style="background:#e67e22;">Todo</a>
-                    <a href="#" class="btn-sm" style="background:transparent; border:1px solid white;">Perros</a>
-                    <a href="#" class="btn-sm" style="background:transparent; border:1px solid white;">Gatos</a>
+                <div class="header-text animate-fade-right">
+                    <h2>Nuestros Productos</h2>
+                    <p class="section-subtitle">Calidad garantizada para tus mejores amigos.</p>
+                </div>
+                <div class="filter-tabs animate-fade-left">
+                    <a href="#" class="filter-btn active">Todo</a>
+                    <a href="#" class="filter-btn">Perros</a>
+                    <a href="#" class="filter-btn">Gatos</a>
                 </div>
             </div>
             <div class="products-grid">
@@ -319,13 +323,13 @@
 
         <!-- Footer Promo -->
         <section class="footer-promo">
-            <div class="promo-left">
-                <h2 style="font-size: 3rem; margin-bottom: 10px;">$1,000</h2>
-                <p>¡Gana un día de compras para tu mascota!</p>
-                <a href="#" class="btn-sm" style="background:white; color:#e67e22; width: fit-content; margin-top: 20px;">Participar</a>
+            <div class="promo-left animate-fade-right">
+                <h2 class="promo-amount">$1,000</h2>
+                <p class="promo-text">¡Gana un día de compras para tu mascota!</p>
+                <a href="#" class="btn-glass">Participar Ahora <i class="fas fa-ticket-alt"></i></a>
             </div>
-            <div class="promo-right">
-                <h2 style="font-size: 2.5rem; z-index: 2;">Got You Pet</h2>
+            <div class="promo-right animate-fade-left">
+                <h2 class="promo-brand">Got You Pet</h2>
                 <!-- Image removed -->
             </div>
         </section>
