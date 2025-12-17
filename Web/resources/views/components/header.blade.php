@@ -17,8 +17,8 @@
         <!-- 2. Navegación Central (Cápsula) -->
         <nav class="nav-capsule">
             <ul class="nav-list">
-                <li class="nav-item"><a href="#" class="nav-link active">Inicio</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Nosotros</a></li>
+                <li class="nav-item"><a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Inicio</a></li>
+                <li class="nav-item"><a href="{{ route('nosotros.index') }}" class="nav-link {{ request()->routeIs('nosotros.*') ? 'active' : '' }}">Nosotros</a></li>
                 
                 <!-- Dropdown Servicios -->
                 <li class="nav-item dropdown">
