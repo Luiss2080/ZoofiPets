@@ -60,19 +60,54 @@
 
     <div class="main-content-container">
         
-        <!-- Hero -->
-        <section class="new-hero">
-            <div class="hero-text">
-                <h1>Best for <br>your little pet</h1>
-                <p>En ZoofiPets combinamos tecnología avanzada con amor incondicional para brindar la mejor atención veterinaria. Tu mascota merece lo mejor.</p>
-                <div class="hero-search">
-                    <input type="text" placeholder="Buscar productos, servicios...">
-                    <button><i class="fas fa-search"></i></button>
+        <!-- Hero Carousel -->
+        <section class="hero-carousel-section full-width-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+                        <div class="slide-overlay">
+                            <div class="hero-text centered">
+                                <h1 class="animate-title">Lo mejor para <br>tu mascota</h1>
+                                <p class="animate-subtitle">En ZoofiPets combinamos tecnología avanzada con amor incondicional. Todo lo que necesitas para su viaje y bienestar.</p>
+                                <div class="hero-search animate-fade-up">
+                                    <input type="text" placeholder="Buscar productos, servicios...">
+                                    <button><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+                        <div class="slide-overlay">
+                            <div class="hero-text centered">
+                                <h1 class="animate-title">Salud y <br>Bienestar</h1>
+                                <p class="animate-subtitle">Servicios veterinarios de primera clase y productos especializados para mantener a tu amigo feliz y saludable.</p>
+                                <div class="hero-actions animate-fade-up">
+                                    <a href="#" class="btn btn-primary">Agendar Cita</a>
+                                    <a href="#" class="btn btn-outline">Ver Servicios</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+                        <div class="slide-overlay">
+                            <div class="hero-text centered">
+                                <h1 class="animate-title">Juguetes y <br>Accesorios</h1>
+                                <p class="animate-subtitle">Descubre nuestra nueva colección de juguetes interactivos y accesorios de moda para tu peludo.</p>
+                                <div class="hero-actions animate-fade-up">
+                                    <a href="#" class="btn btn-primary">Ver Catálogo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-image-container">
-                <div class="glass-card">
-                    <img src="https://placehold.co/500x500/png?text=Happy+Pets" alt="Pets">
+                
+                <div class="carousel-indicators">
+                    <button class="indicator active" onclick="goToSlide(0)"></button>
+                    <button class="indicator" onclick="goToSlide(1)"></button>
+                    <button class="indicator" onclick="goToSlide(2)"></button>
                 </div>
             </div>
         </section>
@@ -86,31 +121,31 @@
             <div class="categories-grid">
                 <!-- 5 Cards -->
                 <div class="category-card">
-                    <div class="category-image"><img src="https://placehold.co/150x150/png?text=Bag" alt="Bag"></div>
+                    <div class="category-image"><!-- Image removed --></div>
                     <div class="category-title">Travel Bag</div>
                     <span class="category-price">$120</span>
                     <a href="#" class="btn-sm">Shop</a>
                 </div>
                 <div class="category-card">
-                    <div class="category-image"><img src="https://placehold.co/150x150/png?text=Carrier" alt="Carrier"></div>
+                    <div class="category-image"><!-- Image removed --></div>
                     <div class="category-title">Pet Carrier</div>
                     <span class="category-price">$85</span>
                     <a href="#" class="btn-sm">Shop</a>
                 </div>
                 <div class="category-card">
-                    <div class="category-image"><img src="https://placehold.co/150x150/png?text=Kit" alt="Kit"></div>
+                    <div class="category-image"><!-- Image removed --></div>
                     <div class="category-title">Grooming Kit</div>
                     <span class="category-price">$45</span>
                     <a href="#" class="btn-sm">Shop</a>
                 </div>
                 <div class="category-card">
-                    <div class="category-image"><img src="https://placehold.co/150x150/png?text=Flight" alt="Flight"></div>
+                    <div class="category-image"><!-- Image removed --></div>
                     <div class="category-title">Flight Box</div>
                     <span class="category-price">$210</span>
                     <a href="#" class="btn-sm">Shop</a>
                 </div>
                 <div class="category-card">
-                    <div class="category-image"><img src="https://placehold.co/150x150/png?text=Toy" alt="Toy"></div>
+                    <div class="category-image"><!-- Image removed --></div>
                     <div class="category-title">Soft Toy</div>
                     <span class="category-price">$25</span>
                     <a href="#" class="btn-sm">Shop</a>
@@ -127,7 +162,7 @@
                         <p>¡Prepárate para el frío!</p>
                         <a href="#" class="btn-sm" style="background:white; color:#16a085;">Comprar</a>
                     </div>
-                    <img src="https://placehold.co/200x200/png?text=Dog" class="banner-img" alt="Dog">
+                    <!-- Image removed -->
                 </div>
                 <div class="promo-banner banner-teal">
                     <div class="banner-content">
@@ -135,7 +170,7 @@
                         <p>Camas calientitas.</p>
                         <a href="#" class="btn-sm" style="background:white; color:#2980b9;">Comprar</a>
                     </div>
-                    <img src="https://placehold.co/200x200/png?text=Cat" class="banner-img" alt="Cat">
+                    <!-- Image removed -->
                 </div>
             </div>
         </section>
@@ -143,7 +178,7 @@
         <!-- Feature (Orange) -->
         <section class="feature-section">
             <div class="feature-image">
-                <img src="https://placehold.co/600x400/png?text=Owner+and+Pet" alt="Owner">
+                <!-- Image removed -->
             </div>
             <div class="feature-content">
                 <h2>Nutrición y Bienestar</h2>
@@ -166,22 +201,22 @@
             </div>
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-img-container"><img src="https://placehold.co/200x200/png?text=Cat+Food" alt="Product"></div>
+                    <div class="product-img-container"><!-- Image removed --></div>
                     <h4>Premium Cat Food</h4>
                     <span class="category-price">$45.00</span>
                 </div>
                 <div class="product-card">
-                    <div class="product-img-container"><img src="https://placehold.co/200x200/png?text=Dog+Toy" alt="Product"></div>
+                    <div class="product-img-container"><!-- Image removed --></div>
                     <h4>Chew Toy</h4>
                     <span class="category-price">$15.00</span>
                 </div>
                 <div class="product-card">
-                    <div class="product-img-container"><img src="https://placehold.co/200x200/png?text=Leash" alt="Product"></div>
+                    <div class="product-img-container"><!-- Image removed --></div>
                     <h4>Leather Leash</h4>
                     <span class="category-price">$35.00</span>
                 </div>
                 <div class="product-card">
-                    <div class="product-img-container"><img src="https://placehold.co/200x200/png?text=Bed" alt="Product"></div>
+                    <div class="product-img-container"><!-- Image removed --></div>
                     <h4>Comfy Bed</h4>
                     <span class="category-price">$80.00</span>
                 </div>
@@ -197,7 +232,7 @@
             </div>
             <div class="promo-right">
                 <h2 style="font-size: 2.5rem; z-index: 2;">Got You Pet</h2>
-                <img src="https://placehold.co/300x300/png?text=Puppy" class="promo-dog-img" alt="Puppy">
+                <!-- Image removed -->
             </div>
         </section>
 
@@ -205,5 +240,38 @@
 
     <!-- Footer Component -->
     @include('components.footer')
+
+    <script>
+        // Carousel Logic
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = slides.length;
+        let slideInterval;
+
+        function goToSlide(n) {
+            if (slides.length === 0) return;
+            slides[currentSlide].classList.remove('active');
+            indicators[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
+            resetInterval();
+        }
+
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Initialize
+        if (slides.length > 0) {
+            resetInterval();
+        }
+    </script>
 </body>
 </html>
