@@ -297,15 +297,25 @@
 
         <!-- Products Grid -->
         <section class="products-section">
-            <div class="section-header-row">
-                <div class="header-text animate-fade-right">
-                    <h2>Nuestros Productos</h2>
-                    <p class="section-subtitle">Calidad garantizada para tus mejores amigos.</p>
+            <div class="section-header-compact">
+                <div class="header-top-row animate-fade-right">
+                    <div class="title-group">
+                        <h2>Nuestros Productos</h2>
+                    </div>
+                    <div class="filter-tabs animate-fade-left">
+                        <a href="#" class="filter-btn active">Todo</a>
+                        <a href="#" class="filter-btn">Perros</a>
+                        <a href="#" class="filter-btn">Gatos</a>
+                    </div>
                 </div>
-                <div class="filter-tabs animate-fade-left">
-                    <a href="#" class="filter-btn active">Todo</a>
-                    <a href="#" class="filter-btn">Perros</a>
-                    <a href="#" class="filter-btn">Gatos</a>
+                <div class="header-bottom-row animate-fade-left">
+                    <p class="section-subtitle-long">
+                        Explora nuestra colección completa de alimentos, juguetes y accesorios. Cada artículo ha sido probado para asegurar la máxima diversión y seguridad.
+                    </p>
+                    <div class="header-stats">
+                        <span class="stat-badge"><i class="fas fa-check-circle"></i> Verificado</span>
+                        <span class="stat-badge"><i class="fas fa-heart"></i> Favoritos</span>
+                    </div>
                 </div>
             </div>
             <div class="products-grid">
