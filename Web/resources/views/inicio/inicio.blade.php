@@ -118,21 +118,31 @@
                 <div class="header-top-row animate-fade-right">
                     <div class="title-group">
                         <h2>Categorías Destacadas</h2>
-                        <a href="#" class="btn-white-card small">Ver todo el catálogo <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="carousel-nav-buttons">
-                        <button class="nav-btn prev-btn" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
-                        <button class="nav-btn next-btn" onclick="moveCarousel(1)"><i class="fas fa-chevron-right"></i></button>
+                    <div class="header-actions">
+                        <a href="#" class="btn-white-card">Ver todo el catálogo <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="header-bottom-row animate-fade-left">
-                    <p class="section-subtitle-long">
-                        Descubre nuestra exclusiva gama de productos seleccionados por expertos para garantizar el máximo confort, seguridad y felicidad de tu mascota. Desde camas ortopédicas hasta juguetes interactivos de última generación.
-                    </p>
-                    <div class="header-stats">
-                        <span class="stat-badge"><i class="fas fa-star"></i> Top Rated</span>
-                        <span class="stat-badge"><i class="fas fa-shipping-fast"></i> Envío Rápido</span>
-                        <span class="stat-badge"><i class="fas fa-shield-alt"></i> Garantía</span>
+                    <div class="subtitle-container">
+                        <p class="section-subtitle-long">
+                            Descubre nuestra exclusiva gama de productos seleccionados por expertos para garantizar el máximo confort, seguridad y felicidad de tu mascota. Desde camas ortopédicas hasta juguetes interactivos de última generación.
+                        </p>
+                        <div class="trust-indicators">
+                            <span class="trust-item"><i class="fas fa-paw"></i> +10k Mascotas Felices</span>
+                            <span class="trust-item"><i class="fas fa-user-md"></i> Aprobado por Veterinarios</span>
+                        </div>
+                    </div>
+                    <div class="header-stats-column">
+                        <div class="header-stats">
+                            <span class="stat-badge"><i class="fas fa-star"></i> Top Rated</span>
+                            <span class="stat-badge"><i class="fas fa-shipping-fast"></i> Envío Rápido</span>
+                            <span class="stat-badge"><i class="fas fa-shield-alt"></i> Garantía</span>
+                        </div>
+                        <div class="extra-benefits">
+                            <span class="benefit-pill"><i class="fas fa-undo"></i> Devolución 30 días</span>
+                            <span class="benefit-pill"><i class="fas fa-headset"></i> Soporte 24/7</span>
+                        </div>
                     </div>
                 </div>
             </div>
