@@ -114,15 +114,26 @@
 
         <!-- Categories Carousel -->
         <section class="categories-section">
-            <div class="section-header-row">
-                <div class="header-text animate-fade-right">
-                    <h2>Categorías Destacadas</h2>
-                    <p class="section-subtitle">Explora nuestra selección premium pensada para el confort y la felicidad de tu mascota.</p>
-                    <a href="#" class="btn-text-arrow">Ver todo el catálogo <i class="fas fa-arrow-right"></i></a>
+            <div class="section-header-compact">
+                <div class="header-top-row animate-fade-right">
+                    <div class="title-group">
+                        <h2>Categorías Destacadas</h2>
+                        <a href="#" class="btn-white-card small">Ver todo el catálogo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="carousel-nav-buttons">
+                        <button class="nav-btn prev-btn" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-btn next-btn" onclick="moveCarousel(1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
                 </div>
-                <div class="carousel-nav-buttons animate-fade-left">
-                    <button class="nav-btn prev-btn" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
-                    <button class="nav-btn next-btn" onclick="moveCarousel(1)"><i class="fas fa-chevron-right"></i></button>
+                <div class="header-bottom-row animate-fade-left">
+                    <p class="section-subtitle-long">
+                        Descubre nuestra exclusiva gama de productos seleccionados por expertos para garantizar el máximo confort, seguridad y felicidad de tu mascota. Desde camas ortopédicas hasta juguetes interactivos de última generación.
+                    </p>
+                    <div class="header-stats">
+                        <span class="stat-badge"><i class="fas fa-star"></i> Top Rated</span>
+                        <span class="stat-badge"><i class="fas fa-shipping-fast"></i> Envío Rápido</span>
+                        <span class="stat-badge"><i class="fas fa-shield-alt"></i> Garantía</span>
+                    </div>
                 </div>
             </div>
             
@@ -255,7 +266,7 @@
                     <div class="banner-content">
                         <h3>Winter Set</h3>
                         <p>¡Prepárate para el frío!</p>
-                        <a href="#" class="btn-glass">Comprar Ahora <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="btn-white-card">Comprar Ahora <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <!-- Image removed -->
                 </div>
@@ -263,7 +274,7 @@
                     <div class="banner-content">
                         <h3>Cozy Cats</h3>
                         <p>Camas calientitas.</p>
-                        <a href="#" class="btn-glass">Ver Colección <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="btn-white-card">Ver Colección <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <!-- Image removed -->
                 </div>
@@ -279,7 +290,7 @@
                 <h2>Nutrición y Bienestar</h2>
                 <p>Descubre la mejor alimentación y suplementos para las necesidades específicas de tu mascota. Nos importa su salud tanto como a ti.</p>
                 <div style="margin-top: 20px;">
-                    <a href="#" class="btn-glass dark">Saber Más <i class="fas fa-plus"></i></a>
+                    <a href="#" class="btn-white-card">Saber Más <i class="fas fa-plus"></i></a>
                 </div>
             </div>
         </section>
@@ -298,22 +309,22 @@
                 </div>
             </div>
             <div class="products-grid">
-                <div class="product-card">
+                <div class="product-card animate-zoom-in" style="animation-delay: 0.1s;">
                     <div class="product-img-container"><!-- Image removed --></div>
                     <h4>Premium Cat Food</h4>
                     <span class="category-price">$45.00</span>
                 </div>
-                <div class="product-card">
+                <div class="product-card animate-zoom-in" style="animation-delay: 0.2s;">
                     <div class="product-img-container"><!-- Image removed --></div>
                     <h4>Chew Toy</h4>
                     <span class="category-price">$15.00</span>
                 </div>
-                <div class="product-card">
+                <div class="product-card animate-zoom-in" style="animation-delay: 0.3s;">
                     <div class="product-img-container"><!-- Image removed --></div>
                     <h4>Leather Leash</h4>
                     <span class="category-price">$35.00</span>
                 </div>
-                <div class="product-card">
+                <div class="product-card animate-zoom-in" style="animation-delay: 0.4s;">
                     <div class="product-img-container"><!-- Image removed --></div>
                     <h4>Comfy Bed</h4>
                     <span class="category-price">$80.00</span>
@@ -326,7 +337,7 @@
             <div class="promo-left animate-fade-right">
                 <h2 class="promo-amount">$1,000</h2>
                 <p class="promo-text">¡Gana un día de compras para tu mascota!</p>
-                <a href="#" class="btn-glass">Participar Ahora <i class="fas fa-ticket-alt"></i></a>
+                <a href="#" class="btn-white-card">Participar Ahora <i class="fas fa-ticket-alt"></i></a>
             </div>
             <div class="promo-right animate-fade-left">
                 <h2 class="promo-brand">Got You Pet</h2>
