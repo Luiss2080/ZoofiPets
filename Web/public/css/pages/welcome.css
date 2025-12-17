@@ -535,9 +535,7 @@ body {
 
 /* Categories Section */
 .categories-section,
-.banners-section,
-.products-section,
-.footer-promo {
+.banners-section {
     padding: 0 5%;
     margin-bottom: 100px; /* Increased from 60px for better separation */
 }
@@ -1121,49 +1119,7 @@ body {
     line-height: 1.6;
 }
 
-/* Products Grid */
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-    margin-bottom: 40px;
-}
 
-.product-card {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    padding: 15px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-
-.product-img-container {
-    height: 180px;
-    background: #f0f4f8;
-    border-radius: 15px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.product-img-container img {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-}
-
-.product-card h4 {
-    color: #2c3e50;
-    margin-bottom: 5px;
-    font-weight: 600;
-}
 
 /* Categories Section Container */
 .categories-section {
@@ -1405,52 +1361,7 @@ body {
     }
 }
 
-/* Footer Promo */
-.footer-promo {
-    background: linear-gradient(to right, #e67e22 40%, #2c3e50 40%);
-    border-radius: 30px;
-    padding: 0;
-    display: flex;
-    overflow: hidden;
-    min-height: 300px;
-    margin-bottom: 40px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
 
-.promo-left {
-    flex: 0 0 40%;
-    padding: 40px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: #e67e22; /* Fallback */
-}
-
-.promo-right {
-    flex: 1;
-    background: #2c3e50; /* Dark teal */
-    padding: 40px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-}
-
-.promo-price {
-    font-size: 3rem;
-    font-weight: 800;
-}
-
-.promo-dog-img {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 110%;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
-}
 
 @media (max-width: 768px) {
     .hero-carousel-section {
@@ -1495,21 +1406,6 @@ body {
     
     .feature-section {
         flex-direction: column;
-    }
-    
-    .footer-promo {
-        flex-direction: column;
-        background: #e67e22;
-    }
-    
-    .promo-right {
-        background: #2c3e50;
-        min-height: 200px;
-    }
-    
-    .promo-dog-img {
-        height: 90%;
-        left: 70%;
     }
 }
 
@@ -1630,30 +1526,7 @@ body {
     color: white;
 }
 
-/* Footer Promo Styles */
-.promo-amount {
-    font-size: 4rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-    background: linear-gradient(45deg, #fff, #f1c40f);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
 
-.promo-text {
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.promo-brand {
-    font-size: 3rem;
-    font-weight: 700;
-    z-index: 2;
-    color: white;
-    text-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
 
 /* White Card Buttons (New Requirement) */
 .btn-white-card {

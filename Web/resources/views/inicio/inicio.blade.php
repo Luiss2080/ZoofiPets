@@ -269,6 +269,157 @@
             </div>
         </section>
 
+        <!-- Services Carousel -->
+        <section class="categories-section">
+            <div class="section-header-compact">
+                <div class="header-top-row animate-fade-right">
+                    <div class="title-group">
+                        <h2>Servicios Clínicos</h2>
+                    </div>
+                    <div class="header-actions">
+                        <a href="#" class="btn-white-card">Ver todos los servicios <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="header-bottom-row animate-fade-left">
+                    <div class="subtitle-container">
+                        <p class="section-subtitle-long">
+                            Ofrecemos atención veterinaria integral con tecnología de vanguardia y un equipo de especialistas comprometidos con la salud de tu mascota.
+                        </p>
+                        <div class="trust-indicators">
+                            <span class="trust-item"><i class="fas fa-user-md"></i> Especialistas Certificados</span>
+                            <span class="trust-item"><i class="fas fa-hospital"></i> Tecnología Avanzada</span>
+                        </div>
+                    </div>
+                    <div class="header-stats-column">
+                        <div class="header-stats">
+                            <span class="stat-badge"><i class="fas fa-star"></i> Excelencia</span>
+                            <span class="stat-badge"><i class="fas fa-clock"></i> Urgencias 24/7</span>
+                            <span class="stat-badge"><i class="fas fa-heartbeat"></i> Cuidado Integral</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-carousel-wrapper animate-fade-up-delay">
+                <div class="product-carousel-track" id="servicesTrack">
+                    <!-- Card 1 -->
+                    <div class="product-card-modern">
+                        <div class="card-image-wrapper">
+                            <div class="blob-bg"></div>
+                            <img src="https://images.unsplash.com/photo-1628009368231-760335298784?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Consulta General">
+                        </div>
+                        <div class="card-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <span>(5.0)</span>
+                            </div>
+                            <h3>Consulta General</h3>
+                            <p class="card-description">Evaluación completa de la salud de tu mascota por expertos.</p>
+                            <div class="card-footer">
+                                <span class="price">Desde $30</span>
+                                <button class="add-cart-btn"><i class="fas fa-calendar-check"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="product-card-modern">
+                        <div class="card-image-wrapper">
+                            <div class="blob-bg"></div>
+                            <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Vacunación">
+                        </div>
+                        <div class="card-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <span>(4.9)</span>
+                            </div>
+                            <h3>Vacunación</h3>
+                            <p class="card-description">Protege a tu amigo con nuestro esquema completo de vacunas.</p>
+                            <div class="card-footer">
+                                <span class="price">Desde $25</span>
+                                <button class="add-cart-btn"><i class="fas fa-calendar-check"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="product-card-modern">
+                        <div class="card-image-wrapper">
+                            <div class="blob-bg"></div>
+                            <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cirugía">
+                        </div>
+                        <div class="card-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <span>(5.0)</span>
+                            </div>
+                            <h3>Cirugía</h3>
+                            <p class="card-description">Quirófanos equipados y cirujanos especializados para procedimientos seguros.</p>
+                            <div class="card-footer">
+                                <span class="price">Cotizar</span>
+                                <button class="add-cart-btn"><i class="fas fa-calendar-check"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="product-card-modern">
+                        <div class="card-image-wrapper">
+                            <div class="blob-bg"></div>
+                            <img src="https://images.unsplash.com/photo-1599443015574-be5fe8a05783?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Odontología">
+                        </div>
+                        <div class="card-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <span>(4.8)</span>
+                            </div>
+                            <h3>Odontología</h3>
+                            <p class="card-description">Limpieza dental y tratamientos para una sonrisa saludable.</p>
+                            <div class="card-footer">
+                                <span class="price">Desde $50</span>
+                                <button class="add-cart-btn"><i class="fas fa-calendar-check"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="product-card-modern">
+                        <div class="card-image-wrapper">
+                            <div class="blob-bg"></div>
+                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Laboratorio">
+                        </div>
+                        <div class="card-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <span>(4.9)</span>
+                            </div>
+                            <h3>Laboratorio</h3>
+                            <p class="card-description">Análisis clínicos rápidos y precisos para un diagnóstico certero.</p>
+                            <div class="card-footer">
+                                <span class="price">Desde $20</span>
+                                <button class="add-cart-btn"><i class="fas fa-calendar-check"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="product-card-modern">
+                        <div class="card-image-wrapper">
+                            <div class="blob-bg"></div>
+                            <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Urgencias">
+                        </div>
+                        <div class="card-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <span>(5.0)</span>
+                            </div>
+                            <h3>Urgencias</h3>
+                            <p class="card-description">Atención inmediata para situaciones críticas, las 24 horas.</p>
+                            <div class="card-footer">
+                                <span class="price">Variable</span>
+                                <button class="add-cart-btn"><i class="fas fa-phone-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Wide Promo Section (Replaces Banners) -->
         <section class="promo-wide-section animate-fade-up-delay">
             <div class="decor-shape shape-1"></div>
@@ -374,66 +525,6 @@
                         <a href="#" class="btn-white-card">Ver Planes de Alimentación <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Products Grid -->
-        <section class="products-section">
-            <div class="section-header-compact">
-                <div class="header-top-row animate-fade-right">
-                    <div class="title-group">
-                        <h2>Nuestros Productos</h2>
-                    </div>
-                    <div class="filter-tabs animate-fade-left">
-                        <a href="#" class="filter-btn active">Todo</a>
-                        <a href="#" class="filter-btn">Perros</a>
-                        <a href="#" class="filter-btn">Gatos</a>
-                    </div>
-                </div>
-                <div class="header-bottom-row animate-fade-left">
-                    <p class="section-subtitle-long">
-                        Explora nuestra colección completa de alimentos, juguetes y accesorios. Cada artículo ha sido probado para asegurar la máxima diversión y seguridad.
-                    </p>
-                    <div class="header-stats">
-                        <span class="stat-badge"><i class="fas fa-check-circle"></i> Verificado</span>
-                        <span class="stat-badge"><i class="fas fa-heart"></i> Favoritos</span>
-                    </div>
-                </div>
-            </div>
-            <div class="products-grid">
-                <div class="product-card animate-zoom-in" style="animation-delay: 0.1s;">
-                    <div class="product-img-container"><!-- Image removed --></div>
-                    <h4>Premium Cat Food</h4>
-                    <span class="category-price">$45.00</span>
-                </div>
-                <div class="product-card animate-zoom-in" style="animation-delay: 0.2s;">
-                    <div class="product-img-container"><!-- Image removed --></div>
-                    <h4>Chew Toy</h4>
-                    <span class="category-price">$15.00</span>
-                </div>
-                <div class="product-card animate-zoom-in" style="animation-delay: 0.3s;">
-                    <div class="product-img-container"><!-- Image removed --></div>
-                    <h4>Leather Leash</h4>
-                    <span class="category-price">$35.00</span>
-                </div>
-                <div class="product-card animate-zoom-in" style="animation-delay: 0.4s;">
-                    <div class="product-img-container"><!-- Image removed --></div>
-                    <h4>Comfy Bed</h4>
-                    <span class="category-price">$80.00</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer Promo -->
-        <section class="footer-promo">
-            <div class="promo-left animate-fade-right">
-                <h2 class="promo-amount">$1,000</h2>
-                <p class="promo-text">¡Gana un día de compras para tu mascota!</p>
-                <a href="#" class="btn-white-card">Participar Ahora <i class="fas fa-ticket-alt"></i></a>
-            </div>
-            <div class="promo-right animate-fade-left">
-                <h2 class="promo-brand">Got You Pet</h2>
-                <!-- Image removed -->
             </div>
         </section>
 

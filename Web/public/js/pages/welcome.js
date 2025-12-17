@@ -39,12 +39,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Product Carousel Logic
-    const track = document.getElementById('categoriesTrack');
-    if (track) {
+    function initCarousel(trackId) {
+        const track = document.getElementById(trackId);
+        if (!track) return;
+
         let scrollAmount = 0;
         const cardWidth = 390; // Card width (350) + gap (40)
         
-        window.moveCarousel = function(direction) {
+        function moveCarousel(direction) {
             const maxScroll = track.scrollWidth - track.clientWidth;
             
             if (direction === 1) { // Next
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else { // Prev
                 scrollAmount -= cardWidth;
                 if (scrollAmount < 0) scrollAmount = maxScroll; // Loop to end
-            }
+       -     }
             
             track.style.transform = `translateX(-${scrollAmount}px)`;
         };
@@ -62,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let productAutoScroll = setInterval(() => moveCarousel(1), 5000);
 
         // Pause on hover
-        const productWrapper = document.querySelector('.product-carousel-wrapper');
+        const productWrapper = track.parentElement;
         if(productWrapper) {
             productWrapper.addEventListener('mouseenter', () => clearInterval(productAutoScroll));
             productWrapper.addEventListener('mouseleave', () => {
@@ -70,4 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+
+    initCarousel('categoriesTrack');
+    initCarousel('servicesTrack');
 });
