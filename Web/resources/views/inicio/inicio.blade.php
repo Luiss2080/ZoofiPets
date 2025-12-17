@@ -112,43 +112,90 @@
             </div>
         </section>
 
-        <!-- Categories -->
+        <!-- Categories Carousel -->
         <section class="categories-section">
             <div class="section-header-row">
-                <h2>Your plays</h2>
-                <a href="#" class="btn-sm">Ver todo <i class="fas fa-arrow-right"></i></a>
+                <h2>Categorías Destacadas</h2>
+                <div class="carousel-nav-buttons">
+                    <button class="nav-btn prev-btn" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn next-btn" onclick="moveCarousel(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
-            <div class="categories-grid">
-                <!-- 5 Cards -->
-                <div class="category-card">
-                    <div class="category-image"><!-- Image removed --></div>
-                    <div class="category-title">Travel Bag</div>
-                    <span class="category-price">$120</span>
-                    <a href="#" class="btn-sm">Shop</a>
-                </div>
-                <div class="category-card">
-                    <div class="category-image"><!-- Image removed --></div>
-                    <div class="category-title">Pet Carrier</div>
-                    <span class="category-price">$85</span>
-                    <a href="#" class="btn-sm">Shop</a>
-                </div>
-                <div class="category-card">
-                    <div class="category-image"><!-- Image removed --></div>
-                    <div class="category-title">Grooming Kit</div>
-                    <span class="category-price">$45</span>
-                    <a href="#" class="btn-sm">Shop</a>
-                </div>
-                <div class="category-card">
-                    <div class="category-image"><!-- Image removed --></div>
-                    <div class="category-title">Flight Box</div>
-                    <span class="category-price">$210</span>
-                    <a href="#" class="btn-sm">Shop</a>
-                </div>
-                <div class="category-card">
-                    <div class="category-image"><!-- Image removed --></div>
-                    <div class="category-title">Soft Toy</div>
-                    <span class="category-price">$25</span>
-                    <a href="#" class="btn-sm">Shop</a>
+            
+            <div class="product-carousel-wrapper">
+                <div class="product-carousel-track" id="categoriesTrack">
+                    <!-- Card 1 -->
+                    <div class="product-card-modern">
+                        <div class="card-image-wrapper">
+                            <div class="blob-bg"></div>
+                            <img src="https://images.unsplash.com/photo-1591337819702-5c21810edd47?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Travel Bag">
+                        </div>
+                        <div class="card-content">
+                            <h3>Travel Bag</h3>
+                            <span class="price">$120</span>
+                            <a href="#" class="action-btn">Ver más</a>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="product-card-modern">
+                        <div class="card-image-wrapper">
+                            <div class="blob-bg"></div>
+                            <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pet Carrier">
+                        </div>
+                        <div class="card-content">
+                            <h3>Pet Carrier</h3>
+                            <span class="price">$85</span>
+                            <a href="#" class="action-btn">Ver más</a>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="product-card-modern">
+                        <div class="card-image-wrapper">
+                            <div class="blob-bg"></div>
+                            <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Grooming Kit">
+                        </div>
+                        <div class="card-content">
+                            <h3>Grooming Kit</h3>
+                            <span class="price">$45</span>
+                            <a href="#" class="action-btn">Ver más</a>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="product-card-modern">
+                        <div class="card-image-wrapper">
+                            <div class="blob-bg"></div>
+                            <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Flight Box">
+                        </div>
+                        <div class="card-content">
+                            <h3>Flight Box</h3>
+                            <span class="price">$210</span>
+                            <a href="#" class="action-btn">Ver más</a>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="product-card-modern">
+                        <div class="card-image-wrapper">
+                            <div class="blob-bg"></div>
+                            <img src="https://images.unsplash.com/photo-1585837575652-267c041d77d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Soft Toy">
+                        </div>
+                        <div class="card-content">
+                            <h3>Soft Toy</h3>
+                            <span class="price">$25</span>
+                            <a href="#" class="action-btn">Ver más</a>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="product-card-modern">
+                        <div class="card-image-wrapper">
+                            <div class="blob-bg"></div>
+                            <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Food Bowl">
+                        </div>
+                        <div class="card-content">
+                            <h3>Food Bowl</h3>
+                            <span class="price">$15</span>
+                            <a href="#" class="action-btn">Ver más</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -271,6 +318,37 @@
         // Initialize
         if (slides.length > 0) {
             resetInterval();
+        }
+
+        // Product Carousel Logic
+        const track = document.getElementById('categoriesTrack');
+        let scrollAmount = 0;
+        const cardWidth = 310; // Card width + gap (280 + 30)
+        
+        function moveCarousel(direction) {
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            
+            if (direction === 1) { // Next
+                scrollAmount += cardWidth;
+                if (scrollAmount > maxScroll) scrollAmount = 0; // Loop back to start
+            } else { // Prev
+                scrollAmount -= cardWidth;
+                if (scrollAmount < 0) scrollAmount = maxScroll; // Loop to end
+            }
+            
+            track.style.transform = `translateX(-${scrollAmount}px)`;
+        }
+
+        // Auto scroll for products (optional, slow)
+        let productAutoScroll = setInterval(() => moveCarousel(1), 4000);
+
+        // Pause on hover
+        const productWrapper = document.querySelector('.product-carousel-wrapper');
+        if(productWrapper) {
+            productWrapper.addEventListener('mouseenter', () => clearInterval(productAutoScroll));
+            productWrapper.addEventListener('mouseleave', () => {
+                productAutoScroll = setInterval(() => moveCarousel(1), 4000);
+            });
         }
     </script>
 </body>
