@@ -335,49 +335,7 @@
             </div>
         </section>
 
-        <!-- Feature Wide Section (Nutrition) -->
-        <section class="feature-section-wide animate-fade-up-delay">
-            <div class="feature-container">
-                <div class="feature-visual-left">
-                    <div class="circle-bg"></div>
-                    <img src="https://images.unsplash.com/photo-1589924691195-41432c84c161?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Healthy Dog Food" class="feature-img">
-                    <div class="floating-badge">
-                        <i class="fas fa-leaf"></i> 100% Natural
-                    </div>
-                </div>
-                
-                <div class="feature-content-right">
-                    <div class="feature-header">
-                        <span class="sub-tag">Salud & Vitalidad</span>
-                        <h2>Nutrición Premium <br>Para Una Vida Larga</h2>
-                    </div>
-                    <p>Formulaciones científicas con ingredientes reales. Sin rellenos, sin conservantes artificiales. Solo lo mejor para su bienestar.</p>
-                    
-                    <div class="benefits-grid">
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Proteína Real</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Sin Granos</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Vitaminas A+E</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Digestión Fácil</span>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-actions">
-                        <a href="#" class="btn-white-card">Ver Planes de Alimentación <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <!-- Services Carousel -->
         <section class="categories-section">
@@ -525,6 +483,50 @@
                                 <button class="add-cart-btn"><i class="fas fa-phone-alt"></i></button>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Wide Section (Nutrition) -->
+        <section class="feature-section-wide animate-fade-up-delay">
+            <div class="feature-container">
+                <div class="feature-visual-left">
+                    <div class="circle-bg"></div>
+                    <img src="https://images.unsplash.com/photo-1585499193151-0f515432ed79?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Healthy Dog Food" class="feature-img">
+                    <div class="floating-badge">
+                        <i class="fas fa-leaf"></i> 100% Natural
+                    </div>
+                </div>
+                
+                <div class="feature-content-right">
+                    <div class="feature-header">
+                        <span class="sub-tag">Salud & Vitalidad</span>
+                        <h2>Nutrición Premium <br>Para Una Vida Larga</h2>
+                    </div>
+                    <p>Formulaciones científicas con ingredientes reales. Sin rellenos, sin conservantes artificiales. Solo lo mejor para su bienestar.</p>
+                    
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Proteína Real</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sin Granos</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Vitaminas A+E</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Digestión Fácil</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-actions">
+                        <a href="#" class="btn-white-card">Ver Planes de Alimentación <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
