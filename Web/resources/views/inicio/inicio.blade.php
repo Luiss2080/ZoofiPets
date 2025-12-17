@@ -58,130 +58,152 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1 class="hero-title">Cuidado experto para tus <br><span>Mejores Amigos</span></h1>
-            <p class="hero-subtitle">
-                En ZoofiPets combinamos tecnología avanzada con amor incondicional para brindar la mejor atención veterinaria. Tu mascota merece lo mejor.
-            </p>
-            <div class="cta-buttons">
-                <a href="{{ route('login') }}" class="btn btn-primary">
-                    <i class="fas fa-paw"></i> Iniciar Sesión
-                </a>
-                <a href="#servicios" class="btn btn-outline">
-                    <i class="fas fa-stethoscope"></i> Nuestros Servicios
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="servicios" class="services-section">
-        <div class="section-header">
-            <h2 class="section-title">Nuestros Servicios</h2>
-            <p class="section-subtitle">Soluciones integrales para la salud y felicidad de tu mascota</p>
-        </div>
+    <div class="main-content-container">
         
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-user-md"></i></div>
-                <h3>Consultas Generales</h3>
-                <p>Atención personalizada para el diagnóstico y tratamiento de enfermedades comunes. Tu mascota en las mejores manos.</p>
+        <!-- Hero -->
+        <section class="new-hero">
+            <div class="hero-text">
+                <h1>Best for <br>your little pet</h1>
+                <p>En ZoofiPets combinamos tecnología avanzada con amor incondicional para brindar la mejor atención veterinaria. Tu mascota merece lo mejor.</p>
+                <div class="hero-search">
+                    <input type="text" placeholder="Buscar productos, servicios...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
             </div>
-            
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-syringe"></i></div>
-                <h3>Vacunación</h3>
-                <p>Programas de vacunación completos para prevenir enfermedades y mantener a tu amigo protegido y saludable.</p>
+            <div class="hero-image-container">
+                <div class="glass-card">
+                    <img src="https://placehold.co/500x500/png?text=Happy+Pets" alt="Pets">
+                </div>
             </div>
-            
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
-                <h3>Cirugía Avanzada</h3>
-                <p>Quirófanos equipados con tecnología de punta para procedimientos seguros y recuperación rápida.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-cut"></i></div>
-                <h3>Estética y Spa</h3>
-                <p>Baño, corte y cuidados estéticos para que tu mascota luzca y se sienta increíble.</p>
-            </div>
+        </section>
 
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-microscope"></i></div>
-                <h3>Laboratorio Clínico</h3>
-                <p>Análisis rápidos y precisos para diagnósticos certeros en el menor tiempo posible.</p>
+        <!-- Categories -->
+        <section class="categories-section">
+            <div class="section-header-row">
+                <h2>Your plays</h2>
+                <a href="#" class="btn-sm">Ver todo <i class="fas fa-arrow-right"></i></a>
             </div>
+            <div class="categories-grid">
+                <!-- 5 Cards -->
+                <div class="category-card">
+                    <div class="category-image"><img src="https://placehold.co/150x150/png?text=Bag" alt="Bag"></div>
+                    <div class="category-title">Travel Bag</div>
+                    <span class="category-price">$120</span>
+                    <a href="#" class="btn-sm">Shop</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-image"><img src="https://placehold.co/150x150/png?text=Carrier" alt="Carrier"></div>
+                    <div class="category-title">Pet Carrier</div>
+                    <span class="category-price">$85</span>
+                    <a href="#" class="btn-sm">Shop</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-image"><img src="https://placehold.co/150x150/png?text=Kit" alt="Kit"></div>
+                    <div class="category-title">Grooming Kit</div>
+                    <span class="category-price">$45</span>
+                    <a href="#" class="btn-sm">Shop</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-image"><img src="https://placehold.co/150x150/png?text=Flight" alt="Flight"></div>
+                    <div class="category-title">Flight Box</div>
+                    <span class="category-price">$210</span>
+                    <a href="#" class="btn-sm">Shop</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-image"><img src="https://placehold.co/150x150/png?text=Toy" alt="Toy"></div>
+                    <div class="category-title">Soft Toy</div>
+                    <span class="category-price">$25</span>
+                    <a href="#" class="btn-sm">Shop</a>
+                </div>
+            </div>
+        </section>
 
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-ambulance"></i></div>
-                <h3>Urgencias 24/7</h3>
-                <p>Estamos disponibles en todo momento para atender cualquier emergencia que se presente.</p>
+        <!-- Banners -->
+        <section class="banners-section">
+            <div class="banners-grid">
+                <div class="promo-banner banner-green">
+                    <div class="banner-content">
+                        <h3>Winter Set</h3>
+                        <p>¡Prepárate para el frío!</p>
+                        <a href="#" class="btn-sm" style="background:white; color:#16a085;">Comprar</a>
+                    </div>
+                    <img src="https://placehold.co/200x200/png?text=Dog" class="banner-img" alt="Dog">
+                </div>
+                <div class="promo-banner banner-teal">
+                    <div class="banner-content">
+                        <h3>Cozy Cats</h3>
+                        <p>Camas calientitas.</p>
+                        <a href="#" class="btn-sm" style="background:white; color:#2980b9;">Comprar</a>
+                    </div>
+                    <img src="https://placehold.co/200x200/png?text=Cat" class="banner-img" alt="Cat">
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="stats-container">
-            <div class="stat-item">
-                <span class="stat-number" data-target="5000">0+</span>
-                <span class="stat-label">Mascotas Felices</span>
+        <!-- Feature (Orange) -->
+        <section class="feature-section">
+            <div class="feature-image">
+                <img src="https://placehold.co/600x400/png?text=Owner+and+Pet" alt="Owner">
             </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="15">0+</span>
-                <span class="stat-label">Especialistas</span>
+            <div class="feature-content">
+                <h2>Nutrición y Bienestar</h2>
+                <p>Descubre la mejor alimentación y suplementos para las necesidades específicas de tu mascota. Nos importa su salud tanto como a ti.</p>
+                <div style="margin-top: 20px;">
+                    <a href="#" class="btn-sm" style="background:white; color:#e67e22; padding: 10px 25px; font-size: 1rem;">Saber Más</a>
+                </div>
             </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="10">0+</span>
-                <span class="stat-label">Años de Experiencia</span>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="products-section">
+            <div class="section-header-row">
+                <h2>Shop Pet</h2>
+                <div class="filter-tabs">
+                    <a href="#" class="btn-sm" style="background:#e67e22;">Todo</a>
+                    <a href="#" class="btn-sm" style="background:transparent; border:1px solid white;">Perros</a>
+                    <a href="#" class="btn-sm" style="background:transparent; border:1px solid white;">Gatos</a>
+                </div>
             </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="24">0/7</span>
-                <span class="stat-label">Atención</span>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img-container"><img src="https://placehold.co/200x200/png?text=Cat+Food" alt="Product"></div>
+                    <h4>Premium Cat Food</h4>
+                    <span class="category-price">$45.00</span>
+                </div>
+                <div class="product-card">
+                    <div class="product-img-container"><img src="https://placehold.co/200x200/png?text=Dog+Toy" alt="Product"></div>
+                    <h4>Chew Toy</h4>
+                    <span class="category-price">$15.00</span>
+                </div>
+                <div class="product-card">
+                    <div class="product-img-container"><img src="https://placehold.co/200x200/png?text=Leash" alt="Product"></div>
+                    <h4>Leather Leash</h4>
+                    <span class="category-price">$35.00</span>
+                </div>
+                <div class="product-card">
+                    <div class="product-img-container"><img src="https://placehold.co/200x200/png?text=Bed" alt="Product"></div>
+                    <h4>Comfy Bed</h4>
+                    <span class="category-price">$80.00</span>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Footer Promo -->
+        <section class="footer-promo">
+            <div class="promo-left">
+                <h2 style="font-size: 3rem; margin-bottom: 10px;">$1,000</h2>
+                <p>¡Gana un día de compras para tu mascota!</p>
+                <a href="#" class="btn-sm" style="background:white; color:#e67e22; width: fit-content; margin-top: 20px;">Participar</a>
+            </div>
+            <div class="promo-right">
+                <h2 style="font-size: 2.5rem; z-index: 2;">Got You Pet</h2>
+                <img src="https://placehold.co/300x300/png?text=Puppy" class="promo-dog-img" alt="Puppy">
+            </div>
+        </section>
+
+    </div>
 
     <!-- Footer Component -->
     @include('components.footer')
-
-    <script>
-        // Simple Counter Animation for Stats
-        const stats = document.querySelectorAll('.stat-number');
-        
-        const observerOptions = {
-            threshold: 0.5
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = entry.target;
-                    const targetValue = parseInt(target.getAttribute('data-target'));
-                    if (targetValue > 0) { // Only animate numbers
-                        animateValue(target, 0, targetValue, 2000);
-                    }
-                    observer.unobserve(target);
-                }
-            });
-        }, observerOptions);
-
-        stats.forEach(stat => observer.observe(stat));
-
-        function animateValue(obj, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                obj.innerHTML = Math.floor(progress * (end - start) + start) + "+";
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-    </script>
 </body>
 </html>
