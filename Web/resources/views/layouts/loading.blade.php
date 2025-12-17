@@ -102,6 +102,12 @@
         const loadingScreen = document.getElementById('loading-screen');
         let progress = 0;
 
+        // Detectar si es la primera visita en la sesión
+        const isFirstVisit = !sessionStorage.getItem('zoofi_visited');
+        if (isFirstVisit) {
+            sessionStorage.setItem('zoofi_visited', 'true');
+        }
+
         // Simulación más natural con pausas y acelerones
         const simulateLoading = () => {
             if (progress >= 100) {
@@ -111,22 +117,33 @@
                 return;
             }
 
-            // Incremento variable
-            let increment = Math.random() * 2;
-            
-            // A veces se detiene un poco (simulando carga pesada)
-            if (Math.random() > 0.9) increment = 0;
-            
-            // A veces avanza rápido
-            if (Math.random() > 0.95) increment = 10;
+            let increment;
+            let nextTick;
+
+            if (isFirstVisit) {
+                // Lógica original (Lenta: Primera vez)
+                increment = Math.random() * 2;
+                // A veces se detiene un poco (simulando carga pesada)
+                if (Math.random() > 0.9) increment = 0;
+                // A veces avanza rápido
+                if (Math.random() > 0.95) increment = 10;
+                
+                // Velocidad variable lenta
+                nextTick = 30 + Math.random() * 100;
+            } else {
+                // Lógica rápida (1-2 segundos: Navegación posterior)
+                // Incremento mayor para terminar rápido
+                increment = 2 + Math.random() * 5; // Avance entre 2% y 7% por tick
+                
+                // Velocidad más rápida y constante
+                nextTick = 20 + Math.random() * 30; 
+            }
 
             progress += increment;
             if (progress > 100) progress = 100;
             
             updateUI();
 
-            // Velocidad variable
-            let nextTick = 30 + Math.random() * 100;
             setTimeout(simulateLoading, nextTick);
         };
 
