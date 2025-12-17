@@ -540,6 +540,11 @@ body {
     margin-bottom: 100px; /* Increased from 60px for better separation */
 }
 
+/* Add spacing specifically when categories follows hero */
+.hero-carousel-section + .categories-section {
+    margin-top: 80px;
+}
+
 .feature-section {
     margin: 0 5% 100px 5%; /* Increased from 60px */
     /* Keep original padding defined below */
