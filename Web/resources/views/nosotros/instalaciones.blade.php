@@ -11,18 +11,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 <style>
     .facilities-hero {
-        padding: 120px 0 60px;
+        padding: 80px 0 40px;
         text-align: center;
         position: relative;
         z-index: 10;
+        /* Background removed to show global animated background */
+        background: transparent;
     }
     
     .facilities-title {
         font-family: 'Montserrat', sans-serif;
-        font-size: 3.5rem;
+        font-size: 2.8rem;
         font-weight: 900;
         color: #fff;
-        margin-bottom: 25px;
+        margin-bottom: 15px;
         background: linear-gradient(135deg, #fff 0%, #4ade80 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -31,17 +33,17 @@
 
     .facilities-subtitle {
         color: rgba(255,255,255,0.85);
-        max-width: 750px;
-        margin: 0 auto 50px;
-        font-size: 1.2rem;
-        line-height: 1.7;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        font-size: 1.05rem;
+        line-height: 1.5;
         animation: fadeInUp 0.8s ease 0.2s both;
     }
 
     /* Tour Virtual */
     .virtual-tour {
-        max-width: 1400px;
-        margin: 0 auto 80px;
+        max-width: 1200px;
+        margin: 0 auto 50px;
         padding: 0 20px;
         position: relative;
         z-index: 10;
@@ -51,25 +53,25 @@
         background: linear-gradient(135deg, rgba(74, 222, 128, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
         border: 2px solid rgba(74, 222, 128, 0.3);
         backdrop-filter: blur(10px);
-        border-radius: 30px;
-        padding: 50px;
+        border-radius: 20px;
+        padding: 35px;
         text-align: center;
         animation: fadeIn 1s ease;
     }
 
     .tour-title {
         font-family: 'Montserrat', sans-serif;
-        font-size: 2rem;
+        font-size: 1.6rem;
         font-weight: 800;
         color: #fff;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     .tour-text {
         color: rgba(255,255,255,0.8);
-        font-size: 1.1rem;
-        margin-bottom: 35px;
-        line-height: 1.6;
+        font-size: 1rem;
+        margin-bottom: 25px;
+        line-height: 1.5;
     }
 
     .btn-tour {
@@ -95,8 +97,8 @@
 
     /* Galería Interactiva */
     .gallery-section {
-        max-width: 1400px;
-        margin: 80px auto;
+        max-width: 1300px;
+        margin: 50px auto;
         padding: 0 20px;
         position: relative;
         z-index: 10;
@@ -122,15 +124,15 @@
 
     .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 25px;
-        padding: 40px 0;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 20px;
+        padding: 30px 0;
     }
 
     .gallery-item {
         position: relative;
-        height: 300px;
-        border-radius: 20px;
+        height: 260px;
+        border-radius: 15px;
         overflow: hidden;
         cursor: pointer;
         border: 2px solid rgba(255,255,255,0.1);
@@ -140,7 +142,7 @@
 
     .gallery-item.large {
         grid-column: span 2;
-        height: 400px;
+        height: 340px;
     }
 
     .gallery-item:hover {
@@ -225,8 +227,8 @@
 
     /* Features Section */
     .features-list {
-        max-width: 1300px;
-        margin: 100px auto;
+        max-width: 1200px;
+        margin: 60px auto;
         padding: 0 20px;
         position: relative;
         z-index: 10;
@@ -234,16 +236,16 @@
 
     .features-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 35px;
-        margin-top: 60px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+        margin-top: 35px;
     }
 
     .feature-card {
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 100%);
         border: 2px solid rgba(255,255,255,0.1);
-        border-radius: 25px;
-        padding: 40px 30px;
+        border-radius: 20px;
+        padding: 30px 25px;
         backdrop-filter: blur(10px);
         text-align: center;
         transition: all 0.4s ease;
@@ -257,9 +259,9 @@
     }
 
     .feature-icon-wrapper {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 25px;
+        width: 65px;
+        height: 65px;
+        margin: 0 auto 18px;
         background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
         border-radius: 50%;
         display: flex;
@@ -275,29 +277,29 @@
     }
 
     .feature-icon {
-        font-size: 2rem;
+        font-size: 1.6rem;
         color: #0f172a;
     }
 
     .feature-title {
         color: #fff;
         font-family: 'Montserrat', sans-serif;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         font-weight: 800;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
 
     .feature-text {
         color: rgba(255,255,255,0.8);
-        line-height: 1.7;
-        font-size: 0.95rem;
+        line-height: 1.5;
+        font-size: 0.9rem;
     }
 
     /* Carrusel de Testimonios de Instalaciones */
     .testimonials-section {
-        max-width: 1000px;
-        margin: 100px auto;
-        padding: 0 20px;
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 0 20px 60px;
         position: relative;
         z-index: 10;
     }
@@ -305,18 +307,18 @@
     .testimonial-card {
         background: linear-gradient(135deg, rgba(30, 27, 75, 0.8) 0%, rgba(74, 222, 128, 0.1) 100%);
         backdrop-filter: blur(10px);
-        border-radius: 25px;
-        padding: 40px;
+        border-radius: 20px;
+        padding: 30px;
         border: 2px solid rgba(74, 222, 128, 0.2);
         text-align: center;
     }
 
     .testimonial-text {
         color: rgba(255,255,255,0.9);
-        font-size: 1.15rem;
-        line-height: 1.8;
+        font-size: 1.05rem;
+        line-height: 1.6;
         font-style: italic;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
     }
 
     .testimonial-author {

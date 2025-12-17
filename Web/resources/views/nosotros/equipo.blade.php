@@ -7,18 +7,20 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <style>
     .team-hero {
-        padding: 120px 0 60px;
+        padding: 80px 0 40px;
         text-align: center;
         position: relative;
         z-index: 10;
+        /* Background removed to show global animated background */
+        background: transparent;
     }
     
     .team-title {
         font-family: 'Montserrat', sans-serif;
-        font-size: 3.5rem;
+        font-size: 2.8rem;
         font-weight: 900;
         color: #fff;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         background: linear-gradient(135deg, #fff 0%, #4ade80 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -27,10 +29,10 @@
 
     .team-subtitle {
         color: rgba(255,255,255,0.85);
-        max-width: 700px;
-        margin: 0 auto 50px;
-        font-size: 1.2rem;
-        line-height: 1.6;
+        max-width: 650px;
+        margin: 0 auto 30px;
+        font-size: 1.05rem;
+        line-height: 1.5;
         animation: fadeInUp 0.8s ease 0.2s both;
     }
 
@@ -38,9 +40,9 @@
     .filter-container {
         display: flex;
         justify-content: center;
-        gap: 15px;
+        gap: 12px;
         flex-wrap: wrap;
-        margin-bottom: 60px;
+        margin-bottom: 35px;
         padding: 0 20px;
         position: relative;
         z-index: 10;
@@ -49,7 +51,7 @@
 
     .filter-btn {
         font-family: 'Inter', sans-serif;
-        padding: 12px 28px;
+        padding: 10px 22px;
         border: 2px solid rgba(74, 222, 128, 0.3);
         background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(10px);
@@ -58,7 +60,7 @@
         cursor: pointer;
         transition: all 0.3s ease;
         font-weight: 600;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         text-transform: uppercase;
         letter-spacing: 0.5px;
     }
@@ -79,11 +81,11 @@
 
     .team-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 40px;
-        max-width: 1400px;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+        max-width: 1300px;
         margin: 0 auto;
-        padding: 50px 20px;
+        padding: 30px 20px 60px;
         position: relative;
         z-index: 10;
     }
@@ -123,7 +125,7 @@
     }
 
     .member-img-container {
-        height: 350px;
+        height: 280px;
         background: linear-gradient(135deg, #1e1b4b 0%, #2d2a5d 100%);
         position: relative;
         overflow: hidden;
@@ -169,7 +171,7 @@
     }
 
     .member-info {
-        padding: 30px;
+        padding: 25px 20px;
         text-align: center;
         position: relative;
         z-index: 2;
@@ -177,10 +179,10 @@
 
     .member-name {
         font-family: 'Montserrat', sans-serif;
-        font-size: 1.6rem;
+        font-size: 1.35rem;
         font-weight: 800;
         color: #fff;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
         transition: color 0.3s ease;
     }
 
@@ -192,28 +194,28 @@
         color: #4ade80;
         font-family: 'Inter', sans-serif;
         font-weight: 700;
-        font-size: 0.95rem;
+        font-size: 0.85rem;
         text-transform: uppercase;
-        letter-spacing: 1.5px;
-        margin-bottom: 18px;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 8px;
+        gap: 6px;
     }
 
     .member-bio {
         color: rgba(255,255,255,0.8);
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin-bottom: 20px;
+        font-size: 0.88rem;
+        line-height: 1.5;
+        margin-bottom: 15px;
     }
 
     .member-stats {
         display: flex;
         justify-content: space-around;
-        margin-bottom: 25px;
-        padding-top: 20px;
+        margin-bottom: 18px;
+        padding-top: 15px;
         border-top: 1px solid rgba(255,255,255,0.1);
     }
 

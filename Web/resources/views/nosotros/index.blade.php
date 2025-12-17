@@ -8,18 +8,69 @@
 <!-- AOS - Animate On Scroll -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <style>
-    /* === HERO SECTION MEJORADO === */
+    /* === GLOBAL & UTILS === */
+    :root {
+        --primary: #4ade80;
+        --primary-dark: #22c55e;
+        --secondary: #3b82f6;
+        --dark-bg: #0f172a;
+        --card-bg: rgba(255, 255, 255, 0.05);
+        --text-light: #f8fafc;
+        --text-dim: #cbd5e1;
+    }
+
+    /* === HERO SECTION PREMIUM === */
     .nosotros-hero {
-        padding: 150px 0 80px;
+        padding: 140px 0 100px;
         text-align: center;
         position: relative;
         z-index: 10;
         overflow: hidden;
+        background-attachment: fixed;
+    }
+
+    .nosotros-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* Background removed to show global animated background */
+        z-index: -1;
+    }
+
+    /* Animated Particles Background */
+    .particles-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .particle {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(74, 222, 128, 0.3);
+        animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(100vh) scale(0); opacity: 0; }
+        50% { opacity: 0.6; }
+        100% { transform: translateY(-100px) scale(1); opacity: 0; }
     }
     
     .hero-content {
         position: relative;
         z-index: 2;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
     
     .nosotros-title {
@@ -27,66 +78,182 @@
         font-size: 4rem;
         font-weight: 900;
         color: #fff;
-        margin-bottom: 25px;
-        text-shadow: 0 4px 20px rgba(0,0,0,0.4);
-        animation: fadeInUp 0.8s ease-out;
+        margin-bottom: 20px;
+        text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        letter-spacing: -1px;
+        background: linear-gradient(to right, #fff, #bbf7d0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     
     .nosotros-subtitle {
         font-family: 'Inter', sans-serif;
-        font-size: 1.3rem;
-        color: rgba(255,255,255,0.95);
-        max-width: 800px;
+        font-size: 1.25rem;
+        color: var(--text-dim);
+        max-width: 750px;
         margin: 0 auto 40px;
-        line-height: 1.8;
-        animation: fadeInUp 0.8s ease-out 0.2s both;
+        line-height: 1.7;
+        font-weight: 300;
     }
 
-    .hero-stats {
+    /* Hero Buttons */
+    .hero-actions {
         display: flex;
         justify-content: center;
-        gap: 60px;
-        margin-top: 50px;
-        flex-wrap: wrap;
-        animation: fadeInUp 0.8s ease-out 0.4s both;
+        gap: 20px;
+        margin-bottom: 60px;
     }
 
-    .stat-item {
-        text-align: center;
+    .btn-hero {
+        padding: 15px 35px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-family: 'Montserrat', sans-serif;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn-hero-primary {
+        background: var(--primary);
+        color: #064e3b;
+        box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
+    }
+
+    .btn-hero-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 30px rgba(74, 222, 128, 0.6);
+        background: #fff;
+    }
+
+    .btn-hero-outline {
+        border: 2px solid rgba(255,255,255,0.2);
+        color: #fff;
+        backdrop-filter: blur(5px);
+    }
+
+    .btn-hero-outline:hover {
+        background: rgba(255,255,255,0.1);
+        border-color: #fff;
+        transform: translateY(-3px);
+    }
+
+    /* Stats Cards */
+    .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .stat-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 25px;
+        border-radius: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        border-color: var(--primary);
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .stat-icon {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 15px;
+        display: inline-block;
     }
 
     .stat-number {
         font-family: 'Montserrat', sans-serif;
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: 800;
-        color: #4ade80;
+        color: #fff;
         display: block;
-        text-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+        line-height: 1;
+        margin-bottom: 5px;
     }
 
     .stat-label {
         font-family: 'Inter', sans-serif;
-        color: rgba(255,255,255,0.8);
-        font-size: 0.95rem;
+        color: var(--text-dim);
+        font-size: 0.9rem;
         text-transform: uppercase;
         letter-spacing: 1px;
-        margin-top: 5px;
+        font-weight: 500;
     }
 
-    /* === MISIÓN, VISIÓN Y VALORES === */
+    /* Scroll Down */
+    .scroll-down {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        opacity: 0.7;
+        transition: opacity 0.3s;
+        cursor: pointer;
+    }
+    
+    .scroll-down:hover { opacity: 1; }
+
+    .mouse {
+        width: 30px;
+        height: 50px;
+        border: 2px solid #fff;
+        border-radius: 20px;
+        position: relative;
+    }
+
+    .mouse::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 6px;
+        background: #fff;
+        border-radius: 50%;
+        animation: scrollMouse 2s infinite;
+    }
+
+    @keyframes scrollMouse {
+        0% { opacity: 1; top: 10px; }
+        100% { opacity: 0; top: 30px; }
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+        40% { transform: translateX(-50%) translateY(-10px); }
+        60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    /* === MISSION VISION VALUES === */
     .mission-vision-section {
         padding: 100px 0;
         position: relative;
         z-index: 10;
+        /* Fondo transparente para mostrar el global */
+        background: transparent;
+        border-top: 1px solid rgba(255,255,255,0.05);
+        border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
     .section-title {
         text-align: center;
         font-family: 'Montserrat', sans-serif;
-        font-size: 2.8rem;
+        font-size: 2.5rem;
         font-weight: 800;
         color: #fff;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         background: linear-gradient(135deg, #fff 0%, #4ade80 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -95,9 +262,9 @@
     .section-subtitle {
         text-align: center;
         font-family: 'Inter', sans-serif;
-        color: rgba(255,255,255,0.7);
+        color: var(--text-dim);
         font-size: 1.1rem;
-        max-width: 700px;
+        max-width: 650px;
         margin: 0 auto 60px;
     }
 
@@ -105,92 +272,132 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 40px;
-        max-width: 1300px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 0 20px;
     }
 
     .mv-card {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.08) 100%);
-        backdrop-filter: blur(15px);
-        border: 2px solid rgba(255, 255, 255, 0.1);
-        border-radius: 25px;
-        padding: 50px 35px;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        background: rgba(30, 41, 59, 0.4); /* Más transparente para que se vea el fondo morado */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        padding: 40px 30px;
         text-align: center;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
         overflow: hidden;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        backdrop-filter: blur(10px);
     }
 
-    .mv-card::before {
+    .mv-card::after {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(74, 222, 128, 0.1) 0%, transparent 100%);
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        pointer-events: none;
-    }
-
-    .mv-card:hover::before {
-        opacity: 1;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
     }
 
     .mv-card:hover {
-        transform: translateY(-15px) scale(1.02);
-        box-shadow: 0 25px 50px rgba(74, 222, 128, 0.3);
-        border-color: #4ade80;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.15) 100%);
+        transform: translateY(-10px);
+        background: rgba(30, 41, 59, 0.8);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        border-color: var(--primary);
+    }
+
+    .mv-card:hover::after {
+        transform: scaleX(1);
     }
 
     .mv-icon-wrapper {
-        width: 100px;
-        height: 100px;
-        margin: 0 auto 25px;
-        background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+        width: 90px;
+        height: 90px;
+        background: rgba(255, 255, 255, 0.03);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 10px 30px rgba(74, 222, 128, 0.4);
+        margin-bottom: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
         transition: all 0.4s ease;
-        animation: float 3s ease-in-out infinite;
     }
 
     .mv-card:hover .mv-icon-wrapper {
-        transform: rotateY(360deg) scale(1.1);
-        box-shadow: 0 15px 40px rgba(74, 222, 128, 0.6);
+        background: var(--primary);
+        transform: rotate(10deg) scale(1.1);
+        box-shadow: 0 0 30px rgba(74, 222, 128, 0.4);
+        border-color: transparent;
     }
 
     .mv-icon {
         font-size: 2.5rem;
-        color: #0f172a;
+        color: var(--primary);
+        transition: color 0.4s ease;
+    }
+
+    .mv-card:hover .mv-icon {
+        color: #064e3b;
     }
 
     .mv-title {
         font-family: 'Montserrat', sans-serif;
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: 800;
         color: #fff;
         margin-bottom: 20px;
-        position: relative;
     }
 
     .mv-text {
         font-family: 'Inter', sans-serif;
-        color: rgba(255,255,255,0.85);
+        color: var(--text-dim);
+        font-size: 1.05rem;
         line-height: 1.8;
+    }
+
+    /* Values List */
+    .values-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        width: 100%;
+    }
+
+    .values-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        color: var(--text-dim);
         font-size: 1rem;
+    }
+
+    .values-list li i {
+        color: var(--primary);
+        margin-right: 15px;
+        font-size: 1.2rem;
+        background: rgba(74, 222, 128, 0.1);
+        padding: 8px;
+        border-radius: 8px;
+    }
+
+    .values-list li strong {
+        color: #fff;
+        margin-right: 5px;
     }
 
     /* === TIMELINE / HISTORIA === */
     .history-section {
-        max-width: 1200px;
+        max-width: 1100px;
         margin: 0 auto;
-        padding: 100px 20px;
+        padding: 60px 20px;
         position: relative;
         z-index: 10;
         color: #fff;
@@ -198,7 +405,7 @@
 
     .timeline {
         position: relative;
-        padding: 50px 0;
+        padding: 30px 0;
     }
 
     .timeline::before {
@@ -217,7 +424,7 @@
         justify-content: flex-end;
         padding-right: 50%;
         position: relative;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
 
     .timeline-item:nth-child(even) {
@@ -229,8 +436,8 @@
     .timeline-content {
         background: linear-gradient(135deg, rgba(30, 27, 75, 0.8) 0%, rgba(74, 222, 128, 0.1) 100%);
         backdrop-filter: blur(10px);
-        border-radius: 20px;
-        padding: 30px;
+        border-radius: 15px;
+        padding: 20px 25px;
         width: calc(50% - 50px);
         border: 1px solid rgba(255,255,255,0.15);
         position: relative;
@@ -259,54 +466,53 @@
 
     .timeline-title {
         font-family: 'Montserrat', sans-serif;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: 700;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         color: #4ade80;
     }
 
     .timeline-text {
-        line-height: 1.7;
+        line-height: 1.6;
         color: rgba(255,255,255,0.85);
+        font-size: 0.95rem;
     }
 
     /* === GALERÍA / CARRUSEL === */
     .gallery-section {
-        padding: 100px 0;
+        padding: 80px 0;
         position: relative;
         z-index: 10;
+        background: transparent; /* Fondo transparente para mostrar el global */
     }
 
     .swiper {
         width: 100%;
-        padding: 50px 0;
-    }
-
-    .swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        padding: 50px 20px;
     }
 
     .gallery-item {
         width: 100%;
-        height: 400px;
-        border-radius: 20px;
+        height: 500px; /* Más alto para mejor visualización */
+        border-radius: 24px;
         overflow: hidden;
         position: relative;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-        transition: transform 0.3s ease;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        transition: all 0.4s ease;
+        border: 1px solid rgba(255,255,255,0.1);
     }
 
     .gallery-item:hover {
-        transform: scale(1.05);
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px rgba(74, 222, 128, 0.2);
+        border-color: var(--primary);
     }
 
     .gallery-img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5s ease;
+        transition: transform 0.8s ease;
     }
 
     .gallery-item:hover .gallery-img {
@@ -318,67 +524,156 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
-        padding: 30px;
-        transform: translateY(100%);
+        background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.8) 60%, transparent 100%);
+        padding: 40px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+        opacity: 1;
+    }
+    
+    .gallery-content {
+        transform: translateY(30px);
         transition: transform 0.4s ease;
     }
 
-    .gallery-item:hover .gallery-overlay {
+    .gallery-item:hover .gallery-content {
         transform: translateY(0);
     }
 
     .gallery-title {
         font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        font-size: 1.3rem;
+        font-weight: 800;
+        font-size: 1.8rem;
         color: #fff;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
 
     .gallery-description {
-        color: rgba(255,255,255,0.85);
+        color: rgba(255,255,255,0.9);
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s ease 0.1s;
+    }
+
+    .gallery-item:hover .gallery-description {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .gallery-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 25px;
+        background: var(--primary);
+        color: #064e3b;
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
         font-size: 0.9rem;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s ease 0.2s;
+        width: fit-content;
+    }
+    
+    .gallery-btn:hover {
+        background: #fff;
+        color: var(--primary-dark);
+    }
+    
+    .gallery-item:hover .gallery-btn {
+        opacity: 1;
+        transform: translateY(0);
     }
 
     /* === CTA SECTION === */
     .cta-section {
-        text-align: center;
-        padding: 100px 20px;
+        padding: 80px 20px;
         position: relative;
         z-index: 10;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
     }
 
     .cta-box {
-        background: linear-gradient(135deg, rgba(74, 222, 128, 0.1) 0%, rgba(34, 197, 94, 0.1) 100%);
-        border: 2px solid rgba(74, 222, 128, 0.3);
-        backdrop-filter: blur(10px);
+        background: rgba(30, 27, 75, 0.4);
+        border: 1px solid rgba(74, 222, 128, 0.3);
+        backdrop-filter: blur(20px);
         border-radius: 30px;
-        padding: 60px 40px;
-        max-width: 800px;
-        margin: 0 auto;
+        padding: 60px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .cta-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 400px;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.05));
+        pointer-events: none;
+    }
+
+    .cta-content {
+        flex: 1;
+        text-align: left;
     }
 
     .cta-title {
         color: #fff;
         font-family: 'Montserrat', sans-serif;
-        font-size: 2.5rem;
-        font-weight: 800;
-        margin-bottom: 20px;
+        font-size: 2.8rem;
+        font-weight: 900;
+        margin-bottom: 15px;
+        line-height: 1.2;
     }
 
     .cta-text {
         color: rgba(255,255,255,0.8);
-        font-size: 1.1rem;
-        margin-bottom: 35px;
+        font-size: 1.2rem;
+        margin-bottom: 0;
         line-height: 1.6;
+        max-width: 800px;
     }
 
     .btn-group {
         display: flex;
         gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-shrink: 0;
+    }
+    
+    @media (max-width: 992px) {
+        .cta-box {
+            flex-direction: column;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .cta-content {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .cta-text {
+            margin: 0 auto;
+        }
     }
 
     .btn-team, .btn-secondary {
@@ -474,6 +769,7 @@
             left: 30px;
         }
 
+
         .timeline-item,
         .timeline-item:nth-child(even) {
             padding-left: 80px;
@@ -509,31 +805,59 @@
 @section('content')
     <!-- Hero Nosotros con Estadísticas -->
     <section class="nosotros-hero">
+        <!-- Animated Particles -->
+        <div class="particles-container">
+            <div class="particle" style="width: 10px; height: 10px; left: 10%; animation-duration: 15s;"></div>
+            <div class="particle" style="width: 15px; height: 15px; left: 30%; animation-duration: 20s; animation-delay: 2s;"></div>
+            <div class="particle" style="width: 8px; height: 8px; left: 70%; animation-duration: 18s; animation-delay: 5s;"></div>
+            <div class="particle" style="width: 12px; height: 12px; left: 90%; animation-duration: 22s; animation-delay: 1s;"></div>
+            <div class="particle" style="width: 6px; height: 6px; left: 50%; animation-duration: 25s; animation-delay: 8s;"></div>
+        </div>
+
         <div class="hero-content">
-            <h1 class="nosotros-title" data-aos="fade-down">Nuestra Pasión son las Mascotas</h1>
+            <h1 class="nosotros-title" data-aos="fade-down" data-aos-duration="1000">Nuestra Pasión son las Mascotas</h1>
             <p class="nosotros-subtitle" data-aos="fade-up" data-aos-delay="200">
                 En ZoofiPets, no solo curamos animales; cuidamos a los miembros más queridos de tu familia con tecnología de punta y un corazón enorme.
             </p>
             
+            <!-- Hero Actions -->
+            <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+                <a href="#equipo" class="btn-hero btn-hero-primary">
+                    <i class="fas fa-user-md"></i> Conoce al Equipo
+                </a>
+                <a href="#contacto" class="btn-hero btn-hero-outline">
+                    <i class="fas fa-envelope"></i> Contáctanos
+                </a>
+            </div>
+            
             <!-- Estadísticas Animadas -->
             <div class="hero-stats">
-                <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fas fa-calendar-check stat-icon"></i>
                     <span class="stat-number counter" data-target="5">0</span>
                     <span class="stat-label">Años de Experiencia</span>
                 </div>
-                <div class="stat-item" data-aos="zoom-in" data-aos-delay="500">
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="500">
+                    <i class="fas fa-paw stat-icon"></i>
                     <span class="stat-number counter" data-target="15000">0</span>
                     <span class="stat-label">Mascotas Atendidas</span>
                 </div>
-                <div class="stat-item" data-aos="zoom-in" data-aos-delay="600">
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="600">
+                    <i class="fas fa-smile-beam stat-icon"></i>
                     <span class="stat-number counter" data-target="98">0</span>
                     <span class="stat-label">% Satisfacción</span>
                 </div>
-                <div class="stat-item" data-aos="zoom-in" data-aos-delay="700">
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="700">
+                    <i class="fas fa-user-nurse stat-icon"></i>
                     <span class="stat-number counter" data-target="24">0</span>
                     <span class="stat-label">Especialistas</span>
                 </div>
             </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="scroll-down" data-aos="fade-up" data-aos-delay="1000">
+            <div class="mouse"></div>
         </div>
     </section>
 
@@ -570,9 +894,12 @@
                     <i class="fas fa-hand-holding-heart mv-icon"></i>
                 </div>
                 <h2 class="mv-title">Nuestros Valores</h2>
-                <p class="mv-text">
-                    Compasión, Integridad, Innovación y Excelencia. Creemos que cada vida importa y merece ser tratada con el máximo respeto y dedicación.
-                </p>
+                <ul class="values-list">
+                    <li><i class="fas fa-heart"></i> <span><strong>Compasión:</strong> Empatía en cada consulta.</span></li>
+                    <li><i class="fas fa-shield-alt"></i> <span><strong>Integridad:</strong> Honestidad total.</span></li>
+                    <li><i class="fas fa-microchip"></i> <span><strong>Innovación:</strong> Tecnología punta.</span></li>
+                    <li><i class="fas fa-star"></i> <span><strong>Excelencia:</strong> Calidad superior.</span></li>
+                </ul>
             </div>
         </div>
     </section>
@@ -641,7 +968,7 @@
     <section class="gallery-section">
         <h2 class="section-title" data-aos="fade-up">Nuestras Instalaciones</h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-            Espacios diseñados con amor y tecnología para el bienestar de tu mascota
+            Espacios diseñados con amor y tecnología para el bienestar de tu mascota. Cada rincón de ZoofiPets está pensado para brindar seguridad, confort y la mejor atención médica posible.
         </p>
         
         <div class="swiper" data-aos="fade-up" data-aos-delay="200">
@@ -650,8 +977,11 @@
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=800" alt="Recepción ZoofiPets" class="gallery-img">
                         <div class="gallery-overlay">
-                            <h3 class="gallery-title">Recepción y Sala de Espera</h3>
-                            <p class="gallery-description">Ambiente cómodo y acogedor para tu comodidad</p>
+                            <div class="gallery-content">
+                                <h3 class="gallery-title"><i class="fas fa-couch"></i> Recepción y Sala de Espera</h3>
+                                <p class="gallery-description">Un ambiente cómodo, tranquilo y libre de estrés tanto para ti como para tu mascota. Contamos con áreas separadas para perros y gatos para minimizar la ansiedad.</p>
+                                <a href="#" class="gallery-btn">Ver Detalles <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -660,8 +990,11 @@
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=800" alt="Quirófano" class="gallery-img">
                         <div class="gallery-overlay">
-                            <h3 class="gallery-title">Quirófanos de Última Generación</h3>
-                            <p class="gallery-description">Equipamiento médico de vanguardia para cirugías seguras</p>
+                            <div class="gallery-content">
+                                <h3 class="gallery-title"><i class="fas fa-procedures"></i> Quirófanos Avanzados</h3>
+                                <p class="gallery-description">Equipados con monitoreo multiparamétrico, anestesia inhalatoria y tecnología de mínima invasión para garantizar la máxima seguridad en cada procedimiento quirúrgico.</p>
+                                <a href="#" class="gallery-btn">Ver Detalles <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -670,8 +1003,11 @@
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1548681528-6a5c45b66b42?w=800" alt="Consultorios" class="gallery-img">
                         <div class="gallery-overlay">
-                            <h3 class="gallery-title">Consultorios Especializados</h3>
-                            <p class="gallery-description">Espacios diseñados para atención personalizada</p>
+                            <div class="gallery-content">
+                                <h3 class="gallery-title"><i class="fas fa-stethoscope"></i> Consultorios Modernos</h3>
+                                <p class="gallery-description">Espacios amplios y luminosos diseñados para una evaluación exhaustiva. Cada consultorio cuenta con todo lo necesario para un diagnóstico inicial preciso.</p>
+                                <a href="#" class="gallery-btn">Ver Detalles <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -680,8 +1016,11 @@
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800" alt="Laboratorio" class="gallery-img">
                         <div class="gallery-overlay">
-                            <h3 class="gallery-title">Laboratorio Propio</h3>
-                            <p class="gallery-description">Diagnósticos rápidos y precisos</p>
+                            <div class="gallery-content">
+                                <h3 class="gallery-title"><i class="fas fa-microscope"></i> Laboratorio Propio</h3>
+                                <p class="gallery-description">Realizamos análisis de sangre, orina y coprológicos en minutos. La rapidez en el diagnóstico es clave para un tratamiento efectivo y oportuno.</p>
+                                <a href="#" class="gallery-btn">Ver Detalles <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -690,8 +1029,11 @@
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800" alt="Hospitalización" class="gallery-img">
                         <div class="gallery-overlay">
-                            <h3 class="gallery-title">Área de Hospitalización</h3>
-                            <p class="gallery-description">Cuidados intensivos 24/7 para tu mascota</p>
+                            <div class="gallery-content">
+                                <h3 class="gallery-title"><i class="fas fa-heartbeat"></i> Área de Hospitalización</h3>
+                                <p class="gallery-description">Cuidados intensivos 24/7 con personal dedicado. Jaulas cómodas, climatizadas y con oxigenoterapia para la recuperación óptima de pacientes críticos.</p>
+                                <a href="#" class="gallery-btn">Ver Detalles <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -707,10 +1049,12 @@
     <!-- CTA Mejorado -->
     <section class="cta-section">
         <div class="cta-box" data-aos="zoom-in">
-            <h2 class="cta-title">¿Quiénes Cuidan a Tu Mascota?</h2>
-            <p class="cta-text">
-                Conoce a nuestro equipo de profesionales apasionados, altamente capacitados y comprometidos con el bienestar de tu mejor amigo.
-            </p>
+            <div class="cta-content">
+                <h2 class="cta-title">¿Quiénes Cuidan a Tu Mascota?</h2>
+                <p class="cta-text">
+                    Detrás de cada diagnóstico y tratamiento hay un equipo de profesionales apasionados. Nuestros veterinarios, auxiliares y especialistas se capacitan constantemente para ofrecer lo mejor a tu mejor amigo. ¡Ven a conocernos!
+                </p>
+            </div>
             <div class="btn-group">
                 <a href="{{ route('nosotros.equipo') }}" class="btn-team">
                     <i class="fas fa-user-doctor"></i>
