@@ -269,6 +269,116 @@
             </div>
         </section>
 
+
+
+        <!-- Wide Promo Section (Replaces Banners) -->
+        <section class="promo-wide-section animate-fade-up-delay">
+            <div class="decor-shape shape-1"></div>
+            <div class="decor-shape shape-2"></div>
+            <div class="promo-container">
+                <div class="promo-content-left">
+                    <div class="promo-tags">
+                        <span class="promo-badge">Nueva Colección</span>
+                        <span class="promo-badge outline">Edición Limitada</span>
+                    </div>
+                    <h2>Estilo & Confort <br>Para Tu Mascota</h2>
+                    <p>Descubre accesorios diseñados para destacar. Calidad premium que combina con tu estilo de vida y la personalidad de tu mejor amigo.</p>
+                    
+                    <div class="promo-actions">
+                        <a href="#" class="btn-white-card">Explorar Colección <i class="fas fa-arrow-right"></i></a>
+                        <div class="promo-timer">
+                            <span>Oferta termina en:</span>
+                            <div class="timer-box">
+                                <span class="time-part">24<small>h</small></span> : 
+                                <span class="time-part">00<small>m</small></span>
+                            </div>
+                            <div class="progress-bar-mini"><div class="progress-fill"></div></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="promo-visual-center">
+                    <div class="glow-effect"></div>
+                    <div class="floating-review">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <span>"A mi perro le encanta"</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Happy Dog" class="floating-img main-pet">
+                </div>
+                
+                <div class="promo-content-right">
+                    <div class="mini-feature-card animate-zoom-in" style="animation-delay: 0.2s;">
+                        <div class="icon-box"><i class="fas fa-gift"></i></div>
+                        <div class="text-box">
+                            <h4>Regalo Gratis</h4>
+                            <small>En compras > $50</small>
+                        </div>
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </div>
+                    <div class="mini-feature-card animate-zoom-in" style="animation-delay: 0.4s;">
+                        <div class="icon-box"><i class="fas fa-truck"></i></div>
+                        <div class="text-box">
+                            <h4>Envío Express</h4>
+                            <small>Recíbelo mañana</small>
+                        </div>
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </div>
+                    <div class="mini-feature-card animate-zoom-in" style="animation-delay: 0.6s;">
+                        <div class="icon-box"><i class="fas fa-medal"></i></div>
+                        <div class="text-box">
+                            <h4>Calidad Premium</h4>
+                            <small>Garantía de por vida</small>
+                        </div>
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Wide Section (Nutrition) -->
+        <section class="feature-section-wide animate-fade-up-delay">
+            <div class="feature-container">
+                <div class="feature-visual-left">
+                    <div class="circle-bg"></div>
+                    <img src="https://images.unsplash.com/photo-1589924691195-41432c84c161?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Healthy Dog Food" class="feature-img">
+                    <div class="floating-badge">
+                        <i class="fas fa-leaf"></i> 100% Natural
+                    </div>
+                </div>
+                
+                <div class="feature-content-right">
+                    <div class="feature-header">
+                        <span class="sub-tag">Salud & Vitalidad</span>
+                        <h2>Nutrición Premium <br>Para Una Vida Larga</h2>
+                    </div>
+                    <p>Formulaciones científicas con ingredientes reales. Sin rellenos, sin conservantes artificiales. Solo lo mejor para su bienestar.</p>
+                    
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Proteína Real</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sin Granos</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Vitaminas A+E</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Digestión Fácil</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-actions">
+                        <a href="#" class="btn-white-card">Ver Planes de Alimentación <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Services Carousel -->
         <section class="categories-section">
             <div class="section-header-compact">
@@ -415,114 +525,6 @@
                                 <button class="add-cart-btn"><i class="fas fa-phone-alt"></i></button>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Wide Promo Section (Replaces Banners) -->
-        <section class="promo-wide-section animate-fade-up-delay">
-            <div class="decor-shape shape-1"></div>
-            <div class="decor-shape shape-2"></div>
-            <div class="promo-container">
-                <div class="promo-content-left">
-                    <div class="promo-tags">
-                        <span class="promo-badge">Nueva Colección</span>
-                        <span class="promo-badge outline">Edición Limitada</span>
-                    </div>
-                    <h2>Estilo & Confort <br>Para Tu Mascota</h2>
-                    <p>Descubre accesorios diseñados para destacar. Calidad premium que combina con tu estilo de vida y la personalidad de tu mejor amigo.</p>
-                    
-                    <div class="promo-actions">
-                        <a href="#" class="btn-white-card">Explorar Colección <i class="fas fa-arrow-right"></i></a>
-                        <div class="promo-timer">
-                            <span>Oferta termina en:</span>
-                            <div class="timer-box">
-                                <span class="time-part">24<small>h</small></span> : 
-                                <span class="time-part">00<small>m</small></span>
-                            </div>
-                            <div class="progress-bar-mini"><div class="progress-fill"></div></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="promo-visual-center">
-                    <div class="glow-effect"></div>
-                    <div class="floating-review">
-                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <span>"A mi perro le encanta"</span>
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Happy Dog" class="floating-img main-pet">
-                </div>
-                
-                <div class="promo-content-right">
-                    <div class="mini-feature-card animate-zoom-in" style="animation-delay: 0.2s;">
-                        <div class="icon-box"><i class="fas fa-gift"></i></div>
-                        <div class="text-box">
-                            <h4>Regalo Gratis</h4>
-                            <small>En compras > $50</small>
-                        </div>
-                        <i class="fas fa-chevron-right arrow-icon"></i>
-                    </div>
-                    <div class="mini-feature-card animate-zoom-in" style="animation-delay: 0.4s;">
-                        <div class="icon-box"><i class="fas fa-truck"></i></div>
-                        <div class="text-box">
-                            <h4>Envío Express</h4>
-                            <small>Recíbelo mañana</small>
-                        </div>
-                        <i class="fas fa-chevron-right arrow-icon"></i>
-                    </div>
-                    <div class="mini-feature-card animate-zoom-in" style="animation-delay: 0.6s;">
-                        <div class="icon-box"><i class="fas fa-medal"></i></div>
-                        <div class="text-box">
-                            <h4>Calidad Premium</h4>
-                            <small>Garantía de por vida</small>
-                        </div>
-                        <i class="fas fa-chevron-right arrow-icon"></i>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Feature Wide Section (Nutrition) -->
-        <section class="feature-section-wide animate-fade-up-delay">
-            <div class="feature-container">
-                <div class="feature-visual-left">
-                    <div class="circle-bg"></div>
-                    <img src="https://images.unsplash.com/photo-1589924691195-41432c84c161?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Healthy Dog Food" class="feature-img">
-                    <div class="floating-badge">
-                        <i class="fas fa-leaf"></i> 100% Natural
-                    </div>
-                </div>
-                
-                <div class="feature-content-right">
-                    <div class="feature-header">
-                        <span class="sub-tag">Salud & Vitalidad</span>
-                        <h2>Nutrición Premium <br>Para Una Vida Larga</h2>
-                    </div>
-                    <p>Formulaciones científicas con ingredientes reales. Sin rellenos, sin conservantes artificiales. Solo lo mejor para su bienestar.</p>
-                    
-                    <div class="benefits-grid">
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Proteína Real</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Sin Granos</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Vitaminas A+E</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Digestión Fácil</span>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-actions">
-                        <a href="#" class="btn-white-card">Ver Planes de Alimentación <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
