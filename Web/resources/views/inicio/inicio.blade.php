@@ -115,7 +115,10 @@
         <!-- Categories Carousel -->
         <section class="categories-section">
             <div class="section-header-row">
-                <h2>Categorías Destacadas</h2>
+                <div class="header-text">
+                    <h2>Categorías Destacadas</h2>
+                    <p class="section-subtitle">Explora nuestra selección premium pensada para el confort y la felicidad de tu mascota.</p>
+                </div>
                 <div class="carousel-nav-buttons">
                     <button class="nav-btn prev-btn" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
                     <button class="nav-btn next-btn" onclick="moveCarousel(1)"><i class="fas fa-chevron-right"></i></button>
@@ -129,11 +132,19 @@
                         <div class="card-image-wrapper">
                             <div class="blob-bg"></div>
                             <img src="https://images.unsplash.com/photo-1591337819702-5c21810edd47?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Travel Bag">
+                            <div class="card-badge">Nuevo</div>
                         </div>
                         <div class="card-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <span>(4.8)</span>
+                            </div>
                             <h3>Travel Bag</h3>
-                            <span class="price">$120</span>
-                            <a href="#" class="action-btn">Ver más</a>
+                            <p class="card-description">Mochila ergonómica y ventilada para viajes largos con tu mascota.</p>
+                            <div class="card-footer">
+                                <span class="price">$120</span>
+                                <button class="add-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
                         </div>
                     </div>
                     <!-- Card 2 -->
@@ -143,9 +154,16 @@
                             <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pet Carrier">
                         </div>
                         <div class="card-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                <span>(4.0)</span>
+                            </div>
                             <h3>Pet Carrier</h3>
-                            <span class="price">$85</span>
-                            <a href="#" class="action-btn">Ver más</a>
+                            <p class="card-description">Transportadora segura y cómoda, aprobada por aerolíneas.</p>
+                            <div class="card-footer">
+                                <span class="price">$85</span>
+                                <button class="add-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
                         </div>
                     </div>
                     <!-- Card 3 -->
@@ -153,11 +171,19 @@
                         <div class="card-image-wrapper">
                             <div class="blob-bg"></div>
                             <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Grooming Kit">
+                            <div class="card-badge sale">Oferta</div>
                         </div>
                         <div class="card-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <span>(5.0)</span>
+                            </div>
                             <h3>Grooming Kit</h3>
-                            <span class="price">$45</span>
-                            <a href="#" class="action-btn">Ver más</a>
+                            <p class="card-description">Set completo de cuidado y aseo para mantener su pelaje brillante.</p>
+                            <div class="card-footer">
+                                <span class="price">$45</span>
+                                <button class="add-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
                         </div>
                     </div>
                     <!-- Card 4 -->
@@ -167,9 +193,16 @@
                             <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Flight Box">
                         </div>
                         <div class="card-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <span>(4.5)</span>
+                            </div>
                             <h3>Flight Box</h3>
-                            <span class="price">$210</span>
-                            <a href="#" class="action-btn">Ver más</a>
+                            <p class="card-description">Jaula resistente de alto impacto para máxima seguridad en vuelos.</p>
+                            <div class="card-footer">
+                                <span class="price">$210</span>
+                                <button class="add-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
                         </div>
                     </div>
                     <!-- Card 5 -->
@@ -179,9 +212,16 @@
                             <img src="https://images.unsplash.com/photo-1585837575652-267c041d77d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Soft Toy">
                         </div>
                         <div class="card-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                <span>(4.2)</span>
+                            </div>
                             <h3>Soft Toy</h3>
-                            <span class="price">$25</span>
-                            <a href="#" class="action-btn">Ver más</a>
+                            <p class="card-description">Juguete de felpa suave, ideal para cachorros y juegos tranquilos.</p>
+                            <div class="card-footer">
+                                <span class="price">$25</span>
+                                <button class="add-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
                         </div>
                     </div>
                     <!-- Card 6 -->
@@ -191,9 +231,16 @@
                             <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Food Bowl">
                         </div>
                         <div class="card-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <span>(4.9)</span>
+                            </div>
                             <h3>Food Bowl</h3>
-                            <span class="price">$15</span>
-                            <a href="#" class="action-btn">Ver más</a>
+                            <p class="card-description">Plato antideslizante de diseño moderno y fácil limpieza.</p>
+                            <div class="card-footer">
+                                <span class="price">$15</span>
+                                <button class="add-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -288,68 +335,6 @@
     <!-- Footer Component -->
     @include('components.footer')
 
-    <script>
-        // Carousel Logic
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const indicators = document.querySelectorAll('.indicator');
-        const totalSlides = slides.length;
-        let slideInterval;
-
-        function goToSlide(n) {
-            if (slides.length === 0) return;
-            slides[currentSlide].classList.remove('active');
-            indicators[currentSlide].classList.remove('active');
-            currentSlide = (n + totalSlides) % totalSlides;
-            slides[currentSlide].classList.add('active');
-            indicators[currentSlide].classList.add('active');
-            resetInterval();
-        }
-
-        function nextSlide() {
-            goToSlide(currentSlide + 1);
-        }
-
-        function resetInterval() {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 5000);
-        }
-
-        // Initialize
-        if (slides.length > 0) {
-            resetInterval();
-        }
-
-        // Product Carousel Logic
-        const track = document.getElementById('categoriesTrack');
-        let scrollAmount = 0;
-        const cardWidth = 310; // Card width + gap (280 + 30)
-        
-        function moveCarousel(direction) {
-            const maxScroll = track.scrollWidth - track.clientWidth;
-            
-            if (direction === 1) { // Next
-                scrollAmount += cardWidth;
-                if (scrollAmount > maxScroll) scrollAmount = 0; // Loop back to start
-            } else { // Prev
-                scrollAmount -= cardWidth;
-                if (scrollAmount < 0) scrollAmount = maxScroll; // Loop to end
-            }
-            
-            track.style.transform = `translateX(-${scrollAmount}px)`;
-        }
-
-        // Auto scroll for products (optional, slow)
-        let productAutoScroll = setInterval(() => moveCarousel(1), 4000);
-
-        // Pause on hover
-        const productWrapper = document.querySelector('.product-carousel-wrapper');
-        if(productWrapper) {
-            productWrapper.addEventListener('mouseenter', () => clearInterval(productAutoScroll));
-            productWrapper.addEventListener('mouseleave', () => {
-                productAutoScroll = setInterval(() => moveCarousel(1), 4000);
-            });
-        }
-    </script>
+    <script src="{{ asset('js/pages/welcome.js') }}"></script>
 </body>
 </html>
