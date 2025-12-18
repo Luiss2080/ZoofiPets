@@ -18,33 +18,68 @@
         <nav class="nav-capsule">
             <ul class="nav-list">
                 <li class="nav-item"><a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Inicio</a></li>
-                <li class="nav-item"><a href="{{ route('nosotros.index') }}" class="nav-link {{ request()->routeIs('nosotros.*') ? 'active' : '' }}">Nosotros</a></li>
+                
+                <!-- Dropdown Nosotros -->
+                <li class="nav-item dropdown">
+                    <a href="{{ route('nosotros.index') }}" class="nav-link dropdown-toggle {{ request()->routeIs('nosotros.*', 'galeria.*', 'testimonios.*', 'preguntas-frecuentes.*') ? 'active' : '' }}">
+                        Nosotros 
+                        <svg class="chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ route('nosotros.index') }}" class="dropdown-item">
+                            <span class="item-icon">🏥</span> Quiénes Somos
+                        </a></li>
+                        <li><a href="{{ route('nosotros.equipo') }}" class="dropdown-item">
+                            <span class="item-icon">👨‍⚕️</span> Nuestro Equipo
+                        </a></li>
+                        <li><a href="{{ route('nosotros.instalaciones') }}" class="dropdown-item">
+                            <span class="item-icon">🏢</span> Instalaciones
+                        </a></li>
+                        <li><a href="{{ route('galeria.index') }}" class="dropdown-item">
+                            <span class="item-icon">📸</span> Galería
+                        </a></li>
+                        <li><a href="{{ route('testimonios.index') }}" class="dropdown-item">
+                            <span class="item-icon">💬</span> Testimonios
+                        </a></li>
+                        <li><a href="{{ route('preguntas-frecuentes.index') }}" class="dropdown-item">
+                            <span class="item-icon">❓</span> Preguntas Frecuentes
+                        </a></li>
+                    </ul>
+                </li>
                 
                 <!-- Dropdown Servicios -->
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">
+                    <a href="{{ route('servicios.index') }}" class="nav-link dropdown-toggle {{ request()->routeIs('servicios.*') ? 'active' : '' }}">
                         Servicios 
                         <svg class="chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#" class="dropdown-item">
+                         <!-- Prioridad Urgencias -->
+                         <li><a href="{{ route('servicios.emergencias.index') }}" class="dropdown-item highlight-item">
+                            <span class="item-icon">🚑</span> Urgencias 24h
+                        </a></li>
+                        <li><a href="{{ route('servicios.consultas.index') }}" class="dropdown-item">
                             <span class="item-icon">🩺</span> Consultas
                         </a></li>
-                        <li><a href="#" class="dropdown-item">
+                        <li><a href="{{ route('servicios.vacunacion.index') }}" class="dropdown-item">
                             <span class="item-icon">💉</span> Vacunación
                         </a></li>
-                        <li><a href="#" class="dropdown-item">
-                            <span class="item-icon">✂️</span> Estética
+                        <li><a href="{{ route('servicios.cirugia.index') }}" class="dropdown-item">
+                            <span class="item-icon">🏥</span> Cirugía
                         </a></li>
-                        <li><a href="#" class="dropdown-item">
-                            <span class="item-icon">🏥</span> Urgencias 24h
+                        <li><a href="{{ route('servicios.dermatologia.index') }}" class="dropdown-item">
+                            <span class="item-icon">🔬</span> Dermatología
+                        </a></li>
+                        <li><a href="{{ route('servicios.estetica.index') }}" class="dropdown-item">
+                            <span class="item-icon">✂️</span> Estética
                         </a></li>
                     </ul>
                 </li>
 
-                <li class="nav-item"><a href="#" class="nav-link">Especialistas</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+                <li class="nav-item"><a href="{{ route('citas.solicitud.index') }}" class="nav-link {{ request()->routeIs('citas.*') ? 'active' : '' }}">Citas</a></li>
+                <li class="nav-item"><a href="{{ route('productos.index') }}" class="nav-link {{ request()->routeIs('productos.*') ? 'active' : '' }}">Tienda</a></li>
+                <li class="nav-item"><a href="{{ route('blog.index') }}" class="nav-link {{ request()->routeIs('blog.*') ? 'active' : '' }}">Blog</a></li>
+                <li class="nav-item"><a href="{{ route('contacto.index') }}" class="nav-link {{ request()->routeIs('contacto.*') ? 'active' : '' }}">Contacto</a></li>
             </ul>
         </nav>
 
@@ -93,11 +128,13 @@
             </div>
         </div>
         <ul class="mobile-nav-list">
-            <li><a href="#" class="mobile-link active">Inicio</a></li>
-            <li><a href="#" class="mobile-link">Servicios</a></li>
-            <li><a href="#" class="mobile-link">Especialistas</a></li>
-            <li><a href="#" class="mobile-link">Tienda</a></li>
-            <li><a href="#" class="mobile-link">Contacto</a></li>
+            <li><a href="{{ route('home') }}" class="mobile-link {{ request()->routeIs('home') ? 'active' : '' }}">Inicio</a></li>
+            <li><a href="{{ route('nosotros.index') }}" class="mobile-link {{ request()->routeIs('nosotros.*') ? 'active' : '' }}">Nosotros</a></li>
+            <li><a href="{{ route('servicios.index') }}" class="mobile-link {{ request()->routeIs('servicios.*') ? 'active' : '' }}">Servicios</a></li>
+            <li><a href="{{ route('citas.solicitud.index') }}" class="mobile-link {{ request()->routeIs('citas.*') ? 'active' : '' }}">Citas</a></li>
+            <li><a href="{{ route('productos.index') }}" class="mobile-link {{ request()->routeIs('productos.*') ? 'active' : '' }}">Tienda</a></li>
+            <li><a href="{{ route('blog.index') }}" class="mobile-link {{ request()->routeIs('blog.*') ? 'active' : '' }}">Blog</a></li>
+            <li><a href="{{ route('contacto.index') }}" class="mobile-link {{ request()->routeIs('contacto.*') ? 'active' : '' }}">Contacto</a></li>
         </ul>
         
         <div class="mobile-auth">
