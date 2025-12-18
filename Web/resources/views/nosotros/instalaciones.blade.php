@@ -3,301 +3,156 @@
 @section('title', 'Nuestras Instalaciones')
 
 @push('styles')
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-<!-- AOS - Animate On Scroll -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<!-- GLightbox CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-
+    <!-- Reusing System Styles -->
+    <link rel="stylesheet" href="{{ asset('css/pages/welcome.css') }}">
+    <!-- INDEPENDENT CSS FOR THIS VIEW -->
+    <link rel="stylesheet" href="{{ asset('css/nosotros/instalaciones.css') }}">
+    <!-- GLightbox CSS (Kept for Gallery Functionality) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 @endpush
 
 @section('content')
-    <!-- Hero Section -->
-    <section class="facilities-hero">
-        <h1 class="facilities-title">Tecnología y Confort para tu Mascota</h1>
-        <p class="facilities-subtitle">
-            Espacios diseñados con amor y equipados con tecnología de vanguardia para garantizar la seguridad, comodidad y tranquilidad de tu mejor amigo en cada visita.
-        </p>
+    <!-- Hero Section (Strict Home Style) -->
+    <section class="hero-carousel-section facilities-hero full-width-carousel">
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+                    <div class="slide-overlay">
+                        <div class="hero-text centered">
+                            <span class="sub-tag" style="margin-bottom: 20px; display: block;">Espacios que Sanan</span>
+                            <h1 class="animate-title">Infraestructura <br>de Clase Mundial</h1>
+                            <p class="animate-subtitle">Diseñamos cada metro cuadrado pensando en la seguridad, confort y recuperación de tus mascotas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Tour Virtual CTA -->
-    <div class="virtual-tour" data-aos="fade-up">
-        <div class="tour-card">
-            <h2 class="tour-title">🏥 Recorre Nuestras Instalaciones</h2>
-            <p class="tour-text">
-                Explora virtualmente cada rincón de nuestra clínica y conoce los espacios donde cuidamos a tu mascota con la máxima dedicación y tecnología.
-            </p>
-            <a href="#gallery" class="btn-tour">
-                <i class="fas fa-video"></i>
-                Iniciar Tour Virtual
-            </a>
-        </div>
+    <div class="main-content-container">
+        
+        <!-- Clean Features Grid -->
+        <section class="categories-section animate-fade-up">
+            <div class="section-header text-center">
+                <span class="sub-tag">Excelencia Hospitalaria</span>
+                <h2>Áreas Médicas</h2>
+                <div class="header-line center"></div>
+            </div>
+
+            <div class="facilities-grid-clean">
+                <!-- Feature 1 -->
+                <div class="facility-card-minimal">
+                    <i class="fas fa-procedures facility-icon"></i>
+                    <h3>Quirófanos Estériles</h3>
+                    <p>Dos salas de cirugía equipadas con flujo laminar, anestesia inhalatoria y monitoreo multiparamétrico.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="facility-card-minimal">
+                    <i class="fas fa-microscope facility-icon"></i>
+                    <h3>Laboratorio In-House</h3>
+                    <p>Resultados en minutos. Hematología, bioquímica y citología procesadas al momento para diagnósticos rápidos.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="facility-card-minimal">
+                    <i class="fas fa-bed facility-icon"></i>
+                    <h3>Hospitalización UCI</h3>
+                    <p>Jaulas individuales climatizadas con bomba de oxígeno y monitoreo 24/7 por personal veterinario.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="facility-card-minimal">
+                    <i class="fas fa-cat facility-icon"></i>
+                    <h3>Zona Cat-Friendly</h3>
+                    <p>Sala de espera y consulta exclusiva para gatos, aislada de ruidos y olores caninos.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="facility-card-minimal">
+                    <i class="fas fa-x-ray facility-icon"></i>
+                    <h3>Diagnóstico por Imagen</h3>
+                    <p>Rayos X digital y Ecografía Doppler color para una visión precisa del interior de tu mascota.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="facility-card-minimal">
+                    <i class="fas fa-cut facility-icon"></i>
+                    <h3>Spa & Grooming</h3>
+                    <p>Estética profesional con productos dermatológicos hipoalergénicos de alta gama.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery / Visual Tour (Horizontal Scroll like Home Carousel) -->
+        <section class="gallery-section-wide animate-fade-up-delay">
+            <div class="section-header-compact" style="margin: 0 5% 30px;">
+                <div class="title-group">
+                    <h2>Recorrido Visual</h2>
+                    <p style="color: rgba(255,255,255,0.6);">Explora nuestras modernas instalaciones.</p>
+                </div>
+            </div>
+            
+            <div class="gallery-track-container">
+                <!-- Image 1 -->
+                <a href="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=1200" class="glightbox gallery-card">
+                    <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=600" alt="Recepción">
+                    <div class="gallery-overlay-hover">
+                        <div class="gallery-title">Recepción Principal</div>
+                    </div>
+                </a>
+                <!-- Image 2 -->
+                <a href="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=1200" class="glightbox gallery-card">
+                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=600" alt="Quirófano">
+                    <div class="gallery-overlay-hover">
+                        <div class="gallery-title">Quirófano 1</div>
+                    </div>
+                </a>
+                <!-- Image 3 -->
+                <a href="https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=1200" class="glightbox gallery-card">
+                    <img src="https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=600" alt="Rayos X">
+                    <div class="gallery-overlay-hover">
+                        <div class="gallery-title">Sala Rayos X</div>
+                    </div>
+                </a>
+                <!-- Image 4 -->
+                <a href="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1200" class="glightbox gallery-card">
+                    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600" alt="Laboratorio">
+                    <div class="gallery-overlay-hover">
+                        <div class="gallery-title">Laboratorio</div>
+                    </div>
+                </a>
+                 <!-- Image 5 -->
+                 <a href="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1200" class="glightbox gallery-card">
+                    <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600" alt="Hospitalización">
+                    <div class="gallery-overlay-hover">
+                        <div class="gallery-title">Hospitalización</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Tech Promo (Wide Banner - Home Style) -->
+        <section class="tech-promo animate-fade-up">
+            <div class="tech-left">
+                <span class="sub-tag" style="color: #fff; opacity: 0.8;">Innovación</span>
+                <h2>Tecnología que <br>Salva Vidas</h2>
+                <p style="margin-bottom: 30px; font-size: 1.1rem; opacity: 0.9;">
+                    Contamos con el equipamiento más avanzado de la región para garantizar diagnósticos precisos y tratamientos efectivos.
+                </p>
+                <a href="#" class="btn btn-white-card" style="color: #0984e3;">Ver Equipamiento <i class="fas fa-microscope"></i></a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tech" class="tech-right-img">
+        </section>
+
     </div>
 
-    <!-- Galería Interactiva -->
-    <section class="gallery-section" id="gallery">
-        <h2 class="section-title" data-aos="fade-up">Galería de Instalaciones</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-            Descubre nuestros espacios modernos y acogedores
-        </p>
-        
-        <div class="gallery-grid">
-            <!-- Recepción -->
-            <a href="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=1200" class="glightbox gallery-item large" data-aos="fade-up" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=800" alt="Recepción" class="gallery-img">
-                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                <div class="gallery-overlay">
-                    <h3 class="item-title"><i class="fas fa-door-open"></i> Recepción y Sala de Espera</h3>
-                    <div class="item-desc">Ambiente Confortable</div>
-                    <p class="item-details">Espacio amplio y acogedor con áreas separadas para perros y gatos, climatización y Wi-Fi gratuito.</p>
-                </div>
-            </a>
-
-            <!-- Consultorio -->
-            <a href="https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?w=1200" class="glightbox gallery-item" data-aos="fade-up" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?w=800" alt="Consultorio" class="gallery-img">
-                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                <div class="gallery-overlay">
-                    <h3 class="item-title"><i class="fas fa-stethoscope"></i> Consultorios Médicos</h3>
-                    <div class="item-desc">Atención Personalizada</div>
-                    <p class="item-details">4 consultorios equipados con tecnología diagnóstica avanzada.</p>
-                </div>
-            </a>
-
-            <!-- Quirófano -->
-            <a href="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=1200" class="glightbox gallery-item" data-aos="fade-up" data-aos-delay="300">
-                <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=800" alt="Quirófano" class="gallery-img">
-                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                <div class="gallery-overlay">
-                    <h3 class="item-title"><i class="fas fa-procedures"></i> Quirófanos Modernos</h3>
-                    <div class="item-desc">Cirugías de Alta Complejidad</div>
-                    <p class="item-details">2 quirófanos con equipamiento laparoscópico y monitoreo avanzado.</p>
-                </div>
-            </a>
-
-            <!-- Laboratorio -->
-            <a href="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1200" class="glightbox gallery-item large" data-aos="fade-up" data-aos-delay="400">
-                <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800" alt="Laboratorio" class="gallery-img">
-                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                <div class="gallery-overlay">
-                    <h3 class="item-title"><i class="fas fa-flask"></i> Laboratorio Clínico</h3>
-                    <div class="item-desc">Diagnósticos Rápidos y Precisos</div>
-                    <p class="item-details">Laboratorio in-house con analizadores hematológicos, bioquímicos y de urianálisis.</p>
-                </div>
-            </a>
-
-            <!-- Rayos X -->
-            <a href="https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=1200" class="glightbox gallery-item" data-aos="fade-up" data-aos-delay="500">
-                <img src="https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=800" alt="Radiología" class="gallery-img">
-                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                <div class="gallery-overlay">
-                    <h3 class="item-title"><i class="fas fa-x-ray"></i> Sala de Rayos X</h3>
-                    <div class="item-desc">Diagnóstico por Imagen Digital</div>
-                    <p class="item-details">Equipo de radiología digital con resultados inmediatos.</p>
-                </div>
-            </a>
-
-            <!-- Hospitalización -->
-            <a href="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1200" class="glightbox gallery-item" data-aos="fade-up" data-aos-delay="600">
-                <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800" alt="Hospitalización" class="gallery-img">
-                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                <div class="gallery-overlay">
-                    <h3 class="item-title"><i class="fas fa-bed"></i> Área de Hospitalización</h3>
-                    <div class="item-desc">Cuidados Intensivos 24/7</div>
-                    <p class="item-details">Jaulas amplias con temperatura controlada y monitoreo constante.</p>
-                </div>
-            </a>
-
-            <!-- Farmacia -->
-            <a href="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1200" class="glightbox gallery-item" data-aos="fade-up" data-aos-delay="700">
-                <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800" alt="Farmacia" class="gallery-img">
-                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                <div class="gallery-overlay">
-                    <h3 class="item-title"><i class="fas fa-pills"></i> Farmacia Veterinaria</h3>
-                    <div class="item-desc">Medicamentos Certificados</div>
-                    <p class="item-details">Stock completo de medicamentos y productos veterinarios.</p>
-                </div>
-            </a>
-
-            <!-- Grooming -->
-            <a href="https://images.unsplash.com/photo-1548681528-6a5c45b66b42?w=1200" class="glightbox gallery-item" data-aos="fade-up" data-aos-delay="800">
-                <img src="https://images.unsplash.com/photo-1548681528-6a5c45b66b42?w=800" alt="Peluquería" class="gallery-img">
-                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                <div class="gallery-overlay">
-                    <h3 class="item-title"><i class="fas fa-cut"></i> Sala de Estética</h3>
-                    <div class="item-desc">Peluquería y Spa</div>
-                    <p class="item-details">Servicio completo de grooming y estética canina y felina.</p>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <!-- Features / Características -->
-    <section class="features-list">
-        <h2 class="section-title" data-aos="fade-up">Nuestras Características</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-            Innovación y cuidado en cada detalle
-        </p>
-
-        <div class="features-grid">
-            <div class="feature-card" data-aos="flip-up" data-aos-delay="100">
-                <div class="feature-icon-wrapper">
-                    <i class="fas fa-shield-virus feature-icon"></i>
-                </div>
-                <h3 class="feature-title">Bioseguridad Total</h3>
-                <p class="feature-text">Protocolos estrictos de limpieza y desinfección en todas nuestras áreas para prevenir contagios.</p>
-            </div>
-
-            <div class="feature-card" data-aos="flip-up" data-aos-delay="200">
-                <div class="feature-icon-wrapper">
-                    <i class="fas fa-thermometer-half feature-icon"></i>
-                </div>
-                <h3 class="feature-title">Climatización Perfecta</h3>
-                <p class="feature-text">Temperatura y humedad controladas en todas las áreas para el máximo confort de tu mascota.</p>
-            </div>
-
-            <div class="feature-card" data-aos="flip-up" data-aos-delay="300">
-                <div class="feature-icon-wrapper">
-                    <i class="fas fa-cat feature-icon"></i>
-                </div>
-                <h3 class="feature-title">Cat-Friendly Certified</h3>
-                <p class="feature-text">Espacios exclusivos para gatos, diseñados para reducir el estrés durante su visita.</p>
-            </div>
-
-            <div class="feature-card" data-aos="flip-up" data-aos-delay="400">
-                <div class="feature-icon-wrapper">
-                    <i class="fas fa-video feature-icon"></i>
-                </div>
-                <h3 class="feature-title">Monitoreo en Vivo</h3>
-                <p class="feature-text">Sistema de cámaras que te permite ver a tu mascota hospitalizada desde tu celular.</p>
-            </div>
-
-            <div class="feature-card" data-aos="flip-up" data-aos-delay="500">
-                <div class="feature-icon-wrapper">
-                    <i class="fas fa-parking feature-icon"></i>
-                </div>
-                <h3 class="feature-title">Estacionamiento Amplio</h3>
-                <p class="feature-text">Parking gratuito con espacios amplios para tu comodidad al llegar con tu mascota.</p>
-            </div>
-
-            <div class="feature-card" data-aos="flip-up" data-aos-delay="600">
-                <div class="feature-icon-wrapper">
-                    <i class="fas fa-wifi feature-icon"></i>
-                </div>
-                <h3 class="feature-title">WiFi Gratuito</h3>
-                <p class="feature-text">Internet de alta velocidad disponible en todas las áreas de espera para tu comodidad.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonios sobre Instalaciones -->
-    <section class="testimonials-section">
-        <h2 class="section-title" data-aos="fade-up">Lo Que Dicen Nuestros Clientes</h2>
-        
-        <div class="swiper testimonials-swiper" data-aos="fade-up" data-aos-delay="200">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">
-                            "Las instalaciones son impecables, modernas y muy limpias. Mi gato se sintió tranquilo en el consultorio Cat-Friendly. ¡Excelente atención!"
-                        </p>
-                        <div class="testimonial-author">- María González</div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">
-                            "Me impresionó el quirófano y todo el equipamiento médico. Se nota que invierten en tecnología de punta. Mi perro fue operado exitosamente."
-                        </p>
-                        <div class="testimonial-author">- Carlos Rodríguez</div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">
-                            "La sala de espera es muy cómoda y el sistema de monitoreo me permitió ver a mi mascota durante su hospitalización. ¡Muy tranquilizador!"
-                        </p>
-                        <div class="testimonial-author">- Ana Martínez</div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
 @endsection
 
 @push('scripts')
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<!-- AOS - Animate On Scroll -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="{{ asset('js/pages/welcome.js') }}"></script>
 <!-- GLightbox JS -->
 <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-
 <script>
-    // Inicializar AOS
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100,
-        easing: 'ease-out-cubic'
-    });
-
-    // Inicializar GLightbox para la galería
     const lightbox = GLightbox({
         touchNavigation: true,
         loop: true,
-        autoplayVideos: true,
-        closeButton: true,
-    });
-
-    // Inicializar Swiper para testimonios
-    const testimonialsSwiper = new Swiper('.testimonials-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
-
-    // Smooth scroll para el botón de tour virtual
-    document.querySelector('.btn-tour').addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
+        autoplayVideos: true
     });
 </script>
 @endpush
