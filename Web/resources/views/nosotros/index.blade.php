@@ -71,7 +71,7 @@
             </div>
         </section>
 
-        <!-- Values Section (4 Columns, Standard Header) -->
+        <!-- Values Section (4 Columns) -->
         <section class="categories-section animate-fade-up-delay" id="valores" style="margin-top: -50px; position: relative; z-index: 10;">
             <div class="section-header text-center">
                 <span class="sub-tag">Nuestra Esencia</span>
@@ -169,7 +169,7 @@
             </div>
         </section>
 
-        <!-- Why Choose Us Section (Enhanced Content & Buttons) -->
+        <!-- Why Choose Us Section -->
         <section class="categories-section animate-fade-up-delay bg-dark-glass">
             <div class="section-header text-center">
                 <span class="sub-tag">Excelencia Clínica</span>
@@ -181,28 +181,24 @@
             </div>
             
             <div class="grid-feature-detailed">
-                <!-- Card 1 -->
                 <div class="detailed-card">
                     <div class="icon-box-small"><i class="fas fa-user-md"></i></div>
                     <h4>Especialistas Certificados</h4>
                     <p>Contamos con un equipo multidisciplinario con postgrados internacionales. Tu mascota será atendida por verdaderos expertos en cada área.</p>
                     <a href="#" class="btn-white-sm">Conocer especialistas</a>
                 </div>
-                <!-- Card 2 -->
                 <div class="detailed-card">
                     <div class="icon-box-small"><i class="fas fa-flask"></i></div>
                     <h4>Tecnología de Punta</h4>
                     <p>Laboratorio propio y equipos de diagnóstico por imagen de última generación para resultados precisos y tratamientos inmediatos.</p>
                     <a href="#" class="btn-white-sm">Ver equipamiento</a>
                 </div>
-                <!-- Card 3 -->
                 <div class="detailed-card">
                     <div class="icon-box-small"><i class="fas fa-cat"></i></div>
                     <h4>Certificación Cat Friendly</h4>
                     <p>Comprendemos a los felinos. Nuestras instalaciones y manejo están diseñados para reducir su estrés y ansiedad al mínimo.</p>
                     <a href="#" class="btn-white-sm">Área felina</a>
                 </div>
-                <!-- Card 4 -->
                 <div class="detailed-card">
                     <div class="icon-box-small"><i class="fas fa-shield-alt"></i></div>
                     <h4>Protocolos Seguros</h4>
@@ -224,11 +220,8 @@
                     </div>
                 </div>
             </div>
-            
             <div class="product-carousel-wrapper animate-fade-up-delay">
                 <div class="product-carousel-track" id="teamTrack">
-                    <!-- Cards (Already enhanced previously) -->
-                    <!-- Re-pasting simplified structure for brevity, logic remains same -->
                     <div class="product-card-modern team-card-enhanced">
                         <div class="card-image-wrapper">
                             <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dra. Ana García">
@@ -243,7 +236,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- (Other team cards...) -->
                     <div class="product-card-modern team-card-enhanced">
                         <div class="card-image-wrapper">
                             <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dr. Carlos Ruiz">
@@ -290,13 +282,66 @@
             </div>
         </section>
 
-        <!-- Wide Promo -->
-        <section class="promo-wide-section animate-fade-up-delay" style="background: linear-gradient(135deg, #00b894 0%, #0984e3 100%); margin-bottom: 0;">
+        <!-- Complex Promo Section (From Inicio - Replaces simple banner) -->
+        <section class="promo-wide-section animate-fade-up-delay">
             <div class="decor-shape shape-1"></div>
             <div class="decor-shape shape-2"></div>
-            <div class="promo-container" style="justify-content: center; text-align: center; flex-direction: column;">
-                <h2 style="margin-bottom: 2rem;">¿Listo para visitar ZoofiPets?</h2>
-                <a href="#" class="btn btn-white-card" style="padding: 15px 40px; font-size: 1.2rem;">Reservar Cita Ahora <i class="fas fa-calendar-alt"></i></a>
+            <div class="promo-container">
+                <div class="promo-content-left">
+                    <div class="promo-tags">
+                        <span class="promo-badge">Agenda Tu Visita</span>
+                        <span class="promo-badge outline">Atención Personalizada</span>
+                    </div>
+                    <h2>Cuidado & Amor <br>Para Tu Mascota</h2>
+                    <p>Desde el primer chequeo hasta los cuidados más complejos, estamos aquí para ti. Tecnología de punta y corazones dedicados.</p>
+                    
+                    <div class="promo-actions">
+                        <a href="#" class="btn-white-card">Reservar Cita <i class="fas fa-arrow-right"></i></a>
+                        <!-- Timer visual (kept for design consistency user liked) -->
+                        <div class="promo-timer">
+                            <span>Abierto Hoy Hasta:</span>
+                            <div class="timer-box" style="width: auto; padding: 0 15px;">
+                                <span class="time-part">20:00 <small>PM</small></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="promo-visual-center">
+                    <div class="glow-effect"></div>
+                    <div class="floating-review">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <span>"La mejor atención"</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Happy Dog" class="floating-img main-pet">
+                </div>
+                
+                <div class="promo-content-right">
+                    <div class="mini-feature-card animate-zoom-in" style="animation-delay: 0.2s;">
+                        <div class="icon-box"><i class="fas fa-stethoscope"></i></div>
+                        <div class="text-box">
+                            <h4>Primera Consulta</h4>
+                            <small>Valoración Integral</small>
+                        </div>
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </div>
+                    <div class="mini-feature-card animate-zoom-in" style="animation-delay: 0.4s;">
+                        <div class="icon-box"><i class="fas fa-ambulance"></i></div>
+                        <div class="text-box">
+                            <h4>Urgencias 24/7</h4>
+                            <small>Siempre Listos</small>
+                        </div>
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </div>
+                    <div class="mini-feature-card animate-zoom-in" style="animation-delay: 0.6s;">
+                        <div class="icon-box"><i class="fas fa-award"></i></div>
+                        <div class="text-box">
+                            <h4>Certificados</h4>
+                            <small>Calidad ISO</small>
+                        </div>
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </div>
+                </div>
             </div>
         </section>
 
