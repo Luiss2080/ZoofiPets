@@ -493,7 +493,7 @@
             <div class="feature-container">
                 <div class="feature-visual-left">
                     <div class="circle-bg"></div>
-                    <img src="https://images.unsplash.com/photo-1585499193151-0f515432ed79?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Healthy Dog Food" class="feature-img">
+                    <img src="https://images.unsplash.com/photo-1608408843596-b311965e04cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Healthy Dog Food" class="feature-img">
                     <div class="floating-badge">
                         <i class="fas fa-leaf"></i> 100% Natural
                     </div>
