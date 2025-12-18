@@ -1,0 +1,196 @@
+/* Independent CSS for Equipo View */
+
+/* --- Hero Section (Matches Home) --- */
+.hero-carousel-section.team-hero {
+    margin-bottom: 50px;
+    height: 60vh;
+    min-height: 500px;
+}
+
+/* --- Component: Clean Tabs (Home Style) --- */
+.team-tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px 0;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    font-family: "Montserrat", sans-serif;
+}
+
+.tab-btn:hover {
+    color: white;
+}
+
+.tab-btn.active {
+    color: #2ecc71; /* Brand Green or Accent */
+    font-weight: 700;
+}
+
+.tab-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: -21px; /* Aligns with container border */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #2ecc71;
+    box-shadow: 0 -2px 10px rgba(46, 204, 113, 0.5);
+}
+
+/* --- Component: Clean Grid (Ordered) --- */
+.team-grid-clean {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 90%;
+    margin: 0 auto 100px;
+}
+
+.team-card-minimal {
+    background: rgba(255, 255, 255, 0.03); /* Subtle glass */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-card-minimal:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-body-clean {
+    padding: 25px;
+    text-align: center;
+}
+
+.card-body-clean h3 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.card-body-clean .role {
+    color: #f1c40f; /* Accent */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.social-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-mini {
+    color: rgba(255, 255, 255, 0.5);
+    transition: 0.3s;
+}
+.social-mini:hover {
+    color: white;
+    transform: scale(1.2);
+}
+
+/* --- Component: Recruitment Promo (Home Clone) --- */
+.recruitment-promo {
+    margin: 0 5% 100px; /* Standard margins */
+    background: linear-gradient(
+        135deg,
+        #6c5ce7 0%,
+        #a29bfe 100%
+    ); /* Clean Purple/Blue */
+    border-radius: 30px;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.promo-left {
+    z-index: 2;
+    max-width: 500px;
+}
+
+.promo-left h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.promo-right-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 110%; /* Slight overflow for dynamic look */
+    width: auto;
+    object-fit: contain;
+    mask-image: linear-gradient(to left, black 80%, transparent 100%);
+    z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .team-grid-clean {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 900px) {
+    .team-grid-clean {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .recruitment-promo {
+        flex-direction: column;
+        text-align: center;
+    }
+    .promo-right-img {
+        position: relative;
+        height: 300px;
+        margin-top: 30px;
+    }
+}
+@media (max-width: 600px) {
+    .team-grid-clean {
+        grid-template-columns: 1fr;
+    }
+    .team-tabs-container {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+}

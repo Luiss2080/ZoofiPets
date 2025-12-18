@@ -3,278 +3,170 @@
 @section('title', 'Nuestro Equipo')
 
 @push('styles')
-<!-- AOS - Animate On Scroll -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+    <!-- Reusing System Styles -->
+    <link rel="stylesheet" href="{{ asset('css/pages/welcome.css') }}">
+    <!-- INDEPENDENT CSS FOR THIS VIEW -->
+    <link rel="stylesheet" href="{{ asset('css/nosotros/equipo.css') }}">
 @endpush
 
 @section('content')
-    <section class="team-hero">
-        <h1 class="team-title">Conoce a los Expertos</h1>
-        <p class="team-subtitle">
-            Un equipo multidisciplinario de profesionales apasionados y altamente capacitados, dedicados a la salud y bienestar de tu mascota.
-        </p>
+    <!-- Hero Section (Strict Home Replication) -->
+    <section class="hero-carousel-section team-hero full-width-carousel">
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+                    <div class="slide-overlay">
+                        <div class="hero-text centered">
+                            <span class="sub-tag" style="margin-bottom: 20px; display: block;">Profesionales de Confianza</span>
+                            <h1 class="animate-title">Expertos en <br>Salud Animal</h1>
+                            <p class="animate-subtitle">Conoce a las personas detrás de cada diagnóstico, cada cirugía y cada recuperación exitosa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Filtros por Especialidad -->
-    <div class="filter-container">
-        <button class="filter-btn active" data-filter="all">
-            <i class="fas fa-globe"></i> Todos
-        </button>
-        <button class="filter-btn" data-filter="cirugia">
-            <i class="fas fa-stethoscope"></i> Cirugía
-        </button>
-        <button class="filter-btn" data-filter="dermatologia">
-            <i class="fas fa-syringe"></i> Dermatología
-        </button>
-        <button class="filter-btn" data-filter="cardiologia">
-            <i class="fas fa-heartbeat"></i> Cardiología
-        </button>
-        <button class="filter-btn" data-filter="etologia">
-            <i class="fas fa-paw"></i> Etología
-        </button>
-        <button class="filter-btn" data-filter="nutricion">
-            <i class="fas fa-utensils"></i> Nutrición
-        </button>
-    </div>
-
-    <div class="team-grid" id="teamGrid">
-        <!-- Miembro 1 -->
-        <div class="team-card" data-category="cirugia" data-aos="fade-up" data-aos-delay="100">
-            <div class="member-img-container">
-                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop" 
-                     alt="Dr. Carlos Ruiz" class="member-img">
-                <span class="specialty-badge">Cirugía</span>
-            </div>
-            <div class="member-info">
-                <h3 class="member-name">Dr. Carlos Ruiz</h3>
-                <div class="member-role">
-                    <i class="fas fa-user-md"></i> Director Médico
-                </div>
-                <p class="member-bio">Especialista en cirugía de tejidos blandos con más de 15 años de experiencia. Certificado en técnicas laparoscópicas avanzadas.</p>
-                <div class="member-stats">
-                    <div class="stat">
-                        <span class="stat-value">15+</span>
-                        <span class="stat-label">Años</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">2K+</span>
-                        <span class="stat-label">Cirugías</span>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-btn"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Miembro 2 -->
-        <div class="team-card" data-category="dermatologia" data-aos="fade-up" data-aos-delay="200">
-            <div class="member-img-container">
-                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop" 
-                     alt="Dra. Ana López" class="member-img">
-                <span class="specialty-badge">Dermatología</span>
-            </div>
-            <div class="member-info">
-                <h3 class="member-name">Dra. Ana López</h3>
-                <div class="member-role">
-                    <i class="fas fa-microscope"></i> Dermatóloga
-                </div>
-                <p class="member-bio">Apasionada por el cuidado de la piel y alergias. Especialización en dermatología veterinaria avanzada en Universidad de Cornell.</p>
-                <div class="member-stats">
-                    <div class="stat">
-                        <span class="stat-value">10+</span>
-                        <span class="stat-label">Años</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">3K+</span>
-                        <span class="stat-label">Pacientes</span>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-btn"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Miembro 3 -->
-        <div class="team-card" data-category="cardiologia" data-aos="fade-up" data-aos-delay="300">
-            <div class="member-img-container">
-                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop" 
-                     alt="Dr. Miguel Torres" class="member-img">
-                <span class="specialty-badge">Cardiología</span>
-            </div>
-            <div class="member-info">
-                <h3 class="member-name">Dr. Miguel Torres</h3>
-                <div class="member-role">
-                    <i class="fas fa-heartbeat"></i> Cardiólogo
-                </div>
-                <p class="member-bio">Experto en diagnóstico por imagen cardiovascular y ecocardiografía. Certificación internacional en medicina interna.</p>
-                <div class="member-stats">
-                    <div class="stat">
-                        <span class="stat-value">12+</span>
-                        <span class="stat-label">Años</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">1.5K+</span>
-                        <span class="stat-label">Ecocardiogramas</span>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-btn"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
+    <div class="main-content-container">
         
-        <!-- Miembro 4 -->
-        <div class="team-card" data-category="etologia" data-aos="fade-up" data-aos-delay="400">
-            <div class="member-img-container">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" 
-                     alt="Lic. Sofia Méndez" class="member-img">
-                <span class="specialty-badge">Etología</span>
+        <!-- Clean Ordered Content -->
+        <section class="categories-section animate-fade-up">
+            <div class="section-header text-center">
+                <h2>Nuestro Equipo</h2>
+                <div class="header-line center"></div>
             </div>
-            <div class="member-info">
-                <h3 class="member-name">Lic. Sofia Méndez</h3>
-                <div class="member-role">
-                    <i class="fas fa-paw"></i> Etóloga Clínica
-                </div>
-                <p class="member-bio">Especialista en comportamiento animal y adiestramiento positivo. Máster en Etología Aplicada y Bienestar Animal.</p>
-                <div class="member-stats">
-                    <div class="stat">
-                        <span class="stat-value">8+</span>
-                        <span class="stat-label">Años</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">800+</span>
-                        <span class="stat-label">Casos</span>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-btn"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
 
-        <!-- Miembro 5 -->
-        <div class="team-card" data-category="cirugia" data-aos="fade-up" data-aos-delay="500">
-            <div class="member-img-container">
-                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop" 
-                     alt="Dra. Laura Fernández" class="member-img">
-                <span class="specialty-badge">Cirugía</span>
+            <!-- Minimalist Tabs (Home Style) -->
+            <div class="team-tabs-container">
+                <button class="tab-btn active" data-filter="all">Todos</button>
+                <button class="tab-btn" data-filter="cirugia">Cirugía</button>
+                <button class="tab-btn" data-filter="medicina">Medicina General</button>
+                <button class="tab-btn" data-filter="especialidades">Especialidades</button>
             </div>
-            <div class="member-info">
-                <h3 class="member-name">Dra. Laura Fernández</h3>
-                <div class="member-role">
-                    <i class="fas fa-user-md"></i> Cirujana Ortopédica
-                </div>
-                <p class="member-bio">Especialista en cirugía ortopédica y traumatología veterinaria. Pionera en técnicas de osteosíntesis mínimamente invasivas.</p>
-                <div class="member-stats">
-                    <div class="stat">
-                        <span class="stat-value">9+</span>
-                        <span class="stat-label">Años</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">1.2K+</span>
-                        <span class="stat-label">Cirugías</span>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-btn"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
 
-        <!-- Miembro 6 -->
-        <div class="team-card" data-category="nutricion" data-aos="fade-up" data-aos-delay="600">
-            <div class="member-img-container">
-                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop" 
-                     alt="Lic. Daniela Morales" class="member-img">
-                <span class="specialty-badge">Nutrición</span>
-            </div>
-            <div class="member-info">
-                <h3 class="member-name">Lic. Daniela Morales</h3>
-                <div class="member-role">
-                    <i class="fas fa-apple-alt"></i> Nutricionista Veterinaria
-                </div>
-                <p class="member-bio">Experta en nutrición clínica y dietética animal. Especialización en alergias alimentarias y dietas terapéuticas personalizadas.</p>
-                <div class="member-stats">
-                    <div class="stat">
-                        <span class="stat-value">7+</span>
-                        <span class="stat-label">Años</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">900+</span>
-                        <span class="stat-label">Planes</span>
+            <!-- Clean 4-Col Grid -->
+            <div class="team-grid-clean" id="teamGrid">
+                <!-- Member 1 -->
+                <div class="team-card-minimal" data-category="cirugia">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop" class="card-img-top" alt="Dr. Carlos">
+                    <div class="card-body-clean">
+                        <h3>Dr. Carlos Ruiz</h3>
+                        <span class="role">Director & Cirujano</span>
+                        <p style="font-size: 0.9rem; color: #ccc;">Especialista en ortopedia y tejidos blandos con 15 años de experiencia.</p>
+                        <div class="social-row">
+                            <a href="#" class="social-mini"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-mini"><i class="fas fa-envelope"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="social-links">
-                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-btn"><i class="fas fa-envelope"></i></a>
+
+                <!-- Member 2 -->
+                <div class="team-card-minimal" data-category="medicina">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop" class="card-img-top" alt="Dra. Ana">
+                    <div class="card-body-clean">
+                        <h3>Dra. Ana García</h3>
+                        <span class="role">Medicina Interna</span>
+                        <p style="font-size: 0.9rem; color: #ccc;">Experta en diagnóstico clínico y manejo de pacientes crónicos.</p>
+                        <div class="social-row">
+                            <a href="#" class="social-mini"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Member 3 -->
+                <div class="team-card-minimal" data-category="especialidades">
+                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&h=400&fit=crop" class="card-img-top" alt="Dr. Miguel">
+                    <div class="card-body-clean">
+                        <h3>Dr. Miguel Ángel</h3>
+                        <span class="role">Exóticos</span>
+                        <p style="font-size: 0.9rem; color: #ccc;">Atención especializada para aves, reptiles y pequeños mamíferos.</p>
+                        <div class="social-row">
+                            <a href="#" class="social-mini"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="team-card-minimal" data-category="medicina">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop" class="card-img-top" alt="Dr. John">
+                    <div class="card-body-clean">
+                        <h3>Dr. John Doe</h3>
+                        <span class="role">Urgencias</span>
+                        <p style="font-size: 0.9rem; color: #ccc;">Disponible 24/7 para el cuidado crítico de tu mascota.</p>
+                         <div class="social-row">
+                            <a href="#" class="social-mini"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Member 5 -->
+                 <div class="team-card-minimal" data-category="especialidades">
+                    <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop" class="card-img-top" alt="Dra. Laura">
+                    <div class="card-body-clean">
+                        <h3>Dra. Laura P.</h3>
+                        <span class="role">Dermatología</span>
+                        <p style="font-size: 0.9rem; color: #ccc;">Soluciones avanzadas para alergias y problemas cutáneos.</p>
+                         <div class="social-row">
+                            <a href="#" class="social-mini"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Member 6 -->
+                 <div class="team-card-minimal" data-category="medicina">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" class="card-img-top" alt="Lic. Sofia">
+                    <div class="card-body-clean">
+                        <h3>Lic. Sofia M.</h3>
+                        <span class="role">Etología</span>
+                        <p style="font-size: 0.9rem; color: #ccc;">Mejorando la conducta y el bienestar emocional.</p>
+                         <div class="social-row">
+                            <a href="#" class="social-mini"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
+        </section>
+
+        <!-- Recruitment Promo (Strict Home Style - Wide Banner) -->
+        <section class="recruitment-promo animate-fade-up">
+            <div class="promo-left">
+                <span class="sub-tag" style="color: #fff; opacity: 0.8;">Carreras</span>
+                <h2>Únete a la <br>Manada ZoofiPets</h2>
+                <p style="margin-bottom: 30px; font-size: 1.1rem; opacity: 0.9;">
+                    Buscamos veterinarios y asistentes apasionados que quieran marcar la diferencia. Ofrecemos crecimiento profesional y un ambiente de primer nivel.
+                </p>
+                <a href="#" class="btn btn-white-card" style="color: #6c5ce7;">Ver Vacantes <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Team" class="promo-right-img">
+        </section>
+
     </div>
+
 @endsection
 
 @push('scripts')
-<!-- AOS - Animate On Scroll -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+<script src="{{ asset('js/pages/welcome.js') }}"></script>
 <script>
-    // Inicializar AOS
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100,
-        easing: 'ease-out-cubic'
-    });
+    // Clean Filter Logic (No Animations clutter)
+    const tabs = document.querySelectorAll('.tab-btn');
+    const cards = document.querySelectorAll('.team-card-minimal');
 
-    // Sistema de Filtros
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const teamCards = document.querySelectorAll('.team-card');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Active State
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
 
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const filter = button.getAttribute('data-filter');
-            
-            // Actualizar botones activos
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            
-            // Filtrar tarjetas
-            teamCards.forEach((card, index) => {
-                const category = card.getAttribute('data-category');
-                
-                if (filter === 'all' || category === filter) {
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
-                    }, index * 50);
+            const filter = tab.getAttribute('data-filter');
+
+            // Filtering
+            cards.forEach(card => {
+                if(filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.style.display = 'flex';
                 } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'scale(0.8)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
+                    card.style.display = 'none';
                 }
             });
         });
-    });
-
-    // Animación de entrada inicial
-    teamCards.forEach(card => {
-        card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
     });
 </script>
 @endpush
