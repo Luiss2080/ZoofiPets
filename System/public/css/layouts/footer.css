@@ -167,31 +167,10 @@
     gap: 1rem;
 }
 
-.logo-icon-red {
-    width: 48px;
+.footer-logo-img {
     height: 48px;
-    background: linear-gradient(
-        135deg,
-        var(--primary-color),
-        var(--primary-color-hover)
-    );
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(72, 52, 212, 0.3);
-}
-
-.brand-title {
-    color: var(--footer-heading);
-    font-weight: 800;
-    font-size: 1.2rem;
-    line-height: 1;
-}
-.brand-subtitle {
-    color: var(--footer-text);
-    font-size: 0.8rem;
-    font-weight: 500;
+    width: auto;
+    object-fit: contain;
 }
 
 .social-links {
@@ -207,24 +186,20 @@
     justify-content: center;
     transition: all 0.3s ease;
     color: white;
+    background-color: var(--primary-color); /* Default to Purple */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .social-link:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 15px rgba(72, 52, 212, 0.4);
+    background-color: var(--primary-color-hover);
 }
 
-.social-link.facebook {
-    background-color: #3b82f6;
-}
-.social-link.instagram {
-    background-color: #ec4899;
-}
+/* Optional: Keep original colors ONLY on hover if desired, 
+   but user asked for purple background. 
+   We will keep uniform purple for elegance. */
 .social-link.tiktok {
-    background-color: #000000;
-} /* TikTok Black */
-.social-link.whatsapp {
-    background-color: #22c55e;
+    /* TikTok icon adjustment if needed */
 }
 
 .footer-legal-section {
