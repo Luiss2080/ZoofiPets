@@ -18,11 +18,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             // Usuarios y Roles (Orden importante)
             RolesSeeder::class,
-            PermisosSeeder::class,
+            CargosSeeder::class, // Moved here
             UsersSeeder::class,
+            DummyDataSeeder::class, // Added
             
             // Tablas base (sin dependencias)
-            CargosSeeder::class,
             MetodosPagoSeeder::class,
             CategoriaProductosSeeder::class,
             
