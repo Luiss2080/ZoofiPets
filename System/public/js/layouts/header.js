@@ -13,13 +13,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         toggle.addEventListener("click", function (e) {
             e.stopPropagation();
-            const isVisible = dropdown.classList.contains("show-dropdown");
+            const isVisible = dropdown.classList.contains("show"); // Changed to match CSS
 
             // Close all other dropdowns
             closeAllDropdowns();
 
             if (!isVisible) {
-                dropdown.classList.add("show-dropdown");
+                dropdown.classList.add("show"); // Changed to match CSS
                 toggle.setAttribute("aria-expanded", "true");
             }
         });
@@ -31,8 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function closeAllDropdowns() {
-        document.querySelectorAll(".show-dropdown").forEach((d) => {
-            d.classList.remove("show-dropdown");
+        document.querySelectorAll(".show").forEach((d) => {
+            // Changed to match CSS
+            d.classList.remove("show");
         });
         document.querySelectorAll('[aria-expanded="true"]').forEach((t) => {
             t.setAttribute("aria-expanded", "false");
