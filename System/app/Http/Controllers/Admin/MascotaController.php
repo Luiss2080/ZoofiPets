@@ -16,7 +16,7 @@ class MascotaController extends Controller
     public function index()
     {
         $mascotas = Mascota::with('cliente')->paginate(10);
-        return view('admin.mascotas.index', compact('mascotas'));
+        return view('veterinario.mascotas.index', compact('mascotas'));
     }
 
     /**
@@ -25,7 +25,7 @@ class MascotaController extends Controller
     public function create()
     {
         $clientes = Cliente::orderBy('nombre')->get();
-        return view('admin.mascotas.create', compact('clientes'));
+        return view('veterinario.mascotas.create', compact('clientes'));
     }
 
     /**
@@ -58,7 +58,7 @@ class MascotaController extends Controller
     {
         $mascota = Mascota::findOrFail($id);
         $clientes = Cliente::orderBy('nombre')->get();
-        return view('admin.mascotas.edit', compact('mascota', 'clientes'));
+        return view('veterinario.mascotas.edit', compact('mascota', 'clientes'));
     }
 
     /**

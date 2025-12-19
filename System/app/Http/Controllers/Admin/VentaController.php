@@ -20,7 +20,7 @@ class VentaController extends Controller
     public function index()
     {
         $ventas = Venta::with(['cliente', 'empleado'])->orderBy('created_at', 'desc')->paginate(10);
-        return view('admin.ventas.index', compact('ventas'));
+        return view('vendedor.ventas.index', compact('ventas'));
     }
 
     /**
@@ -30,7 +30,7 @@ class VentaController extends Controller
     {
         $productos = Producto::where('activo', true)->where('stock_actual', '>', 0)->get();
         $clientes = Cliente::where('activo', true)->orderBy('nombre')->get();
-        return view('admin.ventas.create', compact('productos', 'clientes'));
+        return view('vendedor.ventas.create', compact('productos', 'clientes'));
     }
 
     /**
@@ -112,7 +112,7 @@ class VentaController extends Controller
     public function show(string $id)
     {
         $venta = Venta::with(['detalles.producto', 'cliente', 'empleado'])->findOrFail($id);
-        return view('admin.ventas.show', compact('venta'));
+        return view('vendedor.ventas.show', compact('venta'));
     }
 
     public function edit(string $id) { /* No editable usually */ }

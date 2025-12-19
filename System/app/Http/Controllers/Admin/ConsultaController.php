@@ -25,7 +25,7 @@ class ConsultaController extends Controller
             ->orderBy('fecha_hora', 'asc')
             ->get();
 
-        return view('admin.veterinaria.agenda', compact('citas'));
+        return view('veterinario.consultas.agenda', compact('citas'));
     }
 
     /**
@@ -52,7 +52,7 @@ class ConsultaController extends Controller
 
         $historialprevio = $mascota->historiales()->orderBy('fecha_consulta', 'desc')->get();
 
-        return view('admin.veterinaria.consulta', compact('cita', 'mascota', 'historialprevio'));
+        return view('veterinario.consultas.consulta', compact('cita', 'mascota', 'historialprevio'));
     }
 
     /**
@@ -91,7 +91,7 @@ class ConsultaController extends Controller
     public function show(string $id)
     {
         $historial = HistorialMedico::with(['mascota', 'veterinario'])->findOrFail($id);
-        return view('admin.veterinaria.show', compact('historial'));
+        return view('veterinario.consultas.show', compact('historial'));
     }
 
     // Skipping Edit/Update/Destroy for MVP history integrity

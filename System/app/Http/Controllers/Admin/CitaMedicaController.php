@@ -21,7 +21,7 @@ class CitaMedicaController extends Controller
             ->orderBy('fecha_hora', 'asc')
             ->paginate(10);
             
-        return view('admin.citas.index', compact('citas'));
+        return view('recepcionista.citas.index', compact('citas'));
     }
 
     /**
@@ -35,7 +35,7 @@ class CitaMedicaController extends Controller
             $q->where('nombre', 'Veterinario'); // Ajustar si el cargo se llama diferente
         })->get();
         
-        return view('admin.citas.create', compact('clientes', 'veterinarios'));
+        return view('recepcionista.citas.create', compact('clientes', 'veterinarios'));
     }
 
     /**
@@ -69,7 +69,7 @@ class CitaMedicaController extends Controller
         $clientes = Cliente::orderBy('nombre')->get(); // Para mostrar, aunque idealmente no se cambia el cliente
         $veterinarios = Empleado::whereHas('cargo', function($q){ $q->where('nombre', 'Veterinario'); })->get();
         
-        return view('admin.citas.edit', compact('cita', 'clientes', 'veterinarios'));
+        return view('recepcionista.citas.edit', compact('cita', 'clientes', 'veterinarios'));
     }
 
     /**

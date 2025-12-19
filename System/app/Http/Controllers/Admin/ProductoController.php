@@ -13,13 +13,13 @@ class ProductoController extends Controller
     public function index()
     {
         $productos = Producto::paginate(10);
-        return view('admin.productos.index', compact('productos'));
+        return view('vendedor.productos.index', compact('productos'));
     }
 
     public function create()
     {
         // $categorias = CategoriaProducto::all(); // Comentar si no existe aun el modelo
-        return view('admin.productos.create');
+        return view('vendedor.productos.create');
     }
 
     public function store(Request $request)
@@ -39,7 +39,7 @@ class ProductoController extends Controller
     public function edit(string $id)
     {
         $producto = Producto::findOrFail($id);
-        return view('admin.productos.edit', compact('producto'));
+        return view('vendedor.productos.edit', compact('producto'));
     }
 
     public function update(Request $request, string $id)

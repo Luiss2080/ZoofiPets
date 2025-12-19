@@ -15,7 +15,7 @@ class ClienteController extends Controller
     public function index()
     {
         $clientes = Cliente::paginate(10);
-        return view('admin.clientes.index', compact('clientes'));
+        return view('recepcionista.clientes.index', compact('clientes'));
     }
 
     /**
@@ -23,7 +23,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('admin.clientes.create');
+        return view('recepcionista.clientes.create');
     }
 
     /**
@@ -64,7 +64,7 @@ class ClienteController extends Controller
     public function edit(string $id)
     {
         $cliente = Cliente::findOrFail($id);
-        return view('admin.clientes.edit', compact('cliente'));
+        return view('recepcionista.clientes.edit', compact('cliente'));
     }
 
     /**
