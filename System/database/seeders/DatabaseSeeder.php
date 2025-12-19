@@ -18,60 +18,53 @@ class DatabaseSeeder extends Seeder
         $this->call([
             // Usuarios y Roles (Orden importante)
             RolesSeeder::class,
-            CargosSeeder::class, // Moved here
-            UsersSeeder::class,
-            DummyDataSeeder::class, // Added
-            
-            // Tablas base (sin dependencias)
-            MetodosPagoSeeder::class,
-            CategoriaProductosSeeder::class,
-            
-            // Empleados y proveedores
+            CargosSeeder::class,
+            // Main Entity Seeders
             EmpleadosSeeder::class,
             ProveedoresSeeder::class,
             ServiciosMedicosSeeder::class,
             
             // Clientes y horarios
             ClientesSeeder::class,
-            HorariosEmpleadosSeeder::class,
-            EspecialistaServicioSeeder::class,
+            // HorariosEmpleadosSeeder::class,
+            // EspecialistaServicioSeeder::class,
             
             // Productos y relaciones
             ProductosSeeder::class,
-            ProductoProveedorSeeder::class,
+            // ProductoProveedorSeeder::class,
             
             // Mascotas (depende de clientes)
             MascotasSeeder::class,
             
             // Promociones
-            PromocionesSeeder::class,
+            // PromocionesSeeder::class,
             
             // Citas médicas (depende de mascotas, empleados, servicios)
             CitasMedicasSeeder::class,
             
             // Ventas y detalles (depende de clientes, empleados, productos)
-            VentasSeeder::class,
-            DetalleVentasSeeder::class,
+            // VentasSeeder::class,
+            // DetalleVentasSeeder::class,
             
             // Compras y detalles (depende de proveedores, empleados, productos)
-            ComprasSeeder::class,
-            DetalleComprasSeeder::class,
+            // ComprasSeeder::class,
+            // DetalleComprasSeeder::class,
             
             // Movimientos de stock (depende de productos, ventas, compras)
-            MovimientosStockSeeder::class,
+            // MovimientosStockSeeder::class,
             
             // Alertas de stock (depende de productos)
-            AlertasStockSeeder::class,
+            // AlertasStockSeeder::class,
             
             // Registros médicos (depende de mascotas, empleados)
-            RegistroVacunasSeeder::class,
-            HistorialesMedicosSeeder::class,
+            // RegistroVacunasSeeder::class,
+            // HistorialesMedicosSeeder::class,
             
             // Pagos (depende de ventas y métodos de pago)
-            PagosSeeder::class,
+            // PagosSeeder::class,
             
             // Uso de promociones (depende de promociones, clientes, ventas)
-            UsoPromocionesSeeder::class,
+            // UsoPromocionesSeeder::class,
         ]);
     }
 }
