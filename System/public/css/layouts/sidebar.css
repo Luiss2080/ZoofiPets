@@ -34,23 +34,19 @@
 }
 
 .logo-icon {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(
-        135deg,
-        var(--primary-color),
-        var(--primary-color-hover)
-    );
-    border-radius: 10px;
+    width: 48px; /* Slightly larger since no box */
+    height: 48px;
+    background: transparent; /* Remove Purple Square */
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 6px -1px rgba(72, 52, 212, 0.3);
+    box-shadow: none; /* Remove shadow */
 }
 
 .sidebar-logo {
-    width: 32px;
-    height: 32px;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     object-position: center;
 }
@@ -98,14 +94,17 @@ body:not(.dark-mode) .brand-name {
 
 .section-title {
     font-family: var(--font-family);
-    font-size: 0.65rem;
+    font-size: 0.7rem; /* Increased from 0.65rem */
     font-weight: 800;
-    color: var(--text-muted);
+    color: #475569; /* Darker Slate for better visibility (was text-muted) */
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: 0.8rem;
     padding-left: 0.5rem;
-    opacity: 0.8;
+    opacity: 1; /* Was 0.8 - Remove opacity for clarity */
+}
+body.dark-mode .section-title {
+    color: #94a3b8; /* Keep lighter in dark mode */
 }
 
 .nav-list {
@@ -122,13 +121,16 @@ body:not(.dark-mode) .brand-name {
     align-items: center;
     padding: 0.65rem 0.8rem;
     border-radius: 10px;
-    color: var(--sidebar-text);
+    color: #334155; /* Darker Text (was var(--sidebar-text) #64748b) */
     text-decoration: none;
     transition: all 0.2s ease;
     font-family: var(--font-family);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.9rem; /* Slightly larger text */
     border: 1px solid transparent;
+}
+body.dark-mode .nav-link {
+    color: #cbd5e1; /* Lighter in dark mode */
 }
 
 .nav-link:hover {
