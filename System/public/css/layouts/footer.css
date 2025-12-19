@@ -188,6 +188,7 @@
     color: white;
     background-color: var(--primary-color); /* Default to Purple */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none !important; /* Remove unwanted underline */
 }
 .social-link:hover {
     transform: translateY(-3px);
@@ -195,12 +196,8 @@
     background-color: var(--primary-color-hover);
 }
 
-/* Optional: Keep original colors ONLY on hover if desired, 
-   but user asked for purple background. 
-   We will keep uniform purple for elegance. */
-.social-link.tiktok {
-    /* TikTok icon adjustment if needed */
-}
+/* Optional: Keep original colors ONLY on hover if desired.
+   Currently enforced Purple for all. */
 
 .footer-legal-section {
     text-align: right;

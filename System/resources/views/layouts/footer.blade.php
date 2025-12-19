@@ -84,7 +84,7 @@
             <!-- Brand -->
             <div class="footer-brand-section">
                 <div class="brand-logo-container">
-                    <img src="{{ asset('img/LogoHeader.png') }}" alt="ZoofiPets Logo" class="footer-logo-img">
+                    <img src="{{ asset('images/LogoHeader.png') }}" alt="ZoofiPets Logo" class="footer-logo-img">
                 </div>
                 <div class="brand-text">
                     <span class="brand-title">ZOOFIPETS</span>
@@ -106,8 +106,8 @@
                 <a href="#" class="social-link whatsapp" title="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                 <a href="#" class="social-link twitter" title="X (Twitter)">
-                    <i class="fab fa-x-twitter"></i>
+                 <a href="#" class="social-link twitter" title="Twitter">
+                    <i class="fab fa-twitter"></i>
                 </a>
                 <a href="#" class="social-link linkedin" title="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
