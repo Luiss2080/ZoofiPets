@@ -159,11 +159,11 @@
                                 <table class="dashboard-table">
                                     <thead>
                                         <tr>
-                                            <th class="ps-3"><i class="fas fa-user me-2 text-danger"></i>Usuario</th>
-                                            <th class="text-center"><i class="fas fa-user-tag me-2 text-danger"></i>Rol</th>
-                                            <th class="text-center"><i class="fas fa-clock me-2 text-danger"></i>Sesión</th>
-                                            <th class="text-center"><i class="fas fa-toggle-on me-2 text-danger"></i>Estado</th>
-                                            <th class="text-center" style="width: 140px; white-space: nowrap;">ACTIONS <i class="fas fa-cog text-danger ms-1"></i></th>
+                                            <th class="ps-3"><i class="fas fa-user me-2 text-purple"></i>Usuario</th>
+                                            <th class="text-center"><i class="fas fa-user-tag me-2 text-purple"></i>Rol</th>
+                                            <th class="text-center"><i class="fas fa-clock me-2 text-purple"></i>Sesión</th>
+                                            <th class="text-center"><i class="fas fa-toggle-on me-2 text-purple"></i>Estado</th>
+                                            <th class="text-center" style="width: 140px; white-space: nowrap;">ACTIONS <i class="fas fa-cog text-purple ms-1"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody class="align-middle">
@@ -171,14 +171,14 @@
                                             <tr class="hover-scale">
                                                 <td class="ps-3">
                                                     <div class="user-info-compact">
-                                                        <div class="user-avatar-xs {{ $user->rol === 'admin' ? 'pulse-red' : '' }}">{{ substr($user->name, 0, 1) }}</div>
+                                                        <div class="user-avatar-xs {{ $user->rol === 'admin' ? 'pulse-purple' : '' }}">{{ substr($user->name, 0, 1) }}</div>
                                                         <div class="d-flex align-items-center">
                                                             <span class="user-name-styled">{{ $user->name }}</span>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td class="text-center">
-                                                    <span class="badge-modern-red">
+                                                    <span class="badge-modern-purple">
                                                         @if($user->rol == 'admin') <i class="fas fa-crown"></i>
                                                         @elseif($user->rol == 'docente') <i class="fas fa-chalkboard-teacher"></i>
                                                         @else <i class="fas fa-user-graduate"></i>
@@ -188,7 +188,7 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <span class="session-time">
-                                                        <i class="fas fa-history text-danger me-1"></i> Hace {{ rand(1, 59) }} min
+                                                        <i class="fas fa-history text-purple me-1"></i> Hace {{ rand(1, 59) }} min
                                                     </span>
                                                 </td>
                                                 <td class="text-center">
@@ -198,13 +198,13 @@
                                                 </td>
                                                 <td class="text-center" style="white-space: nowrap;">
                                                     <div class="action-buttons-row">
-                                                        <button class="btn-icon-modern red" title="Editar">
+                                                        <button class="btn-icon-modern purple" title="Editar">
                                                             <i class="fas fa-pen"></i>
                                                         </button>
-                                                        <button class="btn-icon-modern red" title="Ver Perfil">
+                                                        <button class="btn-icon-modern purple" title="Ver Perfil">
                                                             <i class="fas fa-eye"></i>
                                                         </button>
-                                                        <button class="btn-icon-modern red" title="Eliminar">
+                                                        <button class="btn-icon-modern purple" title="Eliminar">
                                                             <i class="fas fa-trash"></i>
                                                         </button>
                                                     </div>
@@ -213,7 +213,7 @@
                                         @empty
                                             <tr><td colspan="5" class="text-center py-4">
                                                 <div class="empty-state">
-                                                    <i class="fas fa-users-slash mb-2 text-danger" style="font-size: 2rem; opacity: 0.5;"></i>
+                                                    <i class="fas fa-users-slash mb-2 text-purple" style="font-size: 2rem; opacity: 0.5;"></i>
                                                     <p>No hay usuarios recientes</p>
                                                 </div>
                                             </td></tr>
@@ -281,9 +281,9 @@
                             <div class="card-header border-0 pb-0 d-flex justify-content-between align-items-center">
                                 <h3 class="card-title">Citas Mensuales</h3>
                                 <div class="d-flex gap-2">
-                                    <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; font-weight: 600;">Semana</button>
-                                    <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Mes</button>
-                                    <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Año</button>
+                                    <button type="button" class="btn" style="background-color: #4834d4 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; font-weight: 600;">Semana</button>
+                                    <button type="button" class="btn" style="background-color: #4834d4 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Mes</button>
+                                    <button type="button" class="btn" style="background-color: #4834d4 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Año</button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -296,9 +296,9 @@
                             <div class="card-header border-0 pb-0 d-flex justify-content-between align-items-center">
                                 <h3 class="card-title">Actividad Global</h3>
                                 <div class="d-flex gap-2">
-                                    <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; font-weight: 600;">Semana</button>
-                                    <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Mes</button>
-                                    <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Año</button>
+                                    <button type="button" class="btn" style="background-color: #4834d4 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; font-weight: 600;">Semana</button>
+                                    <button type="button" class="btn" style="background-color: #4834d4 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Mes</button>
+                                    <button type="button" class="btn" style="background-color: #4834d4 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Año</button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -315,9 +315,9 @@
                             <div class="card-header border-0 pb-0 d-flex justify-content-between align-items-center">
                                 <h3 class="card-title">Inventario Top</h3>
                                 <div class="d-flex gap-2">
-                                    <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; font-weight: 600;">Semana</button>
-                                    <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Mes</button>
-                                    <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Año</button>
+                                    <button type="button" class="btn" style="background-color: #4834d4 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; font-weight: 600;">Semana</button>
+                                    <button type="button" class="btn" style="background-color: #4834d4 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Mes</button>
+                                    <button type="button" class="btn" style="background-color: #4834d4 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Año</button>
                                 </div>
                             </div>
                             <div class="card-body" style="position: relative;">
@@ -330,9 +330,9 @@
                             <div class="card-header border-0 pb-0 d-flex justify-content-between align-items-center">
                                 <h3 class="card-title">Pacientes por Especie</h3>
                                 <div class="d-flex gap-2">
-                                    <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; font-weight: 600;">Semana</button>
-                                    <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Mes</button>
-                                    <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Año</button>
+                                    <button type="button" class="btn" style="background-color: #4834d4 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; font-weight: 600;">Semana</button>
+                                    <button type="button" class="btn" style="background-color: #4834d4 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Mes</button>
+                                    <button type="button" class="btn" style="background-color: #4834d4 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Año</button>
                                 </div>
                             </div>
                             <div class="card-body" style="position: relative;">

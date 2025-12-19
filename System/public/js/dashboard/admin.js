@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     {
                         label: "Citas Atendidas",
                         data: [12, 19, 15, 25, 22, 30],
-                        borderColor: "#06b6d4", // Cyan
+                        borderColor: "#4834d4", // ZoofiPets Purple
                         tension: 0.4,
                         fill: true,
-                        backgroundColor: "rgba(6, 182, 212, 0.1)",
+                        backgroundColor: "rgba(72, 52, 212, 0.1)",
                     },
                 ],
             },
