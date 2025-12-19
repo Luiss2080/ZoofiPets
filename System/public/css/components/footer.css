@@ -1,0 +1,310 @@
+/* ============================================
+   FOOTER REDESIGN - LIGHT & RED THEME
+   ============================================ */
+
+/* Variables moved to dashboard.css */
+
+.dashboard-footer {
+    /* margin: 2rem 1rem 1rem 1rem; Removed to match dashboard.css */
+    margin-top: 2rem;
+    padding: 3rem 2rem 1.5rem;
+    background: var(--footer-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    font-size: 0.9rem;
+    color: var(--footer-text);
+    position: relative;
+    width: 100%; /* Full width */
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Main Grid */
+.footer-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.footer-heading {
+    color: var(--footer-heading);
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--primary-red);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+/* Contact Cards */
+.contact-cards {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--card-bg);
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    border-color: var(--primary-red);
+    transform: translateX(5px);
+    background: var(--bg-surface-secondary);
+}
+
+.card-icon {
+    color: var(--primary-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-value {
+    color: var(--footer-heading);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.card-sub {
+    font-size: 0.8rem;
+    color: var(--footer-text);
+}
+
+/* Info Column */
+.footer-description {
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: var(--footer-text);
+}
+
+.feature-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--card-bg);
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    color: var(--footer-heading);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid transparent; /* Match contact-card */
+}
+
+.badge svg {
+    color: var(--primary-red);
+}
+
+.badge:hover {
+    border-color: var(--primary-red);
+    transform: translateX(5px);
+    background: var(--bg-surface-secondary);
+}
+
+/* Version Button */
+.system-version-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.version-btn {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+    transition: all 0.3s ease;
+}
+
+.version-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(220, 38, 38, 0.4);
+}
+
+.build-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* Brand Section */
+.footer-brand-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-icon-red {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    color: var(--footer-heading);
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.brand-subtitle {
+    color: var(--footer-text);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Social Icons */
+.social-links {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Specific Colors for Social Icons */
+.social-link.facebook {
+    background-color: #3b82f6;
+}
+.social-link.instagram {
+    background-color: #ec4899;
+}
+.social-link.twitter {
+    background-color: #0ea5e9;
+}
+.social-link.whatsapp {
+    background-color: #22c55e;
+}
+.social-link.linkedin {
+    background-color: #2563eb;
+}
+.social-link.youtube {
+    background-color: #ef4444;
+}
+
+/* Legal Section */
+.footer-legal-section {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-copyright {
+    color: var(--footer-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.footer-links-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.footer-links-row a {
+    color: var(--footer-text);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.2s;
+}
+
+.footer-links-row a:hover {
+    color: var(--primary-red);
+}
+
+.sep {
+    color: #cbd5e1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .footer-main-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .footer-brand-section {
+        flex-direction: column;
+    }
+
+    .footer-legal-section {
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-links-row {
+        justify-content: center;
+    }
+}
