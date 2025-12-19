@@ -91,6 +91,15 @@ class ClienteController extends Controller
     }
 
     /**
+     * Get Client's Pets (JSON).
+     */
+    public function getMascotas(string $id)
+    {
+        $mascotas = Mascota::where('cliente_id', $id)->select('id', 'nombre', 'especie')->get();
+        return response()->json($mascotas);
+    }
+
+    /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)

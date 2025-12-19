@@ -54,6 +54,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     // Modulo Recepción
     Route::resource('clientes', Admin\ClienteController::class);
+    Route::get('clientes/{id}/mascotas', [Admin\ClienteController::class, 'getMascotas'])->name('clientes.mascotas');
     Route::resource('mascotas', Admin\MascotaController::class);
     Route::resource('citas', Admin\CitaMedicaController::class);
 
