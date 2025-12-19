@@ -1,4 +1,4 @@
-<div class="loading-overlay" id="loadingOverlay">
+<div class="loading-overlay" id="loading-screen">
     <!-- Tech Background Elements -->
     <div class="tech-bg-grid"></div>
     <div class="tech-particles">
@@ -10,7 +10,7 @@
 
     <div class="loading-content">
         <h2 class="welcome-text">Bienvenido a</h2>
-        <h1 class="brand-text" data-text="TECH HOME">TECH HOME</h1>
+        <h1 class="brand-text" data-text="ZOOFIPETS">ZOOFIPETS</h1>
         
         <div class="spinner-container">
             <svg class="spinner" viewBox="0 0 50 50">
@@ -21,7 +21,7 @@
         <!-- System Log Output -->
         <div class="system-log-container">
             <div class="log-content" id="systemLog">
-                <span class="log-line">> Iniciando kernel...</span>
+                <span class="log-line">> Iniciando sistema veterinario...</span>
             </div>
         </div>
 
@@ -35,7 +35,7 @@
         </div>
         
         <div class="status-wrapper">
-            <p class="loading-status" id="loadingStatus">Iniciando sistema...</p>
+            <p class="loading-status" id="loadingStatus">Cargando módulos...</p>
             <div class="loading-dots">
                 <span></span><span></span><span></span>
             </div>

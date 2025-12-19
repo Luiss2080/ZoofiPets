@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Dashboard Admin - Tech Home Books')</title>
-    <link rel="icon" type="image/png" href="{{ asset('images/faviconTH.png') }}">
+    <title>@yield('title', 'Dashboard Admin - ZoofiPets')</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/LogoPestaña.jpg') }}">
 
     
     <!-- Precargar fuentes -->
@@ -78,11 +78,11 @@
                     <div class="stat-card rich-stat">
                         <div class="stat-left">
                             <div class="stat-icon-wrapper">
-                                <i class="fas fa-user-graduate"></i>
+                                <i class="fas fa-paw"></i>
                             </div>
                             <div class="stat-info">
                                 <h3 class="stat-value">{{ $stats['students'] ?? 0 }}</h3>
-                                <p class="stat-label">Estudiantes</p>
+                                <p class="stat-label">Mascotas</p>
                             </div>
                         </div>
                         <div class="stat-right">
@@ -101,11 +101,11 @@
                     <div class="stat-card rich-stat">
                         <div class="stat-left">
                             <div class="stat-icon-wrapper">
-                                <i class="fas fa-chalkboard-teacher"></i>
+                                <i class="fas fa-user-md"></i>
                             </div>
                             <div class="stat-info">
                                 <h3 class="stat-value">{{ $stats['teachers'] ?? 0 }}</h3>
-                                <p class="stat-label">Docentes</p>
+                                <p class="stat-label">Empleados</p>
                             </div>
                         </div>
                         <div class="stat-right">
@@ -124,11 +124,11 @@
                     <div class="stat-card rich-stat">
                         <div class="stat-left">
                             <div class="stat-icon-wrapper">
-                                <i class="fas fa-book"></i>
+                                <i class="fas fa-box"></i>
                             </div>
                             <div class="stat-info">
                                 <h3 class="stat-value">{{ $stats['courses'] ?? 0 }}</h3>
-                                <p class="stat-label">Cursos Activos</p>
+                                <p class="stat-label">Productos</p>
                             </div>
                         </div>
                         <div class="stat-right">
@@ -256,13 +256,13 @@
                                 <!-- Docente -->
                                 <div class="legend-item-compact">
                                     <div class="legend-box" style="background: #a855f7;"></div>
-                                    <span class="legend-text">Docente <span style="opacity: 0.7;">({{ round(($roleDistribution['docente'] ?? 0) / $total * 100) }}%)</span></span>
+                                    <span class="legend-text">Vet. <span style="opacity: 0.7;">({{ round(($roleDistribution['docente'] ?? 0) / $total * 100) }}%)</span></span>
                                 </div>
 
                                 <!-- Estudiante -->
                                 <div class="legend-item-compact">
                                     <div class="legend-box" style="background: #10b981;"></div>
-                                    <span class="legend-text">Estud. <span style="opacity: 0.7;">({{ round(($roleDistribution['estudiante'] ?? 0) / $total * 100) }}%)</span></span>
+                                    <span class="legend-text">Recep. <span style="opacity: 0.7;">({{ round(($roleDistribution['estudiante'] ?? 0) / $total * 100) }}%)</span></span>
                                 </div>
                             </div>
                         </div>
@@ -281,7 +281,7 @@
                         <!-- Chart: Asistencia Mensual -->
                         <div class="dashboard-card glow-effect h-100" style="overflow: hidden;">
                             <div class="card-header border-0 pb-0 d-flex justify-content-between align-items-center">
-                                <h3 class="card-title">Asistencia Mensual</h3>
+                                <h3 class="card-title">Citas Mensuales</h3>
                                 <div class="d-flex gap-2">
                                     <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; font-weight: 600;">Semana</button>
                                     <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Mes</button>
@@ -315,7 +315,7 @@
                         <!-- Chart: Promedios -->
                         <div class="dashboard-card h-100" style="overflow: hidden !important; background-image: none !important;">
                             <div class="card-header border-0 pb-0 d-flex justify-content-between align-items-center">
-                                <h3 class="card-title">Promedios</h3>
+                                <h3 class="card-title">Inventario Top</h3>
                                 <div class="d-flex gap-2">
                                     <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; font-weight: 600;">Semana</button>
                                     <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Mes</button>
@@ -330,7 +330,7 @@
                         <!-- Chart: Recursos -->
                         <div class="dashboard-card h-100" style="overflow: hidden !important; background-image: none !important;">
                             <div class="card-header border-0 pb-0 d-flex justify-content-between align-items-center">
-                                <h3 class="card-title">Recursos</h3>
+                                <h3 class="card-title">Pacientes por Especie</h3>
                                 <div class="d-flex gap-2">
                                     <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; font-weight: 600;">Semana</button>
                                     <button type="button" class="btn" style="background-color: #e11d48 !important; color: #ffffff !important; border: none; border-radius: 8px; padding: 5px 15px; opacity: 0.6; font-weight: 600;">Mes</button>

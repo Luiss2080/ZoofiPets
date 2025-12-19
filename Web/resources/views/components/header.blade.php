@@ -101,7 +101,7 @@
 
             <!-- Botones Auth -->
             <div class="auth-buttons">
-                <a href="{{ route('login') }}" class="btn-login">Ingresar</a>
+                <a href="http://127.0.0.20:9010/login" class="btn-login">Iniciar Sesión</a>
                 <a href="{{ route('registro') }}" class="btn-register">
                     <span>Únete Ahora</span>
                     <div class="btn-shine"></div>
@@ -138,7 +138,7 @@
         </ul>
         
         <div class="mobile-auth">
-            <a href="{{ route('login') }}" class="btn-login full-width">Iniciar Sesión</a>
+            <a href="http://127.0.0.20:9010/login" class="btn-login full-width">Iniciar Sesión</a>
             <a href="{{ route('registro') }}" class="btn-register full-width">Únete Ahora</a>
         </div>
     </div>
