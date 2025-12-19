@@ -18,9 +18,9 @@ class MascotasSeeder extends Seeder
         $clientes = \App\Models\Cliente::all();
         
         if($clientes->count() > 0) {
-            // Recorre cada cliente y le crea entre 1 y 2 mascotas
+            // Recorre cada cliente y le crea 1 mascota para asegurar 20 registros exactos
             $clientes->each(function($cliente) {
-                \App\Models\Mascota::factory(rand(1, 2))->create([
+                \App\Models\Mascota::factory(1)->create([
                     'cliente_id' => $cliente->id
                 ]);
             });

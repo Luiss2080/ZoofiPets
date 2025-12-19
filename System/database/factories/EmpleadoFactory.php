@@ -24,7 +24,7 @@ class EmpleadoFactory extends Factory
             'telefono' => $this->faker->phoneNumber(),
             'email' => $this->faker->unique()->safeEmail(),
             'direccion' => $this->faker->address(),
-            'cargo_id' => \App\Models\Cargo::inRandomOrder()->first()->id ?? 1,
+            'cargo_id' => \App\Models\Cargo::inRandomOrder()->first()?->id ?? \App\Models\Cargo::create(['nombre' => 'Generico', 'descripcion' => 'Generado por Factory'])->id,
             'fecha_ingreso' => $this->faker->date(),
             'salario' => $this->faker->randomFloat(2, 400, 2000),
             'activo' => true,

@@ -23,7 +23,6 @@ class ClienteFactory extends Factory
             'telefono' => $this->faker->phoneNumber(),
             'email' => $this->faker->unique()->safeEmail(),
             'direccion' => $this->faker->address(),
-            'ciudad' => $this->faker->city(),
             'activo' => true,
         ];
     }
