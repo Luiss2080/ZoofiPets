@@ -1,0 +1,8 @@
+@extends('components.admin')
+@section('title', 'vendedor\alertas - edit')
+@section('content')
+<div class='container-fluid'>
+    <h1>Module: vendedor\alertas</h1>
+    <p>View: edit</p>
+</div>
+@endsection
