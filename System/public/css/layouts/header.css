@@ -204,7 +204,7 @@ body.dark-mode .notification-dropdown {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    min-width: 220px;
+    min-width: 260px; /* Increased to match dropdown */
     justify-content: space-between;
 }
 
