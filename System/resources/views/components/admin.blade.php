@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Dashboard Admin - ZoofiPets')</title>
-    <link rel="icon" type="image/png" href="{{ asset('images/LogoPestaña.jpg') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 
     
     <!-- Precargar fuentes -->
@@ -23,15 +23,13 @@
     <link rel="stylesheet" href="{{ asset('css/components/sidebar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/components/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/components/footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/components/loading.css') }}">
     
     @stack('styles')
 </head>
 
 <body>
     
-    <!-- Loading Screen -->
-    @include('layouts.loading')
+    <!-- Loading Screen REMOVED as per user request -->
     
     <!-- Layout del Dashboard -->
     <div class="dashboard-layout">
@@ -367,10 +365,7 @@
     </script>
     
     <!-- JavaScript del Dashboard -->
-    <script src="{{ asset('js/components/loading.js') }}"></script>
-
-    <script src="{{ asset('js/components/sidebar.js') }}"></script>
-    <script src="{{ asset('js/components/footer.js') }}"></script>
+    {{-- Scripts removed as they were 404ing --}}
     
     <!-- JavaScript del Header -->
     {{-- Script moved to header.blade.php --}}
