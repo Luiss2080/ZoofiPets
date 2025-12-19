@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin;
 
 Route::get('/', function () {
     return view('welcome');
@@ -48,6 +51,11 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // Panel de Administración (Protegido)
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Modulo Recepción
+    Route::resource('clientes', Admin\ClienteController::class);
+    Route::resource('mascotas', Admin\MascotaController::class);
+    Route::resource('citas', Admin\CitaMedicaController::class);
 
     // Rutas placeholder para sidebar (evitan crashes)
     Route::get('/docentes', function() { return 'Modulo Docentes'; })->name('docentes.index');

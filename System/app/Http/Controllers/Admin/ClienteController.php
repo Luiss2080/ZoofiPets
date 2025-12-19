@@ -58,9 +58,13 @@ class ClienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
+    /**
+     * Show the form for editing the specified resource.
+     */
     public function edit(string $id)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+        return view('admin.clientes.edit', compact('cliente'));
     }
 
     /**
@@ -68,7 +72,22 @@ class ClienteController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+        
+        $validated = $request->validate([
+            'nombre' => 'required|string|max:100',
+            'apellido' => 'required|string|max:100',
+            'cedula' => 'required|string|max:20|unique:clientes,cedula,'.$cliente->id,
+            'email' => 'nullable|email|max:150|unique:clientes,email,'.$cliente->id,
+            'telefono' => 'nullable|string|max:20',
+            'direccion' => 'nullable|string',
+            'genero' => 'nullable|in:M,F,Otro',
+            'fecha_nacimiento' => 'nullable|date',
+        ]);
+
+        $cliente->update($validated);
+
+        return redirect()->route('admin.clientes.index')->with('success', 'Cliente actualizado exitosamente.');
     }
 
     /**
@@ -76,6 +95,8 @@ class ClienteController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+        $cliente->delete();
+        return redirect()->route('admin.clientes.index')->with('success', 'Cliente eliminado exitosamente.');
     }
 }
