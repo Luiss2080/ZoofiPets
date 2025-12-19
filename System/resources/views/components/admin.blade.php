@@ -20,9 +20,9 @@
     
     <!-- CSS del Dashboard -->
     <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/components/sidebar.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/components/header.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/components/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layouts/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layouts/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layouts/footer.css') }}">
     
     @stack('styles')
 </head>
@@ -365,7 +365,8 @@
     </script>
     
     <!-- JavaScript del Dashboard -->
-    {{-- Scripts removed as they were 404ing --}}
+    <script src="{{ asset('js/layouts/sidebar.js') }}"></script>
+    <script src="{{ asset('js/layouts/footer.js') }}"></script>
     
     <!-- JavaScript del Header -->
     {{-- Script moved to header.blade.php --}}
