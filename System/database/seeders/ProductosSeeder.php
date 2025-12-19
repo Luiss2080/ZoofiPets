@@ -226,11 +226,7 @@ class ProductosSeeder extends Seeder
                 'descripcion' => 'Cuerda de algodón natural trenzada para juego y limpieza dental',
                 'precio' => 15.60,
                 'stock_actual' => 95,
-                'stock_minimo' => 20,
-                'codigo_barras' => '7891234567805',
-                'categoria_id' => 5,
-                'fecha_vencimiento' => null,
-                'laboratorio' => null,
+```php
                 'presentacion' => '30cm',
                 'activo' => true,
             ],
@@ -310,3 +306,4 @@ class ProductosSeeder extends Seeder
         }
     }
 }
+```

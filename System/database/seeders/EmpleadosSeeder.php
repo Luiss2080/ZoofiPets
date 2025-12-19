@@ -13,13 +13,6 @@ class EmpleadosSeeder extends Seeder
      */
     public function run(): void
     {
-        // Obtener IDs de cargos
-        $vetId = \App\Models\Cargo::where('nombre', 'Veterinario')->first()->id;
-        $asistId = \App\Models\Cargo::where('nombre', 'Asistente')->first()->id;
-        $recepId = \App\Models\Cargo::where('nombre', 'Recepcionista')->first()->id;
-        $cajeroId = \App\Models\Cargo::where('nombre', 'Cajero')->first()->id;
-        $adminId = \App\Models\Cargo::where('nombre', 'Administrador')->first()->id;
-        $gerenteId = \App\Models\Cargo::where('nombre', 'Gerente')->first()->id;
 
         \DB::table('empleados')->insert([
             ['codigo_empleado' => 'VET001', 'nombre' => 'Dr. Ana María', 'apellido' => 'González', 'cedula' => '1234567890', 'telefono' => '0987654321', 'telefono_emergencia' => '0987654322', 'email' => 'ana.gonzalez@zoofipets.com', 'direccion' => 'Av. Principal #123, Quito', 'cargo_id' => $vetId, 'especialidad' => 'Medicina Interna', 'salario' => 2800.00, 'fecha_ingreso' => '2024-01-15', 'fecha_nacimiento' => '1985-03-20', 'genero' => 'F', 'numero_colegiado' => 'CV-12345', 'tipo_contrato' => 'Fijo', 'activo' => true, 'created_at' => now(), 'updated_at' => now()],
