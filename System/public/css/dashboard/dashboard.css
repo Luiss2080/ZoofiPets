@@ -557,7 +557,7 @@ body.dark-mode .stat-card.rich-stat .stat-label {
     align-items: flex-end;
     padding-left: 1.25rem;
     border-left: 1px solid var(--border-color);
-    height: 50px;
+    min-height: 50px; /* Changed from fixed height to min-height */
 }
 body.dark-mode .stat-right {
     border-color: rgba(255, 255, 255, 0.15);
@@ -572,6 +572,7 @@ body.dark-mode .stat-right {
     color: var(--text-muted);
     line-height: 1.4;
     white-space: nowrap;
+    width: 100%; /* Ensure full width for alignment */
 }
 
 .stat-mini-row strong {
@@ -580,6 +581,19 @@ body.dark-mode .stat-right {
 }
 body.dark-mode .stat-mini-row strong {
     color: #ffffff;
+}
+
+/* Fix Overflow for Small Screens/Content */
+.stat-card.rich-stat {
+    padding: 1.25rem; /* Adjusted padding */
+    gap: 0.8rem; /* Reduced gap slightly */
+}
+.stat-left {
+    flex: 1; /* Allow left side to take available space */
+    min-width: 0; /* Prevent overflow */
+}
+.stat-right {
+    flex-shrink: 0; /* Prevent right side from shrinking too much */
 }
 
 /* Decoration */
