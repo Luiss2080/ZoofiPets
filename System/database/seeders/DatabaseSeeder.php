@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             // EspecialistaServicioSeeder::class,
             
             // Productos y relaciones
+            CategoriaProductosSeeder::class,
             ProductosSeeder::class,
             // ProductoProveedorSeeder::class,
             

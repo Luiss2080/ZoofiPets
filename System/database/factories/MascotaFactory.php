@@ -16,7 +16,7 @@ class MascotaFactory extends Factory
      */
     public function definition(): array
     {
-        $especies = ['Perro', 'Gato', 'Conejo', 'Hamster', 'Ave'];
+        $especies = ['Perro', 'Gato', 'Roedor', 'Ave']; // Conejo/Hamster -> Roedor
         $razasPerro = ['Labrador', 'Pug', 'Bulldog', 'Pastor Aleman', 'Chihuahua'];
         $razasGato = ['Persa', 'Siames', 'Angora', 'Criollo'];
         
@@ -27,6 +27,7 @@ class MascotaFactory extends Factory
         if ($especie == 'Gato') $raza = $this->faker->randomElement($razasGato);
 
         return [
+            'codigo_mascota' => $this->faker->unique()->bothify('PET-####'),
             'nombre' => $this->faker->firstName(), // Pet names often human-like
             'especie' => $especie,
             'raza' => $raza,
