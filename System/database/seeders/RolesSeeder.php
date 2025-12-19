@@ -15,18 +15,14 @@ class RolesSeeder extends Seeder
                 'nombre' => 'Administrador',
                 'descripcion' => 'Acceso total a todos los módulos del sistema',
             ],
-            [
-                'nombre' => 'Recepcionista',
-                'descripcion' => 'Gestión de citas, clientes y mascotas',
-            ],
-            [
-                'nombre' => 'Veterinario',
-                'descripcion' => 'Gestión clínica, historiales y recetas',
-            ],
+            'Administrador',
+            'Recepcionista',
+            'Veterinario',
+            'Vendedor',
         ];
 
-        foreach ($roles as $role) {
-            Role::create($role);
+        foreach ($roles as $roleName) {
+            Role::firstOrCreate(['nombre' => $roleName], ['descripcion' => 'Rol de ' . $roleName]);
         }
     }
 }
