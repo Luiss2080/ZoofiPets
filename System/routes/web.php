@@ -27,7 +27,7 @@ Route::post('/registro/verify', function () {
     return back()->with('success', 'Verificación simulada exitosa.');
 })->name('register.verify');
 
-// Rutas de restablecimiento de contraseña (Placeholder para evitar errores)
+// Rutas de restablecimiento de contraseña (Placeholder)
 Route::get('/password/reset', function () {
     return view('auth.recuperar');
 })->name('password.request');
@@ -48,39 +48,58 @@ Route::post('/password/reset', function () {
 Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// Panel de Administración (Protegido)
+// Panel de Administración (Dashboard General)
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    // Modulo Recepción
-    Route::resource('clientes', Admin\ClienteController::class);
-    Route::get('clientes/{id}/mascotas', [Admin\ClienteController::class, 'getMascotas'])->name('clientes.mascotas');
-    Route::resource('mascotas', Admin\MascotaController::class);
-    Route::resource('citas', Admin\CitaMedicaController::class);
-
-    // Modulo Ventas
-    Route::resource('productos', Admin\ProductoController::class);
-    Route::resource('ventas', Admin\VentaController::class);
-
-    // Modulo Veterinaria
-    Route::resource('consultas', Admin\ConsultaController::class);
-
-    // Rutas placeholder para sidebar (evitan crashes)
-    Route::get('/docentes', function() { return 'Modulo Docentes'; })->name('docentes.index');
-    Route::get('/estudiantes', function() { return 'Modulo Estudiantes'; })->name('estudiantes.index');
-    Route::get('/colegios', function() { return 'Modulo Colegios'; })->name('colegios.index');
-    Route::get('/cursos', function() { return 'Modulo Cursos'; })->name('cursos.index');
-    Route::get('/materias', function() { return 'Modulo Materias'; })->name('materias.index');
-    Route::get('/usuarios', function() { return 'Modulo Usuarios'; })->name('usuarios.index');
-    Route::get('/materiales', function() { return 'Modulo Materiales'; })->name('materiales.index');
-    Route::get('/laboratorios', function() { return 'Modulo Laboratorios'; })->name('laboratorios.index');
+    // Módulos de Administración (Usuarios, Roles, Permisos)
+    // Usamos placeholders o controladores reales si existen
+    Route::get('/usuarios', function() { return view('admin.usuarios.index'); })->name('usuarios.index');
     Route::get('/roles', function() { return 'Modulo Roles'; })->name('roles.index');
     Route::get('/permisos', function() { return 'Modulo Permisos'; })->name('permisos.index');
-    Route::get('/calendario', function() { return 'Modulo Calendario'; })->name('calendario.index'); // Fixed: admin.calendario.index
+    
+    // Rutas legacy/placeholders para evitar 404s en enlaces antiguos si quedan
+    Route::get('/docentes', function() { return 'Modulo Docentes'; })->name('docentes.index');
+    Route::get('/estudiantes', function() { return 'Modulo Estudiantes'; })->name('estudiantes.index'); 
 });
 
-// Rutas fuera del prefijo admin (según sidebar)
-Route::get('/libros', function() { return 'Modulo Biblioteca'; })->name('libros.index');
-Route::get('/reportes', function() { return 'Modulo Reportes'; })->name('reportes.index');
-Route::get('/perfil', function() { return 'Perfil de Usuario'; })->name('perfil.index');
-Route::get('/configuraciones', function() { return 'Modulo Configuraciones'; })->name('configuraciones.index');
+// Modulo Recepcionista
+Route::middleware(['auth'])->prefix('recepcion')->name('recepcionista.')->group(function () {
+    // Citas Médicas
+    Route::resource('citas', Admin\CitaMedicaController::class);
+    // Clientes y Mascotas (Gestión desde recepción)
+    Route::resource('clientes', Admin\ClienteController::class);
+    // Pagos (Placeholder o vinculado a Ventas)
+    Route::get('/pagos', function() { return 'Modulo Pagos'; })->name('pagos.index');
+});
+
+// Modulo Veterinario
+Route::middleware(['auth'])->prefix('veterinaria')->name('veterinario.')->group(function () {
+    // Consultas Médicas
+    Route::resource('consultas', Admin\ConsultaController::class);
+    // Pacientes (Mascotas) - Reutiliza controlador pero con nombre de ruta distinto si es necesario, 
+    // o simplemente apuntamos al mismo recurso. Aquí definimos recurso propio para veterinario.
+    Route::resource('mascotas', Admin\MascotaController::class);
+    // Vacunas
+    Route::get('/vacunas', function() { return view('veterinario.vacunas.index'); })->name('vacunas.index');
+});
+
+// Modulo Vendedor (Tienda)
+Route::middleware(['auth'])->prefix('tienda')->name('vendedor.')->group(function () {
+    // Ventas
+    Route::resource('ventas', Admin\VentaController::class);
+    // Productos
+    Route::resource('productos', Admin\ProductoController::class);
+    // Inventario (Puede ser una vista diferente de productos)
+    Route::get('/inventario', function() { return 'Modulo Inventario'; })->name('inventario.index');
+});
+
+// Rutas Globales / Compartidas
+Route::middleware(['auth'])->group(function () {
+    Route::get('/calendario', function() { return view('calendario.index'); })->name('calendario.index');
+    Route::get('/perfil', function() { return view('perfil.index'); })->name('perfil.index');
+    Route::get('/configuraciones', function() { return view('configuraciones.index'); })->name('configuraciones.index');
+    Route::get('/reportes', function() { return view('reportes.index'); })->name('reportes.index');
+    Route::get('/libros', function() { return 'Modulo Biblioteca'; })->name('libros.index');
+    Route::get('clientes/{id}/mascotas', [Admin\ClienteController::class, 'getMascotas'])->name('clientes.mascotas');
+});
