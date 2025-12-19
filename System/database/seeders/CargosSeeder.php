@@ -20,7 +20,10 @@ class CargosSeeder extends Seeder
         ];
 
         foreach ($cargos as $cargo) {
-            Cargo::create($cargo);
+            Cargo::firstOrCreate(
+                ['nombre' => $cargo['nombre']],
+                ['descripcion' => $cargo['descripcion']]
+            );
         }
     }
 }
