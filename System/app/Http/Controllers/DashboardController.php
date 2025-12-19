@@ -30,9 +30,9 @@ class DashboardController extends Controller
         }
 
         $roleDistribution = [
-            'admin' => \App\Models\User::role('Administrador')->count(),
-            'docente' => \App\Models\User::role('Veterinario')->count(), // Map Vet to Docente
-            'estudiante' => \App\Models\User::role('Recepcionista')->count(), // Map Recep to Estudiante
+            'admin' => \App\Models\User::byRole('Administrador')->count(),
+            'docente' => \App\Models\User::byRole('Veterinario')->count(), // Map Vet to Docente
+            'estudiante' => \App\Models\User::byRole('Recepcionista')->count(), // Map Recep to Estudiante
         ];
         
         $chartData = []; // Placeholder

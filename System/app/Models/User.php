@@ -52,4 +52,18 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class);
     }
+
+    /**
+     * Scope a query to only include users with a given role.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  string  $roleName
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeByRole($query, $roleName)
+    {
+        return $query->whereHas('role', function ($q) use ($roleName) {
+            $q->where('nombre', $roleName);
+        });
+    }
 }
