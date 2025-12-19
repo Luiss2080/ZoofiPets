@@ -3,7 +3,7 @@
     <div class="sidebar-header">
         <a href="{{ route('admin.dashboard') }}" class="logo-container" style="text-decoration: none;">
             <div class="logo-icon">
-                <img src="{{ asset('images/LogoLogin.png') }}" alt="ZOOFIPETS" class="sidebar-logo">
+                <img src="{{ asset('images/LogoHeader.png') }}" alt="ZOOFIPETS" class="sidebar-logo">
             </div>
             <div class="logo-text">
                 <h1 class="brand-name">ZOOFIPETS</h1>
