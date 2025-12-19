@@ -42,12 +42,12 @@ Route::post('/password/reset', function () {
 })->name('password.update');
 
 // Autenticación
-Route::post('/login', [App\Http\Controllers\LoginController::class, 'login'])->name('login.submit');
-Route::post('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
+Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Panel de Administración (Protegido)
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Rutas placeholder para sidebar (evitan crashes)
     Route::get('/docentes', function() { return 'Modulo Docentes'; })->name('docentes.index');
