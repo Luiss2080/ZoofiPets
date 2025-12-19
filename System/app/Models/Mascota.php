@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Mascota extends Model
 {
+    use HasFactory;
+    
     protected $fillable = [
         'cliente_id', 'codigo_mascota', 'nombre', 'especie', 'raza',
         'edad_años', 'edad_meses', 'peso', 'sexo', 'fecha_nacimiento',

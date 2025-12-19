@@ -18,14 +18,18 @@ class CitaMedicaFactory extends Factory
     {
         $fecha = $this->faker->dateTimeBetween('now', '+1 month');
         return [
+            'numero_cita' => $this->faker->unique()->numerify('CITA-#######'),
             'fecha_hora' => $fecha,
+            'duracion_minutos' => 30,
             'motivo_consulta' => $this->faker->sentence(),
             'estado' => $this->faker->randomElement(['Programada', 'Confirmada', 'Cancelada', 'Completada']),
-            // We'll override these in seeder or let them be created
+            'prioridad' => $this->faker->randomElement(['Normal', 'Alta', 'Baja']),
+            
+            // Relationships (resolved at runtime or via factory)
             'cliente_id' => \App\Models\Cliente::factory(),
             'mascota_id' => \App\Models\Mascota::factory(), 
-            // 'empleado_id' (vet) usually assigned later or now
-            'empleado_id' => 1, 
+            'empleado_id' => \App\Models\Empleado::inRandomOrder()->first()->id ?? \App\Models\Empleado::factory(), 
+            'servicio_medico_id' => \App\Models\ServicioMedico::inRandomOrder()->first()->id ?? \App\Models\ServicioMedico::factory(),
         ];
     }
 }
