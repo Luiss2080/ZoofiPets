@@ -360,7 +360,8 @@
                 name: '{{ session("user_name") }}',
                 role: '{{ session("user_role") }}'
             },
-            chartData: @json($chartData ?? [])
+            chartData: @json($chartData ?? []),
+            roleDistribution: @json($roleDistribution ?? [])
         };
     </script>
     

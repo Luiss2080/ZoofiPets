@@ -24,14 +24,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Toggle Theme
+    const themeLabel = document.getElementById("theme-label");
+
+    function updateThemeLabel(isDark) {
+        if (themeLabel) {
+            themeLabel.textContent = isDark ? "Modo Oscuro" : "Modo Claro";
+        }
+    }
+
+    // Initial State Label
+    if (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") && true)
+    ) {
+        // Default dark
+        updateThemeLabel(true);
+    } else {
+        updateThemeLabel(false);
+    }
+
     if (themeSwitch) {
         themeSwitch.addEventListener("change", function (e) {
             if (e.target.checked) {
                 body.classList.add("dark-mode");
                 localStorage.setItem("theme", "dark");
+                updateThemeLabel(true);
             } else {
                 body.classList.remove("dark-mode");
                 localStorage.setItem("theme", "light");
+                updateThemeLabel(false);
             }
         });
     }

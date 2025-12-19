@@ -76,7 +76,7 @@ body.dark-mode .dashboard-header {
 .search-input {
     background: #f1f5f9;
     border: 1px solid var(--border-color);
-    border-radius: 50px;
+    border-radius: 50px; /* Rounded pill shape */
     padding: 0.8rem 1rem 0.8rem 3rem;
     color: #334155; /* Dark text for visibility in light mode */
     font-size: 0.9rem;
@@ -88,6 +88,16 @@ body.dark-mode .dashboard-header {
 .search-input::placeholder {
     color: #94a3b8; /* Visible placeholder */
     font-weight: 500;
+}
+
+/* Dark Mode Override for Search */
+body.dark-mode .search-input {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #f1f5f9; /* Light text for dark mode */
+}
+body.dark-mode .search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 /* Right Actions */

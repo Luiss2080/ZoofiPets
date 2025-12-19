@@ -127,7 +127,7 @@
             <div class="theme-icon">
                 <i class="fas fa-moon"></i>
             </div>
-            <span class="theme-text">Modo Oscuro</span>
+            <span class="theme-text" id="theme-label">Modo Oscuro</span>
              <!-- Toggle Switch (Visual only, JS required for logic) -->
             <label class="switch">
                 <input type="checkbox" id="themeSwitch" checked>
