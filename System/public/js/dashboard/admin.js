@@ -48,8 +48,56 @@ document.addEventListener("DOMContentLoaded", function () {
     // --- Chart 3: Distribución (Roles) ---
     const ctxRoles = document.getElementById("userRolesChart");
     if (ctxRoles && window.appConfig && window.appConfig.roleDistribution) {
-        // Use data passed from controller if available, else static
-        // Logic handled in blade usually, but here as fallback
+        const dist = window.appConfig.roleDistribution;
+        new Chart(ctxRoles, {
+            type: "doughnut",
+            data: {
+                labels: ["Admin", "Veterinario", "Recepción"],
+                datasets: [
+                    {
+                        data: [
+                            dist.admin || 0,
+                            dist.docente || 0, // Mapping 'docente' to Veterinario (legacy naming)
+                            dist.estudiante || 0, // Mapping 'estudiante' to Recepción (legacy naming)
+                        ],
+                        backgroundColor: [
+                            "#3b82f6", // Admin - Blue
+                            "#a855f7", // Vet - Purple
+                            "#10b981", // Recep - Green
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 4,
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: "75%",
+                plugins: {
+                    legend: {
+                        display: false, // Using custom HTML legend
+                    },
+                    tooltip: {
+                        backgroundColor: document.body.classList.contains(
+                            "dark-mode"
+                        )
+                            ? "#000"
+                            : "#fff",
+                        titleColor: document.body.classList.contains(
+                            "dark-mode"
+                        )
+                            ? "#fff"
+                            : "#000",
+                        bodyColor: document.body.classList.contains("dark-mode")
+                            ? "#fff"
+                            : "#000",
+                        borderColor: "rgba(255,255,255,0.1)",
+                        borderWidth: 1,
+                    },
+                },
+            },
+        });
     }
 
     // --- Chart 4: Promedios (Productos Top) ---

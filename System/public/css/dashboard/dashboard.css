@@ -58,41 +58,41 @@
 }
 
 body.dark-mode {
-    /* Colors Overrides - DEEP DARK THEME */
-    --light-bg: #121212; /* True Black/Dark Gray */
+    /* Colors Overrides - DEEP DARK THEME (TRUE BLACK) */
+    --light-bg: #000000; /* True Black */
     --text-dark: #f1f5f9;
     --text-muted: #94a3b8;
-    --border-color: rgba(255, 255, 255, 0.08);
+    --border-color: rgba(255, 255, 255, 0.1);
 
     /* Backgrounds */
-    --bg-surface: #121212;
-    --bg-surface-secondary: #18181b;
-    --input-bg: #18181b;
-    --dropdown-bg: #121212;
+    --bg-surface: #000000; /* True Black for Cards */
+    --bg-surface-secondary: #050505; /* Very Dark Gray for Contrast */
+    --input-bg: #050505;
+    --dropdown-bg: #000000;
 
-    /* Sidebar */
-    --sidebar-bg: #121212;
+    /* Sidebar - Match Dashboard */
+    --sidebar-bg: #000000;
     --sidebar-text: #94a3b8;
     --sidebar-text-active: #ffffff;
-    --sidebar-hover-bg: rgba(72, 52, 212, 0.15);
+    --sidebar-hover-bg: rgba(72, 52, 212, 0.2);
     --sidebar-hover-text: #686de0;
 
-    /* Header */
-    --header-bg: #121212;
+    /* Header - Match Dashboard */
+    --header-bg: #000000;
     --header-text: #94a3b8;
     --header-text-dark: #f1f5f9;
 
-    /* Footer */
-    --footer-bg: #121212;
+    /* Footer - Match Dashboard */
+    --footer-bg: #000000;
     --footer-text: #94a3b8;
     --footer-heading: #f1f5f9;
     --card-bg: rgba(255, 255, 255, 0.03);
 
-    /* Shadows */
-    --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.5),
-        0 2px 4px -2px rgb(0 0 0 / 0.5);
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5);
+    /* Shadows for Depth on Black */
+    --card-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.05),
+        0 2px 4px -2px rgba(255, 255, 255, 0.05);
+    --shadow-sm: 0 1px 2px 0 rgba(255, 255, 255, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 1);
 }
 
 /* ============================================
@@ -461,37 +461,56 @@ body {
     padding: 1.25rem 1.5rem;
     gap: 1rem;
     min-height: 110px;
-    background: #000000; /* Deepest black as per reference */
-    border: 1px solid rgba(72, 52, 212, 0.3); /* Subtle purple border */
+    background: var(
+        --bg-surface
+    ); /* Default to Surface (White in Light Mode) */
+    border: 1px solid var(--border-color);
     border-radius: 24px;
-    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--card-shadow);
     position: relative;
     overflow: hidden;
+    transition: var(--transition);
 }
 
-/* Hover Effect: Glow */
+/* Dark Mode Override - Deep Black */
+body.dark-mode .stat-card.rich-stat {
+    background: #000000;
+    border-color: rgba(72, 52, 212, 0.3);
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover Effect */
 .stat-card.rich-stat:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 0 25px rgba(72, 52, 212, 0.2);
     transform: translateY(-2px);
 }
+body.dark-mode .stat-card.rich-stat:hover {
+    box-shadow: 0 0 25px rgba(72, 52, 212, 0.2);
+}
 
-/* Icon Wrapper - SOLID & LARGE */
+/* Icon Wrapper */
 .stat-card.rich-stat .stat-icon-wrapper {
     width: 64px;
     height: 64px;
     font-size: 1.8rem;
     border-radius: 18px;
-    background: var(--primary-color); /* Solid Purple Background */
-    color: #ffffff; /* White Icon */
+    background: rgba(72, 52, 212, 0.1); /* Light Mode: Transparent Purple */
+    color: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    transition: var(--transition);
+}
+
+/* Dark Mode Icon - Solid Purple */
+body.dark-mode .stat-card.rich-stat .stat-icon-wrapper {
+    background: var(--primary-color);
+    color: #ffffff;
     box-shadow: 0 4px 15px rgba(72, 52, 212, 0.4);
 }
 
-/* Left Section (Icon + Value) */
+/* Left Section */
 .stat-left {
     display: flex;
     align-items: center;
@@ -510,18 +529,23 @@ body {
     margin-bottom: 0;
     line-height: 1;
     font-weight: 800;
-    color: #ffffff;
+    color: var(--text-dark); /* Default Text Color */
     letter-spacing: -1px;
+}
+body.dark-mode .stat-card.rich-stat .stat-value {
+    color: #ffffff;
 }
 
 .stat-card.rich-stat .stat-label {
     font-size: 0.75rem;
     letter-spacing: 1px;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--text-muted);
     text-transform: uppercase;
     margin-top: 4px;
-    opacity: 0.8;
+}
+body.dark-mode .stat-card.rich-stat .stat-label {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Right Section - Divider + Details */
@@ -532,8 +556,11 @@ body {
     justify-content: center;
     align-items: flex-end;
     padding-left: 1.25rem;
-    border-left: 1px solid rgba(255, 255, 255, 0.15); /* Vertical Divider */
-    height: 50px; /* Constrain height to match visual */
+    border-left: 1px solid var(--border-color);
+    height: 50px;
+}
+body.dark-mode .stat-right {
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
 .stat-mini-row {
@@ -542,29 +569,22 @@ body {
     justify-content: flex-end;
     gap: 6px;
     font-size: 0.75rem;
-    color: #94a3b8;
+    color: var(--text-muted);
     line-height: 1.4;
     white-space: nowrap;
 }
 
 .stat-mini-row strong {
-    color: #ffffff;
+    color: var(--text-dark);
     font-weight: 700;
 }
-
-/* Decoration (Background Graphics) */
-.stat-card.rich-stat .stat-decoration {
-    display: none; /* Remove distracting background number */
+body.dark-mode .stat-mini-row strong {
+    color: #ffffff;
 }
 
-/* Specific Response */
-@media (max-width: 1400px) {
-    .stat-card.rich-stat {
-        padding: 1rem;
-    }
-    .stat-card.rich-stat .stat-value {
-        font-size: 1.8rem;
-    }
+/* Decoration */
+.stat-card.rich-stat .stat-decoration {
+    display: none;
 }
 
 /* ============================================
@@ -631,10 +651,11 @@ body {
 }
 
 /* Dark Mode Contrast Fixes */
+/* Dark Mode Contrast Fixes */
 body.dark-mode .dashboard-card {
-    background: #1e1e24; /* Opaque dark background for charts/tables */
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    background: var(--bg-surface); /* Use Global True Black */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 body.dark-mode .card-title {
