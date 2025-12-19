@@ -76,8 +76,11 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/laboratorios', function() { return 'Modulo Laboratorios'; })->name('laboratorios.index');
     Route::get('/roles', function() { return 'Modulo Roles'; })->name('roles.index');
     Route::get('/permisos', function() { return 'Modulo Permisos'; })->name('permisos.index');
+    Route::get('/calendario', function() { return 'Modulo Calendario'; })->name('calendario.index'); // Fixed: admin.calendario.index
 });
 
 // Rutas fuera del prefijo admin (según sidebar)
 Route::get('/libros', function() { return 'Modulo Biblioteca'; })->name('libros.index');
 Route::get('/reportes', function() { return 'Modulo Reportes'; })->name('reportes.index');
+Route::get('/perfil', function() { return 'Perfil de Usuario'; })->name('perfil.index');
+Route::get('/configuraciones', function() { return 'Modulo Configuraciones'; })->name('configuraciones.index');
