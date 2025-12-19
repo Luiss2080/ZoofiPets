@@ -290,52 +290,57 @@ body.dark-mode .profile-trigger {
 }
 
 /* Profile Content & Compactness */
+/* Profile Content & Compactness */
 .pd-header-compact {
-    padding: 1rem; /* Reduced padding */
-    gap: 1rem;
+    padding: 1.5rem 1rem; /* More vertical padding */
+    gap: 0.8rem;
     background: linear-gradient(
         to bottom,
-        rgba(255, 255, 255, 0.03),
-        transparent
+        rgba(72, 52, 212, 0.05),
+        /* Subtle Purple Tint */ transparent
     );
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Stack vertically */
+    align-items: center; /* Center align */
+    text-align: center;
 }
 
 .user-avatar-med {
-    width: 48px; /* Slightly smaller */
-    height: 48px;
+    width: 64px; /* Larger avatar */
+    height: 64px;
     border-radius: 50%;
     background: var(--bg-surface-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--text-muted);
-    font-size: 1.2rem;
-    border: 2px solid var(--primary-color);
+    font-size: 1.5rem;
+    border: 3px solid rgba(72, 52, 212, 0.2); /* Thicker subtle ring */
     overflow: hidden;
-    box-shadow: 0 0 15px rgba(72, 52, 212, 0.2);
+    box-shadow: 0 4px 15px rgba(72, 52, 212, 0.2);
 }
 
 .pd-user-info strong {
+    display: block;
     color: var(--header-text-dark);
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
+    font-size: 1.1rem; /* Larger Name */
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.2rem;
 }
 .pd-user-info small {
-    color: var(--primary-color);
-    font-size: 0.8rem;
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.85rem;
     font-weight: 500;
-    opacity: 0.9;
 }
 
 .pd-grid-menu {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 0.8rem; /* Reduced padding */
-    gap: 0.6rem; /* Reduced gap */
+    padding: 1rem; /* Restore padding */
+    gap: 0.8rem;
 }
 
 .pd-grid-item {
@@ -343,37 +348,36 @@ body.dark-mode .profile-trigger {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0.8rem 0.5rem; /* More compact */
-    border-radius: 12px;
-    gap: 0.4rem;
+    padding: 1rem 0.5rem;
+    border-radius: 16px;
+    gap: 0.5rem;
     color: var(--text-muted);
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background: rgba(255, 255, 255, 0.01);
-    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.5); /* Slightly visible bg */
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 .pd-grid-item span {
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--text-dark);
 }
 .pd-grid-item i {
-    font-size: 1.1rem;
-    color: var(--text-muted);
+    font-size: 1.3rem; /* Larger icon */
+    color: var(--primary-color); /* PURPLE DEFAULT */
     transition: all 0.3s ease;
-    filter: drop-shadow(0 0 0 transparent);
+    filter: drop-shadow(0 2px 4px rgba(72, 52, 212, 0.2));
 }
 
 .pd-grid-item:hover {
-    background: rgba(72, 52, 212, 0.08);
-    border-color: rgba(72, 52, 212, 0.2);
-    color: var(--text-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background: #ffffff;
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(72, 52, 212, 0.15);
 }
 .pd-grid-item:hover i {
-    color: var(--primary-color);
-    transform: scale(1.15);
-    filter: drop-shadow(0 0 8px rgba(72, 52, 212, 0.6));
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(72, 52, 212, 0.5));
 }
 
 .pd-footer-actions {
