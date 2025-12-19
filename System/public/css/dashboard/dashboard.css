@@ -619,3 +619,192 @@ body.dark-mode .stat-card.rich-stat .stat-decoration {
         font-size: 2rem;
     }
 }
+
+/* ============================================
+   ZOOFIPETS PURPLE - UTILITY CLASSES (ADDED)
+   ============================================ */
+.text-purple {
+    color: var(--primary-color) !important;
+}
+
+.pulse-purple {
+    animation: pulse-purple-anim 2s infinite;
+    box-shadow: 0 0 0 0 rgba(72, 52, 212, 0.7);
+}
+
+@keyframes pulse-purple-anim {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(72, 52, 212, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(72, 52, 212, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(72, 52, 212, 0);
+    }
+}
+
+/* Badge Styles */
+.badge-modern-purple {
+    background: rgba(72, 52, 212, 0.1);
+    color: var(--primary-color);
+    padding: 0.35em 0.8em;
+    font-size: 0.75em;
+    font-weight: 700;
+    border-radius: 6px;
+    border: 1px solid rgba(72, 52, 212, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Button Icon Styles */
+.btn-icon-modern.purple {
+    color: var(--primary-color);
+    background: rgba(72, 52, 212, 0.1);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-icon-modern.purple:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(72, 52, 212, 0.3);
+}
+
+/* Dark Mode Contrast Fixes */
+body.dark-mode .dashboard-card {
+    background: #1e1e24; /* Opaque dark background for charts/tables */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .card-title {
+    color: #f1f5f9; /* Ensure titles are white */
+}
+
+body.dark-mode .dashboard-table th {
+    color: #cbd5e1;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .dashboard-table td {
+    color: #e2e8f0;
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Ensure empty state text is visible */
+body.dark-mode .empty-state p {
+    color: #94a3b8;
+}
+
+/* Chart Center Text for Dark Mode */
+body.dark-mode .total-number {
+    color: #ffffff;
+}
+
+body.dark-mode .total-label {
+    color: #cbd5e1;
+}
+
+/* General Layout Fixes for Transparency */
+.dashboard-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* Table Basic Styling */
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dashboard-table th {
+    text-align: left;
+    padding: 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dashboard-table td {
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.user-info-compact {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.user-avatar-xs {
+    width: 32px;
+    height: 32px;
+    background: var(--bg-surface-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    border: 1px solid rgba(72, 52, 212, 0.2);
+}
+
+.user-name-styled {
+    font-weight: 600;
+}
+
+.badge-modern-status {
+    padding: 0.25rem 0.6rem;
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.badge-modern-status.online {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.status-dot-pulse {
+    width: 6px;
+    height: 6px;
+    background: currentColor;
+    border-radius: 50%;
+}
