@@ -134,9 +134,10 @@ body.dark-mode .nav-link {
 }
 
 .nav-link:hover {
-    background-color: var(--sidebar-hover-bg);
-    color: var(--sidebar-hover-text);
+    background-color: rgba(72, 52, 212, 0.05); /* Very subtle purple tint */
+    color: var(--primary-color-hover);
     transform: translateX(3px);
+    border-color: rgba(72, 52, 212, 0.1);
 }
 
 .nav-link.active {
@@ -154,13 +155,18 @@ body.dark-mode .nav-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 0.6rem;
+    margin-right: 0.8rem; /* More space */
     transition: transform 0.2s ease;
-    width: 20px;
+    width: 24px; /* Slightly larger */
     text-align: center;
+    color: var(--primary-color); /* DEFAULT PURPLE */
+    font-size: 1.1rem;
 }
 .nav-link:hover .nav-icon {
     transform: scale(1.1);
+}
+.nav-link.active .nav-icon {
+    color: #ffffff; /* White when active */
 }
 
 .nav-text {
