@@ -23,7 +23,10 @@ class DashboardController extends Controller
         $recentUsers = \App\Models\User::latest()->take(5)->get();
         // Add minimal 'rol' attribute if missing to prevent view crash
         foreach($recentUsers as $user) {
-            if(!$user->rol) $user->rol = $user->roles->first()?->name ?? 'invitado'; 
+            if(!$user->rol) {
+                 // Check if relation is loaded or load it, then access name
+                 $user->rol = $user->role ? $user->role->name : 'invitado';
+            }
         }
 
         $roleDistribution = [

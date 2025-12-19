@@ -24,5 +24,6 @@ Todos estos usuarios tienen la contraseña genérica: `password123`
 | **Dr. Diego Ruiz**       | Veterinario       | `diego.ruiz@zoofipets.com`       |
 | **Dra. Natalia Peña**    | Veterinario       | `natalia.pena@zoofipets.com`     |
 | **Dr. Fernando Silva**   | Veterinario       | `fernando.silva@zoofipets.com`   |
+| **Jorge Ventas**         | Vendedor          | `jorge.ventas@zoofipets.com`     |
 
 > **Nota de Seguridad**: Estas credenciales son solo para entornos de **DESARROLLO**. Nunca las uses en producción.

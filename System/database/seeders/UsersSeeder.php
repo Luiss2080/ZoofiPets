@@ -15,6 +15,7 @@ class UsersSeeder extends Seeder
         $adminRole = \App\Models\Role::where('nombre', 'Administrador')->first()->id;
         $vetRole = \App\Models\Role::where('nombre', 'Veterinario')->first()->id;
         $recepRole = \App\Models\Role::where('nombre', 'Recepcionista')->first()->id;
+        $vendRole = \App\Models\Role::where('nombre', 'Vendedor')->first()->id;
 
         $users = [
             [
@@ -88,6 +89,15 @@ class UsersSeeder extends Seeder
                 'password' => Hash::make('password123'),
                 'created_at' => '2024-01-06 12:00:00',
                 'updated_at' => '2024-01-06 12:00:00'
+            ],
+            [
+                'name' => 'Jorge Ventas',
+                'email' => 'jorge.ventas@zoofipets.com',
+                'role_id' => $vendRole,
+                'email_verified_at' => '2024-01-07 09:00:00',
+                'password' => Hash::make('password123'),
+                'created_at' => '2024-01-07 09:00:00',
+                'updated_at' => '2024-01-07 09:00:00'
             ],
             [
                 'name' => 'Administrador Sistema',
