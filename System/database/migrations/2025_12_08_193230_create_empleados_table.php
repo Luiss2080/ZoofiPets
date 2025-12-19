@@ -21,7 +21,9 @@ return new class extends Migration
             $table->string('telefono_emergencia', 20)->nullable();
             $table->string('email', 150)->unique()->nullable();
             $table->text('direccion')->nullable();
-            $table->enum('cargo', ['Veterinario', 'Asistente', 'Recepcionista', 'Administrador', 'Cajero', 'Gerente']);
+            // Relación con tabla cargos
+            $table->foreignId('cargo_id')->constrained('cargos');
+            //$table->enum('cargo', ['Veterinario', 'Asistente', 'Recepcionista', 'Administrador', 'Cajero', 'Gerente']);
             $table->string('especialidad', 100)->nullable(); // Solo para veterinarios
             $table->decimal('salario', 10, 2)->nullable();
             $table->date('fecha_ingreso');
@@ -34,7 +36,7 @@ return new class extends Migration
             $table->timestamps();
             
             $table->index(['codigo_empleado']);
-            $table->index(['cargo', 'activo']);
+            $table->index(['cargo_id', 'activo']);
             $table->index(['cedula']);
         });
     }

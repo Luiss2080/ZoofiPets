@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             UsersSeeder::class,
             
             // Tablas base (sin dependencias)
+            CargosSeeder::class,
             MetodosPagoSeeder::class,
             CategoriaProductosSeeder::class,
             
