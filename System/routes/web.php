@@ -58,6 +58,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('mascotas', Admin\MascotaController::class);
     Route::resource('citas', Admin\CitaMedicaController::class);
 
+    // Modulo Ventas
+    Route::resource('productos', Admin\ProductoController::class);
+    Route::resource('ventas', Admin\VentaController::class);
+
     // Rutas placeholder para sidebar (evitan crashes)
     Route::get('/docentes', function() { return 'Modulo Docentes'; })->name('docentes.index');
     Route::get('/estudiantes', function() { return 'Modulo Estudiantes'; })->name('estudiantes.index');
