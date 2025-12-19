@@ -195,7 +195,7 @@
                     @endif
 
                     <!-- Formulario de login -->
-                    <form class="login-form" method="POST" action="{{ route('login') }}" id="loginForm">
+                    <form class="login-form" method="POST" action="{{ route('login.submit') }}" id="loginForm">
                         @csrf
 
                         <!-- Campo Email -->
