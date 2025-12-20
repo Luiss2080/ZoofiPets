@@ -2,10 +2,10 @@
 
 @section('title', 'Gestión de Clientes')
 
-@section('css')
+@push('styles')
     <link rel="stylesheet" href="{{ asset('css/admin/clientes/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pages/paginacion.css') }}">
-@endsection
+@endpush
 
 @section('content')
 <div class="clientes-container">
@@ -139,7 +139,7 @@
 
 @endsection
 
-@section('js')
+@push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('js/admin/clientes/index.js') }}"></script>
-@endsection
+@endpush
