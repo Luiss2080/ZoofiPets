@@ -1,0 +1,453 @@
+/* ============================================
+   NEON RED MODALS - HIGH TECH SYSTEM
+   ============================================ */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+/* --- SHARED VARIABLES & MIXINS (Implicit) --- */
+
+/* ============================================
+   1. CUSTOM DELETE MODAL STYLES
+   ============================================ */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+
+    /* Grid Background Pattern */
+    background-image: linear-gradient(
+            rgba(225, 29, 72, 0.03) 1px,
+            transparent 1px
+        ),
+        linear-gradient(90deg, rgba(225, 29, 72, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+}
+
+.modal-content {
+    background: #000000;
+    border: 1px solid var(--primary-red, #e11d48);
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    padding: 2.5rem;
+
+    /* Tech Shape */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
+
+    box-shadow: 0 0 40px rgba(225, 29, 72, 0.15);
+    transform: scale(0.95);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+    box-shadow: 0 0 60px rgba(225, 29, 72, 0.3);
+}
+
+/* Decorative Corners */
+.modal-content::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid #e11d48;
+    border-left: 2px solid #e11d48;
+    z-index: 2;
+}
+.modal-content::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid #e11d48;
+    border-right: 2px solid #e11d48;
+    z-index: 2;
+}
+
+/* Replace all Share Tech Mono with Montserrat */
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #e11d48; /* Solid Red */
+    border: none;
+    color: #ffffff; /* White text */
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: "Montserrat", sans-serif; /* System Font */
+    border-radius: 4px; /* Slight rounding or keep square? User liked polygon, but close button usually simple. Let's keep it simple or match confirm button. */
+    clip-path: polygon(
+        15% 0,
+        100% 0,
+        100% 85%,
+        85% 100%,
+        0 100%,
+        0 15%
+    ); /* Mini Tech Shape */
+}
+.modal-close:hover {
+    background: #ff1f55;
+    color: white;
+    box-shadow: 0 0 15px rgba(225, 29, 72, 0.6);
+}
+
+/* Header & Icon */
+.modal-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.modal-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-icon.warning {
+    width: 100%;
+    height: 100%;
+    /* Solid Red Background */
+    background: #e11d48;
+    /* Black Icon */
+    color: #000000;
+    /* Circle Shape */
+    clip-path: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 30px rgba(225, 29, 72, 0.5);
+}
+
+/* Success Icon - Tech Note Shape */
+.modal-icon.success {
+    width: 100%;
+    height: 100%;
+    background: #e11d48; /* Keep Red as requested */
+    color: #000000;
+    /* Circle Shape */
+    clip-path: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 30px rgba(225, 29, 72, 0.5);
+}
+
+/* Rotating Ring */
+.modal-icon-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed #e11d48;
+    border-radius: 50%;
+    animation: rotateRing 10s linear infinite;
+    opacity: 0.5;
+}
+@keyframes rotateRing {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif; /* System Font */
+    font-weight: 700;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(225, 29, 72, 0.5);
+}
+
+.modal-subtitle {
+    margin-top: 0.5rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.85rem;
+    color: #e11d48;
+    text-transform: uppercase;
+    font-weight: 700; /* Bold */
+    opacity: 1; /* Full visibility */
+    letter-spacing: 0.5px;
+}
+
+/* Target Card */
+.target-card {
+    background: rgba(20, 20, 20, 0.8);
+    border-left: 4px solid #e11d48;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+.target-card::after {
+    /* Scanlines */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(225, 29, 72, 0.05) 4px,
+        rgba(225, 29, 72, 0.05) 4px
+    );
+    pointer-events: none;
+}
+.target-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(225, 29, 72, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #e11d48;
+    border: 1px solid rgba(225, 29, 72, 0.3);
+}
+.target-details {
+    flex: 1;
+}
+.target-label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.75rem;
+    color: #6b7280;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+.target-details h4 {
+    margin: 0 0 0.5rem 0;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-family: "Montserrat", sans-serif;
+}
+.target-meta {
+    display: flex;
+    gap: 1.5rem;
+}
+.meta-tag {
+    font-family: "Montserrat", sans-serif;
+    color: #e11d48;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.2rem 0.5rem;
+    border: 1px solid rgba(225, 29, 72, 0.2);
+}
+
+/* Footer & Buttons */
+.modal-footer {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btn-cancel {
+    background: transparent;
+    border: 1px solid #333;
+    color: #888;
+    font-family: "Montserrat", sans-serif;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+.btn-cancel:hover {
+    border-color: #e11d48;
+    color: #e11d48;
+    box-shadow: 0 0 10px rgba(225, 29, 72, 0.2);
+}
+
+.btn-delete-confirm {
+    background: #e11d48;
+    border: 1px solid #e11d48;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+    transition: all 0.3s;
+}
+.btn-delete-confirm:hover {
+    background: #ff1f55;
+    box-shadow: 0 0 20px rgba(225, 29, 72, 0.6);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   2. SWEETALERT2 TECH OVERRIDES (GLOBAL)
+   ============================================ */
+div:where(.swal2-container) div:where(.swal2-popup) {
+    background: #000000 !important;
+    border: 1px solid var(--primary-red, #e11d48);
+    border-radius: 0 !important;
+    padding: 2.5rem !important;
+
+    /* Tech Shape Copy */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
+
+    box-shadow: 0 0 40px rgba(225, 29, 72, 0.15) !important;
+    /* Grid Pattern Copy */
+    background-image: linear-gradient(
+            rgba(225, 29, 72, 0.03) 1px,
+            transparent 1px
+        ),
+        linear-gradient(90deg, rgba(225, 29, 72, 0.03) 1px, transparent 1px) !important;
+    background-size: 30px 30px !important;
+}
+
+/* SweetAlert Decorative Corners */
+div:where(.swal2-container) div:where(.swal2-popup)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid #e11d48;
+    border-left: 2px solid #e11d48;
+    z-index: 2;
+}
+div:where(.swal2-container) div:where(.swal2-popup)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid #e11d48;
+    border-right: 2px solid #e11d48;
+    z-index: 2;
+}
+
+/* Success Icon Override */
+div:where(.swal2-icon).swal2-success {
+    border-color: #10b981 !important;
+    color: #10b981 !important;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.2) !important;
+}
+div:where(.swal2-icon).swal2-success .swal2-success-ring {
+    border: 0.25em solid rgba(16, 185, 129, 0.3) !important;
+}
+div:where(.swal2-icon).swal2-success [class^="swal2-success-line"] {
+    background-color: #10b981 !important;
+}
+
+/* Error Icon Override */
+div:where(.swal2-icon).swal2-error {
+    border-color: #e11d48 !important;
+    color: #e11d48 !important;
+    box-shadow: 0 0 20px rgba(225, 29, 72, 0.2) !important;
+}
+div:where(.swal2-icon).swal2-error [class^="swal2-x-mark-line"] {
+    background-color: #e11d48 !important;
+}
+
+/* Typo */
+div:where(.swal2-title) {
+    color: #ffffff !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 1.75rem !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(225, 29, 72, 0.5);
+    margin-bottom: 0.5rem !important;
+}
+
+div:where(.swal2-html-container) {
+    color: #e5e5e5 !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 1rem !important;
+}
+
+/* Tech Buttons for SweetAlert */
+div:where(.swal2-actions) button.swal2-confirm {
+    background: #e11d48 !important;
+    border: 1px solid #e11d48 !important;
+    color: #000 !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 700 !important;
+    padding: 0.75rem 2rem !important;
+    text-transform: uppercase;
+    clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+    box-shadow: none !important;
+    margin: 0 0.5rem !important;
+}
+div:where(.swal2-actions) button.swal2-confirm:hover {
+    background: #ff1f55 !important;
+    box-shadow: 0 0 20px rgba(225, 29, 72, 0.6) !important;
+    transform: translateY(-2px);
+}
+
+div:where(.swal2-actions) button.swal2-cancel {
+    background: transparent !important;
+    border: 1px solid #333 !important;
+    color: #888 !important;
+    font-family: "Montserrat", sans-serif !important;
+    padding: 0.75rem 1.5rem !important;
+    text-transform: uppercase;
+    margin: 0 0.5rem !important;
+}
+div:where(.swal2-actions) button.swal2-cancel:hover {
+    border-color: #e11d48 !important;
+    color: #e11d48 !important;
+    box-shadow: 0 0 10px rgba(225, 29, 72, 0.2) !important;
+}
+
+/* Loader */
+.swal2-loader {
+    border-color: #e11d48 transparent #e11d48 transparent !important;
+}
