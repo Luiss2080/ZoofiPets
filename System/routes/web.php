@@ -121,6 +121,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/perfil', function() { return view('perfil.index'); })->name('perfil.index');
     Route::get('/configuraciones', function() { return view('configuraciones.index'); })->name('configuraciones.index');
     Route::get('/reportes', function() { return view('reportes.index'); })->name('reportes.index');
-    Route::get('/libros', function() { return 'Modulo Biblioteca'; })->name('libros.index');
     Route::get('clientes/{id}/mascotas', [Admin\ClienteController::class, 'getMascotas'])->name('clientes.mascotas');
 });

@@ -195,18 +195,7 @@
             </ul>
         </div>
 
-        <!-- Sección: Biblioteca -->
-        <div class="nav-section">
-            <h3 class="section-title">BIBLIOTECA</h3>
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="{{ route('libros.index') }}" class="nav-link {{ request()->routeIs('libros.*') ? 'active' : '' }}">
-                        <span class="nav-icon"><i class="fas fa-book"></i></span>
-                        <span class="nav-text">Libros</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+
 
         <!-- Sección: Administración -->
         <div class="nav-section">
