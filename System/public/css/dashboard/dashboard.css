@@ -645,8 +645,8 @@ body.dark-mode .stat-mini-row strong {
 /* Button Icon Styles */
 .btn-icon-modern.purple {
     color: var(--primary-color);
-    background: rgba(72, 52, 212, 0.1);
-    border: none;
+    background: rgba(72, 52, 212, 0.15);
+    border: 1px solid rgba(72, 52, 212, 0.3); /* Added border */
     width: 32px;
     height: 32px;
     border-radius: 8px;
@@ -660,8 +660,17 @@ body.dark-mode .stat-mini-row strong {
 .btn-icon-modern.purple:hover {
     background: var(--primary-color);
     color: white;
+    border-color: var(--primary-color);
     transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(72, 52, 212, 0.3);
+    box-shadow: 0 4px 10px rgba(72, 52, 212, 0.4);
+}
+
+.action-buttons-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
 }
 
 /* Dark Mode Contrast Fixes */
