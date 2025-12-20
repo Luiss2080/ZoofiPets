@@ -159,11 +159,31 @@
                                 <table class="dashboard-table">
                                     <thead>
                                         <tr>
-                                            <th class="ps-3"><i class="fas fa-user me-2 text-purple"></i>Usuario</th>
-                                            <th class="text-center"><i class="fas fa-user-tag me-2 text-purple"></i>Rol</th>
-                                            <th class="text-center"><i class="fas fa-clock me-2 text-purple"></i>Sesión</th>
-                                            <th class="text-center"><i class="fas fa-toggle-on me-2 text-purple"></i>Estado</th>
-                                            <th class="text-center" style="width: 140px; white-space: nowrap;">ACTIONS <i class="fas fa-cog text-purple ms-1"></i></th>
+                                            <th class="ps-3">
+                                                <div class="th-content start">
+                                                    <i class="fas fa-user text-purple"></i>Usuario
+                                                </div>
+                                            </th>
+                                            <th class="text-center">
+                                                <div class="th-content centered">
+                                                    <i class="fas fa-user-tag text-purple"></i>Rol
+                                                </div>
+                                            </th>
+                                            <th class="text-center">
+                                                <div class="th-content centered">
+                                                    <i class="fas fa-clock text-purple"></i>Sesión
+                                                </div>
+                                            </th>
+                                            <th class="text-center">
+                                                <div class="th-content centered">
+                                                    <i class="fas fa-toggle-on text-purple"></i>Estado
+                                                </div>
+                                            </th>
+                                            <th class="text-center" style="width: 140px; white-space: nowrap;">
+                                                <div class="th-content centered">
+                                                    ACTIONS <i class="fas fa-cog text-purple"></i>
+                                                </div>
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody class="align-middle">

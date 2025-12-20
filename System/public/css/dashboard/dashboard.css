@@ -861,6 +861,19 @@ body.dark-mode .card-action-link:hover {
     vertical-align: middle; /* Ensure vertical centering */
 }
 
+/* Table Header Flex Alignment */
+.th-content {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Better separation */
+}
+.th-content.centered {
+    justify-content: center;
+}
+.th-content.start {
+    justify-content: flex-start;
+}
+
 .user-info-compact {
     display: flex;
     align-items: center;
