@@ -152,7 +152,7 @@
                     <div class="dashboard-card h-100">
                         <div class="card-header">
                             <h3 class="card-title">Usuarios Recientes</h3>
-                            <a href="{{ route('admin.usuarios.index') }}" class="card-action-link" style="color: #fff !important;">Ver todos</a>
+                            <a href="{{ route('admin.usuarios.index') }}" class="card-action-link">Ver todos</a>
                         </div>
                         <div class="card-body p-0">
                             <div class="table-responsive-compact">
