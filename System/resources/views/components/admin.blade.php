@@ -209,7 +209,29 @@
                                                             {{ ucfirst($user->rol) }}
                                                         </span>
                                                     </td>
-                                                    <!-- More columns handled by next chunk if needed, or I include enough context -->
+                                                    <td class="text-center">
+                                                        <span class="session-time">
+                                                            <i class="fas fa-history text-purple me-1"></i> Hace {{ rand(1, 59) }} min
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge-modern-status online">
+                                                            <span class="status-dot-pulse"></span> Activo
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-center" style="white-space: nowrap;">
+                                                        <div class="action-buttons-row">
+                                                            <button class="btn-icon-modern purple" title="Editar">
+                                                                <i class="fas fa-pen"></i>
+                                                            </button>
+                                                            <button class="btn-icon-modern purple" title="Ver Perfil">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                            <button class="btn-icon-modern purple" title="Eliminar">
+                                                                <i class="fas fa-trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                         @else
@@ -218,39 +240,7 @@
                                             </tr>
                                         @endif
                                     </tbody>
-                                                <td class="text-center">
-                                                    <span class="session-time">
-                                                        <i class="fas fa-history text-purple me-1"></i> Hace {{ rand(1, 59) }} min
-                                                    </span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="badge-modern-status online">
-                                                        <span class="status-dot-pulse"></span> Activo
-                                                    </span>
-                                                </td>
-                                                <td class="text-center" style="white-space: nowrap;">
-                                                    <div class="action-buttons-row">
-                                                        <button class="btn-icon-modern purple" title="Editar">
-                                                            <i class="fas fa-pen"></i>
-                                                        </button>
-                                                        <button class="btn-icon-modern purple" title="Ver Perfil">
-                                                            <i class="fas fa-eye"></i>
-                                                        </button>
-                                                        <button class="btn-icon-modern purple" title="Eliminar">
-                                                            <i class="fas fa-trash"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        @empty
-                                            <tr><td colspan="5" class="text-center py-4">
-                                                <div class="empty-state">
-                                                    <i class="fas fa-users-slash mb-2 text-purple" style="font-size: 2rem; opacity: 0.5;"></i>
-                                                    <p>No hay usuarios recientes</p>
-                                                </div>
-                                            </td></tr>
-                                        @endforelse
-                                    </tbody>
+
                                 </table>
                             </div>
                         </div>
