@@ -44,7 +44,7 @@ class ClienteController extends Controller
 
         Cliente::create($validated);
 
-        return redirect()->route('admin.clientes.index')->with('success', 'Cliente registrado exitosamente.');
+        return redirect()->route('recepcionista.clientes.index')->with('success', 'Cliente registrado exitosamente.');
     }
 
     /**
@@ -87,7 +87,7 @@ class ClienteController extends Controller
 
         $cliente->update($validated);
 
-        return redirect()->route('admin.clientes.index')->with('success', 'Cliente actualizado exitosamente.');
+        return redirect()->route('recepcionista.clientes.index')->with('success', 'Cliente actualizado exitosamente.');
     }
 
     /**
@@ -106,6 +106,6 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::findOrFail($id);
         $cliente->delete();
-        return redirect()->route('admin.clientes.index')->with('success', 'Cliente eliminado exitosamente.');
+        return redirect()->route('recepcionista.clientes.index')->with('success', 'Cliente eliminado exitosamente.');
     }
 }

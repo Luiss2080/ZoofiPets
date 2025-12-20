@@ -1,8 +1,5 @@
-/* ============================================
-   DOCENTES INDEX - DASHBOARD STYLE
-   ============================================ */
-
-.docentes-container {
+/* CLIENTES INDEX - DASHBOARD STYLE */
+============================================ */ .clientes-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;

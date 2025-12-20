@@ -37,6 +37,6 @@ class DashboardController extends Controller
         
         $chartData = []; // Placeholder
 
-        return view('components.admin', compact('stats', 'recentUsers', 'roleDistribution', 'chartData'));
+        return view('admin.dashboard', compact('stats', 'recentUsers', 'roleDistribution', 'chartData'));
     }
 }
