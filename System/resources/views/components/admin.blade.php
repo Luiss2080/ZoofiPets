@@ -23,13 +23,15 @@
     <link rel="stylesheet" href="{{ asset('css/layouts/sidebar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/layouts/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/layouts/footer.css') }}">
-    
+    <link rel="stylesheet" href="{{ asset('css/layouts/loading.css') }}">
+
     @stack('styles')
 </head>
 
 <body>
     
-    <!-- Loading Screen REMOVED as per user request -->
+    <!-- Loading Screen -->
+    @include('layouts.loading')
     
     <!-- Layout del Dashboard -->
     <div class="dashboard-layout">
@@ -397,6 +399,7 @@
     <!-- JavaScript del Dashboard -->
     <script src="{{ asset('js/layouts/sidebar.js') }}"></script>
     <script src="{{ asset('js/layouts/footer.js') }}"></script>
+    <script src="{{ asset('js/layouts/loading.js') }}"></script>
     
     <!-- JavaScript del Header -->
     {{-- Script moved to header.blade.php --}}

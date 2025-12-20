@@ -1,44 +1,165 @@
-<div class="loading-overlay" id="loading-screen">
-    <!-- Tech Background Elements -->
-    <div class="tech-bg-grid"></div>
-    <div class="tech-particles">
-        <div class="tp tp-1"></div>
-        <div class="tp tp-2"></div>
-        <div class="tp tp-3"></div>
-        <div class="tp tp-4"></div>
+<div id="loading-screen" class="loading-screen">
+    <!-- Background animado (Copiado del estilo de login) -->
+    <div class="loading-background">
+        <div class="bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+        <div class="bg-grid"></div>
+        <!-- Elementos veterinarios -->
+        <div class="vet-elements">
+            <div class="floating-items">
+                <!-- Huellas -->
+                <div class="paw-print paw-1">
+                    <div class="pad large"></div>
+                    <div class="pad small s-1"></div>
+                    <div class="pad small s-2"></div>
+                    <div class="pad small s-3"></div>
+                </div>
+                <div class="paw-print paw-2">
+                    <div class="pad large"></div>
+                    <div class="pad small s-1"></div>
+                    <div class="pad small s-2"></div>
+                    <div class="pad small s-3"></div>
+                </div>
+                <div class="paw-print paw-3">
+                    <div class="pad large"></div>
+                    <div class="pad small s-1"></div>
+                    <div class="pad small s-2"></div>
+                    <div class="pad small s-3"></div>
+                </div>
+                <div class="paw-print paw-4">
+                    <div class="pad large"></div>
+                    <div class="pad small s-1"></div>
+                    <div class="pad small s-2"></div>
+                    <div class="pad small s-3"></div>
+                </div>
+
+                <!-- Huesos -->
+                <div class="bone bone-1"></div>
+                <div class="bone bone-2"></div>
+                <div class="bone bone-3"></div>
+
+                <!-- Cruces Médicas -->
+                <div class="medical-cross cross-1"></div>
+                <div class="medical-cross cross-2"></div>
+                <div class="medical-cross cross-3"></div>
+
+                <!-- Partículas de vida/salud -->
+                <div class="health-particle hp-1"></div>
+                <div class="health-particle hp-2"></div>
+                <div class="health-particle hp-3"></div>
+                <div class="health-particle hp-4"></div>
+                <div class="health-particle hp-5"></div>
+            </div>
+        </div>
     </div>
 
+    <!-- Contenido del Loading -->
     <div class="loading-content">
-        <h2 class="welcome-text">Bienvenido a</h2>
-        <h1 class="brand-text" data-text="ZOOFIPETS">ZOOFIPETS</h1>
-        
-        <div class="spinner-container">
-            <svg class="spinner" viewBox="0 0 50 50">
-                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="4"></circle>
-            </svg>
+        <h1 class="loading-title">Bienvenido a <span class="highlight">ZoofiPets</span></h1>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
         </div>
-
-        <!-- System Log Output -->
-        <div class="system-log-container">
-            <div class="log-content" id="systemLog">
-                <span class="log-line">> Iniciando sistema veterinario...</span>
-            </div>
-        </div>
-
-        <div class="progress-wrapper">
-            <div class="progress-bar-bg">
-                <div class="progress-bar-fill" id="loadingProgressBar"></div>
-            </div>
-            <div class="progress-info">
-                <span class="percentage" id="loadingPercentage">0%</span>
-            </div>
-        </div>
-        
-        <div class="status-wrapper">
-            <p class="loading-status" id="loadingStatus">Cargando módulos...</p>
-            <div class="loading-dots">
-                <span></span><span></span><span></span>
-            </div>
+        <div class="percentage-text" id="percentage-text">0%</div>
+        <p class="loading-text" id="loading-text">Preparando consulta...</p>
+        <div class="loading-dots">
+            <span>.</span><span>.</span><span>.</span>
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Textos rotativos
+        const texts = [
+            "Preparando consulta...",
+            "Verificando historial médico...",
+            "Esterilizando instrumentos...",
+            "Llamando a las mascotas...",
+            "Organizando fichas...",
+            "Cargando sistema..."
+        ];
+        let textIndex = 0;
+        const textElement = document.getElementById('loading-text');
+        
+        setInterval(() => {
+            textIndex = (textIndex + 1) % texts.length;
+            if(textElement) {
+                textElement.style.opacity = 0;
+                setTimeout(() => {
+                    textElement.innerText = texts[textIndex];
+                    textElement.style.opacity = 1;
+                }, 200);
+            }
+        }, 2000);
+
+        // Simulación de barra de progreso
+        const progressBar = document.getElementById('progress-bar');
+        const percentageText = document.getElementById('percentage-text');
+        const loadingScreen = document.getElementById('loading-screen');
+        let progress = 0;
+
+        // Detectar si es la primera visita en la sesión
+        const isFirstVisit = !sessionStorage.getItem('zoofi_visited');
+        if (isFirstVisit) {
+            sessionStorage.setItem('zoofi_visited', 'true');
+        }
+
+        // Simulación más natural con pausas y acelerones
+        const simulateLoading = () => {
+            if (progress >= 100) {
+                progress = 100;
+                updateUI();
+                setTimeout(hideLoading, 500);
+                return;
+            }
+
+            let increment;
+            let nextTick;
+
+            if (isFirstVisit) {
+                // Lógica original (Lenta: Primera vez)
+                increment = Math.random() * 2;
+                // A veces se detiene un poco (simulando carga pesada)
+                if (Math.random() > 0.9) increment = 0;
+                // A veces avanza rápido
+                if (Math.random() > 0.95) increment = 10;
+                
+                // Velocidad variable lenta
+                nextTick = 30 + Math.random() * 100;
+            } else {
+                // Lógica rápida (1-2 segundos: Navegación posterior)
+                // Incremento mayor para terminar rápido
+                increment = 2 + Math.random() * 5; // Avance entre 2% y 7% por tick
+                
+                // Velocidad más rápida y constante
+                nextTick = 20 + Math.random() * 30; 
+            }
+
+            progress += increment;
+            if (progress > 100) progress = 100;
+            
+            updateUI();
+
+            setTimeout(simulateLoading, nextTick);
+        };
+
+        const updateUI = () => {
+            if (progressBar) progressBar.style.width = progress + '%';
+            if (percentageText) percentageText.innerText = Math.round(progress) + '%';
+        };
+
+        const hideLoading = () => {
+            if(loadingScreen) {
+                loadingScreen.classList.add('hidden');
+                setTimeout(() => loadingScreen.remove(), 800);
+            }
+        };
+
+        // Iniciar simulación
+        setTimeout(simulateLoading, 500);
+    });
+</script>
