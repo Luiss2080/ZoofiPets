@@ -247,20 +247,29 @@
                                 
                                 <!-- Admin -->
                                 <div class="legend-item-compact">
-                                    <div class="legend-box" style="background: #3b82f6;"></div>
-                                    <span class="legend-text">Admin <span style="opacity: 0.7;">({{ round(($roleDistribution['admin'] ?? 0) / $total * 100) }}%)</span></span>
+                                    <div class="legend-info">
+                                        <div class="legend-box" style="background: #3b82f6;"></div>
+                                        <span class="legend-text">Administración</span>
+                                    </div>
+                                    <span class="legend-percent text-muted fw-bold">{{ round(($roleDistribution['admin'] ?? 0) / $total * 100) }}%</span>
                                 </div>
 
                                 <!-- Docente -->
                                 <div class="legend-item-compact">
-                                    <div class="legend-box" style="background: #a855f7;"></div>
-                                    <span class="legend-text">Vet. <span style="opacity: 0.7;">({{ round(($roleDistribution['docente'] ?? 0) / $total * 100) }}%)</span></span>
+                                    <div class="legend-info">
+                                        <div class="legend-box" style="background: #a855f7;"></div>
+                                        <span class="legend-text">Veterinario</span>
+                                    </div>
+                                    <span class="legend-percent text-muted fw-bold">{{ round(($roleDistribution['docente'] ?? 0) / $total * 100) }}%</span>
                                 </div>
 
                                 <!-- Estudiante -->
                                 <div class="legend-item-compact">
-                                    <div class="legend-box" style="background: #10b981;"></div>
-                                    <span class="legend-text">Recep. <span style="opacity: 0.7;">({{ round(($roleDistribution['estudiante'] ?? 0) / $total * 100) }}%)</span></span>
+                                    <div class="legend-info">
+                                        <div class="legend-box" style="background: #10b981;"></div>
+                                        <span class="legend-text">Recepción</span>
+                                    </div>
+                                    <span class="legend-percent text-muted fw-bold">{{ round(($roleDistribution['estudiante'] ?? 0) / $total * 100) }}%</span>
                                 </div>
                             </div>
                         </div>

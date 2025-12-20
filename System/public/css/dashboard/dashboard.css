@@ -691,6 +691,79 @@ body.dark-mode .empty-state p {
     color: #94a3b8;
 }
 
+/* Chart Center Text */
+.chart-center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.total-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1;
+}
+
+.total-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Legend Grid - Vertical List (Clean) */
+.legend-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 90%; /* Center nicely */
+}
+
+.legend-item-compact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spread name and value */
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding: 0.5rem 0.75rem;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+    border: 1px solid transparent;
+}
+body.dark-mode .legend-item-compact {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.legend-box {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.legend-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.legend-text {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+body.dark-mode .legend-text {
+    color: #f1f5f9;
+}
+
 /* Chart Center Text for Dark Mode */
 body.dark-mode .total-number {
     color: #ffffff;
