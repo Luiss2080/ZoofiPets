@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Form Validation (Simple)
-    const form = document.getElementById("createDocenteForm");
+    const form = document.getElementById("createClienteForm");
     if (form) {
         form.addEventListener("submit", function (e) {
             // Optional: Client-side validation could go here

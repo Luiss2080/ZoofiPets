@@ -1,5 +1,5 @@
 /* CLIENTES INDEX - DASHBOARD STYLE */
-============================================ */ .clientes-container {
+.clientes-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;

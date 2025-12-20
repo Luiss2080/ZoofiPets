@@ -110,10 +110,10 @@
                                     <a href="{{ route('clientes.mascotas', $cliente->id) }}" class="btn-icon view" style="color: #a855f7; border-color: rgba(168,85,247,0.3); background: rgba(168,85,247,0.1);" title="Ver Mascotas">
                                         <i class="fas fa-paw"></i>
                                     </a>
-                                    <form action="{{ route('recepcionista.clientes.destroy', $cliente->id) }}" method="POST" class="delete-form" style="display:inline;">
+                                    <form id="delete-form-{{ $cliente->id }}" action="{{ route('recepcionista.clientes.destroy', $cliente->id) }}" method="POST" class="delete-form" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn-icon delete" title="Eliminar" onclick="return confirm('¿Estás seguro de eliminar este cliente?')">
+                                        <button type="button" class="btn-icon delete" title="Eliminar" onclick="confirmDelete('{{ $cliente->id }}')">
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </form>
@@ -133,7 +133,7 @@
     </div>
     
     <div class="pagination-wrapper">
-        {{ $clientes->appends(request()->query())->links('pages.docentes') }} {{-- Reusing the pagination style requested --}}
+        {{ $clientes->appends(request()->query())->links('pages.clientes') }} {{-- Reusing the pagination style requested --}}
     </div>
 </div>
 
@@ -141,20 +141,5 @@
 
 @section('js')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        // Simple search functionality
-        document.getElementById('searchInput').addEventListener('keyup', function(e) {
-            if (e.key === 'Enter') {
-                let url = new URL(window.location.href);
-                url.searchParams.set('search', this.value);
-                window.location.href = url.toString();
-            }
-        });
-
-        document.getElementById('entriesSelect').addEventListener('change', function() {
-             let url = new URL(window.location.href);
-             url.searchParams.set('per_page', this.value);
-             window.location.href = url.toString();
-        });
-    </script>
+    <script src="{{ asset('js/admin/clientes/index.js') }}"></script>
 @endsection

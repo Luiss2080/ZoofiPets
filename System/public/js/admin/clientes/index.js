@@ -38,7 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Función global para eliminar (usada en el onclick)
-window.confirmDelete = function (docenteId) {
+// Función global para eliminar (usada en el onclick)
+window.confirmDelete = function (clienteId) {
     // Configuración tema (puede venir del backend o global)
     const isDark = document.body.classList.contains("dark-mode");
 
@@ -55,7 +56,7 @@ window.confirmDelete = function (docenteId) {
         color: isDark ? "#f1f5f9" : "#1e293b",
     }).then((result) => {
         if (result.isConfirmed) {
-            document.getElementById(`delete-form-${docenteId}`).submit();
+            document.getElementById(`delete-form-${clienteId}`).submit();
         }
     });
 };
