@@ -72,6 +72,11 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     // Gestión Tienda Avanzada
     Route::get('/categorias', function() { return 'Modulo Categorías'; })->name('categorias.index');
     Route::get('/promociones', function() { return 'Modulo Promociones'; })->name('promociones.index');
+    Route::get('/movimientos', function() { return 'Modulo Movimientos de Stock'; })->name('movimientos.index');
+    Route::get('/alertas', function() { return 'Modulo Alertas de Stock'; })->name('alertas.index');
+    
+    // Configuración Financiera
+    Route::get('/metodos-pago', function() { return 'Modulo Métodos de Pago'; })->name('metodos_pago.index');
     
     // Rutas legacy/placeholders para evitar 404s en enlaces antiguos si quedan
     Route::get('/docentes', function() { return 'Modulo Docentes'; })->name('docentes.index');
@@ -92,11 +97,12 @@ Route::middleware(['auth'])->prefix('recepcion')->name('recepcionista.')->group(
 Route::middleware(['auth'])->prefix('veterinaria')->name('veterinario.')->group(function () {
     // Consultas Médicas
     Route::resource('consultas', Admin\ConsultaController::class);
-    // Pacientes (Mascotas) - Reutiliza controlador pero con nombre de ruta distinto si es necesario, 
-    // o simplemente apuntamos al mismo recurso. Aquí definimos recurso propio para veterinario.
+    // Pacientes (Mascotas)
     Route::resource('mascotas', Admin\MascotaController::class);
     // Vacunas
     Route::get('/vacunas', function() { return view('veterinario.vacunas.index'); })->name('vacunas.index');
+    // Historiales Médicos
+    Route::get('/historiales', function() { return 'Modulo Historiales Médicos'; })->name('historiales.index');
 });
 
 // Modulo Vendedor (Tienda)

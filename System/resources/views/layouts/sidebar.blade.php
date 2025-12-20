@@ -63,6 +63,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('veterinario.historiales.index') }}" class="nav-link {{ request()->routeIs('veterinario.historiales.*') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-file-medical-alt"></i></span>
+                        <span class="nav-text">Historiales</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('admin.servicios.index') }}" class="nav-link {{ request()->routeIs('admin.servicios.*') ? 'active' : '' }}">
                         <span class="nav-icon"><i class="fas fa-notes-medical"></i></span>
                         <span class="nav-text">Servicios</span>
@@ -97,6 +103,18 @@
                     <a href="{{ route('vendedor.inventario.index') }}" class="nav-link {{ request()->routeIs('vendedor.inventario.*') ? 'active' : '' }}">
                         <span class="nav-icon"><i class="fas fa-dolly-flatbed"></i></span>
                         <span class="nav-text">Inventario</span>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a href="{{ route('admin.movimientos.index') }}" class="nav-link {{ request()->routeIs('admin.movimientos.*') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-exchange-alt"></i></span>
+                        <span class="nav-text">Movimientos</span>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a href="{{ route('admin.alertas.index') }}" class="nav-link {{ request()->routeIs('admin.alertas.*') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-exclamation-triangle"></i></span>
+                        <span class="nav-text">Alertas Stock</span>
                     </a>
                 </li>
                  <li class="nav-item">
@@ -172,6 +190,12 @@
                     <a href="{{ route('admin.permisos.index') }}" class="nav-link {{ request()->routeIs('admin.permisos.*') ? 'active' : '' }}">
                         <span class="nav-icon"><i class="fas fa-key"></i></span>
                         <span class="nav-text">Permisos</span>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a href="{{ route('admin.metodos_pago.index') }}" class="nav-link {{ request()->routeIs('admin.metodos_pago.*') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-credit-card"></i></span>
+                        <span class="nav-text">Métodos Pago</span>
                     </a>
                 </li>
                 <li class="nav-item">
