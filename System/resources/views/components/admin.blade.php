@@ -189,25 +189,35 @@
                                         </tr>
                                     </thead>
                                     <tbody class="align-middle">
-                                        @forelse($recentUsers as $user)
-                                            <tr class="hover-scale">
-                                                <td class="ps-3">
-                                                    <div class="user-info-compact">
-                                                        <div class="user-avatar-xs {{ $user->rol === 'admin' ? 'pulse-purple' : '' }}">{{ substr($user->name, 0, 1) }}</div>
-                                                        <div class="d-flex align-items-center">
-                                                            <span class="user-name-styled">{{ $user->name }}</span>
+                                        @if(isset($recentUsers) && count($recentUsers) > 0)
+                                            @foreach($recentUsers as $user)
+                                                <tr class="hover-scale">
+                                                    <td class="ps-3">
+                                                        <div class="user-info-compact">
+                                                            <div class="user-avatar-xs {{ $user->rol === 'admin' ? 'pulse-purple' : '' }}">{{ substr($user->name, 0, 1) }}</div>
+                                                            <div class="d-flex align-items-center">
+                                                                <span class="user-name-styled">{{ $user->name }}</span>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="badge-modern-purple">
-                                                        @if($user->rol == 'admin') <i class="fas fa-crown"></i>
-                                                        @elseif($user->rol == 'docente') <i class="fas fa-chalkboard-teacher"></i>
-                                                        @else <i class="fas fa-user-graduate"></i>
-                                                        @endif
-                                                        {{ ucfirst($user->rol) }}
-                                                    </span>
-                                                </td>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge-modern-purple">
+                                                            @if($user->rol == 'admin') <i class="fas fa-crown"></i>
+                                                            @elseif($user->rol == 'docente') <i class="fas fa-chalkboard-teacher"></i>
+                                                            @else <i class="fas fa-user-graduate"></i>
+                                                            @endif
+                                                            {{ ucfirst($user->rol) }}
+                                                        </span>
+                                                    </td>
+                                                    <!-- More columns handled by next chunk if needed, or I include enough context -->
+                                                </tr>
+                                            @endforeach
+                                        @else
+                                            <tr>
+                                                <td colspan="5" class="text-center text-muted py-3">No hay usuarios recientes</td>
+                                            </tr>
+                                        @endif
+                                    </tbody>
                                                 <td class="text-center">
                                                     <span class="session-time">
                                                         <i class="fas fa-history text-purple me-1"></i> Hace {{ rand(1, 59) }} min
