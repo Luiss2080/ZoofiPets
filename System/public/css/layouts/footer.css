@@ -1,19 +1,25 @@
 /* ============================================
-   FOOTER REDESIGN - COMPACT NEON DARK
+   FOOTER REDESIGN - COMPACT NEON DARK & LIGHT
    ============================================ */
 
 .dashboard-footer {
     margin-top: 2rem;
-    padding: 2rem 2.5rem; /* Slightly more comfortable padding */
-    background: #000000; /* True Black */
-    border: 1px solid var(--primary-color); /* Full border */
-    border-radius: 24px; /* Fully rounded like before */
+    padding: 2rem 2.5rem;
+    background: var(--footer-bg); /* Use variable */
+    border: 1px solid var(--border-color); /* Use variable */
+    border-radius: 24px;
     font-size: 0.85rem;
-    color: #a0a0a0;
+    color: var(--footer-text); /* Use variable */
     position: relative;
     width: 100%;
-    margin-bottom: 2rem; /* Add clear space at bottom */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Deep shadow for floating effect */
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-lg); /* Use variable shadow */
+}
+
+/* Specific Dark Mode overrides for neon feel if needed, handled by dashboard.css variables mostly */
+body.dark-mode .dashboard-footer {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .footer-container {
@@ -24,13 +30,13 @@
 .footer-main-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem; /* Compact gap */
+    gap: 2rem;
     margin-bottom: 2rem;
     align-items: start;
 }
 
 .footer-heading {
-    color: #ffffff;
+    color: var(--footer-heading); /* Use variable */
     font-size: 0.9rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -44,18 +50,23 @@
 /* Contact Column */
 .contact-cards {
     display: grid;
-    gap: 0.5rem; /* Very tight */
+    gap: 0.5rem;
 }
 
 .contact-card {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    background: rgba(255, 255, 255, 0.03); /* Subtle dark fill */
+    background: var(--card-bg); /* Use variable */
     padding: 0.6rem 1rem;
-    border-radius: 8px; /* Slightly squarer for compact look */
-    border: 1px solid transparent;
+    border-radius: 8px;
+    border: 1px solid transparent; /* Hide border by default */
     transition: all 0.2s ease;
+}
+
+/* Light mode card border handling */
+.dashboard-footer:not(.dark-mode) .contact-card {
+    border-color: rgba(0, 0, 0, 0.05);
 }
 
 .contact-card:hover {
@@ -77,14 +88,14 @@
     justify-content: center;
 }
 .card-value {
-    color: #e0e0e0;
+    color: var(--footer-heading); /* Use variable */
     font-weight: 600;
     font-size: 0.85rem;
     line-height: 1.2;
 }
 .card-sub {
     font-size: 0.75rem;
-    color: #888;
+    color: var(--text-muted); /* Use variable */
     margin-top: 2px;
 }
 
@@ -92,7 +103,7 @@
 .footer-description {
     line-height: 1.5;
     margin-bottom: 1.5rem;
-    color: #a0a0a0;
+    color: var(--footer-text); /* Use variable */
     font-size: 0.85rem;
     max-width: 90%;
 }
@@ -108,17 +119,22 @@
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--card-bg); /* Use variable */
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    color: #e0e0e0;
+    color: var(--footer-heading); /* Use variable */
     font-weight: 500;
     font-size: 0.85rem;
     border: 1px solid transparent;
     transition: all 0.2s ease;
-    width: 100%; /* Match width of contact cards */
+    width: 100%;
     box-sizing: border-box;
 }
+
+.dashboard-footer:not(.dark-mode) .badge {
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
 .badge i {
     color: var(--primary-color);
     font-size: 0.9rem;
@@ -149,13 +165,13 @@
 
 .build-text {
     font-size: 0.75rem;
-    color: #666;
+    color: var(--text-muted); /* Use variable */
     font-family: monospace;
 }
 
 /* Footer Bottom */
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--border-color); /* Use variable */
     padding-top: 1.5rem;
     margin-top: 1rem;
     display: flex;
@@ -172,7 +188,7 @@
 }
 
 .footer-logo-img {
-    height: 36px; /* Smaller */
+    height: 36px;
     width: auto;
 }
 
@@ -181,14 +197,14 @@
     flex-direction: column;
 }
 .brand-title {
-    color: white;
+    color: var(--footer-heading); /* Use variable */
     font-weight: 700;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
 }
 .brand-subtitle {
     font-size: 0.7rem;
-    color: #888;
+    color: var(--text-muted); /* Use variable */
 }
 
 .social-links {
@@ -221,7 +237,7 @@
     gap: 0.2rem;
 }
 .footer-copyright {
-    color: #888;
+    color: var(--text-muted); /* Use variable */
     font-size: 0.75rem;
 }
 .footer-links-row {
@@ -230,7 +246,7 @@
     justify-content: flex-end;
 }
 .footer-links-row a {
-    color: #666;
+    color: var(--footer-text); /* Use variable */
     text-decoration: none;
     font-size: 0.75rem;
 }
@@ -238,7 +254,7 @@
     color: var(--primary-color);
 }
 .sep {
-    color: #333;
+    color: var(--border-color); /* Use variable */
     font-size: 0.75rem;
 }
 

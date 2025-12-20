@@ -62,6 +62,12 @@
                         <span class="nav-text">Vacunas</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.servicios.index') }}" class="nav-link {{ request()->routeIs('admin.servicios.*') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-notes-medical"></i></span>
+                        <span class="nav-text">Servicios</span>
+                    </a>
+                </li>
             </ul>
         </div>
 
@@ -82,9 +88,65 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('admin.categorias.index') }}" class="nav-link {{ request()->routeIs('admin.categorias.*') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-tags"></i></span>
+                        <span class="nav-text">Categorías</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('vendedor.inventario.index') }}" class="nav-link {{ request()->routeIs('vendedor.inventario.*') ? 'active' : '' }}">
                         <span class="nav-icon"><i class="fas fa-dolly-flatbed"></i></span>
                         <span class="nav-text">Inventario</span>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a href="{{ route('admin.promociones.index') }}" class="nav-link {{ request()->routeIs('admin.promociones.*') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-percentage"></i></span>
+                        <span class="nav-text">Promociones</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Sección: Compras -->
+        <div class="nav-section">
+            <h3 class="section-title">COMPRAS</h3>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="{{ route('admin.proveedores.index') }}" class="nav-link {{ request()->routeIs('admin.proveedores.*') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-truck"></i></span>
+                        <span class="nav-text">Proveedores</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.compras.index') }}" class="nav-link {{ request()->routeIs('admin.compras.*') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-file-invoice-dollar"></i></span>
+                        <span class="nav-text">Compras</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Sección: RRHH -->
+        <div class="nav-section">
+            <h3 class="section-title">RRHH</h3>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="{{ route('admin.empleados.index') }}" class="nav-link {{ request()->routeIs('admin.empleados.*') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-id-card-alt"></i></span>
+                        <span class="nav-text">Empleados</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.cargos.index') }}" class="nav-link {{ request()->routeIs('admin.cargos.*') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-briefcase"></i></span>
+                        <span class="nav-text">Cargos</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.horarios.index') }}" class="nav-link {{ request()->routeIs('admin.horarios.*') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-clock"></i></span>
+                        <span class="nav-text">Horarios</span>
                     </a>
                 </li>
             </ul>
@@ -92,7 +154,7 @@
 
         <!-- Sección: Administración -->
         <div class="nav-section">
-            <h3 class="section-title">ADMINISTRACIÓN</h3>
+            <h3 class="section-title">GESTIÓN</h3>
             <ul class="nav-list">
                 <li class="nav-item">
                     <a href="{{ route('admin.usuarios.index') }}" class="nav-link {{ request()->routeIs('admin.usuarios.*') ? 'active' : '' }}">
@@ -104,6 +166,12 @@
                     <a href="{{ route('admin.roles.index') }}" class="nav-link {{ request()->routeIs('admin.roles.*') ? 'active' : '' }}">
                         <span class="nav-icon"><i class="fas fa-user-tag"></i></span>
                         <span class="nav-text">Roles</span>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a href="{{ route('admin.permisos.index') }}" class="nav-link {{ request()->routeIs('admin.permisos.*') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-key"></i></span>
+                        <span class="nav-text">Permisos</span>
                     </a>
                 </li>
                 <li class="nav-item">

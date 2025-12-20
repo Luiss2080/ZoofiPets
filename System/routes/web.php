@@ -53,14 +53,29 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Módulos de Administración (Usuarios, Roles, Permisos)
-    // Usamos placeholders o controladores reales si existen
     Route::get('/usuarios', function() { return view('admin.usuarios.index'); })->name('usuarios.index');
     Route::get('/roles', function() { return 'Modulo Roles'; })->name('roles.index');
     Route::get('/permisos', function() { return 'Modulo Permisos'; })->name('permisos.index');
+
+    // Recursos Humanos
+    Route::get('/empleados', function() { return 'Modulo Empleados'; })->name('empleados.index');
+    Route::get('/cargos', function() { return 'Modulo Cargos'; })->name('cargos.index');
+    Route::get('/horarios', function() { return 'Modulo Horarios'; })->name('horarios.index');
+
+    // Compras y Proveedores
+    Route::get('/proveedores', function() { return 'Modulo Proveedores'; })->name('proveedores.index');
+    Route::get('/compras', function() { return 'Modulo Compras'; })->name('compras.index');
+
+    // Gestión Veterinaria Avanzada
+    Route::get('/servicios', function() { return 'Modulo Servicios Médicos'; })->name('servicios.index');
+
+    // Gestión Tienda Avanzada
+    Route::get('/categorias', function() { return 'Modulo Categorías'; })->name('categorias.index');
+    Route::get('/promociones', function() { return 'Modulo Promociones'; })->name('promociones.index');
     
     // Rutas legacy/placeholders para evitar 404s en enlaces antiguos si quedan
     Route::get('/docentes', function() { return 'Modulo Docentes'; })->name('docentes.index');
-    Route::get('/estudiantes', function() { return 'Modulo Estudiantes'; })->name('estudiantes.index'); 
+    Route::get('/estudiantes', function() { return 'Modulo Estudiantes'; })->name('estudiantes.index');  
 });
 
 // Modulo Recepcionista
