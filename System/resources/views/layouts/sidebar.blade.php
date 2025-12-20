@@ -14,6 +14,31 @@
 
     <!-- Contenedor de Navegación con Scroll -->
     <div class="sidebar-scroll-content">
+
+        <!-- Sección: Principal -->
+        <div class="nav-section">
+            <h3 class="section-title">PRINCIPAL</h3>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="{{ route('admin.dashboard') }}" class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('calendario.index') }}" class="nav-link {{ request()->routeIs('calendario.*') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-calendar-alt"></i></span>
+                        <span class="nav-text">Calendario</span>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a href="{{ route('reportes.index') }}" class="nav-link {{ request()->routeIs('reportes.*') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-chart-line"></i></span>
+                        <span class="nav-text">Reportes</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
         
         <!-- Sección: Recepción -->
         <div class="nav-section">
@@ -165,6 +190,19 @@
                     <a href="{{ route('admin.horarios.index') }}" class="nav-link {{ request()->routeIs('admin.horarios.*') ? 'active' : '' }}">
                         <span class="nav-icon"><i class="fas fa-clock"></i></span>
                         <span class="nav-text">Horarios</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Sección: Biblioteca -->
+        <div class="nav-section">
+            <h3 class="section-title">BIBLIOTECA</h3>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="{{ route('libros.index') }}" class="nav-link {{ request()->routeIs('libros.*') ? 'active' : '' }}">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        <span class="nav-text">Libros</span>
                     </a>
                 </li>
             </ul>
