@@ -19,6 +19,10 @@ Route::prefix('nosotros')->group(function () {
     Route::get('/instalaciones', function () {
         return view('nosotros.instalaciones');
     })->name('nosotros.instalaciones');
+
+    Route::get('/galeria', function () {
+        return view('nosotros.galeria');
+    })->name('nosotros.galeria');
 });
 
 Route::get('/login', function () {
@@ -95,12 +99,6 @@ Route::prefix('citas')->group(function () {
     })->name('citas.solicitud.index');
 });
 
-// Rutas de Galería
-Route::prefix('galeria')->group(function () {
-    Route::get('/', function () {
-        return view('galeria.index');
-    })->name('galeria.index');
-});
 
 // Rutas de Testimonios
 Route::prefix('testimonios')->group(function () {
