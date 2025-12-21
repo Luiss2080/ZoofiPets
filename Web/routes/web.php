@@ -105,4 +105,8 @@ Route::prefix('citas')->group(function () {
     Route::get('/agendar', function () {
         return view('citas.solicitud.index');
     })->name('citas.solicitud.index');
+
+    Route::get('/confirmacion', function () {
+        return view('citas.confirmacion.index');
+    })->name('citas.confirmacion');
 });

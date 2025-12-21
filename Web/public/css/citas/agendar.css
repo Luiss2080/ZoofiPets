@@ -1,0 +1,803 @@
+/* Appointment Booking Page Styles */
+
+/* Hero Section */
+.appointment-hero {
+    background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 100%);
+    padding: 120px 0 80px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.appointment-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/pattern.png') repeat;
+    opacity: 0.05;
+}
+
+.appointment-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.appointment-hero p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+/* Form Container */
+.appointment-container {
+    max-width: 1400px;
+    margin: -60px auto 80px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.appointment-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Main Form Card */
+.appointment-form-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    position: relative;
+}
+
+/* Progress Steps */
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.progress-steps::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #e0e0e0;
+    z-index: 0;
+}
+
+.progress-line {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #0984e3, #6c5ce7);
+    transition: width 0.4s ease;
+    z-index: 1;
+}
+
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.step-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #95a5a6;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.step-item.active .step-circle {
+    background: linear-gradient(135deg, #0984e3, #6c5ce7);
+    border-color: #0984e3;
+    color: white;
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.3);
+}
+
+.step-item.completed .step-circle {
+    background: #00b894;
+    border-color: #00b894;
+    color: white;
+}
+
+.step-label {
+    font-size: 0.9rem;
+    color: #95a5a6;
+    font-weight: 500;
+    text-align: center;
+}
+
+.step-item.active .step-label {
+    color: #0984e3;
+    font-weight: 600;
+}
+
+.step-item.completed .step-label {
+    color: #00b894;
+}
+
+/* Form Steps */
+.form-step {
+    display: none;
+    animation: fadeInStep 0.4s ease;
+}
+
+.form-step.active {
+    display: block;
+}
+
+@keyframes fadeInStep {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.step-title {
+    font-size: 1.8rem;
+    color: #2d3436;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.step-subtitle {
+    color: #636e72;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+}
+
+/* Form Groups */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.form-grid.full {
+    grid-template-columns: 1fr;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #2d3436;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-group label .required {
+    color: #e74c3c;
+    font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 14px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0984e3;
+    box-shadow: 0 0 0 4px rgba(9, 132, 227, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #b2bec3;
+}
+
+/* Service Selection */
+.service-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.service-option {
+    position: relative;
+}
+
+.service-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.service-label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.service-label:hover {
+    border-color: #0984e3;
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.1);
+    transform: translateY(-2px);
+}
+
+.service-option input[type="radio"]:checked + .service-label {
+    border-color: #0984e3;
+    background: linear-gradient(135deg, rgba(9, 132, 227, 0.05), rgba(108, 92, 231, 0.05));
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.15);
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.service-icon.urgencias { background: rgba(231, 76, 60, 0.1); }
+.service-icon.consulta { background: rgba(9, 132, 227, 0.1); }
+.service-icon.vacunacion { background: rgba(155, 89, 182, 0.1); }
+.service-icon.cirugia { background: rgba(230, 126, 34, 0.1); }
+.service-icon.estetica { background: rgba(46, 204, 113, 0.1); }
+.service-icon.domicilio { background: rgba(241, 196, 15, 0.1); }
+
+.service-info h4 {
+    font-size: 1.05rem;
+    color: #2d3436;
+    margin-bottom: 4px;
+}
+
+.service-info p {
+    font-size: 0.85rem;
+    color: #636e72;
+    margin: 0;
+}
+
+/* Date and Time Selection */
+.datetime-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 20px;
+}
+
+/* Terms Checkbox */
+.terms-group {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+    margin-top: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.terms-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.terms-group label {
+    font-size: 0.95rem;
+    color: #2d3436;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.terms-group label a {
+    color: #0984e3;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.terms-group label a:hover {
+    text-decoration: underline;
+}
+
+/* Form Navigation Buttons */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.btn {
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #2d3436;
+}
+
+.btn-secondary:hover {
+    background: #dfe6e9;
+    transform: translateX(-3px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0984e3, #6c5ce7);
+    color: white;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 6px 20px rgba(9, 132, 227, 0.3);
+    transform: translateX(3px);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #00b894, #00cec9);
+    color: white;
+    font-size: 1.1rem;
+    padding: 16px 40px;
+}
+
+.btn-success:hover {
+    box-shadow: 0 8px 25px rgba(0, 184, 148, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Summary Sidebar */
+.appointment-summary {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 35px;
+    position: sticky;
+    top: 100px;
+}
+
+.summary-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.summary-header i {
+    font-size: 1.8rem;
+    color: #0984e3;
+}
+
+.summary-header h3 {
+    font-size: 1.4rem;
+    color: #2d3436;
+    margin: 0;
+}
+
+.summary-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.summary-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.summary-section h4 {
+    font-size: 0.85rem;
+    color: #95a5a6;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.summary-section p {
+    color: #2d3436;
+    font-size: 0.95rem;
+    margin: 6px 0;
+    line-height: 1.6;
+}
+
+.summary-section p strong {
+    color: #636e72;
+    font-weight: 600;
+    display: inline-block;
+    width: 100px;
+}
+
+.summary-empty {
+    color: #b2bec3;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.summary-highlight {
+    background: linear-gradient(135deg, rgba(9, 132, 227, 0.05), rgba(108, 92, 231, 0.05));
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #0984e3;
+}
+
+.summary-highlight p {
+    margin: 4px 0;
+}
+
+/* Help Section */
+.help-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 80px 0;
+}
+
+.help-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.help-container h2 {
+    font-size: 2.2rem;
+    color: #2d3436;
+    margin-bottom: 15px;
+}
+
+.help-container p {
+    font-size: 1.1rem;
+    color: #636e72;
+    margin-bottom: 35px;
+}
+
+.help-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.help-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 35px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.help-btn.phone {
+    background: linear-gradient(135deg, #0984e3, #6c5ce7);
+    color: white;
+}
+
+.help-btn.phone:hover {
+    box-shadow: 0 8px 25px rgba(9, 132, 227, 0.3);
+    transform: translateY(-3px);
+}
+
+.help-btn.whatsapp {
+    background: linear-gradient(135deg, #00b894, #00cec9);
+    color: white;
+}
+
+.help-btn.whatsapp:hover {
+    box-shadow: 0 8px 25px rgba(0, 184, 148, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.benefits-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-header-center {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header-center h2 {
+    font-size: 2.5rem;
+    color: #2d3436;
+    margin-bottom: 15px;
+}
+
+.section-header-center p {
+    font-size: 1.1rem;
+    color: #636e72;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 35px 25px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    background: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+}
+
+.benefit-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #0984e3, #6c5ce7);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.benefit-card h3 {
+    font-size: 1.2rem;
+    color: #2d3436;
+    margin-bottom: 12px;
+}
+
+.benefit-card p {
+    color: #636e72;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 22px 25px;
+    background: white;
+    border: none;
+    text-align: left;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #2d3436;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #f8f9fa;
+}
+
+.faq-question i {
+    color: #0984e3;
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+}
+
+.faq-answer p {
+    padding: 0 25px 22px;
+    color: #636e72;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .appointment-wrapper {
+        grid-template-columns: 1fr 340px;
+        gap: 25px;
+    }
+
+    .appointment-form-card {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 968px) {
+    .appointment-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-summary {
+        position: relative;
+        top: 0;
+        order: -1;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .appointment-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .appointment-hero p {
+        font-size: 1rem;
+    }
+
+    .appointment-form-card {
+        padding: 30px 25px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .datetime-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-steps {
+        margin-bottom: 40px;
+    }
+
+    .step-label {
+        font-size: 0.75rem;
+    }
+
+    .step-circle {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .help-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .help-btn {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .appointment-container {
+        margin-top: -40px;
+    }
+
+    .appointment-form-card {
+        padding: 25px 20px;
+    }
+
+    .step-title {
+        font-size: 1.5rem;
+    }
+
+    .form-navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .service-label {
+        padding: 15px;
+    }
+}
