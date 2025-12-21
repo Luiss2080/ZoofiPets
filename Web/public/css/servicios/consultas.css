@@ -1,0 +1,633 @@
+/* Independent CSS for Consultas View */
+
+/* Hero Section */
+.hero-carousel-section.consultas-hero {
+    height: 70vh;
+    min-height: 550px;
+}
+
+/* Consultation Types Section */
+.consultation-types-section {
+    margin: 100px 5% 100px;
+}
+
+.consultation-types-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.consultation-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 25px;
+    padding: 35px;
+    text-align: center;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.consultation-card:hover {
+    transform: translateY(-12px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(46, 204, 113, 0.4);
+    box-shadow: 0 20px 60px rgba(46, 204, 113, 0.2);
+}
+
+.consultation-card.featured {
+    border-color: rgba(46, 204, 113, 0.6);
+    background: rgba(46, 204, 113, 0.05);
+}
+
+.featured-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: white;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+}
+
+.consultation-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    margin: 0 auto 25px;
+    transition: transform 0.3s ease;
+}
+
+.consultation-card:hover .consultation-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.consultation-icon.primary {
+    background: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+    border: 3px solid rgba(46, 204, 113, 0.4);
+}
+
+.consultation-icon.secondary {
+    background: rgba(52, 152, 219, 0.15);
+    color: #3498db;
+    border: 3px solid rgba(52, 152, 219, 0.4);
+}
+
+.consultation-icon.accent {
+    background: rgba(155, 89, 182, 0.15);
+    color: #9b59b6;
+    border: 3px solid rgba(155, 89, 182, 0.4);
+}
+
+.consultation-icon.tertiary {
+    background: rgba(230, 126, 34, 0.15);
+    color: #e67e22;
+    border: 3px solid rgba(230, 126, 34, 0.4);
+}
+
+.consultation-card h3 {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.consultation-card > p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.consultation-includes {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+    text-align: left;
+}
+
+.consultation-includes li {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.consultation-includes i {
+    color: #2ecc71;
+    font-size: 0.8rem;
+}
+
+.consultation-price {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+}
+
+.price-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+.price {
+    color: #2ecc71;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+/* Consultation Process Section */
+.consultation-process-section {
+    margin: 100px 5% 100px;
+}
+
+.process-timeline {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.timeline-item {
+    flex: 1;
+    min-width: 220px;
+    max-width: 280px;
+    position: relative;
+}
+
+.timeline-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: white;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 25px rgba(46, 204, 113, 0.4);
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 30px 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(46, 204, 113, 0.4);
+    transform: translateY(-8px);
+}
+
+.timeline-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(46, 204, 113, 0.1);
+    border: 2px solid rgba(46, 204, 113, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #2ecc71;
+    margin: 0 auto 20px;
+}
+
+.timeline-content h3 {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.timeline-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.timeline-connector {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, rgba(46, 204, 113, 0.5), rgba(46, 204, 113, 0.2));
+    align-self: center;
+    margin-top: -180px;
+}
+
+/* What We Check Section */
+.what-we-check-section {
+    margin: 100px 5% 100px;
+}
+
+.check-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.check-left h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.check-left > p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.check-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.check-category h4 {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.check-category h4 i {
+    color: #2ecc71;
+    font-size: 1.3rem;
+}
+
+.check-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.check-category ul li {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.check-category ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.check-right {
+    position: relative;
+}
+
+.check-right img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.check-stats {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    color: #2ecc71;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Benefits Section */
+.benefits-section {
+    margin: 100px 5% 100px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.benefit-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 35px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(46, 204, 113, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(46, 204, 113, 0.1);
+    border: 2px solid rgba(46, 204, 113, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #2ecc71;
+    margin: 0 auto 20px;
+}
+
+.benefit-card h3 {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.benefit-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* CTA Consultation Banner */
+.cta-consultation-banner {
+    margin: 0 5% 100px;
+    background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);
+    border-radius: 30px;
+    padding: 60px;
+    overflow: hidden;
+    position: relative;
+}
+
+.cta-consultation-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.cta-left h2 {
+    color: white;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.cta-left > p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.cta-features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.cta-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-size: 1rem;
+}
+
+.cta-feature i {
+    color: #2ecc71;
+    font-size: 1.2rem;
+}
+
+.cta-right img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* FAQ Consultation Section */
+.faq-consultation-section {
+    margin: 100px 5% 100px;
+}
+
+.faq-consultation-container {
+    max-width: 900px;
+    margin: 50px auto 0;
+}
+
+.faq-item-consultation {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item-consultation:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.faq-item-consultation.active {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(46, 204, 113, 0.4);
+}
+
+.faq-question-consultation {
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-question-consultation h3 {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.faq-item-consultation.active .faq-question-consultation h3 {
+    color: #2ecc71;
+}
+
+.faq-icon-consultation {
+    color: rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faq-item-consultation.active .faq-icon-consultation {
+    transform: rotate(180deg);
+    color: #2ecc71;
+}
+
+.faq-answer-consultation {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 30px;
+}
+
+.faq-item-consultation.active .faq-answer-consultation {
+    max-height: 300px;
+    padding: 0 30px 25px;
+}
+
+.faq-answer-consultation p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .consultation-types-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timeline-connector {
+        display: none;
+    }
+
+    .check-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .consultation-types-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .check-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .check-right img {
+        height: 400px;
+    }
+
+    .check-left h2 {
+        font-size: 2.5rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-consultation-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .cta-left h2 {
+        font-size: 2.5rem;
+    }
+
+    .cta-right img {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-carousel-section.consultas-hero {
+        height: 60vh;
+        min-height: 500px;
+    }
+
+    .check-left h2 {
+        font-size: 2rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-left h2 {
+        font-size: 2rem;
+    }
+
+    .check-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .process-timeline {
+        flex-direction: column;
+    }
+
+    .timeline-item {
+        max-width: 100%;
+    }
+}
