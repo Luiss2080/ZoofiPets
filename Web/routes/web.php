@@ -23,6 +23,14 @@ Route::prefix('nosotros')->group(function () {
     Route::get('/galeria', function () {
         return view('nosotros.galeria');
     })->name('nosotros.galeria');
+
+    Route::get('/testimonios', function () {
+        return view('nosotros.testimonios');
+    })->name('nosotros.testimonios');
+
+    Route::get('/faqs', function () {
+        return view('nosotros.faqs');
+    })->name('nosotros.faqs');
 });
 
 Route::get('/login', function () {
@@ -97,19 +105,4 @@ Route::prefix('citas')->group(function () {
     Route::get('/agendar', function () {
         return view('citas.solicitud.index');
     })->name('citas.solicitud.index');
-});
-
-
-// Rutas de Testimonios
-Route::prefix('testimonios')->group(function () {
-    Route::get('/', function () {
-        return view('testimonios.index');
-    })->name('testimonios.index');
-});
-
-// Rutas de Preguntas Frecuentes
-Route::prefix('faqs')->group(function () {
-    Route::get('/', function () {
-        return view('preguntas-frecuentes.index');
-    })->name('preguntas-frecuentes.index');
 });

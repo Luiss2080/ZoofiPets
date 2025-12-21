@@ -21,7 +21,7 @@
                 
                 <!-- Dropdown Nosotros -->
                 <li class="nav-item dropdown">
-                    <a href="{{ route('nosotros.index') }}" class="nav-link dropdown-toggle {{ request()->routeIs('nosotros.*', 'galeria.*', 'testimonios.*', 'preguntas-frecuentes.*') ? 'active' : '' }}">
+                    <a href="{{ route('nosotros.index') }}" class="nav-link dropdown-toggle {{ request()->routeIs('nosotros.*') ? 'active' : '' }}">
                         Nosotros 
                         <svg class="chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>
                     </a>
@@ -35,13 +35,13 @@
                         <li><a href="{{ route('nosotros.instalaciones') }}" class="dropdown-item">
                             <span class="item-icon">🏢</span> Instalaciones
                         </a></li>
-                        <li><a href="{{ route('galeria.index') }}" class="dropdown-item">
+                        <li><a href="{{ route('nosotros.galeria') }}" class="dropdown-item">
                             <span class="item-icon">📸</span> Galería
                         </a></li>
-                        <li><a href="{{ route('testimonios.index') }}" class="dropdown-item">
+                        <li><a href="{{ route('nosotros.testimonios') }}" class="dropdown-item">
                             <span class="item-icon">💬</span> Testimonios
                         </a></li>
-                        <li><a href="{{ route('preguntas-frecuentes.index') }}" class="dropdown-item">
+                        <li><a href="{{ route('nosotros.faqs') }}" class="dropdown-item">
                             <span class="item-icon">❓</span> Preguntas Frecuentes
                         </a></li>
                     </ul>

@@ -1,0 +1,220 @@
+/* Independent CSS for Testimonios View */
+
+/* --- Hero Section (Matches Home) --- */
+.hero-carousel-section.testimonials-hero {
+    margin-bottom: 50px;
+    height: 60vh;
+    min-height: 500px;
+}
+
+/* --- Component: Clean Tabs (Home Style) --- */
+.testimonial-tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px 0;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    font-family: "Montserrat", sans-serif;
+}
+
+.tab-btn:hover {
+    color: white;
+}
+
+.tab-btn.active {
+    color: #2ecc71; /* Brand Green */
+    font-weight: 700;
+}
+
+.tab-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: -21px; /* Aligns with container border */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #2ecc71;
+    box-shadow: 0 -2px 10px rgba(46, 204, 113, 0.5);
+}
+
+/* --- Component: Clean Grid (Ordered) --- */
+.testimonial-grid-clean {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 90%;
+    margin: 0 auto 100px;
+}
+
+.testimonial-card-minimal {
+    background: rgba(255, 255, 255, 0.03); /* Subtle glass */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card-minimal:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Card Header --- */
+.card-header-clean {
+    display: flex;
+    align-items: center;
+    padding: 25px 25px 15px;
+    gap: 15px;
+}
+
+.client-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(46, 204, 113, 0.3);
+}
+
+.client-info h3 {
+    color: white;
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.client-info .pet-name {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 3px;
+}
+
+/* --- Card Body --- */
+.card-body-clean {
+    padding: 0 25px 25px;
+    text-align: left;
+}
+
+.stars {
+    color: #f1c40f;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    min-height: 80px;
+}
+
+.service-tag {
+    display: inline-block;
+    background: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+/* --- Component: CTA Promo (Home Clone) --- */
+.cta-promo {
+    margin: 0 5% 100px; /* Standard margins */
+    background: linear-gradient(
+        135deg,
+        #0984e3 0%,
+        #74b9ff 100%
+    ); /* Clean Blue */
+    border-radius: 30px;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.promo-left {
+    z-index: 2;
+    max-width: 500px;
+}
+
+.promo-left h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.promo-right-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 110%; /* Slight overflow for dynamic look */
+    width: auto;
+    object-fit: contain;
+    mask-image: linear-gradient(to left, black 80%, transparent 100%);
+    z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .testimonial-grid-clean {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .testimonial-grid-clean {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cta-promo {
+        flex-direction: column;
+        text-align: center;
+    }
+    .promo-right-img {
+        position: relative;
+        height: 300px;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .testimonial-grid-clean {
+        grid-template-columns: 1fr;
+    }
+    .testimonial-tabs-container {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    .testimonial-text {
+        min-height: auto;
+    }
+}
