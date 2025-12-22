@@ -55,7 +55,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     // Módulos de Administración (Usuarios, Roles, Permisos)
     Route::get('/usuarios', [App\Http\Controllers\UsuarioController::class, 'index'])->name('usuarios.index');
     Route::get('/roles', [App\Http\Controllers\RoleController::class, 'index'])->name('roles.index');
-    Route::get('/permisos', function() { return 'Modulo Permisos'; })->name('permisos.index');
+    Route::get('/permisos', [App\Http\Controllers\PermisoController::class, 'index'])->name('permisos.index');
 
     // Recursos Humanos
     Route::get('/empleados', function() { return 'Modulo Empleados'; })->name('empleados.index');
