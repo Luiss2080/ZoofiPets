@@ -1,11 +1,11 @@
-/* VACUNAS INDEX - VETERINARY STYLE COLORFUL */
+/* VACUNAS INDEX - STANDARDIZED PURPLE VETERINARY STYLE */
 .vacunas-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-/* Control Panel Styles */
+/* Control Panel Styles (Matches Clientes) */
 .control-panel {
     background: var(--bg-surface);
     border-radius: 24px;
@@ -34,50 +34,44 @@
 }
 
 .icon-wrapper {
-    width: 56px;
-    height: 56px;
-    background: linear-gradient(
-        135deg,
-        rgba(16, 185, 129, 0.1),
-        rgba(16, 185, 129, 0.2)
-    ); /* Green Tint */
-    color: #10b981; /* Emerald Green for Health/Vaccines */
-    border-radius: 14px;
+    width: 52px;
+    height: 52px;
+    background: rgba(72, 52, 212, 0.1); /* Transparent Purple */
+    color: var(--primary-color);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.75rem;
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+    font-size: 1.5rem;
+    border: 1px solid rgba(72, 52, 212, 0.2);
 }
 
 body.dark-mode .icon-wrapper {
-    background: #10b981;
+    background: var(--primary-color);
     color: white;
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+    box-shadow: 0 0 15px rgba(72, 52, 212, 0.4);
     border: none;
 }
 
 .title-content h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 800;
-    color: #10b981; /* Green Title */
+    color: var(--text-dark); /* Dark Title per Clientes Image */
     margin: 0 0 0.25rem 0;
-    letter-spacing: -0.03em;
-    line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 
 .subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--text-muted);
     font-weight: 500;
 }
 
-/* Primary Action Button (Green for Vacunas) */
+/* Primary Action Button (Purple) */
 .btn-primary-action {
-    background: #10b981;
+    background: var(--primary-color);
     color: white;
-    padding: 0.875rem 1.75rem;
+    padding: 0.875rem 1.5rem;
     border-radius: 14px;
     font-weight: 700;
     text-decoration: none;
@@ -85,15 +79,15 @@ body.dark-mode .icon-wrapper {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(72, 52, 212, 0.3);
+    font-size: 0.95rem;
     border: 2px solid transparent;
 }
 
 .btn-primary-action:hover {
-    background: #059669;
+    background: var(--primary-color-hover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+    box-shadow: 0 8px 20px rgba(72, 52, 212, 0.4);
     color: white;
 }
 
@@ -118,31 +112,30 @@ body.dark-mode .icon-wrapper {
     left: 1.25rem;
     top: 50%;
     transform: translateY(-50%);
-    color: #10b981;
+    color: var(--primary-color);
     font-size: 1.2rem;
     transition: all 0.3s ease;
     z-index: 2;
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 .search-bar input {
     width: 100%;
     background: var(--bg-surface-secondary);
-    border: 2px solid transparent;
+    border: 2px solid var(--border-color);
     padding: 1rem 1rem 1rem 3.5rem;
     border-radius: 14px;
     color: var(--text-dark);
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
     transition: all 0.3s ease;
     font-family: var(--font-family);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .search-bar input:focus {
     background: var(--bg-surface);
-    border-color: #10b981;
-    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(72, 52, 212, 0.1);
     outline: none;
 }
 
@@ -158,19 +151,19 @@ body.dark-mode .icon-wrapper {
     align-items: center;
 }
 
-/* Filter Group Select Wrapper - Solid Green */
+/* Select Wrapper - Solid Purple */
 .select-wrapper {
     position: relative;
-    background: #10b981;
-    border: 1px solid #10b981;
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
     border-radius: 12px;
     transition: all 0.3s ease;
 }
 
 .select-wrapper:hover {
-    background: #059669;
+    background: var(--primary-color-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(16, 185, 129, 0.25);
+    box-shadow: 0 4px 12px rgba(72, 52, 212, 0.2);
 }
 
 .select-wrapper i {
@@ -187,13 +180,13 @@ body.dark-mode .icon-wrapper {
     appearance: none;
     background: transparent;
     border: none;
-    padding: 0.8rem 2.5rem 0.8rem 2.8rem;
+    padding: 0.75rem 2.5rem 0.75rem 2.5rem;
     border-radius: 12px;
     color: white;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
-    font-size: 0.95rem;
-    min-width: 150px;
+    font-size: 0.9rem;
+    min-width: 140px;
 }
 
 .select-wrapper::after {
@@ -206,35 +199,39 @@ body.dark-mode .icon-wrapper {
     transform: translateY(-50%);
     color: white;
     pointer-events: none;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
-/* Secondary Action Button - Solid Green */
+/* Secondary Action Button - Solid Purple */
 .btn-secondary-action {
-    background: #10b981;
-    border: 1px solid #10b981;
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
     color: white;
-    padding: 0.8rem 1.5rem;
+    padding: 0.75rem 1.25rem;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-weight: 700;
+    font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    font-size: 0.95rem;
-    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 6px -1px rgba(72, 52, 212, 0.2);
 }
 
 .btn-secondary-action i {
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .btn-secondary-action:hover {
-    background: #059669;
+    background: var(--primary-color-hover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(16, 185, 129, 0.35);
+    box-shadow: 0 8px 15px -3px rgba(72, 52, 212, 0.3);
+}
+
+.btn-secondary-action:hover i {
+    color: white;
 }
 
 /* Table Section */
@@ -258,23 +255,22 @@ body.dark-mode .icon-wrapper {
 
 .dashboard-table th {
     background: var(--bg-surface-secondary);
-    color: #10b981; /* Green Headers */
-    font-weight: 800;
-    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 700;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 1.5rem 1.5rem;
+    letter-spacing: 0.05em;
+    padding: 1.25rem 1.5rem;
     text-align: left;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .dashboard-table td {
-    padding: 1.5rem 1.5rem;
+    padding: 1.25rem 1.5rem;
     border-bottom: 1px solid var(--border-color);
     vertical-align: middle;
     color: var(--text-dark);
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 0.95rem;
     transition: var(--transition);
 }
 
@@ -286,11 +282,48 @@ body.dark-mode .icon-wrapper {
     background: var(--bg-surface-secondary);
 }
 
-/* Colorful Badges for Vaccines */
+/* Columns Specifics */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar-circle {
+    width: 42px;
+    height: 42px;
+    background: rgba(72, 52, 212, 0.1);
+    color: var(--primary-color);
+    border: 1px solid rgba(72, 52, 212, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.user-info .details {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info .name {
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.user-info .role {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Badges for Vaccines (Data highlight) */
 .badge-vaccine {
     padding: 0.4rem 0.85rem;
     border-radius: 99px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;
     display: inline-flex;
     align-items: center;
@@ -370,13 +403,13 @@ body.dark-mode .icon-wrapper {
 /* Action Buttons */
 .action-buttons {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.5rem;
 }
 
 .btn-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -385,40 +418,47 @@ body.dark-mode .icon-wrapper {
     cursor: pointer;
     background: var(--bg-surface-secondary);
     color: var(--text-muted);
-    font-size: 1.1rem;
 }
 
 .btn-icon:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
 .btn-icon.view {
-    background: rgba(16, 185, 129, 0.1);
-    color: #10b981;
-    border-color: rgba(16, 185, 129, 0.2);
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
 }
 .btn-icon.view:hover {
-    background: #10b981;
-    color: white;
+    background: #2563eb;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
 }
 
 .btn-icon.edit {
-    background: rgba(249, 115, 22, 0.1);
-    color: #f97316;
-    border-color: rgba(249, 115, 22, 0.2);
-}
-.btn-icon.edit:hover {
     background: #f97316;
     color: white;
+    border-color: #f97316;
+    box-shadow: 0 2px 4px rgba(249, 115, 22, 0.2);
+}
+.btn-icon.edit:hover {
+    background: #ea580c;
+    box-shadow: 0 4px 10px rgba(249, 115, 22, 0.4);
 }
 
 .btn-icon.delete {
-    background: rgba(239, 68, 68, 0.1);
-    color: #ef4444;
-    border-color: rgba(239, 68, 68, 0.2);
-}
-.btn-icon.delete:hover {
     background: #ef4444;
     color: white;
+    border-color: #ef4444;
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+.btn-icon.delete:hover {
+    background: #dc2626;
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
+}
+
+/* Pagination */
+.pagination-wrapper {
+    width: 100%;
+    margin-top: 0;
 }

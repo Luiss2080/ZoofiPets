@@ -100,13 +100,13 @@
                         <tr>
                             <td>
                                 <div class="status-date">
-                                    <span class="status-label valid">APLICADA</span>
+                                    <span class="status-label valid" style="color: #10b981;">APLICADA</span>
                                     <span class="date-text">{{ $vacuna->fecha_aplicacion->format('d/m/Y') }}</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="user-info">
-                                    <div class="avatar-circle" style="color: #10b981; border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">
+                                    <div class="avatar-circle">
                                         {{ strtoupper(substr($vacuna->mascota->nombre ?? '?', 0, 1)) }}
                                     </div>
                                     <div class="details">
@@ -163,3 +163,4 @@
     </div>
 </div>
 @endsection
+
