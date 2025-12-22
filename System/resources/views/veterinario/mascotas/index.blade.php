@@ -4,7 +4,98 @@
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/admin/mascotas/index.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pages/paginacion.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/mod/confirmar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/mod/advertencia.css') }}">
+    <style>
+        /* Table Header Styling per Request - Purple */
+        .dashboard-table thead th {
+            color: var(--primary-color) !important; /* Force Purple Color */
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Avatar Styling */
+        .avatar-circle {
+            background: rgba(72, 52, 212, 0.1);
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* ACTIONS STYLING - MATCHING CLIENTES MODULE */
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: flex-start; 
+        }
+
+        .btn-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-icon:hover {
+            transform: translateY(-2px);
+        }
+
+        /* View Button - Blue */
+        .btn-icon.view {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+            box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+        }
+        .btn-icon.view:hover {
+            background: #2563eb;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Edit Button - Orange */
+        .btn-icon.edit {
+            background: #f97316;
+            color: white;
+            border-color: #f97316;
+            box-shadow: 0 2px 4px rgba(249, 115, 22, 0.2);
+        }
+        .btn-icon.edit:hover {
+            background: #ea580c;
+            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.4);
+        }
+
+        /* History/Pets Button - Purple */
+        .btn-icon.history {
+            background: #a855f7;
+            color: white;
+            border-color: #a855f7;
+            box-shadow: 0 2px 4px rgba(168, 85, 247, 0.2);
+        }
+        .btn-icon.history:hover {
+            background: #9333ea;
+            box-shadow: 0 4px 10px rgba(168, 85, 247, 0.4);
+        }
+
+        /* Delete Button - Red */
+        .btn-icon.delete {
+            background: #ef4444;
+            color: white;
+            border-color: #ef4444;
+            box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+        }
+        .btn-icon.delete:hover {
+            background: #dc2626;
+            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -74,7 +165,7 @@
                         <tr>
                             <td>
                                 <div class="id-info">
-                                    <span class="primary-text">{{ $mascota->codigo_mascota }}</span>
+                                    <span class="primary-text" style="font-weight: 700;">{{ $mascota->codigo_mascota }}</span>
                                 </div>
                             </td>
                             <td>
@@ -83,7 +174,7 @@
                                         {{ strtoupper(substr($mascota->nombre, 0, 1)) }}
                                     </div>
                                     <div class="details">
-                                        <span class="name">{{ $mascota->nombre }}</span>
+                                        <span class="name" style="font-weight: 700; color: var(--text-primary);">{{ $mascota->nombre }}</span>
                                         <span class="role">
                                             @if($mascota->sexo == 'Macho') <i class="fas fa-mars text-blue-400"></i>
                                             @elseif($mascota->sexo == 'Hembra') <i class="fas fa-venus text-pink-400"></i>
@@ -95,7 +186,8 @@
                             </td>
                             <td>
                                 <div class="details">
-                                    <a href="{{ route('recepcionista.clientes.edit', $mascota->cliente_id) }}" class="name hover:text-purple-500 transition">
+                                    {{-- Link to client profile if possible --}}
+                                    <a href="{{ route('recepcionista.clientes.edit', $mascota->cliente_id) }}" class="name hover:text-purple-500 transition" style="font-weight: 600; text-decoration: none; color: var(--primary-color);">
                                         {{ $mascota->cliente->nombre }} {{ $mascota->cliente->apellido }}
                                     </a>
                                 </div>
@@ -108,16 +200,28 @@
                             </td>
                             <td>
                                 <div class="action-buttons">
+                                    {{-- 1. View (Blue) --}}
+                                    <a href="#" class="btn-icon view" title="Ver Detalles">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+
+                                    {{-- 2. Edit (Orange) --}}
                                     <a href="{{ route('veterinario.mascotas.edit', $mascota->id) }}" class="btn-icon edit" title="Editar">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form id="delete-form-{{ $mascota->id }}" action="{{ route('veterinario.mascotas.destroy', $mascota->id) }}" method="POST" class="delete-form" style="display:inline;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="button" class="btn-icon delete" title="Eliminar" onclick="confirmDelete('{{ $mascota->id }}')">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </form>
+
+                                    {{-- 3. Medical History (Purple) --}}
+                                    <a href="#" class="btn-icon history" title="Historial Médico">
+                                        <i class="fas fa-file-medical-alt"></i>
+                                    </a>
+
+                                    {{-- 4. Delete (Red) --}}
+                                    <button type="button" 
+                                            class="btn-icon delete" 
+                                            title="Eliminar" 
+                                            onclick="openDeleteModal('{{ route('veterinario.mascotas.destroy', $mascota->id) }}', '{{ $mascota->nombre }}')">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
                                 </div>
                             </td>
                         </tr>
@@ -134,29 +238,28 @@
     </div>
     
     <div class="pagination-wrapper">
-        {{ $mascotas->appends(request()->query())->links('pages.clientes') }}
+        {{ $mascotas->appends(request()->query())->links('pages.mascotas') }}
     </div>
 </div>
+
+@include('veterinario.mascotas.mod.delete')
+@include('veterinario.mascotas.mod.error')
 @endsection
 
-@push('scripts')
+@section('js')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('js/mod/confirmar.js') }}"></script>
+    <script src="{{ asset('js/mod/advertencia.js') }}"></script>
+
     <script>
-        function confirmDelete(id) {
-            Swal.fire({
-                title: '¿Eliminar Mascota?',
-                text: "Esta acción no se puede deshacer.",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#ef4444',
-                cancelButtonColor: '#3b82f6',
-                confirmButtonText: 'Sí, eliminar',
-                cancelButtonText: 'Cancelar'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    document.getElementById('delete-form-' + id).submit();
-                }
-            })
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            @if(session('success'))
+                openWarningModal("Operación Exitosa", "{{ session('success') }}");
+            @endif
+
+            @if(session('error'))
+                openWarningModal("Error", "{{ session('error') }}");
+            @endif
+        });
     </script>
-@endpush
+@endsection
