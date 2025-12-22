@@ -67,7 +67,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/compras', function() { return 'Modulo Compras'; })->name('compras.index');
 
     // Gestión Veterinaria Avanzada
-    Route::get('/servicios', function() { return 'Modulo Servicios Médicos'; })->name('servicios.index');
+    Route::get('/servicios', [App\Http\Controllers\ServicioController::class, 'index'])->name('servicios.index');
 
     // Gestión Tienda Avanzada
     Route::get('/categorias', function() { return 'Modulo Categorías'; })->name('categorias.index');
