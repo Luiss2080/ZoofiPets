@@ -21,9 +21,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::table('clientes', function (Blueprint $table) {
-            $table->foreign('metodo_pago_preferido_id')->references('id')->on('metodos_pago')->onDelete('set null');
-        });
+
     }
 
     /**
