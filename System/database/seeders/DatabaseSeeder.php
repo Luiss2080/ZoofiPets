@@ -16,48 +16,49 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         try {
-            echo "Seeding Started...\n";
+            \Illuminate\Support\Facades\Log::info("Seeding Started...");
             // Master/Client
-            echo "Seeding Master...\n";
+            \Illuminate\Support\Facades\Log::info("Seeding Master...");
             \App\Models\Cargo::factory(5)->create();
             \App\Models\MetodoPago::factory(5)->create();
             \App\Models\Proveedor::factory(20)->create();
-            // Categoria must be seeded or created by Producto factory. Factory handles it.
-            // But verify_factories showed CategoriaProducto OK.
             \App\Models\Producto::factory(20)->create();
             
-            echo "Seeding Clients...\n";
+            \Illuminate\Support\Facades\Log::info("Seeding Clients...");
             \App\Models\Cliente::factory(20)->create();
             \App\Models\Mascota::factory(20)->create();
 
             // Receptionist
-            echo "Seeding Receptionist...\n";
+            \Illuminate\Support\Facades\Log::info("Seeding Receptionist...");
             \App\Models\SalaEspera::factory(20)->create();
             \App\Models\Recordatorio::factory(20)->create();
             \App\Models\InteraccionCliente::factory(20)->create();
 
             // Vendor
-            echo "Seeding Vendor...\n";
+            \Illuminate\Support\Facades\Log::info("Seeding Vendor...");
             \App\Models\SesionCaja::factory(20)->create();
             \App\Models\Venta::factory(20)->create(); 
             \App\Models\Devolucion::factory(20)->create();
             \App\Models\MovimientoInventario::factory(20)->create();
 
             // Veterinario
-            echo "Seeding Veterinario...\n";
-            echo "Class exists? " . (class_exists(\App\Models\ServicioMedico::class) ? "YES" : "NO") . "\n";
-            echo "Methods: " . implode(", ", get_class_methods(\App\Models\ServicioMedico::class)) . "\n";
+            \Illuminate\Support\Facades\Log::info("Seeding Veterinario...");
+            if (class_exists(\App\Models\ServicioMedico::class)) {
+                \Illuminate\Support\Facades\Log::info("ServicioMedico class exists.");
+                \Illuminate\Support\Facades\Log::info("Methods: " . implode(", ", get_class_methods(\App\Models\ServicioMedico::class)));
+            } else {
+                 \Illuminate\Support\Facades\Log::error("ServicioMedico class MISSING.");
+            }
             \App\Models\ServicioMedico::factory(20)->create();
             // \App\Models\CitaMedica::factory(20)->create(); 
             // \App\Models\RegistroVacuna::factory(20)->create();
             // \App\Models\HistorialMedico::factory(20)->create();
             // \App\Models\Hospitalizacion::factory(20)->create();
             // \App\Models\Laboratorio::factory(20)->create();
-            echo "Seeding Finished (Skipped).\n";
+            \Illuminate\Support\Facades\Log::info("Seeding Finished.");
         } catch (\Throwable $e) {
-            echo "FAILEDSEED: " . $e->getMessage() . "\n";
-            echo "File: " . $e->getFile() . " Line: " . $e->getLine() . "\n";
-            // dump($e->getTraceAsString());
+            \Illuminate\Support\Facades\Log::error("FAILEDSEED: " . $e->getMessage());
+            \Illuminate\Support\Facades\Log::error($e->getTraceAsString());
             throw $e;
         }
     }
