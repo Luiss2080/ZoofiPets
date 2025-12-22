@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     {
             // Clientes con preferencias
             \App\Models\Cliente::factory(20)->create();
-            // \App\Models\Mascota::factory(20)->create();
+            \App\Models\Mascota::factory(20)->create();
             //
             // // Modulos Recepcionista
             // \App\Models\SalaEspera::factory(20)->create();
