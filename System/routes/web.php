@@ -100,7 +100,14 @@ Route::middleware(['auth'])->prefix('veterinaria')->name('veterinario.')->group(
     // Pacientes (Mascotas)
     Route::resource('mascotas', Admin\MascotaController::class);
     // Vacunas
-    Route::get('/vacunas', function() { return view('veterinario.vacunas.index'); })->name('vacunas.index');
+    Route::resource('vacunas', Admin\VacunaController::class)->names([
+        'index' => 'vacunas.index',
+        'create' => 'vacunas.create',
+        'store' => 'vacunas.store',
+        'edit' => 'vacunas.edit',
+        'update' => 'vacunas.update',
+        'destroy' => 'vacunas.destroy',
+    ]);
     // Historiales Médicos
     Route::get('/historiales', function() { return 'Modulo Historiales Médicos'; })->name('historiales.index');
 });
