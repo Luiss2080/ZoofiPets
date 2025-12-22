@@ -10,7 +10,7 @@ class RegistroVacunaFactory extends Factory
     {
         return [
             'mascota_id' => \App\Models\Mascota::factory(),
-            'empleado_id' => 1, // Assuming admin/default vet exists, or factory
+            'empleado_id' => \App\Models\Empleado::factory(),
             'servicio_medico_id' => \App\Models\ServicioMedico::factory(),
             'vacuna' => $this->faker->randomElement(['Rabia', 'Parvovirus', 'Moquillo', 'Triple Felina', 'Leucemia']),
             'laboratorio' => $this->faker->company(),

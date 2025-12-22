@@ -28,8 +28,8 @@ class CitaMedicaFactory extends Factory
             // Relationships (resolved at runtime or via factory)
             'cliente_id' => \App\Models\Cliente::factory(),
             'mascota_id' => \App\Models\Mascota::factory(), 
-            'empleado_id' => \App\Models\Empleado::inRandomOrder()->first()->id ?? \App\Models\Empleado::factory(), 
-            'servicio_medico_id' => \App\Models\ServicioMedico::inRandomOrder()->first()->id ?? \App\Models\ServicioMedico::factory(),
+            'empleado_id' => \App\Models\Empleado::inRandomOrder()->first()?->id ?? \App\Models\Empleado::factory(), 
+            'servicio_medico_id' => \App\Models\ServicioMedico::inRandomOrder()->first()?->id ?? \App\Models\ServicioMedico::factory(),
         ];
     }
 }

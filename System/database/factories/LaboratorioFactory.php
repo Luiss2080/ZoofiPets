@@ -10,7 +10,7 @@ class LaboratorioFactory extends Factory
     {
         return [
             'mascota_id' => \App\Models\Mascota::factory(),
-            'empleado_id' => 1,
+            'empleado_id' => \App\Models\Empleado::factory(),
             'tipo_examen' => $this->faker->randomElement(['Hemograma', 'Bioquimica', 'Urianalisis', 'Coproparasitoscopico']),
             'fecha_solicitud' => $this->faker->dateTimeBetween('-6 months', 'now'),
             'fecha_resultado' => $this->faker->dateTimeBetween('-6 months', 'now'),

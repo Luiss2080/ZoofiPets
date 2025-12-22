@@ -10,7 +10,7 @@ class HistorialMedicoFactory extends Factory
     {
         return [
             'mascota_id' => \App\Models\Mascota::factory(),
-            'empleado_id' => 1,
+            'empleado_id' => \App\Models\Empleado::factory(),
             'fecha_consulta' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'peso' => $this->faker->randomFloat(2, 1, 50),
             'temperatura' => $this->faker->randomFloat(1, 37.5, 40.0),

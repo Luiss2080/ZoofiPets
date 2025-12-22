@@ -11,7 +11,7 @@ class HospitalizacionFactory extends Factory
         $fechaIngreso = $this->faker->dateTimeBetween('-1 month', 'now');
         return [
             'mascota_id' => \App\Models\Mascota::factory(),
-            'empleado_id' => 1,
+            'empleado_id' => \App\Models\Empleado::factory(),
             'motivo_ingreso' => $this->faker->sentence(),
             'fecha_ingreso' => $fechaIngreso,
             'fecha_alta_estimada' => $this->faker->dateTimeBetween($fechaIngreso, '+5 days'),

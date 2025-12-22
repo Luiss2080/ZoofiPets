@@ -46,11 +46,11 @@ class DatabaseSeeder extends Seeder
             // Veterinario
             echo "Seeding Veterinario...\n";
             \App\Models\ServicioMedico::factory(20)->create();
-            \App\Models\CitaMedica::factory(20)->create(); 
-            \App\Models\RegistroVacuna::factory(20)->create();
-            \App\Models\HistorialMedico::factory(20)->create();
-            \App\Models\Hospitalizacion::factory(20)->create();
-            \App\Models\Laboratorio::factory(20)->create();
+            // \App\Models\CitaMedica::factory(20)->create(); 
+            // \App\Models\RegistroVacuna::factory(20)->create();
+            // \App\Models\HistorialMedico::factory(20)->create();
+            // \App\Models\Hospitalizacion::factory(20)->create();
+            // \App\Models\Laboratorio::factory(20)->create();
             echo "Seeding Finished (Skipped).\n";
         } catch (\Throwable $e) {
             echo "FAILEDSEED: " . $e->getMessage() . "\n";
