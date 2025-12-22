@@ -135,39 +135,53 @@
     left: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--text-muted);
+    color: white !important; /* White icon for solid background */
     z-index: 1;
 }
 
 .select-wrapper select {
     padding: 0.75rem 2.5rem 0.75rem 2.8rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid #a855f7;
     border-radius: 10px;
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-    font-weight: 500;
+    background: #a855f7 !important; /* Solid Purple */
+    color: white !important;
+    font-weight: 600;
     cursor: pointer;
     appearance: none;
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.25);
+    transition: all 0.2s ease;
+}
+
+.select-wrapper select:hover {
+    background: #9333ea !important;
+    transform: translateY(-2px);
+}
+
+.select-wrapper select option {
+    background: white;
+    color: var(--text-primary);
 }
 
 .btn-secondary-action {
     padding: 0.75rem 1.25rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid #a855f7;
     border-radius: 10px;
-    background: var(--bg-secondary);
-    color: var(--text-primary);
+    background: #a855f7 !important; /* Solid Purple */
+    color: white !important;
     font-weight: 600;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
     transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.25);
 }
 
 .btn-secondary-action:hover {
-    background: var(--primary-color);
+    background: #9333ea !important;
     color: white;
-    border-color: var(--primary-color);
+    border-color: #9333ea;
+    transform: translateY(-2px);
 }
 
 /* --- Table Styles --- */
