@@ -53,7 +53,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Módulos de Administración (Usuarios, Roles, Permisos)
-    Route::get('/usuarios', function() { return view('admin.usuarios.index'); })->name('usuarios.index');
+    Route::get('/usuarios', [App\Http\Controllers\UsuarioController::class, 'index'])->name('usuarios.index');
     Route::get('/roles', function() { return 'Modulo Roles'; })->name('roles.index');
     Route::get('/permisos', function() { return 'Modulo Permisos'; })->name('permisos.index');
 
