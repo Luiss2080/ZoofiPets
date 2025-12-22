@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\ServicioMedico;
 
 class DatabaseSeeder extends Seeder
 {
@@ -41,15 +42,8 @@ class DatabaseSeeder extends Seeder
             \App\Models\Devolucion::factory(20)->create();
             \App\Models\MovimientoInventario::factory(20)->create();
 
-            // Veterinario
             \Illuminate\Support\Facades\Log::info("Seeding Veterinario...");
-            if (class_exists(\App\Models\ServicioMedico::class)) {
-                \Illuminate\Support\Facades\Log::info("ServicioMedico class exists.");
-                \Illuminate\Support\Facades\Log::info("Methods: " . implode(", ", get_class_methods(\App\Models\ServicioMedico::class)));
-            } else {
-                 \Illuminate\Support\Facades\Log::error("ServicioMedico class MISSING.");
-            }
-            \App\Models\ServicioMedico::factory(20)->create();
+            ServicioMedico::factory(20)->create();
             // \App\Models\CitaMedica::factory(20)->create(); 
             // \App\Models\RegistroVacuna::factory(20)->create();
             // \App\Models\HistorialMedico::factory(20)->create();
