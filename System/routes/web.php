@@ -89,8 +89,15 @@ Route::middleware(['auth'])->prefix('recepcion')->name('recepcionista.')->group(
     Route::resource('citas', Admin\CitaMedicaController::class);
     // Clientes y Mascotas (Gestión desde recepción)
     Route::resource('clientes', Admin\ClienteController::class);
-    // Pagos (Placeholder o vinculado a Ventas)
-    Route::get('/pagos', function() { return 'Modulo Pagos'; })->name('pagos.index');
+    // Pagos
+    Route::resource('pagos', Admin\PagoController::class)->names([
+        'index' => 'pagos.index',
+        'create' => 'pagos.create',
+        'store' => 'pagos.store',
+        'edit' => 'pagos.edit',
+        'update' => 'pagos.update',
+        'destroy' => 'pagos.destroy',
+    ]);
 });
 
 // Modulo Veterinario
