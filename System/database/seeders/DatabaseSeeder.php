@@ -15,19 +15,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-            // Master Tables
+        try {
+            // Master/Client
+            echo "Seeding Master...\n";
             \App\Models\Cargo::factory(5)->create();
             \App\Models\MetodoPago::factory(5)->create();
             \App\Models\Proveedor::factory(20)->create();
             \App\Models\Producto::factory(20)->create();
-
-            // Clientes con preferencias
             \App\Models\Cliente::factory(20)->create();
             \App\Models\Mascota::factory(20)->create();
-            //
-            // Modulos Recepcionista
-            // // Modulos Recepcionista
-            // \App\Models\SalaEspera::factory(20)->create();
             // \App\Models\Recordatorio::factory(20)->create();
             // \App\Models\InteraccionCliente::factory(20)->create();
             //
