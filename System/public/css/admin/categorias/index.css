@@ -34,16 +34,16 @@
     height: 48px;
     background: linear-gradient(
         135deg,
-        var(--primary-color) 0%,
-        var(--secondary-color) 100%
-    );
+        #a855f7 0%,
+        /* Purple Start */ #7e22ce 100% /* Purple End */
+    ) !important;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: white !important;
     font-size: 1.5rem;
-    box-shadow: 0 4px 12px rgba(72, 52, 212, 0.3);
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
 }
 
 .title-content h2 {
@@ -60,10 +60,10 @@
     margin: 0;
 }
 
-/* Header Actions */
+/* Header Actions - Force Purple */
 .btn-primary-action {
-    background: var(--primary-color);
-    color: white;
+    background: #a855f7 !important; /* Purple */
+    color: white !important;
     padding: 0.75rem 1.5rem;
     border-radius: 10px;
     text-decoration: none;
@@ -72,12 +72,14 @@
     align-items: center;
     gap: 0.5rem;
     transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(72, 52, 212, 0.25);
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.25);
+    border: none;
 }
 
 .btn-primary-action:hover {
+    background: #9333ea !important; /* Darker Purple */
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(72, 52, 212, 0.35);
+    box-shadow: 0 6px 16px rgba(168, 85, 247, 0.35);
 }
 
 /* Panel Content */
