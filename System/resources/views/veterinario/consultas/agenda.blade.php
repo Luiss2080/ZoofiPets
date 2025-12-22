@@ -23,26 +23,77 @@
             font-weight: 700;
         }
 
-        /* Action Buttons - Green for Atender */
-        .btn-icon.start {
-            background-color: #10b981; /* Green-500 */
-            color: white;
-            width: auto;
-            padding: 0 1rem;
-            border-radius: 8px;
-            font-weight: 600;
-            height: 38px;
+        /* ACTIONS STYLING - MATCHING CLIENTES MODULE */
+        .action-buttons {
             display: flex;
-            align-items: center;
             gap: 0.5rem;
-            text-decoration: none;
-            transition: all 0.2s;
+            justify-content: flex-start; /* Align left or center? Clientes is default flex */
         }
 
-        .btn-icon.start:hover {
-            background-color: #059669; /* Green-600 */
+        .btn-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-icon:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.3);
+        }
+
+        /* View Button - Blue */
+        .btn-icon.view {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+            box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+        }
+        .btn-icon.view:hover {
+            background: #2563eb;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Edit Button - Orange */
+        .btn-icon.edit {
+            background: #f97316;
+            color: white;
+            border-color: #f97316;
+            box-shadow: 0 2px 4px rgba(249, 115, 22, 0.2);
+        }
+        .btn-icon.edit:hover {
+            background: #ea580c;
+            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.4);
+        }
+
+        /* Atender Button (Matches 'Pets' visually - Purple) */
+        .btn-icon.atender {
+            background: #a855f7;
+            color: white;
+            border-color: #a855f7;
+            box-shadow: 0 2px 4px rgba(168, 85, 247, 0.2);
+        }
+        .btn-icon.atender:hover {
+            background: #9333ea;
+            box-shadow: 0 4px 10px rgba(168, 85, 247, 0.4);
+        }
+
+        /* Delete Button - Red */
+        .btn-icon.delete {
+            background: #ef4444;
+            color: white;
+            border-color: #ef4444;
+            box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+        }
+        .btn-icon.delete:hover {
+            background: #dc2626;
+            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
         }
     </style>
 @endpush
@@ -135,26 +186,30 @@
                                 </span>
                             </td>
                             <td>
-                                    <div class="action-buttons">
-                                        {{-- Standard Actions --}}
-                                        <a href="#" class="btn-icon view" title="Ver Detalles">
-                                            <i class="fas fa-eye"></i>
-                                        </a>
-                                        <a href="#" class="btn-icon edit" title="Editar">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                        <button type="button" 
-                                                class="btn-icon delete" 
-                                                title="Cancelar Cita" 
-                                                onclick="openDeleteModal('{{ route('recepcionista.citas.destroy', $cita->id) }}', '{{ $cita->mascota->nombre }}')">
-                                            <i class="fas fa-times-circle"></i>
-                                        </button>
-                                        
-                                        {{-- Primary Action --}}
-                                        <a href="{{ route('veterinario.consultas.create', ['cita_id' => $cita->id]) }}" class="btn-icon start" title="Iniciar Consulta">
-                                            <i class="fas fa-file-medical"></i> <span>Atender</span>
-                                        </a>
-                                    </div>
+                                <div class="action-buttons">
+                                    {{-- 1. Ver (Blue) --}}
+                                    <a href="#" class="btn-icon view" title="Ver Detalles">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+
+                                    {{-- 2. Editar (Orange) --}}
+                                    <a href="#" class="btn-icon edit" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+
+                                    {{-- 3. Atender (Purple - Matches 'Pets' visual style) --}}
+                                    <a href="{{ route('veterinario.consultas.create', ['cita_id' => $cita->id]) }}" class="btn-icon atender" title="Iniciar Consulta">
+                                        <i class="fas fa-file-medical"></i>
+                                    </a>
+
+                                    {{-- 4. Delete (Red) --}}
+                                    <button type="button" 
+                                            class="btn-icon delete" 
+                                            title="Cancelar Cita" 
+                                            onclick="openDeleteModal('{{ route('recepcionista.citas.destroy', $cita->id) }}', '{{ $cita->mascota->nombre }}')">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
                             </td>
                         </tr>
                     @empty
