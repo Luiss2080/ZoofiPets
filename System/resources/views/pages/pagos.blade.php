@@ -1,15 +1,14 @@
 <style>
-    /* Integrated Pagination Styles for Pagos Module */
-    /* Replicating public/css/pages/paginacion.css but with module-specific scope and Purple theme */
+    /* Integrated Pagination Styles for Pagos Module - High Contrast Version */
 
     .pagos-pagination-nav {
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 1rem;
-        background: var(--bg-surface);
+        background: #ffffff !important; /* Force White Background */
         border: 1px solid var(--border-color);
-        border-radius: 16px; /* Matches screenshot rounded container */
+        border-radius: 16px;
         width: 100%;
         margin-top: 0;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -32,57 +31,63 @@
         justify-content: center;
         border-radius: 8px;
         background: transparent;
-        color: #374151; /* Darker gray for better contrast on white */
+        color: #000000 !important; /* Pure Black Text */
         text-decoration: none;
         transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        font-weight: 700; /* Bolder text */
+        font-weight: 800; /* Extra Bold */
         cursor: pointer;
         border: 1px solid transparent;
-        font-size: 0.95rem;
+        font-size: 1rem; /* Slightly larger */
     }
 
     .pagos-page-link i {
-        font-size: 0.9rem;
-        color: #4b5563; /* Explicit dark color for icons */
+        font-size: 0.95rem;
+        color: #000000 !important; /* Pure Black Icons */
     }
 
     /* Hover State */
     .pagos-page-link:hover:not(.disabled) {
-        background: rgba(72, 52, 212, 0.1); /* Purple tint */
-        color: var(--primary-color);
+        background: rgba(72, 52, 212, 0.1); 
+        color: var(--primary-color) !important;
         border-color: rgba(72, 52, 212, 0.2);
         transform: translateY(-2px);
-        box-shadow: 0 4px 6px -1px rgba(72, 52, 212, 0.1);
     }
 
-    /* Active State - Purple Solid */
+    /* Active State */
     .pagos-page-link.active {
-        background: var(--primary-color);
-        color: #fff;
-        box-shadow: 0 4px 12px rgba(72, 52, 212, 0.3);
+        background: var(--primary-color) !important;
+        color: #ffffff !important; /* White on Purple */
         border-color: var(--primary-color);
+        box-shadow: 0 4px 12px rgba(72, 52, 212, 0.3);
     }
 
     /* Disabled State */
     .pagos-page-link.disabled {
-        opacity: 0.4;
+        opacity: 0.3;
         cursor: not-allowed;
         pointer-events: none;
-        color: var(--text-muted);
+        color: #000000 !important;
     }
 
-    /* Ghost Page (Placeholder) */
+    /* Ghost Page */
     .pagos-page-link.ghost-page {
-        opacity: 0.2;
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px dashed rgba(255, 255, 255, 0.05);
-        color: var(--text-muted);
+        opacity: 0.1;
+        background: rgba(0, 0, 0, 0.05);
+        color: #000000 !important;
     }
 
-    /* Dark Mode Overrides if needed (though variables should handle it) */
+    /* Dark Mode Overrides - Only if body has dark-mode class */
     body.dark-mode .pagos-pagination-nav {
-        background: var(--bg-surface);
-        border-color: var(--border-color);
+        background: #1e1b2e !important; /* Dark surface for dark mode */
+        border-color: #2d2a45;
+    }
+    
+    body.dark-mode .pagos-page-link:not(.active) {
+        color: #ffffff !important; /* White text on dark background */
+    }
+    
+    body.dark-mode .pagos-page-link i {
+        color: #ffffff !important;
     }
 </style>
 
