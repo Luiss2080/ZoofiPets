@@ -27,7 +27,7 @@ class ProductoFactory extends Factory
             'precio_venta' => $precio,
             'stock_actual' => $this->faker->numberBetween(0, 100),
             'stock_minimo' => 5,
-            'categoria_id' => \App\Models\CategoriaProducto::inRandomOrder()->first()?->id ?? 1,
+            'categoria_id' => \App\Models\CategoriaProducto::inRandomOrder()->first()?->id ?? \App\Models\CategoriaProducto::factory(),
             'activo' => true,
         ];
     }
