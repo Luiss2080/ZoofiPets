@@ -30,11 +30,11 @@ class DatabaseSeeder extends Seeder
             \App\Models\Recordatorio::factory(20)->create();
             \App\Models\InteraccionCliente::factory(20)->create();
             //
-            // Modulos Vendedor
-            \App\Models\SesionCaja::factory(20)->create();
-            \App\Models\Venta::factory(20)->create(); // Linked to sesiones, empleados
-            \App\Models\Devolucion::factory(20)->create();
-            \App\Models\MovimientoInventario::factory(20)->create();
+            // // Modulos Vendedor
+            // \App\Models\SesionCaja::factory(20)->create();
+            // \App\Models\Venta::factory(20)->create(); // Linked to sesiones, empleados
+            // \App\Models\Devolucion::factory(20)->create();
+            // \App\Models\MovimientoInventario::factory(20)->create();
             //
             // // Modulos Veterinario
             // \App\Models\ServicioMedico::factory(20)->create();
