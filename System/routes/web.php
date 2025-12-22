@@ -76,7 +76,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/alertas', function() { return 'Modulo Alertas de Stock'; })->name('alertas.index');
     
     // Configuración Financiera
-    Route::get('/metodos-pago', function() { return 'Modulo Métodos de Pago'; })->name('metodos_pago.index');
+    Route::get('/metodos-pago', [App\Http\Controllers\MetodoPagoController::class, 'index'])->name('metodos_pago.index');
     
     // Rutas legacy/placeholders para evitar 404s en enlaces antiguos si quedan
     Route::get('/docentes', function() { return 'Modulo Docentes'; })->name('docentes.index');
