@@ -107,7 +107,7 @@
                                     <a href="{{ route('recepcionista.clientes.edit', $cliente->id) }}" class="btn-icon edit" title="Editar">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <a href="{{ route('clientes.mascotas', $cliente->id) }}" class="btn-icon view" style="color: #a855f7; border-color: rgba(168,85,247,0.3); background: rgba(168,85,247,0.1);" title="Ver Mascotas">
+                                    <a href="{{ route('clientes.mascotas', $cliente->id) }}" class="btn-icon pets" title="Ver Mascotas">
                                         <i class="fas fa-paw"></i>
                                     </a>
                                     <form id="delete-form-{{ $cliente->id }}" action="{{ route('recepcionista.clientes.destroy', $cliente->id) }}" method="POST" class="delete-form" style="display:inline;">

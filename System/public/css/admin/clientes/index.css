@@ -151,17 +151,19 @@ body.dark-mode .icon-wrapper {
     align-items: center;
 }
 
+/* Filter Group Select Wrapper - Solid Purple */
 .select-wrapper {
     position: relative;
-    background: var(--bg-surface-secondary);
-    border: 1px solid var(--border-color);
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
     border-radius: 12px;
     transition: all 0.3s ease;
 }
 
 .select-wrapper:hover {
-    border-color: var(--primary-color);
+    background: var(--primary-color-hover);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(72, 52, 212, 0.2);
 }
 
 .select-wrapper i {
@@ -169,7 +171,7 @@ body.dark-mode .icon-wrapper {
     left: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--text-muted);
+    color: white;
     z-index: 1;
     font-size: 0.9rem;
 }
@@ -180,7 +182,7 @@ body.dark-mode .icon-wrapper {
     border: none;
     padding: 0.75rem 2.5rem 0.75rem 2.5rem;
     border-radius: 12px;
-    color: var(--text-dark); /* Dark text on light bg */
+    color: white;
     font-weight: 600;
     cursor: pointer;
     font-size: 0.9rem;
@@ -195,16 +197,16 @@ body.dark-mode .icon-wrapper {
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--text-muted);
+    color: white;
     pointer-events: none;
     font-size: 0.8rem;
 }
 
-/* Secondary Action Button (Purple Outline/Ghost) */
+/* Secondary Action Button - Solid Purple */
 .btn-secondary-action {
-    background: transparent;
+    background: var(--primary-color);
     border: 1px solid var(--primary-color);
-    color: var(--primary-color);
+    color: white;
     padding: 0.75rem 1.25rem;
     border-radius: 12px;
     cursor: pointer;
@@ -214,17 +216,16 @@ body.dark-mode .icon-wrapper {
     align-items: center;
     gap: 0.6rem;
     font-size: 0.9rem;
-    box-shadow: 0 4px 6px -1px rgba(72, 52, 212, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(72, 52, 212, 0.2);
 }
 
 .btn-secondary-action i {
-    color: var(--primary-color);
+    color: white;
     font-size: 1rem;
 }
 
 .btn-secondary-action:hover {
-    background: var(--primary-color);
-    color: white;
+    background: var(--primary-color-hover);
     transform: translateY(-2px);
     box-shadow: 0 8px 15px -3px rgba(72, 52, 212, 0.3);
 }
@@ -390,42 +391,54 @@ body.dark-mode .icon-wrapper {
 
 /* View Button - Blue */
 .btn-icon.view {
-    color: #3b82f6;
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.1);
-}
-.btn-icon.view:hover {
     background: #3b82f6;
     color: white;
-    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+    border-color: #3b82f6;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+.btn-icon.view:hover {
+    background: #2563eb;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
 }
 
 /* Edit Button - Orange */
 .btn-icon.edit {
-    color: #f97316;
-    background: rgba(249, 115, 22, 0.1);
-    border: 1px solid rgba(249, 115, 22, 0.1);
-}
-.btn-icon.edit:hover {
     background: #f97316;
     color: white;
-    box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+    border-color: #f97316;
+    box-shadow: 0 2px 4px rgba(249, 115, 22, 0.2);
+}
+.btn-icon.edit:hover {
+    background: #ea580c;
+    box-shadow: 0 4px 10px rgba(249, 115, 22, 0.4);
 }
 
 /* Delete Button - Red */
 .btn-icon.delete {
-    color: #ef4444;
-    background: rgba(239, 68, 68, 0.1);
-    border: 1px solid rgba(239, 68, 68, 0.1);
-}
-.btn-icon.delete:hover {
     background: #ef4444;
     color: white;
-    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+    border-color: #ef4444;
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+.btn-icon.delete:hover {
+    background: #dc2626;
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
 }
 
 /* Pagination */
 .pagination-wrapper {
     width: 100%;
     margin-top: 0;
+}
+
+/* Pets Button - Purple */
+.btn-icon.pets {
+    background: #a855f7;
+    color: white;
+    border-color: #a855f7;
+    box-shadow: 0 2px 4px rgba(168, 85, 247, 0.2);
+}
+.btn-icon.pets:hover {
+    background: #9333ea;
+    box-shadow: 0 4px 10px rgba(168, 85, 247, 0.4);
 }
