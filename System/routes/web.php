@@ -126,7 +126,7 @@ Route::middleware(['auth'])->prefix('tienda')->name('vendedor.')->group(function
     // Productos
     Route::resource('productos', Admin\ProductoController::class);
     // Inventario (Puede ser una vista diferente de productos)
-    Route::get('/inventario', function() { return 'Modulo Inventario'; })->name('inventario.index');
+    Route::get('/inventario', [Admin\InventarioController::class, 'index'])->name('inventario.index');
 });
 
 // Rutas Globales / Compartidas
