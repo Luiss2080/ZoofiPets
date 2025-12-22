@@ -63,7 +63,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/horarios', function() { return 'Modulo Horarios'; })->name('horarios.index');
 
     // Compras y Proveedores
-    Route::get('/proveedores', function() { return 'Modulo Proveedores'; })->name('proveedores.index');
+    Route::get('/proveedores', [App\Http\Controllers\ProveedorController::class, 'index'])->name('proveedores.index');
     Route::get('/compras', function() { return 'Modulo Compras'; })->name('compras.index');
 
     // Gestión Veterinaria Avanzada
