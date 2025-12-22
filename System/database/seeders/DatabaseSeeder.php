@@ -17,24 +17,24 @@ class DatabaseSeeder extends Seeder
     {
         try {
             echo "Seeding Started...\n";
-            // // Master/Client
-            // echo "Seeding Master...\n";
-            // \App\Models\Cargo::factory(5)->create();
-            // \App\Models\MetodoPago::factory(5)->create();
-            // \App\Models\Proveedor::factory(20)->create();
-            // // Categoria must be seeded or created by Producto factory. Factory handles it.
-            // // But verify_factories showed CategoriaProducto OK.
-            // \App\Models\Producto::factory(20)->create();
+            // Master/Client
+            echo "Seeding Master...\n";
+            \App\Models\Cargo::factory(5)->create();
+            \App\Models\MetodoPago::factory(5)->create();
+            \App\Models\Proveedor::factory(20)->create();
+            // Categoria must be seeded or created by Producto factory. Factory handles it.
+            // But verify_factories showed CategoriaProducto OK.
+            \App\Models\Producto::factory(20)->create();
             
-            // echo "Seeding Clients...\n";
-            // \App\Models\Cliente::factory(20)->create();
-            // \App\Models\Mascota::factory(20)->create();
+            echo "Seeding Clients...\n";
+            \App\Models\Cliente::factory(20)->create();
+            \App\Models\Mascota::factory(20)->create();
 
-            // // Receptionist
-            // echo "Seeding Receptionist...\n";
-            // \App\Models\SalaEspera::factory(20)->create();
-            // \App\Models\Recordatorio::factory(20)->create();
-            // \App\Models\InteraccionCliente::factory(20)->create();
+            // Receptionist
+            echo "Seeding Receptionist...\n";
+            \App\Models\SalaEspera::factory(20)->create();
+            \App\Models\Recordatorio::factory(20)->create();
+            \App\Models\InteraccionCliente::factory(20)->create();
 
             // // Vendor
             // echo "Seeding Vendor...\n";
