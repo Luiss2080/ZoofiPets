@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('numero_factura', 50)->unique();
             $table->foreignId('cliente_id')->nullable()->constrained('clientes')->onDelete('set null');
             $table->foreignId('empleado_id')->constrained('empleados')->onDelete('restrict'); // Vendedor/Cajero
+            $table->foreignId('sesion_caja_id')->nullable(); // Relacionado posteriormente en la migración de cajas
             $table->datetime('fecha_venta');
             $table->decimal('subtotal', 12, 2);
             $table->decimal('impuesto', 10, 2)->default(0);
