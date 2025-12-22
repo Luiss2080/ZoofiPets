@@ -4,6 +4,7 @@
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/admin/pagos/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/pagos/modals.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pages/paginacion.css') }}">
 @endpush
 
@@ -131,7 +132,12 @@
                                     <a href="#" class="btn-icon print" title="Imprimir Recibo">
                                         <i class="fas fa-print"></i>
                                     </a>
-                                </div>
+                                    <button type="button" 
+                                            class="btn-icon delete" 
+                                            onclick="openDeleteModal('{{ route('recepcionista.pagos.destroy', $pago->id) }}', '{{ $clienteNombre }} {{ $clienteApellido }}', '{{ $pago->referencia ?? 'N/A' }}', '{{ number_format($pago->monto, 2) }}')" 
+                                            title="Eliminar">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
                             </td>
                         </tr>
                     @empty
@@ -150,4 +156,27 @@
         {{ $pagos->appends(request()->query())->links('pages.clientes') }}
     </div>
 </div>
+
+@include('recepcionista.pagos.mod.delete')
+@include('recepcionista.pagos.mod.success')
+@include('recepcionista.pagos.mod.error')
+
+@endsection
+
+@section('js')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('js/admin/pagos/index.js') }}"></script>
+    <script src="{{ asset('js/admin/pagos/modals.js') }}"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            @if(session('success'))
+                openSuccessModal("{{ session('success') }}");
+            @endif
+
+            @if(session('error'))
+                openErrorModal("{{ session('error') }}");
+            @endif
+        });
+    </script>
 @endsection
