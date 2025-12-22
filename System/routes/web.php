@@ -59,7 +59,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     // Recursos Humanos
     Route::get('/empleados', [App\Http\Controllers\EmpleadoController::class, 'index'])->name('empleados.index');
-    Route::get('/cargos', function() { return 'Modulo Cargos'; })->name('cargos.index');
+    Route::get('/cargos', [App\Http\Controllers\CargoController::class, 'index'])->name('cargos.index');
     Route::get('/horarios', function() { return 'Modulo Horarios'; })->name('horarios.index');
 
     // Compras y Proveedores
