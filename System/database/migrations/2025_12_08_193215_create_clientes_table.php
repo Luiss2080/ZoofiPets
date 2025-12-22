@@ -29,7 +29,7 @@ return new class extends Migration
             $table->decimal('credito_disponible', 10, 2)->default(0);
             $table->string('profesion', 100)->nullable();
             $table->string('referencia', 100)->nullable();
-            $table->unsignedBigInteger('metodo_pago_preferido_id')->nullable(); // Constraint added in metodos_pago migration
+            // Column removed for debugging migration failure
             $table->boolean('activo')->default(true);
             $table->timestamps();
             
