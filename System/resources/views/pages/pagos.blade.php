@@ -30,19 +30,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 8px; /* Slightly squarish rounded as per modern UI */
+        border-radius: 8px;
         background: transparent;
-        color: var(--text-secondary);
+        color: #374151; /* Darker gray for better contrast on white */
         text-decoration: none;
         transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        font-weight: 600;
+        font-weight: 700; /* Bolder text */
         cursor: pointer;
-        border: 1px solid transparent; /* matches paginacion.css */
-        font-size: 0.9rem;
+        border: 1px solid transparent;
+        font-size: 0.95rem;
     }
 
     .pagos-page-link i {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+        color: #4b5563; /* Explicit dark color for icons */
     }
 
     /* Hover State */
