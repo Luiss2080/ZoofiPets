@@ -72,7 +72,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     // Gestión Tienda Avanzada
     Route::get('/categorias', [App\Http\Controllers\CategoriaController::class, 'index'])->name('categorias.index');
     Route::get('/promociones', function() { return 'Modulo Promociones'; })->name('promociones.index');
-    Route::get('/movimientos', function() { return 'Modulo Movimientos de Stock'; })->name('movimientos.index');
+    Route::get('/movimientos', [App\Http\Controllers\MovimientoController::class, 'index'])->name('movimientos.index');
     Route::get('/alertas', function() { return 'Modulo Alertas de Stock'; })->name('alertas.index');
     
     // Configuración Financiera
