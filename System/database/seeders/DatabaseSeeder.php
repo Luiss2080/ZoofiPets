@@ -36,21 +36,21 @@ class DatabaseSeeder extends Seeder
             \App\Models\Recordatorio::factory(20)->create();
             \App\Models\InteraccionCliente::factory(20)->create();
 
-            // // Vendor
-            // echo "Seeding Vendor...\n";
-            // \App\Models\SesionCaja::factory(20)->create();
-            // \App\Models\Venta::factory(20)->create(); 
-            // \App\Models\Devolucion::factory(20)->create();
-            // \App\Models\MovimientoInventario::factory(20)->create();
+            // Vendor
+            echo "Seeding Vendor...\n";
+            \App\Models\SesionCaja::factory(20)->create();
+            \App\Models\Venta::factory(20)->create(); 
+            \App\Models\Devolucion::factory(20)->create();
+            \App\Models\MovimientoInventario::factory(20)->create();
 
-            // // Veterinario
-            // echo "Seeding Veterinario...\n";
-            // \App\Models\ServicioMedico::factory(20)->create();
-            // \App\Models\CitaMedica::factory(20)->create(); 
-            // \App\Models\RegistroVacuna::factory(20)->create();
-            // \App\Models\HistorialMedico::factory(20)->create();
-            // \App\Models\Hospitalizacion::factory(20)->create();
-            // \App\Models\Laboratorio::factory(20)->create();
+            // Veterinario
+            echo "Seeding Veterinario...\n";
+            \App\Models\ServicioMedico::factory(20)->create();
+            \App\Models\CitaMedica::factory(20)->create(); 
+            \App\Models\RegistroVacuna::factory(20)->create();
+            \App\Models\HistorialMedico::factory(20)->create();
+            \App\Models\Hospitalizacion::factory(20)->create();
+            \App\Models\Laboratorio::factory(20)->create();
             echo "Seeding Finished (Skipped).\n";
         } catch (\Throwable $e) {
             
