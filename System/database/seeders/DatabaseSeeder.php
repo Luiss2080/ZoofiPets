@@ -38,6 +38,5 @@ class DatabaseSeeder extends Seeder
             \App\Models\HistorialMedico::factory(20)->create();
             \App\Models\Hospitalizacion::factory(20)->create();
             \App\Models\Laboratorio::factory(20)->create();
-        ]);
     }
 }
