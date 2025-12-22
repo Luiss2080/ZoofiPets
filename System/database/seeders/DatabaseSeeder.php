@@ -45,6 +45,8 @@ class DatabaseSeeder extends Seeder
 
             // Veterinario
             echo "Seeding Veterinario...\n";
+            echo "Class exists? " . (class_exists(\App\Models\ServicioMedico::class) ? "YES" : "NO") . "\n";
+            echo "Methods: " . implode(", ", get_class_methods(\App\Models\ServicioMedico::class)) . "\n";
             \App\Models\ServicioMedico::factory(20)->create();
             // \App\Models\CitaMedica::factory(20)->create(); 
             // \App\Models\RegistroVacuna::factory(20)->create();
