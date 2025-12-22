@@ -116,7 +116,7 @@ Route::middleware(['auth'])->prefix('veterinaria')->name('veterinario.')->group(
         'destroy' => 'vacunas.destroy',
     ]);
     // Historiales Médicos
-    Route::get('/historiales', function() { return 'Modulo Historiales Médicos'; })->name('historiales.index');
+    Route::get('/historiales', [App\Http\Controllers\HistorialMedicoController::class, 'index'])->name('historiales.index');
 });
 
 // Modulo Vendedor (Tienda)
