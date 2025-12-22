@@ -4,7 +4,47 @@
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/admin/consultas/index.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pages/paginacion.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/mod/confirmar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/mod/advertencia.css') }}">
+    <style>
+        /* Table Header Styling per Request - Purple */
+        .dashboard-table thead th {
+            color: var(--primary-color) !important; /* Force Purple Color */
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Avatar Styling */
+        .avatar-circle {
+            background: rgba(72, 52, 212, 0.1);
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Action Buttons - Green for Atender */
+        .btn-icon.start {
+            background-color: #10b981; /* Green-500 */
+            color: white;
+            width: auto;
+            padding: 0 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-icon.start:hover {
+            background-color: #059669; /* Green-600 */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.3);
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -21,7 +61,6 @@
                     <p class="subtitle">Gestiona tus consultas programadas y atiende a los pacientes</p>
                 </div>
             </div>
-            {{-- No 'New' button here as appointments come from reception, but could add one if needed --}}
         </div>
 
         <div class="panel-content">
@@ -69,7 +108,7 @@
                         <tr>
                             <td>
                                 <div class="id-info">
-                                    <span class="primary-text">{{ $cita->fecha_hora->format('H:i') }}</span>
+                                    <span class="primary-text" style="font-weight: 800;">{{ $cita->fecha_hora->format('H:i') }}</span>
                                     <span class="sub-text">{{ $cita->fecha_hora->format('d/m/Y') }}</span>
                                 </div>
                             </td>
@@ -79,7 +118,7 @@
                                         {{ strtoupper(substr($cita->mascota->nombre ?? '?', 0, 1)) }}
                                     </div>
                                     <div class="details">
-                                        <span class="name">{{ $cita->mascota->nombre }}</span>
+                                        <span class="name" style="font-weight: 700; color: var(--text-primary);">{{ $cita->mascota->nombre }}</span>
                                         <span class="role">{{ $cita->mascota->especie }} - {{ $cita->mascota->raza }}</span>
                                     </div>
                                 </div>
@@ -98,7 +137,7 @@
                             <td>
                                 <div class="action-buttons">
                                     <a href="{{ route('veterinario.consultas.create', ['cita_id' => $cita->id]) }}" class="btn-icon start" title="Iniciar Consulta">
-                                        <i class="fas fa-notes-medical"></i> Atender
+                                        <i class="fas fa-file-medical"></i> <span>Atender</span>
                                     </a>
                                 </div>
                             </td>
@@ -115,11 +154,31 @@
         </div>
     </div>
     
-    {{-- Pagination if available, currently controller returns collection ->get() so no links by default unless paginated --}}
     @if(method_exists($citas, 'links'))
     <div class="pagination-wrapper">
-        {{ $citas->appends(request()->query())->links('pages.clientes') }}
+        {{ $citas->appends(request()->query())->links('pages.consultas') }}
     </div>
     @endif
 </div>
+
+@include('veterinario.consultas.mod.delete')
+@include('veterinario.consultas.mod.error')
+@endsection
+
+@section('js')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('js/mod/confirmar.js') }}"></script>
+    <script src="{{ asset('js/mod/advertencia.js') }}"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            @if(session('success'))
+                openWarningModal("Operación Exitosa", "{{ session('success') }}");
+            @endif
+
+            @if(session('error'))
+                openWarningModal("Error", "{{ session('error') }}");
+            @endif
+        });
+    </script>
 @endsection
