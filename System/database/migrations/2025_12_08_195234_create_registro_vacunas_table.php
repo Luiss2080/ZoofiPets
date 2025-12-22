@@ -22,6 +22,9 @@ return new class extends Migration
             $table->date('fecha_aplicacion');
             $table->date('proxima_dosis')->nullable();
             $table->text('observaciones')->nullable();
+            $table->string('via_administracion', 50)->nullable();
+            $table->string('ubicacion_aplicacion', 100)->nullable();
+            $table->boolean('recordatorio_enviado')->default(false);
             $table->boolean('reaccion_adversa')->default(false);
             $table->text('descripcion_reaccion')->nullable();
             $table->timestamps();

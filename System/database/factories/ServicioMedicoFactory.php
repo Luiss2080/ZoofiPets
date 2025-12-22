@@ -22,6 +22,9 @@ class ServicioMedicoFactory extends Factory
             'precio' => $this->faker->randomFloat(2, 20, 300),
             'duracion_estimada_minutos' => $this->faker->randomElement([15, 30, 45, 60]),
             'categoria' => $this->faker->randomElement(['Consulta', 'Vacunacion', 'Cirugia', 'Tratamiento', 'Estetica']),
+            'codigo_servicio' => $this->faker->unique()->bothify('SRV-####'),
+            'disponible_online' => $this->faker->boolean(30),
+            'garantia_dias' => $this->faker->randomElement([0, 7, 15, 30]),
             'requiere_cita' => true,
             'activo' => true,
         ];

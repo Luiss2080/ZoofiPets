@@ -20,6 +20,8 @@ return new class extends Migration
             $table->decimal('peso', 5, 2)->nullable();
             $table->decimal('temperatura', 4, 1)->nullable();
             $table->text('sintomas')->nullable();
+            $table->decimal('peso_salida', 5, 2)->nullable();
+            $table->decimal('temperatura_salida', 4, 1)->nullable();
             $table->text('diagnostico');
             $table->text('tratamiento')->nullable();
             $table->text('medicamentos')->nullable();

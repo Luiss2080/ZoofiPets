@@ -35,6 +35,10 @@ class MascotaFactory extends Factory
             'peso' => $this->faker->randomFloat(2, 1, 40),
             'color' => $this->faker->colorName(),
             'sexo' => $this->faker->randomElement(['Macho', 'Hembra']),
+            'dieta' => $this->faker->randomElement(['Croquetas', 'Barf', 'Mixta', 'Casera']),
+            'estado_reproductivo' => $this->faker->randomElement(['Castrado', 'Intacto']),
+            'pelaje' => $this->faker->randomElement(['Corto', 'Largo', 'Rizado']),
+            'origen' => $this->faker->randomElement(['Adopcion', 'Compra', 'Rescate']),
             'cliente_id' => \App\Models\Cliente::factory(),
         ];
     }
