@@ -15,6 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+            // Master Tables
+            \App\Models\Cargo::factory(5)->create();
+            \App\Models\MetodoPago::factory(5)->create();
+            \App\Models\Proveedor::factory(20)->create();
+            \App\Models\Producto::factory(20)->create();
+
             // Clientes con preferencias
             \App\Models\Cliente::factory(20)->create();
             \App\Models\Mascota::factory(20)->create();
@@ -28,6 +34,7 @@ class DatabaseSeeder extends Seeder
             \App\Models\SesionCaja::factory(20)->create();
             \App\Models\Venta::factory(20)->create(); // Linked to sesiones, empleados
             \App\Models\Devolucion::factory(20)->create();
+            \App\Models\MovimientoInventario::factory(20)->create();
             //
             // Modulos Veterinario
             \App\Models\ServicioMedico::factory(20)->create();
