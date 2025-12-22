@@ -10,7 +10,7 @@ class DevolucionFactory extends Factory
     {
         return [
             'venta_id' => \App\Models\Venta::factory(),
-            'autorizado_por' => 1,
+            'autorizado_por' => \App\Models\Empleado::factory(),
             'fecha_devolucion' => $this->faker->dateTimeBetween('-1 month', 'now'),
             'motivo' => $this->faker->sentence(),
             'monto_reembolsado' => $this->faker->randomFloat(2, 10, 100),

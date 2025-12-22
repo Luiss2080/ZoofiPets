@@ -10,7 +10,7 @@ class InteraccionClienteFactory extends Factory
     {
         return [
             'cliente_id' => \App\Models\Cliente::factory(),
-            'empleado_id' => 1,
+            'empleado_id' => \App\Models\Empleado::factory(),
             'tipo' => $this->faker->randomElement(['Llamada', 'Visita', 'Mensaje', 'Correo']),
             'fecha_interaccion' => $this->faker->dateTimeBetween('-1 month', 'now'),
             'motivo' => $this->faker->sentence(3),

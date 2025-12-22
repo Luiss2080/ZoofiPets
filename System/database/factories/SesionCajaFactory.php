@@ -13,7 +13,7 @@ class SesionCajaFactory extends Factory
         $cierre->modify('+8 hours');
         
         return [
-            'empleado_id' => 1, // Default user
+            'empleado_id' => \App\Models\Empleado::factory(),
             'fecha_apertura' => $apertura,
             'fecha_cierre' => $cierre,
             'monto_inicial' => $this->faker->randomFloat(2, 50, 200),
