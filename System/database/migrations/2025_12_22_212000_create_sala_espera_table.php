@@ -23,7 +23,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->index(['mascota_id', 'estado']);
-            $table->index(['fecha_atencion']); // Assuming timestamps created_at covers date, or need specific date column? usually created_at is fine for "today".
+            $table->index(['hora_atencion']); // Corrected from fecha_atencion
         });
     }
 
