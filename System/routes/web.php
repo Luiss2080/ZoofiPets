@@ -70,7 +70,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/servicios', [App\Http\Controllers\ServicioController::class, 'index'])->name('servicios.index');
 
     // Gestión Tienda Avanzada
-    Route::get('/categorias', function() { return 'Modulo Categorías'; })->name('categorias.index');
+    Route::get('/categorias', [App\Http\Controllers\CategoriaController::class, 'index'])->name('categorias.index');
     Route::get('/promociones', function() { return 'Modulo Promociones'; })->name('promociones.index');
     Route::get('/movimientos', function() { return 'Modulo Movimientos de Stock'; })->name('movimientos.index');
     Route::get('/alertas', function() { return 'Modulo Alertas de Stock'; })->name('alertas.index');
