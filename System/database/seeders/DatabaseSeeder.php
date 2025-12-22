@@ -53,8 +53,6 @@ class DatabaseSeeder extends Seeder
             \App\Models\Laboratorio::factory(20)->create();
             echo "Seeding Finished (Skipped).\n";
         } catch (\Throwable $e) {
-            
-        } catch (\Throwable $e) {
             echo "FAILEDSEED: " . $e->getMessage() . "\n";
             echo "File: " . $e->getFile() . " Line: " . $e->getLine() . "\n";
             // dump($e->getTraceAsString());
