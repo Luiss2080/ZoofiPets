@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="{{ asset('css/admin/pagos/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/mod/confirmar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/mod/advertencia.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pages/paginacion.css') }}">
 @endpush
 
 @section('content')
@@ -155,7 +154,7 @@
     </div>
     
     <div class="pagination-wrapper">
-        {{ $pagos->appends(request()->query())->links('pages.clientes') }}
+        {{ $pagos->appends(request()->query())->links('pages.pagos') }}
     </div>
 </div>
 
