@@ -19,10 +19,10 @@ class DatabaseSeeder extends Seeder
             \App\Models\Cliente::factory(20)->create();
             \App\Models\Mascota::factory(20)->create();
             //
-            // // Modulos Recepcionista
-            // \App\Models\SalaEspera::factory(20)->create();
-            // \App\Models\Recordatorio::factory(20)->create();
-            // \App\Models\InteraccionCliente::factory(20)->create();
+            // Modulos Recepcionista
+            \App\Models\SalaEspera::factory(20)->create();
+            \App\Models\Recordatorio::factory(20)->create();
+            \App\Models\InteraccionCliente::factory(20)->create();
             //
             // // Modulos Vendedor
             // \App\Models\SesionCaja::factory(20)->create();
