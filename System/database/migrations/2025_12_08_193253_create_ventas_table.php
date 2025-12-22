@@ -32,6 +32,7 @@ return new class extends Migration
             $table->index(['cliente_id', 'fecha_venta']);
             $table->index(['empleado_id', 'fecha_venta']);
             $table->index(['estado', 'fecha_venta']);
+            $table->index(['sesion_caja_id']); // Index required for foreign key
         });
     }
 
