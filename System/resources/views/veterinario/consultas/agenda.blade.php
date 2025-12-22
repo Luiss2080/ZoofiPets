@@ -135,11 +135,26 @@
                                 </span>
                             </td>
                             <td>
-                                <div class="action-buttons">
-                                    <a href="{{ route('veterinario.consultas.create', ['cita_id' => $cita->id]) }}" class="btn-icon start" title="Iniciar Consulta">
-                                        <i class="fas fa-file-medical"></i> <span>Atender</span>
-                                    </a>
-                                </div>
+                                    <div class="action-buttons">
+                                        {{-- Standard Actions --}}
+                                        <a href="#" class="btn-icon view" title="Ver Detalles">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                        <a href="#" class="btn-icon edit" title="Editar">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <button type="button" 
+                                                class="btn-icon delete" 
+                                                title="Cancelar Cita" 
+                                                onclick="openDeleteModal('{{ route('recepcionista.citas.destroy', $cita->id) }}', '{{ $cita->mascota->nombre }}')">
+                                            <i class="fas fa-times-circle"></i>
+                                        </button>
+                                        
+                                        {{-- Primary Action --}}
+                                        <a href="{{ route('veterinario.consultas.create', ['cita_id' => $cita->id]) }}" class="btn-icon start" title="Iniciar Consulta">
+                                            <i class="fas fa-file-medical"></i> <span>Atender</span>
+                                        </a>
+                                    </div>
                             </td>
                         </tr>
                     @empty

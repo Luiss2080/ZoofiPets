@@ -23,7 +23,7 @@ class ConsultaController extends Controller
             ->orWhere('estado', 'Confirmada')
             ->with(['mascota', 'cliente'])
             ->orderBy('fecha_hora', 'asc')
-            ->get();
+            ->paginate(10);
 
         return view('veterinario.consultas.agenda', compact('citas'));
     }
