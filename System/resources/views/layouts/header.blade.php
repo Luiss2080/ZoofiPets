@@ -80,14 +80,18 @@
                 </div>
                 <!-- Mock Items -->
                 <div class="notif-item unread">
-                    <div class="notif-icon blue"><div class="dot"></div></div>
+                    <div class="notif-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
                     <div class="notif-content">
                         <p class="notif-title">Nueva Cita Solicitada</p>
                         <p class="notif-time">Hace 5 min</p>
                     </div>
                 </div>
                 <div class="notif-item">
-                    <div class="notif-icon green"><div class="dot"></div></div>
+                    <div class="notif-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
                     <div class="notif-content">
                         <p class="notif-title">Inventario Bajo: Vacunas</p>
                         <p class="notif-time">Hace 1 hora</p>
@@ -188,5 +192,204 @@
         </div>
     </div>
 </header>
+</header>
+
+<style>
+/* ============================================
+   REFINED NOTIFICATIONS - DUAL MODE (Light & Dark)
+   ============================================ */
+.notification-dropdown {
+    width: 400px !important;
+    padding: 0 !important;
+    max-height: 550px !important;
+    overflow-y: auto !important;
+    
+    /* DEFAULT (Light Mode) */
+    background: #ffffff !important;
+    border: 1px solid rgba(72, 52, 212, 0.15) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1) !important;
+    
+    position: absolute !important;
+    top: calc(100% + 20px) !important;
+    right: -10px !important;
+    z-index: 9999 !important;
+    
+    /* Display State */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px) scale(0.95);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: block !important;
+}
+
+/* DARK MODE Override */
+body.dark-mode .notification-dropdown {
+    background: #050505 !important;
+    border: 1px solid rgba(72, 52, 212, 0.3) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9) !important;
+}
+
+.notification-dropdown.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) scale(1) !important;
+}
+
+/* Header Section */
+.dropdown-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 1.2rem 1.5rem !important;
+    background: #ffffff !important; /* Light Default */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+body.dark-mode .dropdown-header {
+    background: #0a0a0a !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.dropdown-header span {
+    font-size: 0.9rem !important;
+    font-weight: 900 !important;
+    color: var(--text-dark) !important; /* Light Default */
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+body.dark-mode .dropdown-header span {
+    color: #ffffff !important;
+}
+
+/* "Marcar leídas" Button Style */
+.mark-read {
+    font-size: 0.7rem !important;
+    color: var(--primary-color) !important;
+    background: rgba(72, 52, 212, 0.05) !important;
+    padding: 6px 12px !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.2s ease !important;
+    border: 1px solid rgba(72, 52, 212, 0.1) !important;
+}
+
+body.dark-mode .mark-read {
+    color: #a29bfe !important;
+    background: rgba(72, 52, 212, 0.15) !important;
+    border-color: rgba(72, 52, 212, 0.2) !important;
+}
+
+.mark-read:hover {
+    background: var(--primary-color) !important;
+    color: #ffffff !important;
+}
+
+/* Notification Items */
+.notif-item {
+    display: flex !important;
+    gap: 1.2rem !important;
+    padding: 1.2rem 1.5rem !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+    position: relative !important;
+    transition: background 0.2s ease !important;
+}
+
+body.dark-mode .notif-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
+}
+
+.notif-item:last-child {
+    border-bottom: none !important;
+}
+
+.notif-item:hover {
+    background: rgba(72, 52, 212, 0.02) !important;
+}
+body.dark-mode .notif-item:hover {
+    background: rgba(255, 255, 255, 0.03) !important;
+}
+
+/* Unread Styling */
+.notif-item.unread {
+    background: rgba(72, 52, 212, 0.03) !important;
+}
+body.dark-mode .notif-item.unread {
+    background: #080808 !important;
+}
+
+.notif-item.unread::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 4px !important;
+    background: var(--primary-color) !important;
+}
+
+/* Icons - Solid Purple Squares */
+.notif-icon {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    font-size: 1.2rem !important;
+    
+    /* Solid Purple Glow */
+    background: var(--primary-color) !important; 
+    color: #ffffff !important;
+    box-shadow: 0 6px 15px rgba(72, 52, 212, 0.25) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Remove colored backgrounds from old CSS */
+.notif-icon.blue, .notif-icon.green, .notif-icon.purple, .notif-icon.orange {
+    background: var(--primary-color) !important; 
+    color: #ffffff !important;
+}
+
+/* Text Content */
+.notif-content {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.3rem !important;
+}
+
+.notif-title {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important; /* White Text */
+    margin: 0 !important;
+    line-height: 1.3 !important;
+}
+
+.notif-time {
+    font-size: 0.75rem !important;
+    color: #a29bfe !important; /* Purple Text for time */
+    font-weight: 600 !important;
+    margin: 0 !important;
+}
+
+/* Dot hidden in new design (using left bar instead) or kept inside? */
+/* Screenshot had icons, let's keep icons clean */
+.notif-icon .dot { display: none !important; }
+
+</style>
+
 <!-- Header JS Loaded Here -->
 <script src="{{ asset('js/layouts/header.js') }}"></script>

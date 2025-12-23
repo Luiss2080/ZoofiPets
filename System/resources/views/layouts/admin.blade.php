@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{ asset('css/layouts/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/layouts/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/layouts/loading.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/layouts/notification.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layouts/notification.css') }}?v={{ time() }}">
 
     @stack('styles')
     @yield('css')
