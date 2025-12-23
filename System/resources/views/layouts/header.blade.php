@@ -75,7 +75,7 @@
             </button>
             <div class="notification-dropdown" id="notificationDropdown">
                 <div class="dropdown-header">
-                    <span>Notificaciones</span>
+                    <span>Notificación</span>
                     <a href="#" class="mark-read">Marcar leídas</a>
                 </div>
                 <!-- Mock Items -->
