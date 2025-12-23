@@ -316,11 +316,11 @@
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    background: #000000;
-    border: 1px solid rgba(72, 52, 212, 0.4);
+    background: #ffffff; /* White bg for light mode */
+    border: 1px solid rgba(72, 52, 212, 0.3); /* Purple tinted border */
     border-radius: 20px;
     padding: 1.25rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Softer shadow */
     transition: all 0.3s ease;
     cursor: default;
     position: relative;
@@ -353,8 +353,8 @@
 .help-card-item:hover {
     transform: translateY(-2px);
     border-color: var(--primary-color);
-    box-shadow: 0 8px 20px rgba(72, 52, 212, 0.15);
-    background: #050505;
+    box-shadow: 0 8px 20px rgba(72, 52, 212, 0.15); /* Purple shadow */
+    background: #ffffff;
 }
 
 .help-icon {
@@ -370,12 +370,12 @@
     flex-shrink: 0;
     transition: all 0.3s ease;
     border: 1px solid rgba(72, 52, 212, 0.2);
-    box-shadow: 0 4px 6px rgba(72, 52, 212, 0.2);
+    box-shadow: 0 4px 6px rgba(72, 52, 212, 0.1);
 }
 
 .help-card-item:hover .help-icon {
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(72, 52, 212, 0.4);
+    box-shadow: 0 6px 12px rgba(72, 52, 212, 0.3);
     background: var(--primary-color);
     color: white;
 }
@@ -390,7 +390,7 @@
 .help-text h4 {
     margin: 0;
     font-size: 1rem;
-    color: #ffffff;
+    color: var(--text-dark); /* Dark text for light mode */
     font-weight: 700;
     letter-spacing: -0.01em;
 }
@@ -398,7 +398,7 @@
 .help-text p {
     margin: 0;
     font-size: 0.85rem;
-    color: #9ca3af;
+    color: var(--text-muted); /* Muted dark text */
     line-height: 1.4;
 }
 
