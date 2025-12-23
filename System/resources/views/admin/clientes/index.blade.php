@@ -142,12 +142,17 @@
                 text: "No podrás revertir esto.",
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: '#e11d48',
-                cancelButtonColor: '#6b7280',
+                confirmButtonColor: '#4834d4', /* Purple for confirm */
+                cancelButtonColor: '#1f2937', /* Dark for cancel */
                 confirmButtonText: 'Sí, eliminar',
                 cancelButtonText: 'Cancelar',
-                background: '#1f2937',
-                color: '#fff'
+                background: '#ffffff', /* White bg for light mode */
+                color: '#1f2937', /* Dark text */
+                customClass: {
+                    popup: 'animated fadeInDown faster',
+                    confirmButton: 'btn-confirm-delete',
+                    cancelButton: 'btn-cancel-delete'
+                }
             }).then((result) => {
                 if (result.isConfirmed) {
                     const form = document.getElementById('delete-form');
@@ -162,9 +167,9 @@
                 icon: 'success',
                 title: '¡Éxito!',
                 text: "{{ session('success') }}",
-                background: '#1f2937',
-                color: '#fff',
-                confirmButtonColor: '#10b981'
+                background: '#ffffff', /* White bg */
+                color: '#1f2937', /* Dark text */
+                confirmButtonColor: '#4834d4'
             });
         @endif
     </script>
