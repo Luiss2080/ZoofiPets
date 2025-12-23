@@ -135,6 +135,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/perfil', [App\Http\Controllers\ProfileController::class, 'index'])->name('perfil.index');
     Route::post('/perfil/avatar', [App\Http\Controllers\ProfileController::class, 'updateAvatar'])->name('perfil.avatar');
     Route::put('/perfil/update', [App\Http\Controllers\ProfileController::class, 'update'])->name('perfil.update');
+    Route::get('/perfil/editar', [App\Http\Controllers\ProfileController::class, 'edit'])->name('perfil.edit');
+    Route::get('/perfil/seguridad', [App\Http\Controllers\ProfileController::class, 'security'])->name('perfil.security');
+    Route::put('/perfil/password', [App\Http\Controllers\ProfileController::class, 'updatePassword'])->name('perfil.update-password');
     Route::get('/configuraciones', function() { return view('configuraciones.index'); })->name('configuraciones.index');
     Route::get('/reportes', function() { return view('reportes.index'); })->name('reportes.index');
     Route::get('clientes/{id}/mascotas', [Admin\ClienteController::class, 'getMascotas'])->name('clientes.mascotas');

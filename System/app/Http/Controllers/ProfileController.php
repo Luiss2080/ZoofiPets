@@ -69,4 +69,30 @@ class ProfileController extends Controller
 
         return back()->with('success', 'Perfil actualizado correctamente.');
     }
+
+    public function edit()
+    {
+        $user = auth()->user();
+        return view('perfil.edit', compact('user'));
+    }
+
+    public function security()
+    {
+        $user = auth()->user();
+        return view('perfil.security', compact('user'));
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required|current_password',
+            'new_password' => 'required|string|min:6|confirmed',
+        ]);
+
+        $user = auth()->user();
+        $user->password = bcrypt($request->new_password);
+        $user->save();
+
+        return back()->with('success', 'Contraseña actualizada correctamente.');
+    }
 }
