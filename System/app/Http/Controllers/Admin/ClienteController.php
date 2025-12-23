@@ -51,6 +51,15 @@ class ClienteController extends Controller
         $perPage = $request->get('per_page', 10);
         $clientes = $query->paginate($perPage);
 
+        // AJAX Response (JSON for Client-Side Rendering)
+        if ($request->ajax()) {
+            return response()->json([
+                'success' => true,
+                'data' => $clientes->items(),
+                'links' => (string) $clientes->appends($request->query())->links('pages.clientes')
+            ]);
+        }
+
         return view('admin.clientes.index', compact('clientes'));
     }
 

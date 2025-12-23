@@ -44,7 +44,6 @@
                 <input type="text" id="searchInput" placeholder="Buscar por nombre, cédula o email...">
             </div>
             
-            <!-- Renamed container to avoid conflict with filters.css .filter-group -->
             <div class="toolbar-actions">
                 <!-- Custom Purple Dropdown -->
                 <div class="custom-select-wrapper" id="entriesDropdown">
@@ -75,7 +74,7 @@
         </div>
     </div>
     
-    <!-- Tabla -->
+    <!-- Table Section -->
     <div class="table-section">
         <div class="table-responsive">
             <table class="dashboard-table">
@@ -88,7 +87,7 @@
                         <th><i class="fas fa-cogs"></i> ACCIONES</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="clientesTableBody"> <!-- Added ID for JS targeting -->
                     @forelse($clientes as $cliente)
                         <tr>
                             <td>
@@ -142,10 +141,21 @@
         </div>
     </div>
     
-    <div class="pagination-wrapper">
+    <div class="pagination-wrapper" id="paginationWrapper">
         {{ $clientes->appends(request()->query())->links('pages.clientes') }}
     </div>
 </div>
+
+<!-- Routes for JS -->
+<script>
+    const routes = {
+        base: "{{ url('recepcionista/clientes') }}",
+        // Helper to generate full URLs
+        show: (id) => `{{ url('recepcionista/clientes') }}/${id}`,
+        edit: (id) => `{{ url('recepcionista/clientes') }}/${id}/edit`,
+        destroy: (id) => `{{ url('recepcionista/clientes') }}/${id}`
+    };
+</script>
 
 <!-- Simple Delete Form -->
 <form id="delete-form" action="" method="POST" style="display: none;">
@@ -153,7 +163,7 @@
     @method('DELETE')
 </form>
 
-<!-- Filter Modal -->
+<!-- Filter Modal (Hidden) -->
 <div class="filters-modal-overlay" id="filtersModal">
     <div class="filters-modal">
         <div class="filters-header">
@@ -167,17 +177,16 @@
         
         <div class="filters-content">
             <form id="filterForm" action="{{ route('recepcionista.clientes.index') }}" method="GET">
-                <!-- Preserve existing params like per_page -->
                 <input type="hidden" name="per_page" value="{{ request('per_page') }}">
                 
                 <div class="filters-section">
                     <h4 class="section-title">Información Personal</h4>
                     <div class="filters-grid">
-                        <div class="filter-group"> <!-- Used by filters.css -->
+                        <div class="filter-group">
                             <label class="filter-label">Cédula</label>
                             <input type="text" name="cedula" class="filter-input" placeholder="Ej: 12345678" value="{{ request('cedula') }}">
                         </div>
-                        <div class="filter-group"> <!-- Used by filters.css -->
+                        <div class="filter-group">
                             <label class="filter-label">Teléfono</label>
                             <input type="text" name="telefono" class="filter-input" placeholder="Ej: 0912345678" value="{{ request('telefono') }}">
                         </div>
@@ -187,7 +196,7 @@
                 <div class="filters-section">
                     <h4 class="section-title">Ubicación y Otros</h4>
                     <div class="filters-grid">
-                        <div class="filter-group"> <!-- Used by filters.css -->
+                        <div class="filter-group">
                             <label class="filter-label">Dirección</label>
                             <input type="text" name="direccion" class="filter-input" placeholder="Buscar en dirección..." value="{{ request('direccion') }}">
                         </div>
@@ -212,9 +221,7 @@
 @section('js')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('js/admin/clientes/index.js') }}"></script>
-    <!-- Mod JS -->
     <script src="{{ asset('js/mod/eliminar.js') }}"></script>
-    <!-- Filter JS -->
     <script src="{{ asset('js/filters/filters.js') }}"></script>
     <script>
         function toggleFilters() {
@@ -224,8 +231,6 @@
         function resetFilters() {
             window.location.href = "{{ route('recepcionista.clientes.index') }}";
         }
-        
-        // Ensure buttons engage toggle
         document.addEventListener('DOMContentLoaded', function() {
             const filterBtns = document.querySelectorAll('.btn-secondary-action');
             filterBtns.forEach(btn => {
