@@ -332,16 +332,32 @@
 /* Card Header Alignment */
 .card-header {
     display: flex;
-    justify-content: space-between; /* Icon Left, Title Right */
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1rem;
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px; /* Square with rounded corners */
+    background: #e0dcfc; /* Light Purple Background */
+    color: var(--primary-color); /* Dark Purple Icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(72, 52, 212, 0.15);
 }
 
 .card-title {
-    text-align: right;
+    text-align: center;
+    width: 100%;
 }
 
 .card-title h3 {
