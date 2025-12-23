@@ -117,6 +117,7 @@
     border-color: var(--primary-color);
 }
 
+/* Card Icon Theme - Uniform Purple */
 .card-icon {
     width: 48px;
     height: 48px;
@@ -126,40 +127,12 @@
     justify-content: center;
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
-}
 
-/* Card Themes - Preserved but softened to match elegant theme */
-.card-icon.students {
-    background: #d1fae5;
-    color: #10b981;
-}
-.card-icon.teachers {
-    background: #e0e7ff;
-    color: #6366f1;
-}
-.card-icon.grades {
-    background: #fef3c7;
-    color: #f59e0b;
-}
-.card-icon.subjects {
-    background: #f3e8ff;
-    color: #a855f7;
-}
-.card-icon.attendance {
-    background: #e0f2fe;
-    color: #0ea5e9;
-}
-.card-icon.users {
-    background: #f1f5f9;
-    color: #64748b;
-}
-.card-icon.library {
-    background: #ffedd5;
-    color: #f97316;
-}
-.card-icon.labs {
-    background: #ccfbf1;
-    color: #14b8a6;
+    /* Stronger Purple Background */
+    background: #ede9fe; /* Violet-100 */
+    color: var(--primary-color);
+    border: 1px solid rgba(72, 52, 212, 0.15);
+    box-shadow: 0 4px 6px rgba(72, 52, 212, 0.1);
 }
 
 .card-content h3 {
@@ -191,61 +164,23 @@
     justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem 1rem;
+
+    /* Default State: Purple Outline */
     background: transparent;
-    color: var(--text-dark);
-    font-weight: 600;
-    border-radius: 10px;
+    color: var(--primary-color);
+    font-weight: 700;
+    border-radius: 12px;
     text-decoration: none;
     transition: all 0.2s ease;
     font-size: 0.9rem;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--primary-color);
 }
 
-/* Button Themes - now outlines or subtle fills */
 .btn-report:hover {
+    background: var(--primary-color);
+    color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.btn-report.students:hover {
-    border-color: #10b981;
-    color: #10b981;
-    background: #ecfdf5;
-}
-.btn-report.teachers:hover {
-    border-color: #6366f1;
-    color: #6366f1;
-    background: #eef2ff;
-}
-.btn-report.grades:hover {
-    border-color: #f59e0b;
-    color: #f59e0b;
-    background: #fffbeb;
-}
-.btn-report.subjects:hover {
-    border-color: #a855f7;
-    color: #a855f7;
-    background: #faf5ff;
-}
-.btn-report.attendance:hover {
-    border-color: #0ea5e9;
-    color: #0ea5e9;
-    background: #f0f9ff;
-}
-.btn-report.users:hover {
-    border-color: #64748b;
-    color: #64748b;
-    background: #f8fafc;
-}
-.btn-report.library:hover {
-    border-color: #f97316;
-    color: #f97316;
-    background: #fff7ed;
-}
-.btn-report.labs:hover {
-    border-color: #14b8a6;
-    color: #14b8a6;
-    background: #f0fdfa;
+    box-shadow: 0 4px 12px rgba(72, 52, 212, 0.3);
 }
 
 /* Primary Action Button - The Authentic Purple Gradient */
@@ -295,4 +230,43 @@
     border-color: var(--primary-color);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(72, 52, 212, 0.3);
+}
+
+/* Overrides to ensure uniformity if specific classes exist in DOM */
+.card-icon.students,
+.card-icon.teachers,
+.card-icon.grades,
+.card-icon.subjects,
+.card-icon.attendance,
+.card-icon.users,
+.card-icon.library,
+.card-icon.labs {
+    background: #ede9fe;
+    color: var(--primary-color);
+    border-color: rgba(72, 52, 212, 0.15);
+}
+
+.btn-report.students,
+.btn-report.teachers,
+.btn-report.grades,
+.btn-report.subjects,
+.btn-report.attendance,
+.btn-report.users,
+.btn-report.library,
+.btn-report.labs {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
+.btn-report.students:hover,
+.btn-report.teachers:hover,
+.btn-report.grades:hover,
+.btn-report.subjects:hover,
+.btn-report.attendance:hover,
+.btn-report.users:hover,
+.btn-report.library:hover,
+.btn-report.labs:hover {
+    background: var(--primary-color);
+    color: white;
 }
