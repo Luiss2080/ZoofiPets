@@ -11,7 +11,12 @@ class CategoriaProductoFactory extends Factory
     public function definition(): array
     {
         return [
-            'nombre' => $this->faker->unique()->word(),
+            'nombre' => $this->faker->unique()->randomElement([
+                'Alimentos Secos', 'Alimentos Húmedos', 'Juguetes', 'Correas y Collares', 
+                'Medicamentos', 'Higiene y Aseo', 'Snacks y Premios', 'Camas y Mantas', 
+                'Ropa y Accesorios', 'Transportadoras', 'Rascadores', 'Arenas',
+                'Vitaminas y Suplementos', 'Antipulgas', 'Comederos', 'Bebederos'
+            ]),
             'descripcion' => $this->faker->sentence(),
             'activa' => true,
         ];
