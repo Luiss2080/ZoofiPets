@@ -10,94 +10,39 @@
 <div class="create-container">
     <!-- Header -->
     <div class="panel-header">
-        <div class="header-title">
-            <div class="icon-wrapper">
-                <i class="fas fa-user-plus"></i>
+<x-admin>
+    @section('styles')
+        <link rel="stylesheet" href="{{ asset('css/admin/clientes/create.css') }}">
+    @endsection
+
+    <div class="create-container">
+        <div class="panel-header">
+            <div class="header-title">
+                <div class="icon-wrapper">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <div class="title-content">
+                    <h2>Registrar Nuevo Cliente</h2>
+                    <span class="subtitle">Ingrese los datos para dar de alta un nuevo cliente</span>
+                </div>
             </div>
-            <div class="title-content">
-                <h2>Nuevo Docente</h2>
-                <p class="subtitle">Complete el formulario para registrar un nuevo docente</p>
-            </div>
-        </div>
-        <div class="header-actions">
-            <a href="{{ route('admin.docentes.index') }}" class="btn-secondary-action">
-                <i class="fas fa-arrow-left"></i>
-                <span>Volver a la lista</span>
+            <a href="{{ route('recepcionista.clientes.index') }}" class="btn-secondary-action">
+                <i class="fas fa-arrow-left"></i> Volver a la lista
             </a>
         </div>
-    </div>
 
-    <!-- Main Form -->
-    <form action="{{ route('admin.docentes.store') }}" method="POST" enctype="multipart/form-data" id="createDocenteForm">
-        @csrf
         <div class="form-content">
-            <!-- Left Column: Profile Image & Help -->
+            <!-- Left Info Panel -->
             <div class="left-column">
                 <div class="form-card profile-card">
                     <div class="card-header">
-                        <h3>
-                            <i class="fas fa-camera"></i>
-                            Foto de Perfil
-                        </h3>
-                        <p>Suba una foto profesional</p>
+                        <h3><i class="fas fa-user-circle"></i></h3>
+                        <p>Nuevo Perfil</p>
                     </div>
-                    
                     <div class="profile-upload-section">
-                        <div class="avatar-preview" id="avatarPreview">
+                        <div class="avatar-preview">
                             <div class="avatar-placeholder">
-                                <i class="fas fa-user-circle"></i>
-                                <span>Sin imagen</span>
-                            </div>
-                        </div>
-                        
-                        <div class="file-input-wrapper">
-                            <div class="btn-upload">
-                                <i class="fas fa-upload"></i>
-                                <span>Seleccionar Foto</span>
-                            </div>
-                            <input type="file" name="avatar" id="avatar" accept="image/*">
-                        </div>
-                        <p class="upload-hint">Formatos: JPG, PNG. Máx: 2MB</p>
-                    </div>
-                </div>
-
-                <!-- Help Section -->
-                <div class="help-section-container">
-                    <div class="help-cards-list">
-                        <div class="help-card-item">
-                            <div class="help-icon">
                                 <i class="fas fa-camera"></i>
-                            </div>
-                            <div class="help-text">
-                                <h4>Foto de Perfil</h4>
-                                <p>Use fondo neutro y ropa formal para mejor presentación.</p>
-                            </div>
-                            <i class="fas fa-chevron-right help-action-icon"></i>
-                        </div>
-                        <div class="help-card-item">
-                            <div class="help-icon">
-                                <i class="fas fa-file-contract"></i>
-                            </div>
-                            <div class="help-text">
-                                <h4>Contratos</h4>
-                                <p>Verifique la carga horaria antes de guardar.</p>
-                            </div>
-                            <i class="fas fa-chevron-right help-action-icon"></i>
-                        </div>
-                        <div class="help-card-item">
-                            <div class="help-icon">
-                                <i class="fas fa-check-double"></i>
-                            </div>
-                            <div class="help-text">
-                                <h4>Validación</h4>
-                                <p>Los campos marcados con (*) son obligatorios.</p>
-                            </div>
-                            <i class="fas fa-chevron-right help-action-icon"></i>
-                        </div>
-                        <div class="help-card-item">
-                            <div class="help-icon">
-                                <i class="fas fa-file-pdf"></i>
-                            </div>
                             <div class="help-text">
                                 <h4>Documentación</h4>
                                 <p>Tenga a mano los títulos escaneados.</p>

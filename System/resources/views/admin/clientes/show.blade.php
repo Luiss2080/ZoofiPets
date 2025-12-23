@@ -24,31 +24,98 @@
                 <i class="fas fa-arrow-left"></i>
                 <span>Volver a la lista</span>
             </a>
-        </div>
-    </div>
+        <x-admin>
+    @section('styles')
+        <link rel="stylesheet" href="{{ asset('css/admin/clientes/show.css') }}">
+    @endsection
 
-    <!-- Main Content -->
-    <div class="form-content">
-        <!-- Left Column: Profile -->
-        <div class="left-column">
-            <div class="form-card profile-card">
-                <div class="card-header">
-                    <h3>
-                        <i class="fas fa-camera"></i>
-                        Foto de Perfil
-                    </h3>
+    <div class="show-container">
+        <div class="panel-header">
+            <div class="header-title">
+                <div class="icon-wrapper">
+                    <i class="fas fa-id-card-alt"></i>
                 </div>
-                
-                <div class="profile-upload-section">
+                <div class="title-content">
+                    <h2>Detalles del Cliente</h2>
+                    <span class="subtitle">Visualización completa de la información del cliente</span>
+                </div>
+            </div>
+            <a href="{{ route('recepcionista.clientes.index') }}" class="btn-secondary-action">
+                <i class="fas fa-arrow-left"></i> Volver a la lista
+            </a>
+        </div>
+
+        <div class="form-content">
+            <!-- Left Panel (Avatar) -->
+            <div class="left-column">
+                <div class="form-card profile-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-user"></i></h3>
+                        <p>Cliente</p>
+                    </div>
                     <div class="avatar-preview">
-                        @if($docente->avatar)
-                            <img src="{{ asset('storage/' . $docente->avatar) }}" alt="Foto de Perfil">
-                        @else
-                            <div class="avatar-placeholder">
-                                <i class="fas fa-user-circle"></i>
-                                <span>Sin imagen</span>
+                        <div class="avatar-placeholder">
+                            {{ substr($cliente->nombre, 0, 1) }}{{ substr($cliente->apellido, 0, 1) }}
+                        </div>
+                    </div>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <span class="info-label">REGISTRADO</span>
+                            <span class="info-value">{{ $cliente->created_at->format('d/m/Y') }}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">ESTADO</span>
+                            <span class="info-value" style="color: #4ade80;">ACTIVO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel (Data) -->
+            <div class="right-column">
+                <div class="form-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-info-circle"></i> Información Personal</h3>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group span-2">
+                            <label>Cédula / DNI</label>
+                            <div class="form-input" readonly>{{ $cliente->cedula }}</div>
+                        </div>
+
+                        <div class="form-group span-2">
+                            <label>Email</label>
+                            <div class="form-input" readonly>{{ $cliente->email ?? 'N/A' }}</div>
+                        </div>
+
+                        <div class="form-group span-2">
+                            <label>Nombre</label>
+                            <div class="form-input" readonly>{{ $cliente->nombre }}</div>
+                        </div>
+
+                        <div class="form-group span-2">
+                            <label>Apellido</label>
+                            <div class="form-input" readonly>{{ $cliente->apellido }}</div>
+                        </div>
+
+                        <div class="section-divider">
+                            <span class="section-title"><i class="fas fa-address-book"></i> Contacto y Otros</span>
+                        </div>
+
+                        <div class="form-group span-2">
+                            <label>Teléfono</label>
+                            <div class="form-input" readonly>{{ $cliente->telefono ?? 'N/A' }}</div>
+                        </div>
+
+                        <div class="form-group span-2">
+                            <label>Género</label>
+                            <div class="form-input" readonly>
+                                @if($cliente->genero == 'M') Masculino
+                                @elseif($cliente->genero == 'F') Femenino
+                                @else Otro
+                                @endif
                             </div>
-                        @endif
                     </div>
                 </div>
 

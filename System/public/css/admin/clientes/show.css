@@ -1,16 +1,15 @@
 /* ============================================
-   DOCENTES SHOW - DASHBOARD STYLE
+   CLIENTES SHOW - DASHBOARD STYLE
    ============================================ */
 
-/* Reuse logic from edit.css but scoped to show-container if preferred, 
-   or keep congruent structure. We will use .show-container */
+/* Reuse logic from edit.css but scoped to show-container */
 
 .show-container {
-    --primary-red: #e11d48;
-    --primary-red-hover: #be123c;
-    --border-color: rgba(225, 29, 72, 0.5);
+    --primary-color: #4834d4;
+    --primary-color-hover: #686de0;
+    --border-color: rgba(72, 52, 212, 0.5);
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-    --card-hover-shadow: 0 10px 15px -3px rgba(225, 29, 72, 0.15);
+    --card-hover-shadow: 0 10px 15px -3px rgba(72, 52, 212, 0.15);
 
     display: flex;
     flex-direction: column;
@@ -39,14 +38,15 @@
 .icon-wrapper {
     width: 52px;
     height: 52px;
-    background: var(--primary-red);
-    color: white;
+    background: rgba(72, 52, 212, 0.1);
+    color: var(--primary-color);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    box-shadow: 0 4px 6px -1px rgba(225, 29, 72, 0.3);
+    box-shadow: 0 4px 6px -1px rgba(72, 52, 212, 0.2);
+    border: 1px solid rgba(72, 52, 212, 0.2);
 }
 
 .title-content h2 {
@@ -64,7 +64,7 @@
 }
 
 .btn-secondary-action {
-    background: var(--primary-red);
+    background: var(--primary-color);
     color: #ffffff;
     padding: 0.875rem 1.75rem;
     border-radius: 14px;
@@ -75,14 +75,14 @@
     align-items: center;
     gap: 0.75rem;
     border: none;
-    box-shadow: 0 4px 10px rgba(225, 29, 72, 0.3);
+    box-shadow: 0 4px 10px rgba(72, 52, 212, 0.3);
 }
 
 .btn-secondary-action:hover {
-    background: var(--primary-red-hover);
+    background: var(--primary-color-hover);
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(225, 29, 72, 0.4);
+    box-shadow: 0 8px 20px rgba(72, 52, 212, 0.4);
 }
 
 /* Content Layout */
@@ -110,7 +110,7 @@
     background: var(--bg-surface);
     border-radius: 20px;
     padding: 1.5rem;
-    border: 1px solid rgba(225, 29, 72, 0.6);
+    border: 1px solid rgba(72, 52, 212, 0.6);
     box-shadow: var(--card-shadow);
     width: 100%;
     box-sizing: border-box;
@@ -135,24 +135,25 @@
 .card-header h3 i {
     width: 48px;
     height: 48px;
-    background: var(--primary-red);
-    color: white;
+    background: rgba(72, 52, 212, 0.1);
+    color: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 14px;
     font-size: 1.5rem;
-    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.4);
+    box-shadow: 0 4px 12px rgba(72, 52, 212, 0.2);
+    border: 1px solid rgba(72, 52, 212, 0.2);
 }
 
 .card-header p {
     margin: 0;
-    color: var(--primary-red);
+    color: var(--primary-color);
     font-size: 0.95rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    text-shadow: 0 0 10px rgba(225, 29, 72, 0.4);
+    text-shadow: 0 0 10px rgba(72, 52, 212, 0.4);
 }
 
 /* Profile Card Specifics */
@@ -168,6 +169,8 @@
     background: transparent;
     padding: 0;
     font-size: 1.25rem;
+    border: none;
+    box-shadow: none;
 }
 
 .profile-card .card-header p {
@@ -222,7 +225,7 @@
     padding: 0.75rem;
     background: #000000;
     border-radius: 12px;
-    border: 1px solid rgba(225, 29, 72, 0.2);
+    border: 1px solid rgba(72, 52, 212, 0.2);
 }
 
 .info-label {
@@ -302,7 +305,7 @@
 /* Readonly visual cue */
 .form-input:read-only {
     background: #0a0a0a;
-    border-color: rgba(225, 29, 72, 0.1);
+    border-color: rgba(72, 52, 212, 0.1);
     color: #d1d5db;
 }
 
@@ -319,21 +322,21 @@
 .btn-edit-action {
     padding: 0.875rem 2rem;
     border-radius: 12px;
-    background: var(--primary-red);
+    background: var(--primary-color);
     color: white;
     text-decoration: none;
     font-weight: 700;
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    box-shadow: 0 4px 10px rgba(225, 29, 72, 0.25);
+    box-shadow: 0 4px 10px rgba(72, 52, 212, 0.25);
     transition: all 0.3s ease;
 }
 
 .btn-edit-action:hover {
-    background: var(--primary-red-hover);
+    background: var(--primary-color-hover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(225, 29, 72, 0.35);
+    box-shadow: 0 8px 20px rgba(72, 52, 212, 0.35);
 }
 
 /* Responsive */
