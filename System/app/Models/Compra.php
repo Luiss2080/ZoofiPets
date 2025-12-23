@@ -11,20 +11,7 @@ class Compra extends Model
 
     protected $table = 'compras';
 
-    protected $fillable = [
-        'numero_factura',
-        'proveedor_id',
-        'empleado_id',
-        'fecha_compra',
-        'fecha_recepcion',
-        'subtotal',
-        'impuesto',
-        'descuento',
-        'total',
-        'estado',
-        'tipo_pago',
-        'observaciones'
-    ];
+    protected $guarded = [];
 
     protected $casts = [
         'fecha_compra' => 'date',

@@ -11,13 +11,7 @@ class DetalleCompra extends Model
 
     protected $table = 'detalle_compras';
 
-    protected $fillable = [
-        'compra_id',
-        'producto_id',
-        'cantidad',
-        'precio_unitario',
-        'subtotal'
-    ];
+    protected $guarded = [];
 
     public function compra()
     {
