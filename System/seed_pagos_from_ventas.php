@@ -25,8 +25,7 @@ try {
              \App\Models\Pago::factory()->create([
                 'venta_id' => $venta->id,
                 'metodo_pago_id' => \App\Models\MetodoPago::inRandomOrder()->first()?->id ?? \App\Models\MetodoPago::factory(),
-                'monto' => $venta->total,
-                'fecha_pago' => $venta->fecha_venta // Align dates
+                'monto' => $venta->total
             ]);
             echo ".";
         } catch (\Throwable $e2) {
