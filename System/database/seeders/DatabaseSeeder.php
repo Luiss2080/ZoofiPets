@@ -19,6 +19,13 @@ class DatabaseSeeder extends Seeder
         try {
             \Illuminate\Support\Facades\Log::info("Seeding Started...");
             
+            // Create Admin User
+            \App\Models\User::factory()->create([
+                'name' => 'Admin Sistema',
+                'email' => 'admin@zoofipets.com',
+                'password' => \Illuminate\Support\Facades\Hash::make('admin123'),
+            ]);
+
             // Master/Client
             \App\Models\Cargo::factory(5)->create();
             \App\Models\MetodoPago::factory(5)->create();
