@@ -42,13 +42,24 @@ class DatabaseSeeder extends Seeder
             \App\Models\Devolucion::factory(20)->create();
             \App\Models\MovimientoInventario::factory(20)->create();
 
-            \Illuminate\Support\Facades\Log::info("Seeding Veterinario...");
+            \Illuminate\Support\Facades\Log::info("Seeding Veterinario: ServicioMedico...");
             ServicioMedico::factory(20)->create();
+
+            \Illuminate\Support\Facades\Log::info("Seeding Veterinario: CitaMedica...");
             \App\Models\CitaMedica::factory(20)->create(); 
+
+            \Illuminate\Support\Facades\Log::info("Seeding Veterinario: RegistroVacuna...");
             \App\Models\RegistroVacuna::factory(20)->create();
+
+            \Illuminate\Support\Facades\Log::info("Seeding Veterinario: HistorialMedico...");
             \App\Models\HistorialMedico::factory(20)->create();
+
+            \Illuminate\Support\Facades\Log::info("Seeding Veterinario: Hospitalizacion...");
             \App\Models\Hospitalizacion::factory(20)->create();
+
+            \Illuminate\Support\Facades\Log::info("Seeding Veterinario: Laboratorio...");
             \App\Models\Laboratorio::factory(20)->create();
+            
             \Illuminate\Support\Facades\Log::info("Seeding Finished.");
         } catch (\Throwable $e) {
             \Illuminate\Support\Facades\Log::error("FAILEDSEED: " . $e->getMessage());
