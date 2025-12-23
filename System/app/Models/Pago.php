@@ -12,12 +12,8 @@ class Pago extends Model
     protected $table = 'pagos';
 
     protected $fillable = [
-        'venta_id',
-        'metodo_pago_id',
-        'monto',
-        'referencia',
-        'comision',
-        'observaciones'
+        'venta_id', 'metodo_pago_id', 'monto', 'fecha_pago',
+        'referencia', 'comision', 'observaciones', 'tipo_comprobante'
     ];
 
     public function venta()
