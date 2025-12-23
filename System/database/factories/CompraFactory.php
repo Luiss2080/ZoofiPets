@@ -12,8 +12,8 @@ class CompraFactory extends Factory
             'numero_factura' => $this->faker->unique()->bothify('FC-#####'),
             'proveedor_id' => \App\Models\Proveedor::factory(),
             'empleado_id' => \App\Models\Empleado::factory(),
-            'fecha_compra' => $this->faker->dateTimeBetween('-1 year', 'now'),
-            'fecha_recepcion' => $this->faker->dateTimeBetween('-1 year', 'now'), // Simplified
+            'fecha_compra' => $this->faker->dateTimeBetween('-1 year', '-1 month'),
+            'fecha_recepcion' => $this->faker->dateTimeBetween('-1 month', 'now'),
             'subtotal' => 0, // Calculated later
             'impuesto' => 0,
             'descuento' => 0,
