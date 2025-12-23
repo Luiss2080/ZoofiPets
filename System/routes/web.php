@@ -139,6 +139,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/perfil/seguridad', [App\Http\Controllers\ProfileController::class, 'security'])->name('perfil.security');
     Route::put('/perfil/password', [App\Http\Controllers\ProfileController::class, 'updatePassword'])->name('perfil.update-password');
     Route::get('/configuraciones', function() { return view('configuraciones.index'); })->name('configuraciones.index');
-    Route::get('/reportes', function() { return view('reportes.index'); })->name('reportes.index');
+    Route::get('/reportes', function() { return view('admin.reportes.index'); })->name('reportes.index');
+    Route::get('/reportes/estudiantes', function() { return view('admin.reportes.index'); })->name('reportes.estudiantes');
+    Route::get('/reportes/docentes', function() { return view('admin.reportes.index'); })->name('reportes.docentes');
+    Route::get('/reportes/calificaciones', function() { return view('admin.reportes.index'); })->name('reportes.calificaciones');
+    Route::get('/reportes/materias', function() { return view('admin.reportes.index'); })->name('reportes.materias');
     Route::get('clientes/{id}/mascotas', [Admin\ClienteController::class, 'getMascotas'])->name('clientes.mascotas');
 });
