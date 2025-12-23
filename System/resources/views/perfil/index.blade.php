@@ -63,28 +63,12 @@
                 <input type="file" id="avatarInput" hidden accept="image/*">
             </div>
             
-            <h2 class="profile-name">{{ $user->name }} {{ $user->apellido }}</h2>
-            <span class="profile-role">{{ $user->profesion ?? $user->rol ?? 'Usuario' }}</span>
-            <p style="color: var(--text-muted); margin-bottom: 0.5rem;">{{ $user->email }}</p>
+            <h2 class="profile-name">Sistema de administración</h2>
+            <span class="profile-role" style="background: var(--primary-color);">{{ strtoupper($user->rol ?? 'USUARIO') }}</span>
+            
+            <p style="color: var(--text-muted); margin-bottom: 2rem; margin-top: 1rem;">{{ $user->email }}</p>
 
-            <!-- Redes Sociales -->
-            <div class="social-links" style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
-                @if($user->facebook)
-                    <a href="https://facebook.com/{{ $user->facebook }}" target="_blank" style="color: #1877f2; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
-                @endif
-                @if($user->twitter)
-                    <a href="https://twitter.com/{{ $user->twitter }}" target="_blank" style="color: #1da1f2; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
-                @endif
-                @if($user->linkedin)
-                    <a href="https://linkedin.com/in/{{ $user->linkedin }}" target="_blank" style="color: #0077b5; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
-                @endif
-                @if($user->instagram)
-                    <a href="https://instagram.com/{{ $user->instagram }}" target="_blank" style="color: #c32aa3; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
-                @endif
-                @if($user->website)
-                    <a href="{{ $user->website }}" target="_blank" style="color: var(--text-muted); font-size: 1.2rem;"><i class="fas fa-globe"></i></a>
-                @endif
-            </div>
+            <div style="border-top: 1px solid var(--border-color); width: 100%; margin-bottom: 1.5rem;"></div>
 
             <div class="profile-stats">
                 <div class="stat-item">
@@ -92,7 +76,13 @@
                     <span class="stat-label">Miembro Desde</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-value text-success">{{ $user->estado ?? 'Activo' }}</span>
+                    <span class="stat-value text-success" style="color: var(--text-dark);">
+                        @if(($user->estado ?? 'Activo') == 'Activo') 
+                            Activo 
+                        @else 
+                            Inactivo 
+                        @endif
+                    </span>
                     <span class="stat-label">Estado</span>
                 </div>
             </div>
