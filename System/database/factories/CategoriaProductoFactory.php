@@ -13,7 +13,7 @@ class CategoriaProductoFactory extends Factory
         return [
             'nombre' => $this->faker->unique()->word(),
             'descripcion' => $this->faker->sentence(),
-            'activo' => true,
+            'activa' => true,
         ];
     }
 }
