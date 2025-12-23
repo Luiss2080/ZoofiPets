@@ -118,31 +118,31 @@
 
                 <div class="info-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
                     <div class="info-item">
-                        <label style="display:block; color:var(--text-muted); font-size:0.8rem; margin-bottom:0.2rem;">Profesión</label>
+                        <label style="display:block; color:var(--text-muted); font-size:0.8rem; margin-bottom:0.2rem;"><i class="fas fa-briefcase" style="color:var(--primary-color); margin-right:5px;"></i> Profesión</label>
                         <span style="font-weight:600; font-size:1.1rem; color:var(--text-dark);">{{ $user->profesion ?? 'No registrado' }}</span>
                     </div>
                     <div class="info-item">
-                        <label style="display:block; color:var(--text-muted); font-size:0.8rem; margin-bottom:0.2rem;">Nivel de Estudios</label>
+                        <label style="display:block; color:var(--text-muted); font-size:0.8rem; margin-bottom:0.2rem;"><i class="fas fa-graduation-cap" style="color:var(--primary-color); margin-right:5px;"></i> Nivel de Estudios</label>
                         <span style="font-weight:600; font-size:1.1rem; color:var(--text-dark);">{{ $user->nivel_estudios ?? 'No registrado' }}</span>
                     </div>
                     <div class="info-item">
-                        <label style="display:block; color:var(--text-muted); font-size:0.8rem; margin-bottom:0.2rem;">CI / Documento</label>
+                        <label style="display:block; color:var(--text-muted); font-size:0.8rem; margin-bottom:0.2rem;"><i class="fas fa-id-card" style="color:var(--primary-color); margin-right:5px;"></i> CI / Documento</label>
                         <span style="font-weight:600; font-size:1.1rem; color:var(--text-dark);">{{ $user->ci ?? 'No registrado' }}</span>
                     </div>
                     <div class="info-item">
-                        <label style="display:block; color:var(--text-muted); font-size:0.8rem; margin-bottom:0.2rem;">Teléfono</label>
+                        <label style="display:block; color:var(--text-muted); font-size:0.8rem; margin-bottom:0.2rem;"><i class="fas fa-phone" style="color:var(--primary-color); margin-right:5px;"></i> Teléfono</label>
                         <span style="font-weight:600; font-size:1.1rem; color:var(--text-dark);">{{ $user->telefono ?? 'No registrado' }}</span>
                     </div>
                     <div class="info-item">
-                        <label style="display:block; color:var(--text-muted); font-size:0.8rem; margin-bottom:0.2rem;">Dirección</label>
+                        <label style="display:block; color:var(--text-muted); font-size:0.8rem; margin-bottom:0.2rem;"><i class="fas fa-map-marker-alt" style="color:var(--primary-color); margin-right:5px;"></i> Dirección</label>
                         <span style="font-weight:600; font-size:1.1rem; color:var(--text-dark);">{{ $user->direccion ?? 'No registrado' }}</span>
                     </div>
                     <div class="info-item">
-                        <label style="display:block; color:var(--text-muted); font-size:0.8rem; margin-bottom:0.2rem;">Fecha Nacimiento</label>
-                        <span style="font-weight:600; font-size:1.1rem; color:var(--text-dark);">{{ $user->fecha_nacimiento ?? 'No registrado' }}</span>
+                        <label style="display:block; color:var(--text-muted); font-size:0.8rem; margin-bottom:0.2rem;"><i class="fas fa-birthday-cake" style="color:var(--primary-color); margin-right:5px;"></i> Fecha Nacimiento</label>
+                        <span style="font-weight:600; font-size:1.1rem; color:var(--text-dark);">{{ $user->fecha_nacimiento ? \Carbon\Carbon::parse($user->fecha_nacimiento)->format('d/m/Y') : 'No registrado' }}</span>
                     </div>
                     <div class="info-item full-width" style="grid-column: span 2;">
-                        <label style="display:block; color:var(--text-muted); font-size:0.8rem; margin-bottom:0.2rem;">Biografía</label>
+                        <label style="display:block; color:var(--text-muted); font-size:0.8rem; margin-bottom:0.2rem;"><i class="fas fa-user" style="color:var(--primary-color); margin-right:5px;"></i> Biografía</label>
                         <p style="color:var(--text-dark); line-height:1.6;">{{ $user->biografia ?? 'Sin biografía.' }}</p>
                     </div>
                 </div>
