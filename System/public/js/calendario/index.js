@@ -88,7 +88,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Next Month Days
         // Fill remaining grid to ensure 6 rows (total 42 cells typically used in calendars) or just square it off
         const totalCellsSoFar = firstDayIndex + lastDay;
-        const nextDays = 42 - totalCellsSoFar;
+        const totalRows = Math.ceil(totalCellsSoFar / 7);
+        const totalSlots = totalRows * 7;
+        const nextDays = totalSlots - totalCellsSoFar;
 
         for (let j = 1; j <= nextDays; j++) {
             days += `<div class="day-cell next-date"><span class="day-number">${j}</span></div>`;

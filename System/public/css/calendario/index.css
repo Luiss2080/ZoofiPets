@@ -380,6 +380,28 @@
     color: #ca8a04;
 }
 
+/* Dot Indicator */
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Dot Colors */
+.dot.academic {
+    background: #0ea5e9;
+}
+.dot.meeting {
+    background: #a855f7;
+}
+.dot.holiday {
+    background: #ef4444;
+}
+.dot.exam {
+    background: #eab308;
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
     .calendar-controls {
