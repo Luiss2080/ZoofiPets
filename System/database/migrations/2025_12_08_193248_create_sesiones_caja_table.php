@@ -24,10 +24,6 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        // Add the Foreign Key constraint to ventas table now that sesiones_caja exists
-        Schema::table('ventas', function (Blueprint $table) {
-            $table->foreign('sesion_caja_id')->references('id')->on('sesiones_caja')->onDelete('set null');
-        });
     }
 
     /**
