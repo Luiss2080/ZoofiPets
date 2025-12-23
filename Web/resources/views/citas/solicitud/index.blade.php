@@ -310,7 +310,7 @@
                         <div class="form-group checkbox-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" name="terms" required>
-                                <span>Acepto los <a href="#">términos y condiciones</a> y la <a href="#">política de privacidad</a></span>
+                                <span>Acepto los <a href="/legal-modal.blade.php" onclick="showLegalFromUrl('Términos y Condiciones', '/legal/terminos-condiciones'); return false;">términos y condiciones</a> y la <a href="../legal/politica-privacidad" onclick="showLegalFromUrl('Política de Privacidad', '/legal/politica-privacidad'); return false;">política de privacidad</a></span>
                             </label>
                         </div>
 
@@ -369,10 +369,10 @@
                     <div class="contact-help">
                         <h4>¿Necesitas ayuda?</h4>
                         <p>Contáctanos y te asistiremos</p>
-                        <a href="tel:+1234567890" class="help-btn">
+                        <a href="tel:+751xxxxxxxx" class="help-btn">
                             <i class="fas fa-phone"></i> Llamar Ahora
                         </a>
-                        <a href="https://wa.me/1234567890" class="help-btn whatsapp" target="_blank">
+                        <a href="https://wa.me/+75174940820" class="help-btn whatsapp" target="_blank">
                             <i class="fab fa-whatsapp"></i> WhatsApp
                         </a>
                     </div>

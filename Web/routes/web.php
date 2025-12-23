@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -109,4 +110,10 @@ Route::prefix('citas')->group(function () {
     Route::get('/confirmacion', function () {
         return view('citas.confirmacion.index');
     })->name('citas.confirmacion');
+     Route::get('/politica-privacidad', function () {
+        return view('legal.politica-privacidad');
+    })->name('legal.politica-privacidad');
+    Route::get('/terminos-condiciones', function () {
+        return view('legal.terminos-condiciones');
+    })->name('legal.terminos-condiciones');
 });
