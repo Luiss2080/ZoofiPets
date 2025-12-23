@@ -58,13 +58,25 @@ class ProfileController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email,' . auth()->id(),
-            // Add other validations if columns existed
+            'profesion' => 'nullable|string|max:255',
+            'nivel_estudios' => 'nullable|string|max:255',
+            'ci' => 'nullable|string|max:20',
+            'telefono' => 'nullable|string|max:20',
+            'direccion' => 'nullable|string|max:255',
+            'fecha_nacimiento' => 'nullable|date',
+            'biografia' => 'nullable|string|max:1000',
         ]);
 
         $user = auth()->user();
         $user->name = $request->name;
         $user->email = $request->email;
-        // Update password if needed? Not implemented in form properly (needs specialized logic)
+        $user->profesion = $request->profesion;
+        $user->nivel_estudios = $request->nivel_estudios;
+        $user->ci = $request->ci;
+        $user->telefono = $request->telefono;
+        $user->direccion = $request->direccion;
+        $user->fecha_nacimiento = $request->fecha_nacimiento;
+        $user->biografia = $request->biografia;
         $user->save();
 
         return back()->with('success', 'Perfil actualizado correctamente.');
