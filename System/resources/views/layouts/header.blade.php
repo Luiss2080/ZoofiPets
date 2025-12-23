@@ -256,7 +256,7 @@ body.dark-mode .dropdown-header {
 .dropdown-header span {
     font-size: 0.9rem !important;
     font-weight: 900 !important;
-    color: var(--text-dark) !important; /* Light Default */
+    color: #1e293b !important; /* Slate 800 - Visible Dark */
     text-transform: uppercase !important;
     letter-spacing: 1px !important;
 }
@@ -373,16 +373,24 @@ body.dark-mode .notif-item.unread {
 .notif-title {
     font-size: 0.95rem !important;
     font-weight: 700 !important;
-    color: #ffffff !important; /* White Text */
+    color: #334155 !important; /* Slate 700 - Visible Dark */
     margin: 0 !important;
     line-height: 1.3 !important;
 }
 
+body.dark-mode .notif-title {
+    color: #ffffff !important;
+}
+
 .notif-time {
     font-size: 0.75rem !important;
-    color: #a29bfe !important; /* Purple Text for time */
+    color: var(--primary-color) !important; /* Purple */
     font-weight: 600 !important;
     margin: 0 !important;
+}
+
+body.dark-mode .notif-time {
+    color: #a29bfe !important; /* Lighter Purple */
 }
 
 /* Dot hidden in new design (using left bar instead) or kept inside? */
