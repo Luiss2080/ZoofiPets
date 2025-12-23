@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             'Admin User' => fn() => \App\Models\User::factory()->create([
                 'name' => 'Admin Sistema',
                 'email' => 'admin@zoofipets.com',
-                'password' => \Illuminate\Support\Facades\Hash::make('admin123'),
+                'password' => 'admin123',
             ]),
             'Cargo' => fn() => \App\Models\Cargo::factory(5)->create(),
             'MetodoPago' => fn() => \App\Models\MetodoPago::factory(5)->create(),
