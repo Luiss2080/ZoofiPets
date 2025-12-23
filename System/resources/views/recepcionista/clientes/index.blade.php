@@ -38,12 +38,21 @@
             <div class="filter-group">
                 <div class="select-wrapper">
                     <i class="fas fa-list-ol"></i>
-                    <select id="entriesSelect">
+                    <select id="entriesSelect" onchange="window.location.href='?per_page='+this.value">
                         <option value="10" {{ request('per_page') == 10 ? 'selected' : '' }}>10 por pág.</option>
                         <option value="25" {{ request('per_page') == 25 ? 'selected' : '' }}>25 por pág.</option>
                         <option value="50" {{ request('per_page') == 50 ? 'selected' : '' }}>50 por pág.</option>
+                        <option value="100" {{ request('per_page') == 100 ? 'selected' : '' }}>100 por pág.</option>
                     </select>
                 </div>
+                
+                <button type="button" class="btn-secondary-action">
+                    <i class="fas fa-filter"></i> Filtros
+                </button>
+                
+                <button type="button" class="btn-secondary-action">
+                    <i class="fas fa-file-export"></i> Exportar
+                </button>
             </div>
         </div>
     </div>
@@ -107,7 +116,7 @@
                                     <a href="{{ route('recepcionista.clientes.edit', $cliente->id) }}" class="btn-icon edit" title="Editar">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <a href="{{ route('clientes.mascotas', $cliente->id) }}" class="btn-icon view" style="color: #a855f7; border-color: rgba(168,85,247,0.3); background: rgba(168,85,247,0.1);" title="Ver Mascotas">
+                                    <a href="{{ route('clientes.mascotas', $cliente->id) }}" class="btn-icon pets" title="Ver Mascotas">
                                         <i class="fas fa-paw"></i>
                                     </a>
                                     <form id="delete-form-{{ $cliente->id }}" action="{{ route('recepcionista.clientes.destroy', $cliente->id) }}" method="POST" class="delete-form" style="display:inline;">

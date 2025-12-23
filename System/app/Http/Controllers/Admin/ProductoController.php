@@ -10,15 +10,25 @@ use App\Models\CategoriaProducto; // Assuming this exists or using string if not
 
 class ProductoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $productos = Producto::paginate(10);
+        $search = $request->input('search');
+        $perPage = $request->input('per_page', 10);
+
+        $productos = Producto::query()
+            ->when($search, function ($query, $search) {
+                $query->where('nombre', 'like', "%{$search}%")
+                      ->orWhere('codigo_interno', 'like', "%{$search}%");
+            })
+            ->orderBy('nombre', 'asc')
+            ->paginate($perPage);
+
         return view('vendedor.productos.index', compact('productos'));
     }
 
     public function create()
     {
-        // $categorias = CategoriaProducto::all(); // Comentar si no existe aun el modelo
+        // $categorias = CategoriaProducto::all(); 
         return view('vendedor.productos.create');
     }
 
@@ -29,11 +39,11 @@ class ProductoController extends Controller
             'nombre' => 'required|string|max:150',
             'precio_venta' => 'required|numeric|min:0',
             'stock_actual' => 'required|integer|min:0',
-            'categoria_id' => 'required|integer', // Simplificado por ahora
+            'categoria_id' => 'required|integer', 
         ]);
 
         Producto::create($validated);
-        return redirect()->route('admin.productos.index')->with('success', 'Producto creado.');
+        return redirect()->route('vendedor.productos.index')->with('success', 'Producto creado.');
     }
 
     public function edit(string $id)
@@ -54,12 +64,12 @@ class ProductoController extends Controller
         ]);
         
         $producto->update($validated);
-        return redirect()->route('admin.productos.index')->with('success', 'Producto actualizado.');
+        return redirect()->route('vendedor.productos.index')->with('success', 'Producto actualizado.');
     }
 
     public function destroy(string $id)
     {
         Producto::findOrFail($id)->delete();
-        return redirect()->route('admin.productos.index')->with('success', 'Producto eliminado.');
+        return redirect()->route('vendedor.productos.index')->with('success', 'Producto eliminado.');
     }
 }

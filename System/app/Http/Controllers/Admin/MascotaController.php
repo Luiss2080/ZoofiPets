@@ -48,7 +48,7 @@ class MascotaController extends Controller
 
         Mascota::create($validated);
 
-        return redirect()->route('admin.mascotas.index')->with('success', 'Mascota registrada exitosamente.');
+        return redirect()->route('veterinario.mascotas.index')->with('success', 'Mascota registrada exitosamente.');
     }
 
     /**
@@ -83,7 +83,7 @@ class MascotaController extends Controller
 
         $mascota->update($validated);
 
-        return redirect()->route('admin.mascotas.index')->with('success', 'Mascota actualizada exitosamente.');
+        return redirect()->route('veterinario.mascotas.index')->with('success', 'Mascota actualizada exitosamente.');
     }
 
     /**
@@ -93,6 +93,6 @@ class MascotaController extends Controller
     {
         $mascota = Mascota::findOrFail($id);
         $mascota->delete();
-        return redirect()->route('admin.mascotas.index')->with('success', 'Mascota eliminada exitosamente.');
+        return redirect()->route('veterinario.mascotas.index')->with('success', 'Mascota eliminada exitosamente.');
     }
 }

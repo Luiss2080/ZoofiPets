@@ -23,6 +23,9 @@ class ClienteFactory extends Factory
             'telefono' => $this->faker->phoneNumber(),
             'email' => $this->faker->unique()->safeEmail(),
             'direccion' => $this->faker->address(),
+            'profesion' => $this->faker->jobTitle(),
+            'referencia' => $this->faker->randomElement(['Redes Sociales', 'Amigo', 'Publicidad', 'Veterinario']),
+            'metodo_pago_preferido_id' => null,
             'activo' => true,
         ];
     }

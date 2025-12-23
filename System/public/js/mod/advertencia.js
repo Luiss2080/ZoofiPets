@@ -1,41 +1,25 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.getElementById("warningModal");
-    const closeBtn = document.getElementById("closeWarningBtn");
+/**
+ * WARNING MODAL LOGIC
+ * Standardized SweetAlert2 configuration for warning alerts.
+ */
 
-    if (!modal) return;
+window.showWarning = function (
+    title = "Advertencia",
+    text = "Algo requiere tu atención."
+) {
+    Swal.fire({
+        title: title,
+        text: text,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Entendido",
+        cancelButtonText: "Cerrar",
 
-    // Function to open modal
-    window.openWarningModal = function (title, message) {
-        if (title) document.getElementById("warningTitle").textContent = title;
-        if (message)
-            document.getElementById("warningMessage").textContent = message;
-
-        modal.classList.add("active");
-        document.body.style.overflow = "hidden";
-    };
-
-    // Function to close modal
-    window.closeWarningModal = function () {
-        modal.classList.remove("active");
-        document.body.style.overflow = "";
-    };
-
-    // Event Listeners
-    if (closeBtn) {
-        closeBtn.addEventListener("click", window.closeWarningModal);
-    }
-
-    // Close on click outside
-    modal.addEventListener("click", function (e) {
-        if (e.target === modal) {
-            window.closeWarningModal();
-        }
+        customClass: {
+            popup: "animated fadeInDown faster dashboard-modal-popup",
+            confirmButton: "swal2-confirm",
+            cancelButton: "swal2-cancel",
+        },
+        buttonsStyling: false,
     });
-
-    // Close on Escape key
-    document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" && modal.classList.contains("active")) {
-            window.closeWarningModal();
-        }
-    });
-});
+};

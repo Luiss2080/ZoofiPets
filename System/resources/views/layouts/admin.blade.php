@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', 'Dashboard Admin - ZoofiPets')</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+
+    
+    <!-- Precargar fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Meta tags -->
+    <meta name="description" content="Dashboard administrativo de Tech Home Books. Sistema de gestión educativa.">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    <!-- CSS del Dashboard -->
+    <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layouts/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layouts/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layouts/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layouts/loading.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layouts/notification.css') }}?v={{ time() }}">
+
+    @stack('styles')
+    @yield('css')
+</head>
+
+<body>
+    
+    <!-- Loading Screen -->
+    @include('layouts.loading')
+    
+    <!-- Layout del Dashboard -->
+    <div class="dashboard-layout">
+        
+        <!-- Sidebar Component -->
+        @include('layouts.sidebar')
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            
+            <!-- Header Component -->
+            @include('layouts.header', ['header_title' => $header_title ?? 'Dashboard Admin'])
+            
+            <!-- Contenido principal -->
+            <div class="dashboard-content">
+                
+                @yield('content')
+                
+            </div>
+            
+            <!-- Footer Component -->
+            @include('layouts.footer')
+            
+        </div>
+    </div>
+    
+    <!-- Configuración global -->
+    <script>
+        window.appConfig = {
+            csrfToken: '{{ csrf_token() }}',
+            baseUrl: '{{ url("/") }}',
+            user: {
+                id: '{{ session("user_id") }}',
+                name: '{{ session("user_name") }}',
+                role: '{{ session("user_role") }}'
+            },
+            chartData: @json($chartData ?? []),
+            roleDistribution: @json($roleDistribution ?? [])
+        };
+    </script>
+    
+    <!-- JavaScript del Dashboard -->
+    <script src="{{ asset('js/layouts/sidebar.js') }}"></script>
+    <script src="{{ asset('js/layouts/footer.js') }}"></script>
+    <script src="{{ asset('js/layouts/loading.js') }}"></script>
+    
+    <!-- JavaScript del Header -->
+    {{-- Script moved to header.blade.php --}}
+    
+    @stack('scripts')
+    @yield('js')
+    <script src="{{ asset('js/dashboard/admin.js') }}"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Additional initializations if needed
+        });
+    </script>
+</body>
+</html>

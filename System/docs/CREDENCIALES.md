@@ -11,7 +11,7 @@ A continuación se listan los usuarios predeterminados generados por los **Seede
 
 ## Personal Médico y Staff
 
-Todos estos usuarios tienen la contraseña genérica: `password123`
+Todos estos usuarios tienen la contraseña genérica: `password` (o `admin123` si se especifica)
 
 | Nombre                   | Rol / Profesión   | Email                            |
 | ------------------------ | ----------------- | -------------------------------- |

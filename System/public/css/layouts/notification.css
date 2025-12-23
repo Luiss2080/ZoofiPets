@@ -1,0 +1,181 @@
+/* ============================================
+   REFINED NOTIFICATIONS - AUTHENTIC PURPLE (FORCED)
+   ============================================ */
+
+.notification-dropdown {
+    width: 380px !important;
+    padding: 0 !important;
+    max-height: 500px !important;
+    overflow-y: auto !important;
+    border: 1px solid rgba(72, 52, 212, 0.15) !important;
+    /* Glass / White Background */
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+
+    /* Ensure visibility when active */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px) scale(0.95);
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: absolute !important;
+    top: calc(100% + 15px) !important;
+    right: 0 !important;
+    z-index: 100 !important;
+    display: block !important; /* Ensure it's not display:none unless hidden by opacity/visibility */
+}
+
+/* Visibility Control - Requires specific class 'show' */
+.notification-dropdown.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) scale(1) !important;
+    border-color: rgba(72, 52, 212, 0.2) !important;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(72, 52, 212, 0.1) !important;
+}
+
+body.dark-mode .notification-dropdown {
+    background: #000000 !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Header */
+.dropdown-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 1.25rem 1.5rem !important;
+    background: linear-gradient(
+        to right,
+        rgba(72, 52, 212, 0.05),
+        transparent
+    ) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+body.dark-mode .dropdown-header {
+    border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+    background: linear-gradient(
+        to right,
+        rgba(72, 52, 212, 0.2),
+        transparent
+    ) !important;
+}
+
+.dropdown-header span {
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    color: var(--header-text-dark) !important;
+}
+
+body.dark-mode .dropdown-header span {
+    color: #ffffff !important;
+}
+
+.mark-read {
+    font-size: 0.8rem;
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.mark-read:hover {
+    text-decoration: underline;
+    color: var(--primary-color-hover) !important;
+}
+
+/* Notification Items */
+.notif-item {
+    display: flex !important;
+    gap: 1rem !important;
+    padding: 1rem 1.5rem !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03) !important;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    align-items: flex-start !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.notif-item:last-child {
+    border-bottom: none !important;
+}
+
+.notif-item:hover {
+    background: rgba(72, 52, 212, 0.03) !important;
+}
+body.dark-mode .notif-item:hover {
+    background: rgba(255, 255, 255, 0.03) !important;
+}
+
+.notif-item.unread {
+    background: rgba(72, 52, 212, 0.05) !important;
+}
+body.dark-mode .notif-item.unread {
+    background: rgba(72, 52, 212, 0.15) !important;
+}
+
+/* Icon Box */
+.notif-icon {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 12px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.1rem !important;
+}
+
+/* Color Variants for Icons */
+.notif-icon.blue {
+    background: #e0f2fe !important;
+    color: #0ea5e9 !important;
+}
+.notif-icon.green {
+    background: #dcfce7 !important;
+    color: #22c55e !important;
+}
+.notif-icon.purple {
+    background: #f3e8ff !important;
+    color: #a855f7 !important;
+}
+.notif-icon.orange {
+    background: #ffedd5 !important;
+    color: #f97316 !important;
+}
+
+/* Item Content */
+.notif-content {
+    flex: 1 !important;
+}
+
+.notif-title {
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    color: var(--text-dark) !important;
+    margin: 0 0 0.25rem 0 !important;
+    line-height: 1.3 !important;
+}
+body.dark-mode .notif-title {
+    color: #f1f5f9 !important;
+}
+
+.notif-time {
+    font-size: 0.75rem !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+}
+
+/* Unread Dot Indicator inside Icon */
+.notif-icon .dot {
+    width: 8px !important;
+    height: 8px !important;
+    background: currentColor !important;
+    border-radius: 50% !important;
+    box-shadow: 0 0 10px currentColor !important;
+}

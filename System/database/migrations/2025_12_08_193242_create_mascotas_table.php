@@ -34,6 +34,10 @@ return new class extends Migration
             $table->string('numero_poliza', 50)->nullable();
             $table->enum('temperamento', ['Docil', 'Agresivo', 'Nervioso', 'Tranquilo', 'Jugueton'])->nullable();
             $table->text('notas_comportamiento')->nullable();
+            $table->string('dieta', 150)->nullable();
+            $table->enum('estado_reproductivo', ['Castrado', 'Intacto', 'Gestante'])->default('Intacto');
+            $table->enum('pelaje', ['Corto', 'Largo', 'Rizado', 'Sin Pelo', 'Doble Capa'])->nullable();
+            $table->enum('origen', ['Adopcion', 'Compra', 'Rescate', 'Nacimiento_Casa'])->nullable();
             $table->boolean('activo')->default(true);
             $table->timestamps();
             

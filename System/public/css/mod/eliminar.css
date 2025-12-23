@@ -1,0 +1,70 @@
+/* DELETE MODAL - SWEETALERT CUSTOM STYLES */
+
+.dashboard-modal-popup {
+    border-radius: 24px !important;
+    padding: 2rem !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4) !important;
+    font-family: inherit !important;
+    border: 1px solid rgba(72, 52, 212, 0.1) !important;
+    background: #ffffff !important;
+}
+
+.swal2-title {
+    font-size: 1.5rem !important;
+    font-weight: 800 !important;
+    color: #1f2937 !important; /* Dark text */
+}
+
+.swal2-html-container {
+    color: #6b7280 !important; /* Muted text */
+    font-size: 1rem !important;
+}
+
+.swal2-actions {
+    gap: 1rem !important;
+    margin-top: 1.5rem !important;
+}
+
+.swal2-confirm,
+.swal2-cancel {
+    box-shadow: none !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+}
+
+.swal2-confirm {
+    background: #4834d4 !important; /* System Purple */
+    color: white !important;
+}
+
+.swal2-confirm:hover {
+    background: #686de0 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(72, 52, 212, 0.3) !important;
+}
+
+.swal2-cancel {
+    background: #f3f4f6 !important;
+    color: #4b5563 !important;
+}
+
+.swal2-cancel:hover {
+    background: #e5e7eb !important;
+    color: #1f2937 !important;
+}
+
+.swal2-icon.swal2-warning {
+    border-color: #4834d4 !important;
+    color: #4834d4 !important;
+}
+
+.swal2-icon.swal2-success {
+    border-color: #22c55e !important;
+    color: #22c55e !important;
+}

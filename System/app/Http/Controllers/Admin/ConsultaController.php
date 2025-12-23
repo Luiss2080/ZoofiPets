@@ -23,7 +23,7 @@ class ConsultaController extends Controller
             ->orWhere('estado', 'Confirmada')
             ->with(['mascota', 'cliente'])
             ->orderBy('fecha_hora', 'asc')
-            ->get();
+            ->paginate(10);
 
         return view('veterinario.consultas.agenda', compact('citas'));
     }
@@ -47,7 +47,7 @@ class ConsultaController extends Controller
             }
         } else {
             // Caso sin cita (emergencia o directo) - No impementado en MVP simple
-            return redirect()->route('admin.consultas.index');
+            return redirect()->route('veterinario.consultas.index');
         }
 
         $historialprevio = $mascota->historiales()->orderBy('fecha_consulta', 'desc')->get();
@@ -82,7 +82,7 @@ class ConsultaController extends Controller
             CitaMedica::where('id', $request->cita_medica_id)->update(['estado' => 'Completada']);
         }
 
-        return redirect()->route('admin.consultas.index')->with('success', 'Consulta finalizada exitosamente.');
+        return redirect()->route('veterinario.consultas.index')->with('success', 'Consulta finalizada exitosamente.');
     }
 
     /**

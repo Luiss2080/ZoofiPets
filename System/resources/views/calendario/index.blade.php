@@ -3,7 +3,7 @@
 @section('title', 'Calendario Académico')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/admin/calendario/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/calendario/index.css') }}">
 @endsection
 
 @section('content')
@@ -187,6 +187,6 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('js/admin/calendario/index.js') }}"></script>
+    <script src="{{ asset('js/calendario/index.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection

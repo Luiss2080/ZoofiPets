@@ -144,67 +144,109 @@ body.dark-mode .icon-wrapper {
     opacity: 1;
 }
 
-/* Filter Group */
-.filter-group {
+/* =========================================
+   TOOLBAR ACTIONS (Formerly Filter Group)
+   Renamed to avoid conflict with filters.css
+   ========================================= */
+.toolbar-actions {
     display: flex;
     gap: 1rem;
     align-items: center;
 }
 
-.select-wrapper {
+/* =========================================
+   CUSTOM PURPLE DROPDOWN
+   ========================================= */
+.custom-select-wrapper {
     position: relative;
-    background: var(--bg-surface-secondary);
-    border: 1px solid var(--border-color);
+    user-select: none;
+    min-width: 160px;
+}
+
+.custom-select-trigger {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.25rem;
     border-radius: 12px;
-    transition: all 0.3s ease;
-}
-
-.select-wrapper:hover {
-    border-color: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-.select-wrapper i {
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-muted);
-    z-index: 1;
-    font-size: 0.9rem;
-}
-
-.select-wrapper select {
-    appearance: none;
-    background: transparent;
-    border: none;
-    padding: 0.75rem 2.5rem 0.75rem 2.5rem;
-    border-radius: 12px;
-    color: var(--text-dark); /* Dark text on light bg */
-    font-weight: 600;
     cursor: pointer;
+    font-weight: 600;
     font-size: 0.9rem;
-    min-width: 140px;
-}
-
-.select-wrapper::after {
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-muted);
-    pointer-events: none;
-    font-size: 0.8rem;
-}
-
-/* Secondary Action Button (Purple Outline/Ghost) */
-.btn-secondary-action {
-    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(72, 52, 212, 0.2);
     border: 1px solid var(--primary-color);
+}
+
+.custom-select-trigger:hover {
+    background: var(--primary-color-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(72, 52, 212, 0.3);
+}
+
+.custom-select-trigger i:first-child {
+    font-size: 0.95rem; /* Icon size */
+}
+
+.custom-select-trigger i:last-child {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.custom-select-wrapper.open .custom-select-trigger i:last-child {
+    transform: rotate(180deg);
+}
+
+.custom-options {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    border: 1px solid rgba(72, 52, 212, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-select-wrapper.open .custom-options {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.custom-option {
+    padding: 0.75rem 1.25rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+/* THE PURPLE "SYSTEM STYLE" HOVER/SELECTED */
+.custom-option:hover,
+.custom-option.selected {
+    background: rgba(72, 52, 212, 0.05); /* Very light purple bg */
     color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    padding-left: 1.5rem; /* Slight slide effect */
+    font-weight: 700;
+}
+
+/* Secondary Action Button - Solid Purple */
+.btn-secondary-action {
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: white;
     padding: 0.75rem 1.25rem;
     border-radius: 12px;
     cursor: pointer;
@@ -214,17 +256,16 @@ body.dark-mode .icon-wrapper {
     align-items: center;
     gap: 0.6rem;
     font-size: 0.9rem;
-    box-shadow: 0 4px 6px -1px rgba(72, 52, 212, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(72, 52, 212, 0.2);
 }
 
 .btn-secondary-action i {
-    color: var(--primary-color);
+    color: white;
     font-size: 1rem;
 }
 
 .btn-secondary-action:hover {
-    background: var(--primary-color);
-    color: white;
+    background: var(--primary-color-hover);
     transform: translateY(-2px);
     box-shadow: 0 8px 15px -3px rgba(72, 52, 212, 0.3);
 }
@@ -390,42 +431,54 @@ body.dark-mode .icon-wrapper {
 
 /* View Button - Blue */
 .btn-icon.view {
-    color: #3b82f6;
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.1);
-}
-.btn-icon.view:hover {
     background: #3b82f6;
     color: white;
-    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+    border-color: #3b82f6;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+.btn-icon.view:hover {
+    background: #2563eb;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
 }
 
 /* Edit Button - Orange */
 .btn-icon.edit {
-    color: #f97316;
-    background: rgba(249, 115, 22, 0.1);
-    border: 1px solid rgba(249, 115, 22, 0.1);
-}
-.btn-icon.edit:hover {
     background: #f97316;
     color: white;
-    box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+    border-color: #f97316;
+    box-shadow: 0 2px 4px rgba(249, 115, 22, 0.2);
+}
+.btn-icon.edit:hover {
+    background: #ea580c;
+    box-shadow: 0 4px 10px rgba(249, 115, 22, 0.4);
 }
 
 /* Delete Button - Red */
 .btn-icon.delete {
-    color: #ef4444;
-    background: rgba(239, 68, 68, 0.1);
-    border: 1px solid rgba(239, 68, 68, 0.1);
-}
-.btn-icon.delete:hover {
     background: #ef4444;
     color: white;
-    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+    border-color: #ef4444;
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+.btn-icon.delete:hover {
+    background: #dc2626;
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
 }
 
 /* Pagination */
 .pagination-wrapper {
     width: 100%;
     margin-top: 0;
+}
+
+/* Pets Button - Purple */
+.btn-icon.pets {
+    background: #a855f7;
+    color: white;
+    border-color: #a855f7;
+    box-shadow: 0 2px 4px rgba(168, 85, 247, 0.2);
+}
+.btn-icon.pets:hover {
+    background: #9333ea;
+    box-shadow: 0 4px 10px rgba(168, 85, 247, 0.4);
 }

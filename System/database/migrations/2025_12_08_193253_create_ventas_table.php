@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('numero_factura', 50)->unique();
             $table->foreignId('cliente_id')->nullable()->constrained('clientes')->onDelete('set null');
             $table->foreignId('empleado_id')->constrained('empleados')->onDelete('restrict'); // Vendedor/Cajero
+            $table->foreignId('sesion_caja_id')->nullable()->constrained('sesiones_caja')->onDelete('set null');
             $table->datetime('fecha_venta');
             $table->decimal('subtotal', 12, 2);
             $table->decimal('impuesto', 10, 2)->default(0);
@@ -31,6 +32,7 @@ return new class extends Migration
             $table->index(['cliente_id', 'fecha_venta']);
             $table->index(['empleado_id', 'fecha_venta']);
             $table->index(['estado', 'fecha_venta']);
+            $table->index(['sesion_caja_id']); // Index required for foreign key
         });
     }
 

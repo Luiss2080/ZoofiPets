@@ -2,15 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Venta extends Model
 {
-    protected $fillable = [
-        'numero_factura', 'cliente_id', 'empleado_id', 'fecha_venta',
-        'subtotal', 'impuesto', 'descuento', 'total', 'estado',
-        'metodo_pago', 'observaciones'
-    ];
+    use HasFactory;
+    protected $guarded = [];
 
     protected $casts = [
         'fecha_venta' => 'datetime',

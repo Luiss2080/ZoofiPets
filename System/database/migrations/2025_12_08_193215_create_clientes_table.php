@@ -27,6 +27,9 @@ return new class extends Migration
             $table->text('notas')->nullable();
             $table->boolean('acepta_promociones')->default(true);
             $table->decimal('credito_disponible', 10, 2)->default(0);
+            $table->string('profesion', 100)->nullable();
+            $table->string('referencia', 100)->nullable();
+            $table->unsignedBigInteger('metodo_pago_preferido_id')->nullable(); // Constraint added in metodos_pago migration
             $table->boolean('activo')->default(true);
             $table->timestamps();
             

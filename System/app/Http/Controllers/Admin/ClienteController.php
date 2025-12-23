@@ -6,16 +6,61 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Cliente;
+use App\Models\Mascota;
+use Illuminate\Support\Str;
 
 class ClienteController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $clientes = Cliente::paginate(10);
-        return view('recepcionista.clientes.index', compact('clientes'));
+        $query = Cliente::query();
+
+        // Search Filter (Nombre, Apellido, Cedula, Email)
+        if ($request->has('search') && $request->search != '') {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('nombre', 'LIKE', "%{$search}%")
+                  ->orWhere('apellido', 'LIKE', "%{$search}%")
+                  ->orWhere('cedula', 'LIKE', "%{$search}%")
+                  ->orWhere('email', 'LIKE', "%{$search}%");
+            });
+        }
+
+        // Specific Filters
+        if ($request->has('cedula') && $request->cedula != '') {
+             $query->where('cedula', 'LIKE', "%{$request->cedula}%");
+        }
+
+        if ($request->has('telefono') && $request->telefono != '') {
+             $query->where('telefono', 'LIKE', "%{$request->telefono}%");
+        }
+
+        if ($request->has('direccion') && $request->direccion != '') {
+             $query->where('direccion', 'LIKE', "%{$request->direccion}%");
+        }
+        
+        // Sorting
+        $sortField = $request->get('sort', 'created_at');
+        $sortDirection = $request->get('direction', 'desc');
+        $query->orderBy($sortField, $sortDirection);
+
+        // Pagination
+        $perPage = $request->get('per_page', 10);
+        $clientes = $query->paginate($perPage);
+
+        // AJAX Response (JSON for Client-Side Rendering)
+        if ($request->ajax()) {
+            return response()->json([
+                'success' => true,
+                'data' => $clientes->items(),
+                'links' => (string) $clientes->appends($request->query())->links('pages.clientes')
+            ]);
+        }
+
+        return view('admin.clientes.index', compact('clientes'));
     }
 
     /**
@@ -23,7 +68,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('recepcionista.clientes.create');
+        return view('admin.clientes.create');
     }
 
     /**
@@ -52,19 +97,17 @@ class ClienteController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+        return view('admin.clientes.show', compact('cliente'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
         $cliente = Cliente::findOrFail($id);
-        return view('recepcionista.clientes.edit', compact('cliente'));
+        return view('admin.clientes.edit', compact('cliente'));
     }
 
     /**

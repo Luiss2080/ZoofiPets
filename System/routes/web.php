@@ -53,30 +53,30 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Módulos de Administración (Usuarios, Roles, Permisos)
-    Route::get('/usuarios', function() { return view('admin.usuarios.index'); })->name('usuarios.index');
-    Route::get('/roles', function() { return 'Modulo Roles'; })->name('roles.index');
-    Route::get('/permisos', function() { return 'Modulo Permisos'; })->name('permisos.index');
+    Route::get('/usuarios', [App\Http\Controllers\UsuarioController::class, 'index'])->name('usuarios.index');
+    Route::get('/roles', [App\Http\Controllers\RoleController::class, 'index'])->name('roles.index');
+    Route::get('/permisos', [App\Http\Controllers\PermisoController::class, 'index'])->name('permisos.index');
 
     // Recursos Humanos
-    Route::get('/empleados', function() { return 'Modulo Empleados'; })->name('empleados.index');
-    Route::get('/cargos', function() { return 'Modulo Cargos'; })->name('cargos.index');
-    Route::get('/horarios', function() { return 'Modulo Horarios'; })->name('horarios.index');
+    Route::get('/empleados', [App\Http\Controllers\EmpleadoController::class, 'index'])->name('empleados.index');
+    Route::get('/cargos', [App\Http\Controllers\CargoController::class, 'index'])->name('cargos.index');
+    Route::get('/horarios', [App\Http\Controllers\HorarioController::class, 'index'])->name('horarios.index');
 
     // Compras y Proveedores
-    Route::get('/proveedores', function() { return 'Modulo Proveedores'; })->name('proveedores.index');
-    Route::get('/compras', function() { return 'Modulo Compras'; })->name('compras.index');
+    Route::get('/proveedores', [App\Http\Controllers\ProveedorController::class, 'index'])->name('proveedores.index');
+    Route::get('/compras', [App\Http\Controllers\CompraController::class, 'index'])->name('compras.index');
 
     // Gestión Veterinaria Avanzada
-    Route::get('/servicios', function() { return 'Modulo Servicios Médicos'; })->name('servicios.index');
+    Route::get('/servicios', [App\Http\Controllers\ServicioController::class, 'index'])->name('servicios.index');
 
     // Gestión Tienda Avanzada
-    Route::get('/categorias', function() { return 'Modulo Categorías'; })->name('categorias.index');
+    Route::get('/categorias', [App\Http\Controllers\CategoriaController::class, 'index'])->name('categorias.index');
     Route::get('/promociones', function() { return 'Modulo Promociones'; })->name('promociones.index');
-    Route::get('/movimientos', function() { return 'Modulo Movimientos de Stock'; })->name('movimientos.index');
+    Route::get('/movimientos', [App\Http\Controllers\MovimientoController::class, 'index'])->name('movimientos.index');
     Route::get('/alertas', function() { return 'Modulo Alertas de Stock'; })->name('alertas.index');
     
     // Configuración Financiera
-    Route::get('/metodos-pago', function() { return 'Modulo Métodos de Pago'; })->name('metodos_pago.index');
+    Route::get('/metodos-pago', [App\Http\Controllers\MetodoPagoController::class, 'index'])->name('metodos_pago.index');
     
     // Rutas legacy/placeholders para evitar 404s en enlaces antiguos si quedan
     Route::get('/docentes', function() { return 'Modulo Docentes'; })->name('docentes.index');
@@ -89,8 +89,15 @@ Route::middleware(['auth'])->prefix('recepcion')->name('recepcionista.')->group(
     Route::resource('citas', Admin\CitaMedicaController::class);
     // Clientes y Mascotas (Gestión desde recepción)
     Route::resource('clientes', Admin\ClienteController::class);
-    // Pagos (Placeholder o vinculado a Ventas)
-    Route::get('/pagos', function() { return 'Modulo Pagos'; })->name('pagos.index');
+    // Pagos
+    Route::resource('pagos', Admin\PagoController::class)->names([
+        'index' => 'pagos.index',
+        'create' => 'pagos.create',
+        'store' => 'pagos.store',
+        'edit' => 'pagos.edit',
+        'update' => 'pagos.update',
+        'destroy' => 'pagos.destroy',
+    ]);
 });
 
 // Modulo Veterinario
@@ -100,9 +107,16 @@ Route::middleware(['auth'])->prefix('veterinaria')->name('veterinario.')->group(
     // Pacientes (Mascotas)
     Route::resource('mascotas', Admin\MascotaController::class);
     // Vacunas
-    Route::get('/vacunas', function() { return view('veterinario.vacunas.index'); })->name('vacunas.index');
+    Route::resource('vacunas', Admin\VacunaController::class)->names([
+        'index' => 'vacunas.index',
+        'create' => 'vacunas.create',
+        'store' => 'vacunas.store',
+        'edit' => 'vacunas.edit',
+        'update' => 'vacunas.update',
+        'destroy' => 'vacunas.destroy',
+    ]);
     // Historiales Médicos
-    Route::get('/historiales', function() { return 'Modulo Historiales Médicos'; })->name('historiales.index');
+    Route::get('/historiales', [App\Http\Controllers\HistorialMedicoController::class, 'index'])->name('historiales.index');
 });
 
 // Modulo Vendedor (Tienda)
@@ -112,14 +126,23 @@ Route::middleware(['auth'])->prefix('tienda')->name('vendedor.')->group(function
     // Productos
     Route::resource('productos', Admin\ProductoController::class);
     // Inventario (Puede ser una vista diferente de productos)
-    Route::get('/inventario', function() { return 'Modulo Inventario'; })->name('inventario.index');
+    Route::get('/inventario', [Admin\InventarioController::class, 'index'])->name('inventario.index');
 });
 
 // Rutas Globales / Compartidas
 Route::middleware(['auth'])->group(function () {
     Route::get('/calendario', function() { return view('calendario.index'); })->name('calendario.index');
-    Route::get('/perfil', function() { return view('perfil.index'); })->name('perfil.index');
+    Route::get('/perfil', [App\Http\Controllers\ProfileController::class, 'index'])->name('perfil.index');
+    Route::post('/perfil/avatar', [App\Http\Controllers\ProfileController::class, 'updateAvatar'])->name('perfil.avatar');
+    Route::put('/perfil/update', [App\Http\Controllers\ProfileController::class, 'update'])->name('perfil.update');
+    Route::get('/perfil/editar', [App\Http\Controllers\ProfileController::class, 'edit'])->name('perfil.edit');
+    Route::get('/perfil/seguridad', [App\Http\Controllers\ProfileController::class, 'security'])->name('perfil.security');
+    Route::put('/perfil/password', [App\Http\Controllers\ProfileController::class, 'updatePassword'])->name('perfil.update-password');
     Route::get('/configuraciones', function() { return view('configuraciones.index'); })->name('configuraciones.index');
-    Route::get('/reportes', function() { return view('reportes.index'); })->name('reportes.index');
+    Route::get('/reportes', function() { return view('admin.reportes.index'); })->name('reportes.index');
+    Route::get('/reportes/estudiantes', function() { return view('admin.reportes.index'); })->name('reportes.estudiantes');
+    Route::get('/reportes/docentes', function() { return view('admin.reportes.index'); })->name('reportes.docentes');
+    Route::get('/reportes/calificaciones', function() { return view('admin.reportes.index'); })->name('reportes.calificaciones');
+    Route::get('/reportes/materias', function() { return view('admin.reportes.index'); })->name('reportes.materias');
     Route::get('clientes/{id}/mascotas', [Admin\ClienteController::class, 'getMascotas'])->name('clientes.mascotas');
 });
