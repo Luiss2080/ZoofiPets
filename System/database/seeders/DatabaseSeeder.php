@@ -18,52 +18,39 @@ class DatabaseSeeder extends Seeder
     {
         try {
             \Illuminate\Support\Facades\Log::info("Seeding Started...");
+            
             // Master/Client
-            \Illuminate\Support\Facades\Log::info("Seeding Master...");
             \App\Models\Cargo::factory(5)->create();
             \App\Models\MetodoPago::factory(5)->create();
             \App\Models\Proveedor::factory(20)->create();
             \App\Models\Producto::factory(20)->create();
             
-            \Illuminate\Support\Facades\Log::info("Seeding Clients...");
+            // Clients
             \App\Models\Cliente::factory(20)->create();
             \App\Models\Mascota::factory(20)->create();
 
             // Receptionist
-            \Illuminate\Support\Facades\Log::info("Seeding Receptionist...");
             \App\Models\SalaEspera::factory(20)->create();
             \App\Models\Recordatorio::factory(20)->create();
             \App\Models\InteraccionCliente::factory(20)->create();
 
             // Vendor
-            \Illuminate\Support\Facades\Log::info("Seeding Vendor...");
             \App\Models\SesionCaja::factory(20)->create();
             \App\Models\Venta::factory(20)->create(); 
             \App\Models\Devolucion::factory(20)->create();
             \App\Models\MovimientoInventario::factory(20)->create();
 
-            \Illuminate\Support\Facades\Log::info("Seeding Veterinario: ServicioMedico...");
-            ServicioMedico::factory(20)->create();
-
-            \Illuminate\Support\Facades\Log::info("Seeding Veterinario: CitaMedica...");
+            // Veterinario
+            \App\Models\ServicioMedico::factory(20)->create();
             \App\Models\CitaMedica::factory(20)->create(); 
-
-            \Illuminate\Support\Facades\Log::info("Seeding Veterinario: RegistroVacuna...");
             \App\Models\RegistroVacuna::factory(20)->create();
-
-            \Illuminate\Support\Facades\Log::info("Seeding Veterinario: HistorialMedico...");
             \App\Models\HistorialMedico::factory(20)->create();
-
-            \Illuminate\Support\Facades\Log::info("Seeding Veterinario: Hospitalizacion...");
             \App\Models\Hospitalizacion::factory(20)->create();
-
-            \Illuminate\Support\Facades\Log::info("Seeding Veterinario: Laboratorio...");
             \App\Models\Laboratorio::factory(20)->create();
-            
+
             \Illuminate\Support\Facades\Log::info("Seeding Finished.");
         } catch (\Throwable $e) {
             \Illuminate\Support\Facades\Log::error("FAILEDSEED: " . $e->getMessage());
-            \Illuminate\Support\Facades\Log::error($e->getTraceAsString());
             throw $e;
         }
     }
