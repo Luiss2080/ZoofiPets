@@ -53,21 +53,35 @@ document.addEventListener("DOMContentLoaded", function () {
                 method: "POST",
                 headers: {
                     "X-CSRF-TOKEN": csrfToken,
+                    Accept: "application/json", // Ensure backend knows we want JSON
                 },
                 body: formData,
             })
-                .then((response) => response.json())
+                .then(async (response) => {
+                    if (!response.ok) {
+                        const text = await response.text();
+                        console.error("Server Error:", text);
+                        throw new Error(`Server returned ${response.status}`);
+                    }
+                    return response.json();
+                })
                 .then((data) => {
                     if (data.success) {
-                        // Optional: Show success toast
                         console.log("Avatar updated successfully");
+                        // Optional: Reload to ensure backend state matches if needed, or just show toast
                     } else {
-                        alert("Error al subir la imagen");
+                        alert(
+                            "Error: " +
+                                (data.message ||
+                                    "Error desconocido al subir la imagen")
+                        );
                     }
                 })
                 .catch((error) => {
-                    console.error("Error:", error);
-                    alert("Error de conexión al subir imagen");
+                    console.error("Error Details:", error);
+                    alert(
+                        "Error al subir imagen. Revisa la consola para más detalles. Posiblemente la imagen sea muy grande (>2MB)."
+                    );
                 });
         });
     }
