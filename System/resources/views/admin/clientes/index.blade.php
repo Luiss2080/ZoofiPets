@@ -43,15 +43,27 @@
             </div>
             
             <div class="filter-group">
-                <div class="select-wrapper">
-                    <i class="fas fa-list-ol"></i>
-                    <select id="entriesSelect">
-                        <option value="10">10 por pág.</option>
-                        <option value="25">25 por pág.</option>
-                        <option value="50">50 por pág.</option>
-                    </select>
+                <!-- Custom Purple Dropdown -->
+                <div class="custom-select-wrapper" id="entriesDropdown">
+                    <input type="hidden" name="per_page" id="entriesInput" value="{{ request('per_page', 10) }}">
+                    <div class="custom-select-trigger">
+                        <i class="fas fa-list-ol"></i>
+                        <span id="entriesText">{{ request('per_page', 10) }} por pág.</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <!-- Options List -->
+                    <div class="custom-options">
+                        <div class="custom-option {{ request('per_page', 10) == 10 ? 'selected' : '' }}" data-value="10">10 por pág.</div>
+                        <div class="custom-option {{ request('per_page') == 25 ? 'selected' : '' }}" data-value="25">25 por pág.</div>
+                        <div class="custom-option {{ request('per_page') == 50 ? 'selected' : '' }}" data-value="50">50 por pág.</div>
+                    </div>
                 </div>
                 
+                <button class="btn-secondary-action">
+                    <i class="fas fa-filter"></i>
+                    <span>Filtros</span>
+                </button>
+
                 <button class="btn-secondary-action">
                     <i class="fas fa-file-export"></i>
                     <span>Exportar</span>

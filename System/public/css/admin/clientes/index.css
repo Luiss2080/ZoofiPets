@@ -151,55 +151,92 @@ body.dark-mode .icon-wrapper {
     align-items: center;
 }
 
-/* Filter Group Select Wrapper - Solid Purple */
-.select-wrapper {
+/* =========================================
+   CUSTOM PURPLE DROPDOWN
+   ========================================= */
+.custom-select-wrapper {
     position: relative;
-    background: var(--primary-color);
-    border: 1px solid var(--primary-color);
-    border-radius: 12px;
-    transition: all 0.3s ease;
+    user-select: none;
+    min-width: 160px;
 }
 
-.select-wrapper:hover {
+.custom-select-trigger {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(72, 52, 212, 0.2);
+    border: 1px solid var(--primary-color);
+}
+
+.custom-select-trigger:hover {
     background: var(--primary-color-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(72, 52, 212, 0.2);
+    box-shadow: 0 8px 15px rgba(72, 52, 212, 0.3);
 }
 
-.select-wrapper i {
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    z-index: 1;
-    font-size: 0.9rem;
+.custom-select-trigger i:first-child {
+    font-size: 0.95rem; /* Icon size */
 }
 
-.select-wrapper select {
-    appearance: none;
-    background: transparent;
-    border: none;
-    padding: 0.75rem 2.5rem 0.75rem 2.5rem;
-    border-radius: 12px;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 0.9rem;
-    min-width: 140px;
-}
-
-.select-wrapper::after {
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    pointer-events: none;
+.custom-select-trigger i:last-child {
     font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.custom-select-wrapper.open .custom-select-trigger i:last-child {
+    transform: rotate(180deg);
+}
+
+.custom-options {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    border: 1px solid rgba(72, 52, 212, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-select-wrapper.open .custom-options {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.custom-option {
+    padding: 0.75rem 1.25rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+/* THE PURPLE "SYSTEM STYLE" HOVER/SELECTED */
+.custom-option:hover,
+.custom-option.selected {
+    background: rgba(72, 52, 212, 0.05); /* Very light purple bg */
+    color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    padding-left: 1.5rem; /* Slight slide effect */
+    font-weight: 700;
 }
 
 /* Secondary Action Button - Solid Purple */
