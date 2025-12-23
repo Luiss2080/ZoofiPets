@@ -1,4 +1,4 @@
-/* Reportes Index CSS - Authentic Purple Theme */
+/* Reportes Index CSS - Authentic Purple Theme (Solid Mode) */
 
 .reportes-container {
     display: flex;
@@ -7,7 +7,7 @@
     width: 100%;
 }
 
-/* Header - Matches Profile/Calendar Control Panel style */
+/* Header */
 .page-header {
     background: var(--bg-surface);
     border-radius: 20px;
@@ -42,7 +42,7 @@
 .icon-wrapper {
     width: 56px;
     height: 56px;
-    background: #e0dcfc; /* Light Purple match */
+    background: #e0dcfc;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -95,12 +95,12 @@
     }
 }
 
-/* Report Card - Matches Profile Card style */
+/* Report Card */
 .report-card {
     background: var(--bg-surface);
     border-radius: 20px;
     padding: 1.5rem;
-    border: 1px solid rgba(72, 52, 212, 0.1); /* Subtle purple border */
+    border: 1px solid rgba(72, 52, 212, 0.1);
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -108,16 +108,16 @@
     position: relative;
     overflow: hidden;
     height: 100%;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Lighter base shadow */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .report-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px -10px rgba(72, 52, 212, 0.15); /* Purple shadow hover */
+    box-shadow: 0 15px 30px -10px rgba(72, 52, 212, 0.15);
     border-color: var(--primary-color);
 }
 
-/* Card Icon Theme - Uniform Purple */
+/* Card Icon - ALWAYS SOLID PURPLE */
 .card-icon {
     width: 48px;
     height: 48px;
@@ -128,11 +128,11 @@
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
 
-    /* Stronger Purple Background */
-    background: #ede9fe; /* Violet-100 */
-    color: var(--primary-color);
-    border: 1px solid rgba(72, 52, 212, 0.15);
-    box-shadow: 0 4px 6px rgba(72, 52, 212, 0.1);
+    /* Strict Solid Styling */
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 4px 10px rgba(72, 52, 212, 0.3);
 }
 
 .card-content h3 {
@@ -157,6 +157,7 @@
     margin-top: auto;
 }
 
+/* Report Button - ALWAYS SOLID PURPLE */
 .btn-report {
     flex: 1;
     display: flex;
@@ -165,25 +166,50 @@
     gap: 0.5rem;
     padding: 0.75rem 1rem;
 
-    /* Default State: Purple Outline */
-    background: transparent;
-    color: var(--primary-color);
-    font-weight: 700;
-    border-radius: 12px;
+    /* Strict Solid Styling */
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    font-weight: 600;
+    border-radius: 10px;
     text-decoration: none;
     transition: all 0.2s ease;
     font-size: 0.9rem;
-    border: 2px solid var(--primary-color);
+    border: none;
+    box-shadow: 0 4px 6px rgba(72, 52, 212, 0.2);
 }
 
 .btn-report:hover {
-    background: var(--primary-color);
-    color: white;
+    background-color: var(--primary-red-hover) !important;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(72, 52, 212, 0.3);
+    box-shadow: 0 6px 15px rgba(72, 52, 212, 0.4);
 }
 
-/* Primary Action Button - The Authentic Purple Gradient */
+/* Quick Export Button - ALWAYS SOLID PURPLE */
+.btn-quick-export {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+
+    /* Strict Solid Styling */
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(72, 52, 212, 0.2);
+}
+
+.btn-quick-export:hover {
+    background-color: var(--primary-red-hover) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(72, 52, 212, 0.4);
+}
+
+/* Primary Action Top Header */
 .btn-primary-action {
     background: linear-gradient(135deg, #6c5ce7, #4834d4);
     color: white;
@@ -208,31 +234,10 @@
     color: white;
 }
 
-.btn-quick-export {
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background: rgba(72, 52, 212, 0.05); /* Purple tint */
-    color: var(--primary-color);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-size: 1rem;
-    border: 1px solid rgba(72, 52, 212, 0.1);
-}
-
-.btn-quick-export:hover {
-    background: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(72, 52, 212, 0.3);
-}
-
-/* Overrides to ensure uniformity if specific classes exist in DOM */
+/* 
+   Explicitly override any specific class overrides by forcing the solid purple theme 
+   even if classes like .students, .teachers etc are present in HTML 
+*/
 .card-icon.students,
 .card-icon.teachers,
 .card-icon.grades,
@@ -241,9 +246,9 @@
 .card-icon.users,
 .card-icon.library,
 .card-icon.labs {
-    background: #ede9fe;
-    color: var(--primary-color);
-    border-color: rgba(72, 52, 212, 0.15);
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
 }
 
 .btn-report.students,
@@ -254,19 +259,7 @@
 .btn-report.users,
 .btn-report.library,
 .btn-report.labs {
-    border-color: var(--primary-color);
-    color: var(--primary-color);
-    background: transparent;
-}
-
-.btn-report.students:hover,
-.btn-report.teachers:hover,
-.btn-report.grades:hover,
-.btn-report.subjects:hover,
-.btn-report.attendance:hover,
-.btn-report.users:hover,
-.btn-report.library:hover,
-.btn-report.labs:hover {
-    background: var(--primary-color);
-    color: white;
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
 }
