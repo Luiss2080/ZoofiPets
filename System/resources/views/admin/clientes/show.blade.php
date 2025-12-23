@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Detalle del Docente')
+@section('title', 'Detalles del Cliente')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/admin/docentes/show.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/clientes/show.css') }}">
 @endsection
 
 @section('content')
@@ -12,148 +12,81 @@
     <div class="panel-header">
         <div class="header-title">
             <div class="icon-wrapper">
-                <i class="fas fa-user-tag"></i>
+                <i class="fas fa-eye"></i>
             </div>
             <div class="title-content">
-                <h2>Detalles del Docente</h2>
-                <p class="subtitle">Información completa de {{ $docente->user->name }}</p>
+                <h2>Detalles del Cliente</h2>
+                <p class="subtitle">Visualización completa de la información del cliente</p>
             </div>
         </div>
         <div class="header-actions">
-            <a href="{{ route('admin.docentes.index') }}" class="btn-secondary-action">
+            <a href="{{ route('recepcionista.clientes.index') }}" class="btn-secondary-action">
                 <i class="fas fa-arrow-left"></i>
                 <span>Volver a la lista</span>
             </a>
-        <x-admin>
-    @section('styles')
-        <link rel="stylesheet" href="{{ asset('css/admin/clientes/show.css') }}">
-    @endsection
-
-    <div class="show-container">
-        <div class="panel-header">
-            <div class="header-title">
-                <div class="icon-wrapper">
-                    <i class="fas fa-id-card-alt"></i>
-                </div>
-                <div class="title-content">
-                    <h2>Detalles del Cliente</h2>
-                    <span class="subtitle">Visualización completa de la información del cliente</span>
-                </div>
-            </div>
-            <a href="{{ route('recepcionista.clientes.index') }}" class="btn-secondary-action">
-                <i class="fas fa-arrow-left"></i> Volver a la lista
-            </a>
         </div>
+    </div>
 
-        <div class="form-content">
-            <!-- Left Panel (Avatar) -->
-            <div class="left-column">
-                <div class="form-card profile-card">
-                    <div class="card-header">
-                        <h3><i class="fas fa-user"></i></h3>
-                        <p>Cliente</p>
-                    </div>
+    <div class="form-content">
+        <!-- Left Column: Profile Image -->
+        <div class="left-column">
+            <div class="form-card profile-card">
+                <div class="card-header">
+                    <h3>
+                        <i class="fas fa-camera"></i>
+                        Foto de Perfil
+                    </h3>
+                    <p>Imagen actual del cliente</p>
+                </div>
+                
+                <div class="profile-upload-section">
                     <div class="avatar-preview">
-                        <div class="avatar-placeholder">
-                            {{ substr($cliente->nombre, 0, 1) }}{{ substr($cliente->apellido, 0, 1) }}
-                        </div>
-                    </div>
-                    <div class="info-list">
-                        <div class="info-item">
-                            <span class="info-label">REGISTRADO</span>
-                            <span class="info-value">{{ $cliente->created_at->format('d/m/Y') }}</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">ESTADO</span>
-                            <span class="info-value" style="color: #4ade80;">ACTIVO</span>
-                        </div>
+                        @if($cliente->avatar)
+                            <img src="{{ asset('storage/' . $cliente->avatar) }}" alt="Foto de Perfil">
+                        @else
+                            <div class="avatar-placeholder">
+                                {{ strtoupper(substr($cliente->nombre, 0, 1) . substr($cliente->apellido, 0, 1)) }}
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
 
-            <!-- Right Panel (Data) -->
-            <div class="right-column">
-                <div class="form-card">
-                    <div class="card-header">
-                        <h3><i class="fas fa-info-circle"></i> Información Personal</h3>
-                    </div>
-
-                    <div class="form-grid">
-                        <div class="form-group span-2">
-                            <label>Cédula / DNI</label>
-                            <div class="form-input" readonly>{{ $cliente->cedula }}</div>
-                        </div>
-
-                        <div class="form-group span-2">
-                            <label>Email</label>
-                            <div class="form-input" readonly>{{ $cliente->email ?? 'N/A' }}</div>
-                        </div>
-
-                        <div class="form-group span-2">
-                            <label>Nombre</label>
-                            <div class="form-input" readonly>{{ $cliente->nombre }}</div>
-                        </div>
-
-                        <div class="form-group span-2">
-                            <label>Apellido</label>
-                            <div class="form-input" readonly>{{ $cliente->apellido }}</div>
-                        </div>
-
-                        <div class="section-divider">
-                            <span class="section-title"><i class="fas fa-address-book"></i> Contacto y Otros</span>
-                        </div>
-
-                        <div class="form-group span-2">
-                            <label>Teléfono</label>
-                            <div class="form-input" readonly>{{ $cliente->telefono ?? 'N/A' }}</div>
-                        </div>
-
-                        <div class="form-group span-2">
-                            <label>Género</label>
-                            <div class="form-input" readonly>
-                                @if($cliente->genero == 'M') Masculino
-                                @elseif($cliente->genero == 'F') Femenino
-                                @else Otro
-                                @endif
-                            </div>
-                    </div>
+            <!-- Info Summary Card -->
+            <div class="form-card">
+                 <div class="card-header">
+                    <h3><i class="fas fa-info-circle"></i> Resumen</h3>
                 </div>
-
-                <!-- Quick Stats / Info -->
                 <div class="info-list">
                     <div class="info-item">
-                        <span class="info-label">Código</span>
-                        <span class="info-value">{{ $docente->codigo_docente }}</span>
+                        <span class="info-label">REGISTRADO</span>
+                        <span class="info-value">{{ $cliente->created_at->format('d/m/Y') }}</span>
                     </div>
                     <div class="info-item">
-                        <span class="info-label">Estado</span>
-                        <span class="info-value" style="color: {{ $docente->estado_laboral == 'activo' ? '#22c55e' : '#9ca3af' }}">
-                            {{ ucfirst($docente->estado_laboral) }}
-                        </span>
+                        <span class="info-label">ACTUALIZADO</span>
+                        <span class="info-value">{{ $cliente->updated_at->format('d/m/Y') }}</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Right Column: Data -->
+        <!-- Right Form Panel -->
         <div class="right-column">
-            
-            <!-- Card 1: Personal Data -->
             <div class="form-card">
                 <div class="card-header">
                     <h3>
-                        <i class="fas fa-user"></i>
-                        Datos Personales
+                        <i class="fas fa-user-circle"></i>
+                        Información Personal
                     </h3>
-                    <p>Información básica del docente</p>
+                    <p>Datos básicos del cliente</p>
                 </div>
-
+                
                 <div class="form-grid">
                     <div class="form-group span-2">
-                        <label>Nombre Completo</label>
+                        <label>Nombres</label>
                         <div class="input-wrapper">
                             <i class="fas fa-user"></i>
-                            <input type="text" class="form-input" value="{{ $docente->user->name }}" readonly>
+                            <input type="text" class="form-input" value="{{ $cliente->nombre }}" readonly>
                         </div>
                     </div>
 
@@ -161,55 +94,31 @@
                         <label>Apellidos</label>
                         <div class="input-wrapper">
                             <i class="fas fa-user"></i>
-                            <input type="text" class="form-input" value="{{ $docente->user->apellido }}" readonly>
+                            <input type="text" class="form-input" value="{{ $cliente->apellido }}" readonly>
                         </div>
                     </div>
 
                     <div class="form-group span-2">
-                        <label>Documento de Identidad (CI)</label>
+                        <label>Cédula / DNI</label>
                         <div class="input-wrapper">
                             <i class="fas fa-id-card"></i>
-                            <input type="text" class="form-input" value="{{ $docente->user->ci }}" readonly>
+                            <input type="text" class="form-input" value="{{ $cliente->cedula }}" readonly>
                         </div>
                     </div>
 
                     <div class="form-group span-2">
-                        <label>Fecha de Nacimiento</label>
+                         <label>Tel./Celular</label>
                         <div class="input-wrapper">
-                            <i class="fas fa-calendar-alt"></i>
-                            <input type="text" class="form-input" value="{{ optional($docente->user->fecha_nacimiento)->format('d/m/Y') }}" readonly>
+                            <i class="fas fa-phone"></i>
+                            <input type="text" class="form-input" value="{{ $cliente->telefono ?? 'N/A' }}" readonly>
                         </div>
                     </div>
 
-                    <div class="form-group span-2">
-                        <label>Género</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-venus-mars"></i>
-                            <input type="text" class="form-input" value="{{ $docente->user->genero == 'M' ? 'Masculino' : ($docente->user->genero == 'F' ? 'Femenino' : 'Otro') }}" readonly>
-                        </div>
-                    </div>
-
-                    <div class="form-group span-2">
-                        <label>Nacionalidad</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-globe-americas"></i>
-                            <input type="text" class="form-input" value="{{ $docente->nacionalidad }}" readonly>
-                        </div>
-                    </div>
-
-                    <div class="form-group span-3">
+                    <div class="form-group full-width">
                         <label>Correo Electrónico</label>
                         <div class="input-wrapper">
                             <i class="fas fa-envelope"></i>
-                            <input type="text" class="form-input" value="{{ $docente->user->email }}" readonly>
-                        </div>
-                    </div>
-
-                    <div class="form-group span-3">
-                        <label>Tel./Celular</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-phone"></i>
-                            <input type="text" class="form-input" value="{{ $docente->user->telefono }}" readonly>
+                            <input type="email" class="form-input" value="{{ $cliente->email ?? 'N/A' }}" readonly>
                         </div>
                     </div>
 
@@ -217,92 +126,19 @@
                         <label>Dirección Domiciliaria</label>
                         <div class="input-wrapper">
                             <i class="fas fa-map-marker-alt"></i>
-                            <input type="text" class="form-input" value="{{ $docente->user->direccion }}" readonly>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 2: Academic & Contract -->
-            <div class="form-card">
-                <div class="card-header">
-                    <h3>
-                        <i class="fas fa-graduation-cap"></i>
-                        Datos Académicos y Contrato
-                    </h3>
-                    <p>Información profesional y laboral</p>
-                </div>
-
-                <div class="form-grid">
-                    <div class="form-group span-2">
-                        <label>Código</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-barcode"></i>
-                            <input type="text" class="form-input" value="{{ $docente->codigo_docente }}" readonly>
-                        </div>
-                    </div>
-
-                    <div class="form-group span-4">
-                        <label>Especialidad Principal</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-book-reader"></i>
-                            <input type="text" class="form-input" value="{{ $docente->especialidad }}" readonly>
-                        </div>
-                    </div>
-
-                    <div class="form-group span-3">
-                        <label>Institución de Egreso</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-university"></i>
-                            <input type="text" class="form-input" value="{{ $docente->institucion_egreso }}" readonly>
-                        </div>
-                    </div>
-
-                    <div class="form-group span-3">
-                        <label>Título Académico</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-certificate"></i>
-                            <input type="text" class="form-input" value="{{ $docente->titulo_profesional }}" readonly>
-                        </div>
-                    </div>
-
-                    <div class="form-group span-2">
-                        <label>Nivel de Estudio</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-layer-group"></i>
-                            <input type="text" class="form-input" value="{{ $docente->nivel_estudio }}" readonly>
-                        </div>
-                    </div>
-
-                    <div class="form-group span-2">
-                       <label>Años Exp.</label>
-                       <div class="input-wrapper">
-                           <i class="fas fa-history"></i>
-                           <input type="text" class="form-input" value="{{ $docente->experiencia }} Años" readonly>
-                       </div>
-                   </div>
-
-                    <div class="form-group span-2">
-                        <label>Tipo de Contrato</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-file-contract"></i>
-                            <input type="text" class="form-input" value="{{ ucfirst(str_replace('_', ' ', $docente->tipo_contrato)) }}" readonly>
+                            <input type="text" class="form-input" value="{{ $cliente->direccion ?? 'N/A' }}" readonly>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-actions">
-                    <a href="{{ route('admin.docentes.edit', $docente->id) }}" class="btn-edit-action">
+                    <a href="{{ route('recepcionista.clientes.edit', $cliente->id) }}" class="btn-edit-action">
                         <i class="fas fa-edit"></i>
-                        <span>Editar Docente</span>
+                        <span>Editar Cliente</span>
                     </a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-@endsection
-
-@section('js')
-    <script src="{{ asset('js/admin/docentes/show.js') }}"></script>
 @endsection
