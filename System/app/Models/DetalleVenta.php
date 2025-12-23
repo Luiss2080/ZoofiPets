@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class DetalleVenta extends Model
 {
     use HasFactory;
-    protected $table = 'detalles_ventas';
+    protected $table = 'detalles_ventas'; // Matches migration now
 
     protected $fillable = [
-        'venta_id', 'producto_id', 'cantidad', 'precio_unitario', 'subtotal'
+        'venta_id', 'producto_id', 'servicio_medico_id', 'descripcion',
+        'cantidad', 'precio_unitario', 'subtotal'
     ];
 
     public function venta()

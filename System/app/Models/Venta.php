@@ -9,9 +9,9 @@ class Venta extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'numero_factura', 'cliente_id', 'empleado_id', 'fecha_venta',
-        'subtotal', 'impuesto', 'descuento', 'total', 'estado',
-        'metodo_pago', 'observaciones'
+        'numero_factura', 'cliente_id', 'empleado_id', 'sesion_caja_id',
+        'fecha_venta', 'subtotal', 'impuesto', 'descuento', 'total',
+        'estado', 'tipo_venta', 'cambio', 'observaciones'
     ];
 
     protected $casts = [
