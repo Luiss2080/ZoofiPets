@@ -8,7 +8,7 @@ class VentaFactory extends Factory
 {
     public function definition(): array
     {
-        return [
+        $data = [
             'numero_factura' => $this->faker->unique()->bothify('FAC-#####'),
             'cliente_id' => \App\Models\Cliente::factory(),
             'empleado_id' => \App\Models\Empleado::factory(),
@@ -21,6 +21,8 @@ class VentaFactory extends Factory
             'estado' => $this->faker->randomElement(['Pagada', 'Pendiente']),
             'tipo_venta' => 'Contado',
         ];
+        var_dump($data);
+        return $data;
     }
 
     public function configure()
