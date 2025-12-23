@@ -291,11 +291,11 @@
 
 .form-input {
     width: 100%;
-    background: #000000;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #fdfdfd;
+    border: 1px solid #e5e7eb;
     padding: 0.75rem 1rem 0.75rem 2.8rem;
     border-radius: 12px;
-    color: #ffffff;
+    color: #1f2937;
     font-size: 0.95rem;
     font-family: inherit;
     box-sizing: border-box;
@@ -304,9 +304,9 @@
 
 /* Readonly visual cue */
 .form-input:read-only {
-    background: #0a0a0a;
+    background: #f9fafb;
     border-color: rgba(72, 52, 212, 0.1);
-    color: #d1d5db;
+    color: #4b5563;
 }
 
 /* Footer Actions (Edit Button) */
