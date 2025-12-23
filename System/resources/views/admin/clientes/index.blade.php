@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{{ asset('css/pages/paginacion.css') }}">
     <!-- Mod CSS -->
     <link rel="stylesheet" href="{{ asset('css/mod/eliminar.css') }}">
+    <!-- Filters CSS -->
+    <link rel="stylesheet" href="{{ asset('css/filters/filters.css') }}">
 @endsection
 
 @section('content')
@@ -42,7 +44,8 @@
                 <input type="text" id="searchInput" placeholder="Buscar por nombre, cédula o email...">
             </div>
             
-            <div class="filter-group">
+            <!-- Renamed container to avoid conflict with filters.css .filter-group -->
+            <div class="toolbar-actions">
                 <!-- Custom Purple Dropdown -->
                 <div class="custom-select-wrapper" id="entriesDropdown">
                     <input type="hidden" name="per_page" id="entriesInput" value="{{ request('per_page', 10) }}">
@@ -150,6 +153,60 @@
     @method('DELETE')
 </form>
 
+<!-- Filter Modal -->
+<div class="filters-modal-overlay" id="filtersModal">
+    <div class="filters-modal">
+        <div class="filters-header">
+            <h3 class="filters-title">
+                <i class="fas fa-filter"></i> Filtros Avanzados
+            </h3>
+            <button class="filters-close-btn" onclick="toggleFilters()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="filters-content">
+            <form id="filterForm" action="{{ route('recepcionista.clientes.index') }}" method="GET">
+                <!-- Preserve existing params like per_page -->
+                <input type="hidden" name="per_page" value="{{ request('per_page') }}">
+                
+                <div class="filters-section">
+                    <h4 class="section-title">Información Personal</h4>
+                    <div class="filters-grid">
+                        <div class="filter-group"> <!-- Used by filters.css -->
+                            <label class="filter-label">Cédula</label>
+                            <input type="text" name="cedula" class="filter-input" placeholder="Ej: 12345678" value="{{ request('cedula') }}">
+                        </div>
+                        <div class="filter-group"> <!-- Used by filters.css -->
+                            <label class="filter-label">Teléfono</label>
+                            <input type="text" name="telefono" class="filter-input" placeholder="Ej: 0912345678" value="{{ request('telefono') }}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filters-section">
+                    <h4 class="section-title">Ubicación y Otros</h4>
+                    <div class="filters-grid">
+                        <div class="filter-group"> <!-- Used by filters.css -->
+                            <label class="filter-label">Dirección</label>
+                            <input type="text" name="direccion" class="filter-input" placeholder="Buscar en dirección..." value="{{ request('direccion') }}">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <div class="filters-actions">
+            <button type="button" class="btn-secondary" onclick="resetFilters()">
+                <i class="fas fa-undo"></i> Limpiar
+            </button>
+            <button type="button" class="btn-primary" onclick="document.getElementById('filterForm').submit()">
+                <i class="fas fa-check"></i> Aplicar Filtros
+            </button>
+        </div>
+    </div>
+</div>
+
 @endsection
 
 @section('js')
@@ -157,4 +214,28 @@
     <script src="{{ asset('js/admin/clientes/index.js') }}"></script>
     <!-- Mod JS -->
     <script src="{{ asset('js/mod/eliminar.js') }}"></script>
+    <!-- Filter JS -->
+    <script src="{{ asset('js/filters/filters.js') }}"></script>
+    <script>
+        function toggleFilters() {
+            const modal = document.getElementById('filtersModal');
+            if(modal) modal.classList.toggle('active');
+        }
+        function resetFilters() {
+            window.location.href = "{{ route('recepcionista.clientes.index') }}";
+        }
+        
+        // Ensure buttons engage toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.btn-secondary-action');
+            filterBtns.forEach(btn => {
+                if(btn.textContent.includes('Filtros')) {
+                    btn.addEventListener('click', function(e) {
+                         e.preventDefault();
+                         toggleFilters();
+                    });
+                }
+            });
+        });
+    </script>
 @endsection

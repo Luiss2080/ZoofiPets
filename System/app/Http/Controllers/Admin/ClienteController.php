@@ -6,15 +6,51 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Cliente;
+use App\Models\Mascota;
+use Illuminate\Support\Str;
 
 class ClienteController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $clientes = Cliente::paginate(10);
+        $query = Cliente::query();
+
+        // Search Filter (Nombre, Apellido, Cedula, Email)
+        if ($request->has('search') && $request->search != '') {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('nombre', 'LIKE', "%{$search}%")
+                  ->orWhere('apellido', 'LIKE', "%{$search}%")
+                  ->orWhere('cedula', 'LIKE', "%{$search}%")
+                  ->orWhere('email', 'LIKE', "%{$search}%");
+            });
+        }
+
+        // Specific Filters
+        if ($request->has('cedula') && $request->cedula != '') {
+             $query->where('cedula', 'LIKE', "%{$request->cedula}%");
+        }
+
+        if ($request->has('telefono') && $request->telefono != '') {
+             $query->where('telefono', 'LIKE', "%{$request->telefono}%");
+        }
+
+        if ($request->has('direccion') && $request->direccion != '') {
+             $query->where('direccion', 'LIKE', "%{$request->direccion}%");
+        }
+        
+        // Sorting
+        $sortField = $request->get('sort', 'created_at');
+        $sortDirection = $request->get('direction', 'desc');
+        $query->orderBy($sortField, $sortDirection);
+
+        // Pagination
+        $perPage = $request->get('per_page', 10);
+        $clientes = $query->paginate($perPage);
+
         return view('admin.clientes.index', compact('clientes'));
     }
 

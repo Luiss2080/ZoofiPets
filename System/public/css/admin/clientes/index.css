@@ -144,8 +144,11 @@ body.dark-mode .icon-wrapper {
     opacity: 1;
 }
 
-/* Filter Group */
-.filter-group {
+/* =========================================
+   TOOLBAR ACTIONS (Formerly Filter Group)
+   Renamed to avoid conflict with filters.css
+   ========================================= */
+.toolbar-actions {
     display: flex;
     gap: 1rem;
     align-items: center;
