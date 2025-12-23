@@ -119,7 +119,7 @@
                 <div class="profile-card" style="width: 100%; position: relative; padding: 1.5rem; align-items: flex-start; text-align: left;">
                     <!-- Header: Nivel -->
                     <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; width: 100%; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
-                        <div style="width: 45px; height: 45px; background: rgba(220, 38, 38, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary-red); font-size: 1.2rem;">
+                        <div style="width: 45px; height: 45px; background: rgba(72, 52, 212, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary-red); font-size: 1.2rem;">
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <div>
@@ -135,7 +135,7 @@
                             <span style="color: var(--primary-red); font-weight: 700;">85%</span>
                         </div>
                         <div style="width: 100%; height: 6px; background: var(--bg-body); border-radius: 3px; overflow: hidden;">
-                            <div style="width: 85%; height: 100%; background: var(--primary-red); border-radius: 3px; box-shadow: 0 0 10px rgba(220, 38, 38, 0.4);"></div>
+                            <div style="width: 85%; height: 100%; background: var(--primary-red); border-radius: 3px; box-shadow: 0 0 10px rgba(72, 52, 212, 0.4);"></div>
                         </div>
                         <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">
                             <i class="fas fa-info-circle"></i> Completa tu biografía para llegar al 100%.

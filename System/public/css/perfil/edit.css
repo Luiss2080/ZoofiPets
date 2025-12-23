@@ -48,7 +48,7 @@
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    box-shadow: 0 4px 6px -1px rgba(225, 29, 72, 0.3);
+    box-shadow: 0 4px 6px -1px rgba(72, 52, 212, 0.3);
 }
 
 .title-content h2 {
@@ -76,7 +76,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    box-shadow: 0 4px 10px rgba(225, 29, 72, 0.25);
+    box-shadow: 0 4px 10px rgba(72, 52, 212, 0.25);
     font-size: 0.95rem;
     border: 2px solid transparent;
 }
@@ -84,7 +84,7 @@
 .btn-primary-action:hover {
     background: var(--primary-red-hover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(225, 29, 72, 0.35);
+    box-shadow: 0 8px 20px rgba(72, 52, 212, 0.35);
     color: white;
 }
 
@@ -196,7 +196,7 @@
 }
 
 .profile-card:hover {
-    box-shadow: 0 10px 30px rgba(225, 29, 72, 0.1);
+    box-shadow: 0 10px 30px rgba(72, 52, 212, 0.1);
     transform: translateY(-5px);
 }
 
@@ -213,13 +213,13 @@
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--bg-surface);
-    box-shadow: 0 0 0 4px var(--primary-color), 0 0 20px rgba(225, 29, 72, 0.4); /* Neon Glow */
+    box-shadow: 0 0 0 4px var(--primary-color), 0 0 20px rgba(72, 52, 212, 0.4); /* Neon Glow */
     transition: var(--transition);
 }
 
 .profile-avatar:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 0 4px var(--primary-color), 0 0 30px rgba(225, 29, 72, 0.6);
+    box-shadow: 0 0 0 4px var(--primary-color), 0 0 30px rgba(72, 52, 212, 0.6);
 }
 
 .avatar-edit-btn {
@@ -242,7 +242,7 @@
 
 .avatar-edit-btn:hover {
     transform: scale(1.1) rotate(15deg);
-    background: #ff1f4b; /* Brighter Red */
+    background: #686de0; /* Brighter Red */
 }
 
 .profile-name {
@@ -257,11 +257,11 @@
     font-weight: 800;
     text-transform: uppercase;
     color: white;
-    background: linear-gradient(135deg, var(--primary-color), #be123c);
+    background: linear-gradient(135deg, var(--primary-color), #2c1680);
     padding: 0.35rem 1rem;
     border-radius: 50px;
     margin-bottom: 1.5rem;
-    box-shadow: 0 4px 10px rgba(225, 29, 72, 0.3);
+    box-shadow: 0 4px 10px rgba(72, 52, 212, 0.3);
     letter-spacing: 1px;
 }
 
@@ -283,7 +283,7 @@
 
 .stat-item:hover .stat-value {
     color: var(--primary-color);
-    text-shadow: 0 0 10px rgba(225, 29, 72, 0.4);
+    text-shadow: 0 0 10px rgba(72, 52, 212, 0.4);
 }
 
 .stat-value {
@@ -342,13 +342,13 @@
     width: 50px;
     height: 50px;
     border-radius: 14px;
-    background: rgba(225, 29, 72, 0.1);
+    background: rgba(72, 52, 212, 0.1);
     color: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    box-shadow: inset 0 0 10px rgba(225, 29, 72, 0.1);
+    box-shadow: inset 0 0 10px rgba(72, 52, 212, 0.1);
 }
 
 .card-title h3 {
@@ -403,7 +403,7 @@
 .form-input:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.15);
+    box-shadow: 0 0 0 4px rgba(72, 52, 212, 0.15);
     background: var(--bg-surface);
 }
 
@@ -420,13 +420,13 @@
     align-items: center;
     gap: 0.8rem;
     font-size: 1rem;
-    box-shadow: 0 4px 15px rgba(225, 29, 72, 0.3);
+    box-shadow: 0 4px 15px rgba(72, 52, 212, 0.3);
 }
 
 .btn-submit:hover {
-    background: linear-gradient(135deg, #ff1f4b, #be123c);
+    background: linear-gradient(135deg, #686de0, #2c1680);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(225, 29, 72, 0.4);
+    box-shadow: 0 8px 20px rgba(72, 52, 212, 0.4);
 }
 
 .form-actions {
@@ -449,14 +449,14 @@
     font-weight: 700;
     text-decoration: none;
     transition: var(--transition);
-    box-shadow: 0 4px 10px rgba(225, 29, 72, 0.3);
+    box-shadow: 0 4px 10px rgba(72, 52, 212, 0.3);
     text-align: center;
 }
 
 .action-btn-red:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(225, 29, 72, 0.5);
-    background: linear-gradient(135deg, #ff1f4b, #be123c);
+    box-shadow: 0 6px 15px rgba(72, 52, 212, 0.5);
+    background: linear-gradient(135deg, #686de0, #2c1680);
 }
 
 .action-btn-red i {
