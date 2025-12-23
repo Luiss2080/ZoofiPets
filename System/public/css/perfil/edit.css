@@ -3,9 +3,18 @@
 /* ============================================
    LAYOUT GRID
    ============================================ */
+/* ============================================
+   LAYOUT GRID
+   ============================================ */
 .dashboard-section {
     width: 100%;
-
+    /* Apply System Purple Background to show separation */
+    background: linear-gradient(
+        135deg,
+        #f3f0ff 0%,
+        #e0dcfc 100%
+    ); /* Soft purple gradient */
+    min-height: 100vh;
     padding: 2rem 1rem;
 }
 
