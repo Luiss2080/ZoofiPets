@@ -15,7 +15,7 @@ class ClienteController extends Controller
     public function index()
     {
         $clientes = Cliente::paginate(10);
-        return view('recepcionista.clientes.index', compact('clientes'));
+        return view('admin.clientes.index', compact('clientes'));
     }
 
     /**
@@ -23,7 +23,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('recepcionista.clientes.create');
+        return view('admin.clientes.create');
     }
 
     /**
@@ -52,19 +52,17 @@ class ClienteController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+        return view('admin.clientes.show', compact('cliente'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
         $cliente = Cliente::findOrFail($id);
-        return view('recepcionista.clientes.edit', compact('cliente'));
+        return view('admin.clientes.edit', compact('cliente'));
     }
 
     /**
