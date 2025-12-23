@@ -12,7 +12,7 @@ class PagoFactory extends Factory
             'venta_id' => \App\Models\Venta::factory(),
             'metodo_pago_id' => \App\Models\MetodoPago::factory(),
             'monto' => $this->faker->randomFloat(2, 50, 500),
-            'fecha_pago' => $this->faker->dateTimeBetween('-1 month', 'now'),
+            // 'fecha_pago' => $this->faker->dateTimeBetween('-1 month', 'now'), // Uses created_at
             'tipo_comprobante' => 'Ticket',
         ];
     }
