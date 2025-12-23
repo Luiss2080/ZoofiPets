@@ -41,9 +41,32 @@ class ProfileController extends Controller
             $user->avatar = $name;
             $user->save();
 
-            return response()->json(['success' => true, 'avatar' => asset('images/avatars/' . $name)]);
+            if ($request->wantsJson()) {
+                return response()->json(['success' => true, 'avatar' => asset('images/avatars/' . $name)]);
+            }
+            return back()->with('success', 'Foto de perfil actualizada correctamente.');
         }
 
-        return response()->json(['success' => false], 400);
+        if ($request->wantsJson()) {
+            return response()->json(['success' => false], 400);
+        }
+        return back()->with('error', 'No se ha subido ninguna imagen.');
+    }
+
+    public function update(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . auth()->id(),
+            // Add other validations if columns existed
+        ]);
+
+        $user = auth()->user();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        // Update password if needed? Not implemented in form properly (needs specialized logic)
+        $user->save();
+
+        return back()->with('success', 'Perfil actualizado correctamente.');
     }
 }

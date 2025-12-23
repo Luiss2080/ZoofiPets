@@ -134,6 +134,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/calendario', function() { return view('calendario.index'); })->name('calendario.index');
     Route::get('/perfil', [App\Http\Controllers\ProfileController::class, 'index'])->name('perfil.index');
     Route::post('/perfil/avatar', [App\Http\Controllers\ProfileController::class, 'updateAvatar'])->name('perfil.avatar');
+    Route::put('/perfil/update', [App\Http\Controllers\ProfileController::class, 'update'])->name('perfil.update');
     Route::get('/configuraciones', function() { return view('configuraciones.index'); })->name('configuraciones.index');
     Route::get('/reportes', function() { return view('reportes.index'); })->name('reportes.index');
     Route::get('clientes/{id}/mascotas', [Admin\ClienteController::class, 'getMascotas'])->name('clientes.mascotas');
