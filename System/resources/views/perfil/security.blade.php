@@ -11,7 +11,7 @@
     <div class="control-panel">
         <div class="panel-header">
             <div class="header-title">
-                <div class="icon-wrapper" style="background: linear-gradient(135deg, #72, 52, 212, #4834d4);">
+                <div class="icon-wrapper" style="background: linear-gradient(135deg, #4834d4, #4834d4);">
                     <i class="fas fa-shield-alt"></i>
                 </div>
                 <div class="title-content">
