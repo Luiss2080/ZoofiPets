@@ -21,8 +21,6 @@ class VentaFactory extends Factory
             'estado' => $this->faker->randomElement(['Pagada', 'Pendiente']),
             'tipo_venta' => 'Contado',
         ];
-        var_dump($data);
-        return $data;
     }
 
     public function configure()
