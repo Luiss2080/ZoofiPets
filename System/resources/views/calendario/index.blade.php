@@ -187,6 +187,6 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('js/admin/calendario/index.js') }}"></script>
+    <script src="{{ asset('js/calendario/index.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection
