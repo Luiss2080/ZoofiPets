@@ -9,23 +9,7 @@
 @section('content')
     <!-- Header Tipo Panel de Control -->
     <div class="control-panel">
-        <div class="panel-header">
-            <div class="header-title">
-                <div class="icon-wrapper" style="background: linear-gradient(135deg, #4834d4, #4834d4);">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <div class="title-content">
-                    <h2>Seguridad</h2>
-                    <p class="subtitle">Gestiona tu contraseña y protección de cuenta</p>
-                </div>
-            </div>
-            <div class="header-actions">
-                <a href="{{ route('perfil.index') }}" class="action-btn-red">
-                    <i class="fas fa-arrow-left"></i>
-                    <span>Volver al Perfil</span>
-                </a>
-            </div>
-        </div>
+
 
         <div class="panel-content">
             <!-- Barra de Estado -->

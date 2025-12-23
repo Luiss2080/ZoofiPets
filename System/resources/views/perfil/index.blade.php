@@ -9,23 +9,7 @@
 @section('content')
     <!-- Header Tipo Panel de Control -->
     <div class="control-panel">
-        <div class="panel-header">
-            <div class="header-title">
-                <div class="icon-wrapper">
-                    <i class="fas fa-user-circle"></i>
-                </div>
-                <div class="title-content">
-                    <h2>Mi Perfil</h2>
-                    <p class="subtitle">Gestiona tu información personal y seguridad de cuenta</p>
-                </div>
-            </div>
-            <div class="header-actions">
-                <a href="{{ route('perfil.edit') }}" class="btn-primary-action">
-                    <i class="fas fa-user-edit"></i>
-                    <span>Editar Perfil</span>
-                </a>
-            </div>
-        </div>
+
 
         <div class="panel-content">
             <!-- Barra de Estado (Simulando la barra de filtros/búsqueda) -->

@@ -9,23 +9,7 @@
 @section('content')
     <!-- Header Tipo Panel de Control -->
     <div class="control-panel">
-        <div class="panel-header">
-            <div class="header-title">
-                <div class="icon-wrapper">
-                    <i class="fas fa-user-edit"></i>
-                </div>
-                <div class="title-content">
-                    <h2>Editar Perfil</h2>
-                    <p class="subtitle">Actualiza tu información personal y configuración</p>
-                </div>
-            </div>
-            <div class="header-actions">
-                <a href="{{ route('perfil.index') }}" class="action-btn-red">
-                    <i class="fas fa-arrow-left"></i>
-                    <span>Volver al Perfil</span>
-                </a>
-            </div>
-        </div>
+
 
         <div class="panel-content">
             <!-- Barra de Estado -->
