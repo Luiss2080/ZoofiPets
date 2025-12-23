@@ -5,10 +5,17 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/admin/clientes/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pages/paginacion.css') }}">
+    <!-- Mod CSS -->
+    <link rel="stylesheet" href="{{ asset('css/mod/eliminar.css') }}">
 @endsection
 
 @section('content')
 <div class="clientes-container">
+    <!-- Success Message Hidden Input -->
+    @if(session('success'))
+        <input type="hidden" id="session-success-message" value="{{ session('success') }}">
+    @endif
+
     <!-- Control Panel Section -->
     <div class="control-panel">
         <div class="panel-header">
@@ -135,42 +142,7 @@
 
 @section('js')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        function confirmDelete(url) {
-            Swal.fire({
-                title: '¿Estás seguro?',
-                text: "No podrás revertir esto.",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#4834d4', /* Purple for confirm */
-                cancelButtonColor: '#1f2937', /* Dark for cancel */
-                confirmButtonText: 'Sí, eliminar',
-                cancelButtonText: 'Cancelar',
-                background: '#ffffff', /* White bg for light mode */
-                color: '#1f2937', /* Dark text */
-                customClass: {
-                    popup: 'animated fadeInDown faster',
-                    confirmButton: 'btn-confirm-delete',
-                    cancelButton: 'btn-cancel-delete'
-                }
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    const form = document.getElementById('delete-form');
-                    form.action = url;
-                    form.submit();
-                }
-            })
-        }
-
-        @if(session('success'))
-            Swal.fire({
-                icon: 'success',
-                title: '¡Éxito!',
-                text: "{{ session('success') }}",
-                background: '#ffffff', /* White bg */
-                color: '#1f2937', /* Dark text */
-                confirmButtonColor: '#4834d4'
-            });
-        @endif
-    </script>
+    <script src="{{ asset('js/admin/clientes/index.js') }}"></script>
+    <!-- Mod JS -->
+    <script src="{{ asset('js/mod/eliminar.js') }}"></script>
 @endsection
