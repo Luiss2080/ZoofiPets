@@ -18,8 +18,8 @@ class CompraFactory extends Factory
             'impuesto' => 0,
             'descuento' => 0,
             'total' => 0,
-            'estado' => $this->faker->randomElement(['Completada', 'Pendiente']),
-            'tipo_pago' => $this->faker->randomElement(['Contado', 'Credito']),
+            'estado' => $this->faker->randomElement(['Pedido', 'En_Transito', 'Recibida', 'Cancelada']),
+            'tipo_pago' => $this->faker->randomElement(['Contado', 'Credito_30', 'Credito_60']),
             'observaciones' => $this->faker->sentence(),
         ];
     }
